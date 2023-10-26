@@ -1,0 +1,28 @@
+.navbar__logo {
+    font-size:50px;
+    text-align:center;
+    padding:10px;
+}
+a {
+    text-decoration: none;
+    color:darkgreen;
+}
+        ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: beige;
+}
+
+li {
+    float: left;
+    color: black;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 20px;
+}
