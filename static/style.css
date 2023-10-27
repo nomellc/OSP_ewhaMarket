@@ -3,11 +3,13 @@
     text-align:center;
     padding:10px;
 }
-a {
+
+.title {
     text-decoration: none;
     color:darkgreen;
 }
-        ul {
+
+.navbar__menu {
     list-style-type:none;
     margin: 0;
     padding: 0;
