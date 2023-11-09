@@ -1,30 +1,233 @@
-.navbar__logo {
+@font-face {
+    font-family: "SeoulHangang";
+    src: url("SeoulHangang_CEB_Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+    color: #71513c;
+    font-family: "SeoulHangang";
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    color: #71513c;
+    background-color: #f5ebe0;
+}
+
+/* 홈화면 */
+
+.home-a {
+    text-decoration: none;
+}
+
+.home-navbar__logo {
     font-size:50px;
     text-align:center;
     padding:10px;
+    color: #71513c;
 }
 
-.title {
-    text-decoration: none;
-    color:darkgreen;
+.home-navbar__logo a {
+    color: black;
 }
 
-.navbar__menu {
+.home-ul {
     list-style-type:none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: beige;
+    background-color: #e3d5ca;
 }
 
-li {
+.home-li {
     float: left;
     color: black;
 }
 
-li a {
+.home-li a {
     display: block;
     color: black;
     text-align: center;
     padding: 20px 20px;
+}
+
+
+/* review */
+
+.four-home {
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.four-home a {
+    color: #71513c;
+}
+
+.four-hr {
+    border-color: #d4927d;
+    border-top: 1px;
+    position: static;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.four-container {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.four-sub_title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.four-input-group {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.four-label {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+}
+
+.four-text,
+.four-file,
+.four-review-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.four-file {
+    border: none;
+    padding-left: 0px;
+}
+
+.four-review-content {
+    resize: none;
+}
+
+.four-button {
+    margin:20px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #71513c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+.four-button:hover {
+    background-color: #503c2c;
+}
+
+.four-rating-group {
+    display: flex;
+}
+
+.four-rating {
+    display: flex;
+    margin-left: 20px;
+}
+
+.four-rating span {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #CADFDC;
+    font-size: 25px;
+    text-shadow: 0.1px 0 black;
+}
+
+/* review_detail */
+
+.six-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.six-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.six-user-details {
+    flex-grow: 1;
+}
+
+.six-nickname, .six-product-name, .six-date {
+    margin: 15px;
+}
+
+#six-readonly {
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 200px;
+}
+
+.six-unstar_rating {
+    display: flex;
+    margin-right: 20px;
+}
+
+.six-unstar {
+    cursor: pointer;
+    font-size: 25px; 
+    color: #CADFDC;
+}
+
+#six-wrap_image {
+    float: left;
+    overflow: hidden;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.six-article {
+    float: left;
+    margin-left: 5px;
+}
+
+.six-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: none;
+    border-radius: 5px;
+}
+
+#six-thumb {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#six-thumb-image {
+    width: 20px;
+    height: 20px;
 }
