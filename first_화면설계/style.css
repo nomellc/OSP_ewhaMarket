@@ -740,22 +740,22 @@ a {
 }
 
 #eight_userid {
-  background-image: url(1378_soyeon/eight_id.png);
+  background-image: url(eight_id.png);
 }
 #eight_userpwd {
-  background-image: url(1378_soyeon/eight_password.png);
+  background-image: url(eight_password.png);
 }
 #eight_userpwd_check {
-  background-image: url(1378_soyeon/eight_check.png);
+  background-image: url(eight_check.png);
 }
 #eight_nickname {
-  background-image: url(1378_soyeon/eight_tag.png);
+  background-image: url(eight_tag.png);
 }
 #eight_email {
-  background-image: url(1378_soyeon/eight_email.png);
+  background-image: url(eight_email.png);
 }
 #eight_phonenum {
-  background-image: url(1378_soyeon/eight_phone.png);
+  background-image: url(eight_phone.png);
 }
 #eight_id_check {
   background-color: transparent;
@@ -774,10 +774,10 @@ a {
 }
 
 #seven_userid {
-  background-image: url(1378_soyeon/eight_id.png);
+  background-image: url(eight_id.png);
 }
 #seven_userpwd {
-  background-image: url(1378_soyeon/seven_password.png);
+  background-image: url(seven_password.png);
 }
 #seven_id_remember {
   border: 3px solid #d4927d;
