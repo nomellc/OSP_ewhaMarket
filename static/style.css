@@ -1,13 +1,15 @@
-@font-face {
-    font-family: "SeoulHangang";
-    src: url("SeoulHangang_CEB_Regular.ttf") format("truetype");
-    font-weight: normal;
-}
+/* 공통부분 */
 
 * {
     box-sizing: border-box;
     color: #71513c;
     font-family: "SeoulHangang";
+}
+
+@font-face {
+    font-family: "SeoulHangang";
+    src: url("SeoulHangang_CEB_Regular.ttf") format("truetype");
+    font-weight: normal;
 }
 
 body {
@@ -17,7 +19,17 @@ body {
     background-color: #f5ebe0;
 }
 
-/* 홈화면 */
+hr {
+  border-color: #d4927d;
+  border-top: 1px;
+  position: static;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* index.html */
 
 .home-a {
     text-decoration: none;
@@ -54,9 +66,261 @@ body {
     padding: 20px 20px;
 }
 
+/* one */
+.one_main_title {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
 
-/* review */
+.one_sub_title {
+  position: relative;
+  top: 90px;
+  left: 5px;
+}
 
+.one_input_content {
+  margin: auto;
+  width: 50%;
+  height: 100%;
+  position: static;
+}
+
+#one_image_box {
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+  display: inline-block;
+  float: left;
+}
+
+#one_add_images {
+  padding: 50%;
+  background-color: #ebe5d0;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.one_input_form {
+  text-align: right;
+  width: 50%;
+  float: right;
+  display: inline-block;
+}
+
+.one_input_type {
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  width: 70%;
+  margin: 9px 0px;
+  border-color: #a0a19c;
+  border-radius: 3px;
+  outline: none;
+}
+
+#one_category {
+  /*width: 135px;
+  height: 20px;*/
+  text-align: center;
+}
+
+#one_category_lab {
+  margin-right: 1px;
+}
+
+#one_event_check {
+  width: 5%;
+  margin-right: 66%;
+}
+
+#one_explain {
+  padding-top: 51%;
+  display: block;
+}
+
+#one_explain_area {
+  margin-top: 3px;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.one_submit_btn {
+  text-align: right;
+}
+
+#one_back_i {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  color: #9a1414;
+  border-color: #9a1414;
+  border-radius: 5px;
+  text-shadow: none;
+}
+
+#one_submit_i {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  color: #265238;
+  border-color: #265238;
+  border-radius: 5px;
+  text-shadow: none;
+}
+
+/* two */
+.two_mypage a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #71513C;
+    float: right;
+    padding: 10px;
+}
+    .two_mypage a:hover{
+        color:#D4927D;
+    }
+
+    .two_navbar__logo {
+        font-weight: bold;
+        font-size: 36px;
+        text-align: center;
+        padding: 15px;
+        color: #71513C;
+    }
+
+		.two_navbar__logo a{
+        text-decoration:none;
+        color:#71513c;
+    }
+
+    .two_navbar__logo a:hover{
+        text-shadow:0px 0px 3px #A0A19C;
+    }
+
+.two_navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.two_navbar li {
+    float: left;
+}
+
+    .two_navbar li a {
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        padding: 25px 25px;
+        padding-bottom: 15px;
+        color: #D4927D;
+        font-size: 18px;
+    }
+
+        .two_navbar li a:hover{
+            color:#71513c;
+        }
+
+        .two hr {
+            border-color: #D4927D;
+        }
+
+.two_item_order {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+    .two_item_order h1 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .two_item_order img {
+        width: 10px;
+        height: 8px;
+    }
+
+    .two_item_order a {
+        text-decoration: none;
+        color: #71513C;
+    }
+
+    .two_item_order a:hover{
+        color: #D4927D;
+    }
+
+.two_container {
+    max-width:1600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+    .two_container img {
+        width: 300px;
+        height: 350px;
+        border-radius: 5%;
+    }
+
+    .two_container a{
+        text-decoration:none;
+    }
+
+.two_card {
+    display: block;
+    padding: 20px;
+    position: relative;
+}
+
+
+.two_text {
+    text-align: left;
+    margin: 5px;
+}
+
+.two_item_name {
+    font-size: 18px;
+    color: #71513C;
+    margin: 5px;
+}
+
+.two_item_price {
+    font-size: 15px;
+    color: #D4927D;
+    margin: 5px;
+}
+
+.two_pagination{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+    .two_pagination ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .two_pagination li{
+        display: inline;
+        margin: 5px;
+    }
+
+    .two_pagination a{
+        text-decoration: none;
+        padding: 5px 0px;
+        color: #71513C;
+    }
+
+        .two_pagination a:hover{
+            color: #D4927D;
+        }
+
+/* four */
 .four-home {
     padding: 20px;
     padding-bottom: 0px;
@@ -159,7 +423,212 @@ body {
     text-shadow: 0.1px 0 black;
 }
 
-/* review_detail */
+/* five */
+
+.five_logo h1 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: #71513c;
+}
+
+.five_logo a {
+    font-size: 25px;
+    text-align: left;
+    padding: 25px;
+    text-decoration: none;
+    color: #71513c;
+    font-weight: 500;
+}
+
+.five_logo hr {
+    border-color: #d4927d;
+}
+
+.five_rate_avg {
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.five_unstar, .five_star {
+    font-size: 25px;
+    color: #D4927D;
+}
+
+.five_star_numbers {
+    font-size: 25px;
+    color: #D4927D;
+    font-weight: 500;
+}
+
+.five_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px 70px;
+}
+
+.five_title_img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 수평 중앙 정렬 */
+    margin: 30px 0px;
+    align-items: center;
+    border: 2px solid #71513c;
+    border-radius: 10px;
+    background-color: #FFFEF6;
+}
+
+    .five_title_img a {
+        padding: 20px;
+    }
+
+    .five_title_img img, .five_review_img img {
+        border-radius: 5%;
+    }
+
+#five_back, #five_next {
+    color: #CADFDC;
+    font-size: 25px;
+    font-weight: bolder;
+    border: none;
+    background: none;
+}
+
+#five_back:hover, #five_next:hover{
+    color:#778e8a;
+}
+
+.five_review {
+    background-color: #FFFEF6;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border: 2px solid #71513c;
+    border-radius: 10px;
+}
+
+/* .satisfaction 스타일 변경 */
+.five_review_header {
+    display: flex;
+    margin: 30px 90px;
+}
+
+.five_satisfaction {
+    flex-grow: 1;
+}
+
+    .five_satisfaction p {
+        text-align: left;
+        font-size: 15px;
+        color: #A0A19C;
+    }
+
+.five_order h2 {
+    text-align: left;
+    font-size: 15px;
+    color: black;
+}
+
+.five_order a {
+        text-decoration: none;
+        color: #71513C;
+    }
+
+        .five_order a:hover {
+            color: #D4927D;
+        }
+
+.five_user_reviews {
+    margin: 10px 90px;
+}
+
+.five_user_info {
+    display: flex;
+}
+
+.five_review_profile {
+    margin: 0px 10px;
+}
+
+.five_user_details {
+    flex-grow: 1;
+}
+
+.five_user_name {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #71513c;
+}
+
+.five_user_rating .five_date {
+    display: inline-block;
+}
+
+.five_date {
+    color: #A0A19C;
+}
+
+.five_review_title {
+    font-size: 15px;
+    color: black;
+    font-weight: 500;
+}
+
+
+.five_review_img img {
+    height: 120px;
+    width: 120px;
+}
+
+#five_thumb {
+    display: flex;
+    margin: 10px;
+    align-items: flex-end;
+}
+
+    #five_thumb h1 {
+        color: #71513c;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
+
+.five_thumbs_num, #five_thumb_image {
+    margin: 0px 5px;
+    color: #D4927D;
+}
+
+.five_pagination {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+    .five_pagination ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .five_pagination li{
+        display: inline;
+        margin: 5px;
+    }
+
+    .five_pagination a{
+        text-decoration: none;
+        padding: 5px 0px;
+        color: #71513C;
+    }
+
+        .five_pagination a:hover {
+            color: #D4927D;
+        }
+
+/* six */
 
 .six-user-info {
     display: flex;
@@ -231,3 +700,670 @@ body {
     width: 20px;
     height: 20px;
 }
+
+/* seven, eight */
+
+#seven_login_box,
+#eight_register_box {
+  width: 25%;
+  height: 50%;
+  border: solid 2px #71513c;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fffef6;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#seven_h1 {
+  text-align: center;
+}
+
+.seven_placeholder,
+.eight_placeholder {
+  background-color: #d9d9d9;
+  color: #a0a19c;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 25px;
+  width: 60%;
+  height: 30px;
+  margin: 0% 25%;
+}
+
+#eight_userid {
+  background-image: url(id.png);
+}
+#eight_userpwd {
+  background-image: url(password.png);
+}
+#eight_userpwd_check {
+  background-image: url(check.png);
+}
+#eight_nickname {
+  background-image: url(tag.png);
+}
+#eight_email {
+  background-image: url(email.png);
+}
+#eight_phonenum {
+  background-image: url(phone.png);
+}
+#eight_id_check {
+  background-color: transparent;
+  color: #cadfdc;
+  text-align: right;
+  border: none;
+  text-decoration: underline;
+  font-size: 12px;
+  margin-left: 70%;
+}
+
+.eight_check_word {
+  font-size: 12px;
+  color: #cadfdc;
+  margin-left: 100px;
+}
+
+#seven_userid {
+  background-image: url(id.png);
+}
+#seven_userpwd {
+  background-image: url(password.png);
+}
+#seven_id_remember {
+  border: 3px solid #d4927d;
+}
+#seven_checkbox_label1 {
+  margin-top: 5px;
+  text-align: center;
+}
+#seven_checkbox_label2 {
+  color: #d4927d;
+  line-height: 10px;
+  text-decoration: underline;
+  font-size: 12px;
+}
+#seven_login,
+#eight_login {
+  background-color: #d4927d;
+  color: #fffef6;
+  border: #d4927d;
+  text-align: center;
+  display: inline-block;
+  margin: 10px 25%;
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+}
+#seven_service {
+  text-align: center;
+}
+
+#eight_register_box {
+  margin-top: 0px;
+}
+#eight_h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#eight_form {
+  padding-right: 25px;
+}
+
+/*nine*/
+
+.nine-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    min-height: 100vh; 
+}
+
+
+
+.nine-market-name{
+    padding: 20px;
+    text-align: center;
+}
+.nine-market-name .separator{
+    border-top: 1px solid #d4927d;
+    width: 100%;
+    margin-left: -20px;
+
+}
+
+.nine-user-profile {
+    display: flex;
+    align-items: center;
+    border: 2px solid #d4927d; 
+    border-radius: 10px; 
+    padding: 10px; 
+    background-color: white;
+    margin-top: 10px;
+    width: 900px; 
+
+
+    position: static;
+}
+
+.nine-user-profile img {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+}
+
+.nine-user-profile .nine-user-name {
+    margin-left: 20px; 
+    position: relative;
+    left: 0px;
+    top: -15px;
+    margin-bottom: 30px;
+
+    font-size: 15pt;
+}
+
+
+.nine-follow-button {
+    background-color: #cadfdc; 
+    color: #71513c; 
+    padding: 8px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 15pt;
+
+    position: relative;
+    bottom: -30px;
+    right: -380px;
+
+}
+
+.nine-bell-button {
+    padding: 5px 5px; 
+    border-radius: 5px; 
+    border: none;
+    background-color: white;
+
+    position: relative;
+    top: -30px;
+    right: -510px;
+}
+.nine-bell-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.nine-setting-button {
+    border: none;
+    background-color: white;
+    position: relative;
+    top: -30px;
+    right: -510px;
+}
+.nine-setting-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.nine-following {
+    font-size: 10pt;
+    padding: 3px 3px;
+    border-radius: 5px; 
+    background-color: #cadfdc; 
+    margin: 3px;
+
+    left: -50px;
+    top: 10px;
+
+    position: relative;
+
+}
+
+.nine-follower {
+    font-size: 10pt;
+    padding: 3px 3px;
+    border-radius: 5px;
+    background-color: #cadfdc; 
+    margin: 3px;
+
+
+    left: -50px;
+    top: 10px;
+    position: relative;
+
+}
+
+.nine-product-containers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    width: 930px;
+    padding: 10px;
+
+}
+
+.nine-product-container {
+    flex: 1; 
+    border-radius: 10px; 
+    padding: 10px; 
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+    position: static;
+}
+
+.nine-product-container h2 {
+    align-self: flex-start; 
+}
+
+.nine-separator {
+    border-top: 2px solid #d4927d;
+    margin-bottom: -20px;
+}
+
+.nine-page-button {
+    align-self: flex-end; 
+    background-color: white;
+    border: none;
+    cursor: pointer;
+
+    position: relative;
+    top: -35px;
+
+}
+.nine-page-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.nine-product-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.nine-product-card {
+    width: 120px;
+    height: 150px;
+    margin: 8px;
+}
+
+
+
+.nine-product-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.nine-product-card p {
+    align-self: start;
+    margin: 0;
+}
+
+.nine-product-card h5 {
+    align-self: start;
+    margin: 0;
+}
+
+.nine-profile-button {
+    background-color: #3498db; 
+    color: #fff; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    margin-right: 10px; 
+}
+
+.nine-hot-cards {
+    width: 870px;
+    border: 1px solid #d4927d;
+    border-radius: 10px;
+
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    padding: 10px;
+}
+
+.nine-hot-cards h3 {
+    padding: 10px;
+}
+
+.nine_logo {
+    position : absolute;
+    top : 70px;
+    left : 40px;
+    font-size: 60px;
+    text-align: start;
+    padding:10px;
+}
+
+.nine_love{
+  color : #D4927D;
+}
+
+.nine_default {
+    list-style-type: none;
+    color:#71513C;
+    text-decoration: none;
+}
+
+.nine_navbar1{
+  position : absolute;
+  right : 5px;
+}
+.nine_navbar1 ul {
+    margin : 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    text-align : center;
+}
+
+.nine_navbar1 li{
+  display:inline;
+}
+
+.nine_navbar1 a{
+  display : border;
+  color: #CADFDC;
+  float : right;
+  font-size : 18px;
+  text-align : center;
+  padding : 10px;
+}
+
+.nine_write_button {
+  position : absolute;
+  top : 80px;
+  right : 30px;
+  background-color: #CADFDC;
+  font-weight: bold;
+  font-size : 28px;
+  color :#71513C;
+  border : none;
+  border-radius : 10px;
+  padding : 5px;
+  min-height : 60px;
+  min-width: 150px;
+}
+
+.nine_navbar2 {
+    position : absolute;
+    top : 150px;
+    left : 140px;
+    text-align : center;
+}
+
+.nine_navbar2 ul{
+  list-style : none;
+  overflow : hidden;
+}
+
+.nine_navbar2 li{
+  display:inline;
+}
+
+.nine_navbar2 a {
+    display: block;
+    text-align: center;
+    font-size : 30px;
+    padding : 10px 250px;
+    font-weight : bold;
+    border-radius : 10px;
+    display : inline-block;
+    border : 4px solid white;
+}
+
+.nine_navbar2 a:hover{
+  background-color : #D4927D;
+  border : 4px solid #D4927D;
+}
+.nine_navbar2 a.active{
+  background-color : white;
+  border : 4px solid #D4927D;
+}
+
+#sellingbar{
+  list-style-type: none;
+  color:#71513C;
+  text-decoration: none;
+}
+
+#soldbar{
+  list-style-type: none;
+  color:#71513C;
+  text-decoration: none;
+}
+
+
+
+.nine_sold{
+  display : none;
+}
+
+.nine_sell_hr{
+  position : absolute;
+  top : 215px;
+  width: 100%;
+  height : 4px;
+  background-color :#D4927D;
+  border : none;
+}
+
+.nine_buy_like_hr{
+  position : absolute;
+  top : 150px;
+  width: 100%;
+  height : 4px;
+  background-color :#D4927D;
+  border : none;
+}
+
+.nine_following_hr{
+  position : absolute;
+  top : 150px;
+  width: 100%;
+  height : 4px;
+  background-color :#D4927D;
+  border : none;
+}
+
+
+p.nine_sort{
+  position : absolute;
+  top: 220px;
+  right : 5px;
+  font-size : 20px;
+  color : #CADFDC;
+}
+
+p.nine_buy_like_sort{
+  position : absolute;
+  top: 160px;
+  right : 5px;
+  font-size : 20px;
+  color : #CADFDC;
+}
+
+.nine_list{
+  position : absolute;
+  top : 200px;
+
+}
+
+.nine_sell_list{
+  position : absolute;
+  top : 240px;
+
+}
+
+
+div.nine_heart{
+    position : absolute;
+    top : 65%;
+    left : 100%;
+    font-size : 50px;
+    color:#D4927D;
+    font-weight:bold;
+  }
+
+div.nine_buy_like_heart{
+    position : absolute;
+    top : 65%;
+    left : 100%;
+    font-size : 50px;
+    color:#D4927D;
+    font-weight:bold;
+  }
+
+div.nine_following_heart{
+    position : absolute;
+    top : 75%;
+    left : 100%;
+    font-size : 50px;
+    color:#D4927D;
+    font-weight:bold;
+  }
+
+
+div.nine_gallery {
+    position : relative;
+    margin : 30px;
+    float: left;
+    width: 280px;
+    padding : 25px;
+  }
+
+div.nine_following_gallery {
+    position : relative;
+    margin: 40px;
+    float: left;
+    width: 280px;
+    padding : 10px;
+  }
+
+
+div.nine_gallery img {
+    width: 320px;
+    height: 320px;
+    border-radius : 10px;
+  }
+
+div.nine_following_gallery img {
+    width: 340px;
+    height: 340px;
+    border-radius : 10px;
+    border: 4px solid white;
+  }
+
+  
+div.nine_desc {
+    padding: 3px;
+    color : #71513C;
+    text-align: left;
+  }
+div.nine_desc2{
+    color: #CADFDC;
+    text-align: left;
+  }
+
+  .nine_name{
+      position : absolute;
+      top: 240px;
+      left : 240px;
+      font-size : 50px;
+  }
+  
+  
+  .nine_profile_box{
+      position : absolute;
+      top : 200px;
+      left : 40px;
+      width : 150px;
+      height : 150px;
+      border-radius : 50%;
+      overflow : hidden;
+      border : 2px solid #71513C;
+  }
+  
+  .nine_profile{
+      width : 100%;
+      height : 100%;
+      object-fit : cover;
+  }
+  
+  .nine_following_button1{
+      position : absolute;
+      top: 220px;
+      right: 80px;
+      background-color: white;
+      font-weight: bold;
+      font-size : 40px;
+      color : #D4927D;
+      border : 3px groove #CADFDC;
+      border-radius : 10px;
+      padding : 5px;
+      min-height : 80px;
+      min-width: 160px;
+  }
+  
+  .nine_following_button2{
+      position : absolute;
+      top: 310px;
+      right : 80px;
+      border-radius : 50%;
+      overflow : hidden;
+      min-height : 15px;
+      min-width: 15px;
+  
+  }
+  
+  .nine_more{
+      object-fit : cover;
+      width : 30px;
+      height : 30px;
+  }
+  
+  div.nine_follow1{
+    position : relative;
+    padding : 20px;
+  }
+  
+  
+  div.nine_about{
+      position : absolute;
+      top : 370px;
+      left : 40px;
+      text-align: center;
+      width : 1310px;
+      height : 400px;
+      border: 2px solid #71513C;
+      border-radius : 10px;
+  }
+  
+  div.nine_hot{
+      font-size : 40px;
+      color :#D4927D;
+      font-weight : bold;
+      font-style: italic;
+      position : absolute;
+      text-shadow: -2px 0 #71513C, 2px 0 #71513C, 2px 0 #71513C,  -2px 0 #71513C ;
+      top : -5%;
+      left : 5%;
+  }
