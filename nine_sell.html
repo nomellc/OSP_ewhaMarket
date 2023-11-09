@@ -1,0 +1,173 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>판매 내역</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+    <script src = "main.js"></script>
+    </head> 
+    <body style = "background-color : white";>
+
+    <div class="nine_navbar1">
+      <ul>
+        <li><a class = "nine_default" href="/home">마이페이지</a></li>
+        <li><a class = "nine_default" href="/login">로그아웃</a></li>
+        <li><a class = "nine_default" href="/my_page">홈</a></li>
+      </ul>
+    </div>
+
+
+    <div class="nine_logo">
+    <a class = "nine_default">판매 내역</a> 
+    </div>
+
+    <button class = "nine_write_button" onclick = "location.href='/product_info'"> 글쓰기 </button>
+    <div class = "nine_navbar2">
+      <ul>
+          <li><a id = "sellingbar" class = "active" onclick = "menu1()">판매중</a></li>
+          <li><a id = "soldbar" onclick = "menu2()" >판매 완료</a></li>
+      </ul>
+    </div>
+    <hr class = "nine_sell_hr">
+    <p  class = "nine_sort">▼ 최신순</p>
+    <br>
+    <section>
+    <div class = "nine_sell_list">
+      <div class = "nine_selling">
+        <div class = "nine_gallery">
+          <a href="/product">
+            <img src = "nine_cake.jpeg">
+          </a>
+          <div class  ="nine_heart"  id= "likebtn1" onclick = 'like1()'>♡</div>
+          <div class = "nine_desc">상품명</div>
+          <div class = "nine_desc2">10000원</div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+              <img src = "nine_cake.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn2" onclick = 'like2()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+              <img src = "nine_cake.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn3" onclick = 'like3()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+              <img src = "nine_cake.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn4" onclick = 'like4()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+              <img src = "nine_cake.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn5" onclick = 'like5()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+        <a href="/product">
+            <img src = "nine_cake.jpeg">
+        </a>
+        <div class  ="nine_heart" id= "likebtn6" onclick = 'like6()'>♡</div>
+        <div class = "nine_desc"> 상품명 </div>
+        <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+        <a href="/product">
+            <img src = "nine_cake.jpeg">
+        </a>
+        <div class  ="nine_heart" id= "likebtn7" onclick = 'like7()'>♡</div>
+        <div class = "nine_desc"> 상품명 </div>
+        <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+        <a href="/product">
+            <img src = "nine_cake.jpeg">
+        </a>
+        <div class  ="nine_heart" id= "likebtn8" onclick = 'like8()'>♡</div>
+        <div class = "nine_desc"> 상품명 </div>
+        <div class = "nine_desc2"> 10000원 </div>
+      </div>
+    </div>
+      <div class = "nine_sold">
+        <div class = "nine_gallery">
+          <a href="/product">
+              <img src = "cake2.jpeg">
+          </a>
+          <div class  ="nine_heart"  id= "likebtn1" onclick = 'like1()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+            <img src = "nine_cake2.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn2" onclick = 'like2()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+            <img src = "nine_cake2.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn3" onclick = 'like3()'>♡</div>
+          <div class = "nine_desc"> 상품명 </div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+            <img src = "nine_cake2.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn4" onclick = 'like4()'>♡</div>
+          <div class = "nine_desc"> 상품명</div>
+          <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+          <a href="/product">
+            <img src = "nine_cake2.jpeg">
+          </a>
+          <div class  ="nine_heart" id= "likebtn5" onclick = 'like5()'>♡</div>
+          <div class = "nine_desc"> 상품명</div>
+          <div class = "nine_desc"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+        <a href="/product">
+            <img src = "nine_cake2.jpeg">
+        </a>
+        <div class  ="nine_heart" id= "likebtn6" onclick = 'like6()'>♡</div>
+        <div class = "nine_desc"> 상품명</div>
+        <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+        <a href="/product">
+            <img src = "nine_cake2.jpeg">
+        </a>
+        <div class  ="nine_heart" id= "likebtn7" onclick = 'like7()'>♡</div>
+        <div class = "nine_desc"> 상품명</div>
+        <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      <div class = "nine_gallery">
+        <a href="/product">
+            <img src = "nine_cake2.jpeg">
+        </a>
+        <div class  ="nine_heart" id= "likebtn8" onclick = 'like8()'>♡</div>
+        <div class = "nine_desc"> 상품명</div>
+        <div class = "nine_desc2"> 10000원 </div>
+      </div>
+      </div>
+    </div>
+</section>
+</body>
+</html>
