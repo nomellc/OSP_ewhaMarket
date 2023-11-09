@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 페이지</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div class="four-container">
+        <h1 class="four-sub_title">리뷰 작성</h1>
+        <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
+        <br />
+        <hr class="four-hr" />
+        <div class="six-user-info">
+            <div class="six-avatar"></div>
+            <div class="six-user-details">
+                <p class="six-nickname">Nickname</p>
+                <p class="six-product-name">상품명</p>
+                <p class="six-date">2023.01.01</p>
+            </div>
+            <div class="six-unstar_rating">
+                <span class="six-unstar">&#9733;</span> 
+                <span class="six-unstar">&#9733;</span> 
+                <span class="six-unstar">&#9733;</span> 
+                <span class="six-unstar">&#9734;</span> 
+                <span class="six-unstar">&#9734;</span> 
+            </div>
+        </div>
+        <div id="six-wrap_image">
+            <article class="six-article"><img class="six-img" src="../static/images/dessert1.jpg"></article>
+            <article class="six-article"><img class="six-img" src="../static/images/dessert2.jpg"></article>
+            <article class="six-article"><img class="six-img" src="../static/images/dessert3.jpg"></article>
+            <article class="six-article"><img class="six-img" src="../static/images/dessert4.jpg"></article>
+        </div>
+        <textarea class="four-review-content" id="six-readonly" readonly></textarea>
+        <div id="six-thumb">
+            도움이 되었어요 <img id="six-thumb-image" src="../static/images/thumb-up.png" onclick="toggleImage()">
+        </div>
+    </div>
+</body>
+</html>
