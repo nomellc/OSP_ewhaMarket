@@ -25,11 +25,11 @@ def view_list():
 
 @application.route("/review_detail")
 def view_review_detail():
-    return render_template("review_detail.html")
+    return render_template("six_review_detail.html")
 
 @application.route("/review")
 def view_review():
-    return render_template("review.html")
+    return render_template("four_review.html")
 
 @application.route("/reg_items")
 def reg_item():
