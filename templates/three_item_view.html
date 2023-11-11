@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item</title>
+    <!--css, js 파일 연결-->
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="{{url_for('static', filename='main.js')}}" defer></script>
+  </head>
+  <body>
+    <header>
+      <h2><a href="/index" class="one_sub_title">이화마켓</a></h2>
+      <h1>
+        <a href="" class="one_main_title">상품 상세보기</a>
+      </h1>
+      <br />
+      <hr />
+    </header>
+    
+    <div class="three_input_content" style="margin:0px 50px">
+      <div style="display: flex; margin-bottom:10px;align-items:center;">
+      <div class="three_box" style="background: white;flex:1; height:300px; border-radius:5px;display:inline-block; margin-right:10px">
+        <!--<img src="three_arrow.png"/>-->
+      </div>
+      <div class="three_box" style="background: white; flex:2; height:300px; border-radius:5px;display:inline-block; padding:5px">
+        <p>상품명:</p>
+<p>가격:</p>
+<p>카테고리:</p>
+<p>옵션:</p>
+<p>기타 정보:</p>
+      </div>
+    </div>
+      <div id="three_explain" style="background-color:white; border-radius:5px; padding:1px 1px;">
+        <!--설명 추가하는 곳 <input type="text" name="explain" id="explain" required/><br />-->
+        <p><pre>  설명:</pre></p>
+        <p><pre  style="font-size: 13px;">    안녕하세요....
+
+
+
+
+        </pre></p>
+      </div>
+    </div>
+    <hr />
+    <div>
+      <h3>
+        상품 리뷰
+        <a href="">
+          <img src="three_next.png" style="width: 15px; height: 15px" /></a>
+      </h3>
+      <div>
+        <form
+        action="/submit_item_post"
+        method="post"
+        enctype="multipart/form-data"
+      >
+      <div>
+        <label for="array" style="font-size:17px;">최신순 <a href=""></a><img src="three_toggleDown.png" style="margin-top:5px; height: 15px; width:15px;"></a></label>
+      </div>
+      <div>
+        <p>ID1(2023.10.11):</p>
+        <p>ID1(2023.10.11):</p>
+        <p>ID1(2023.10.11):</p>
+        <p>ID1(2023.10.11):</p>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
