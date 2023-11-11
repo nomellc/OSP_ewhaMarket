@@ -21,7 +21,7 @@ def view_signup():
 
 @application.route("/list")
 def view_list():
-    return render_template("list.html")
+    return render_template("two_item_1109.html")
 
 @application.route("/review_detail")
 def view_review_detail():

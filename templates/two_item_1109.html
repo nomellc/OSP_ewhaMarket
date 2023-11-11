@@ -1,135 +1,122 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>이화마켓</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <script src="{{url_for('static', filename='main.js')}}" defer></script>
-</head>
-<body>
-    <div class="two_mypage">
-        <a href="">login</a>
-        <a href="">mypage</a>
+{% extends "index.html" %}
+
+{% block section %}
+<div class="two_mypage">
+    <a href="">login</a>
+    <a href="">mypage</a>
+</div>
+<nav class="two_navbar">
+    <div class="two_navbar__logo">
+        <a href="">이화마켓</a>
     </div>
-    <nav class="two_navbar">
-        <div class="two_navbar__logo">
-            <a href="">이화마켓</a>
-        </div>
-        <ul>
-            <li><a href="">전체상품</a></li>
-            <li><a href="">리뷰</a></li>
-            <li><a href="">상품등록</a></li>
-            <li><a href="">리뷰등록</a></li>
-        </ul>
-    </nav>
-    <div class="two"><hr></div>
-    <div class="two_item_order">
+</nav>
+<div class="two"><hr></div>
+<div class="two_item_order">
+    <a href="#">
+        <h1>최신순<img src="two_button.png" width="10" height="8" /></h1>
+    </a>
+</div>
+<div class="two_container">
+    <div class="two_card">
         <a href="#">
-            <h1>최신순<img src="two_button.png" width="10" height="8" /></h1>
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
         </a>
     </div>
-    <div class="two_container">
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
-        <div class="two_card">
-            <a href="#">
-                <div class="img">
-                    <img src="two_cake.jpeg">
-                </div>
-                <div class="two_text">
-                    <p class="two_item_name">케이크</p>
-                    <p class="two_item_price">10000원</p>
-                </div>
-            </a>
-        </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
+    <div class="two_card">
+        <a href="#">
+            <div class="img">
+                <img src="two_cake.jpeg">
+            </div>
+            <div class="two_text">
+                <p class="two_item_name">케이크</p>
+                <p class="two_item_price">10000원</p>
+            </div>
+        </a>
+    </div>
 
-    </div>
-    <div class="two_pagination">
-        <ul>
-            <li><a href="#"><</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">></a></li>
-            <!-- 페이지 번호들을 원하는 만큼 추가하세요 -->
-        </ul>
-    </div>
-</body>
-</html>
+</div>
+<div class="two_pagination">
+    <ul>
+        <li><a href="#"><</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">></a></li>
+        <!-- 페이지 번호들을 원하는 만큼 추가하세요 -->
+    </ul>
+</div>
+{% endblock section %}
