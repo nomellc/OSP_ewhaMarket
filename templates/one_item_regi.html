@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 등록</title>
+    <!--css, js 파일 연결-->
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="{{url_for('static', filename='main.js')}}" defer></script>
+  </head>
+  <body>
+    <header>
+      <h2><a href="/index" class="one_sub_title">이화마켓</a></h2>
+      <h1>
+        <a href="" class="one_main_title">상품 등록</a>
+      </h1>
+      <br />
+      <hr />
+    </header>
+    <div class="one_input_content">
+      <form
+        action="/submit_item_post"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="one_image_box">
+          <!--이미지 저장하는 영역: 사진 추가 버튼, 양옆 이동 버튼, 사진 갯수
+<input type="file" name="file" />-->
+          <button type="button" id="one_add_images">+</button>
+          <br />
+        </div>
+        <div class="one_input_form">
+          <!--짧은 이미지 폼 넣는 곳: id, 상품명, 가격, 카테고리, 옵션, 기타 정보, 이벤트 글-->
+          <div>
+            <label for="id_i">*ID: </label>
+            <input
+              type="text"
+              class="one_input_type"
+              name="id_i"
+              id="one_id_i"
+              required
+            /><br />
+          </div>
+          <div>
+            <label for="item_title">*상품명: </label>
+            <input
+              type="text"
+              class="one_input_type"
+              name="item_title"
+              id="one_item_title"
+              required
+            /><br />
+          </div>
+          <div>
+            <label for="price">*가격: </label>
+            <input
+              type="number"
+              class="one_input_type"
+              name="price"
+              id="one_price"
+              required
+            /><br />
+          </div>
+          <div class>
+            <label for="category" id="one_category_lab">*카테고리: </label>
+            <select id="one_category" class="one_input_type" name="category">
+              <option value="Cake" selected>케이크</option>
+              <option value="Macaroon">마카롱</option>
+              <option value="Bagel">베이글</option>
+              <option value="Cookie">쿠키</option>
+              <option value="Croissant">크로와상</option>
+              <option value="ECT_sel">기타</option>
+              <br /><br />
+            </select>
+          </div>
+          <div>
+            <label for="option_dsc">옵션: </label>
+            <input
+              type="text"
+              class="one_input_type"
+              name="option_dsc"
+              id="one_option_dsc"
+            /><br />
+          </div>
+          <div>
+            <label for="ect_info">기타 정보: </label>
+            <input
+              type="text"
+              class="one_input_type"
+              name="ect_info"
+              id="one_ect_info"
+            /><br />
+          </div>
+          <div>
+            <label for="event_check">이벤트: </label>
+            <input
+              type="checkbox"
+              class="one_input_type"
+              id="one_event_check"
+              name="event_check"
+              value="on"
+            />
+          </div>
+        </div>
+        <div id="one_explain">
+          <!--설명 추가하는 곳 <input type="text" name="explain" id="explain" required/><br />-->
+          <br /><label for="explain">설명: </label>
+          <textarea id="one_explain_area" name="explain" rows="18"></textarea>
+        </div>
+        <div class="one_submit_btn">
+          <!--제출 버튼: submit, 돌아가기 버튼: 클릭 시 팝업 <input type="submit" value="Submit!"><br><br>-->
+          <button type="button" id="one_back_i">돌아가기</button>
+          <button type="submit" id="one_submit_i">완료</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

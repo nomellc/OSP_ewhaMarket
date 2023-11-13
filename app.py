@@ -21,15 +21,15 @@ def view_signup():
 
 @application.route("/list")
 def view_list():
-    return render_template("list.html")
+    return render_template("two_item_1109.html")
 
 @application.route("/review_detail")
 def view_review_detail():
-    return render_template("review_detail.html")
+    return render_template("six_review_detail.html")
 
 @application.route("/review")
 def view_review():
-    return render_template("review.html")
+    return render_template("four_review.html")
 
 @application.route("/reg_items")
 def reg_item():
