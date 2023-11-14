@@ -378,6 +378,7 @@ a {
 
 .four-container {
   width: 50vw;
+  max-width: 800px;
   min-width: 700px;
 
   margin: 0 auto;
