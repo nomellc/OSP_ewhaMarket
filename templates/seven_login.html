@@ -8,47 +8,49 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
-    <div
-      id="seven_login_box"
-    >
-      <h1 id="seven_h1">이화 마켓</h1>
+    <div id="seven_login_box">
+      <h1 id="seven_h1" class="seven-home"><a href="/">이화마켓</a></h1>
       <form
         action="/submit_item_post"
         method="post"
         enctype="multipart/form-data"
       >
       <div>
-      <div>
-        <input
-        type="text"
-        name="userid"
-        class="seven_placeholder"
-        id="seven_userid"
-        placeholder="아이디"
-        required/>
-      </div><br />      <div>
-        <input
-        type="password"
-        name="userpwd"
-        class="seven_placeholder"
-        id="seven_userpwd"
-        placeholder="비밀번호"
-        required/>
+        <div>
+          <input
+          type="text"
+          name="userid"
+          class="seven_userid"
+          id="seven_userid"
+          placeholder="아이디"
+          required/>
+        </div><br />      
+      
+        <div>
+          <input
+          type="password"
+          name="userpwd"
+          class="seven_userpwd"
+          id="seven_userpwd"
+          placeholder="비밀번호"
+          required/>
+        </div>
       </div>
-    </div>
-    <div id="seven_checkbox_label1">
-      <input
-        type="checkbox"
-        id="seven_id_remember"
-        name="id_remember"
-        value="on"
-      />
-      <label for="id_remember" id="seven_checkbox_label2">아이디 기억하기</label>
-    </div>
-    <div>
-      <button type="button" id="seven_login" 
-      >로그인</button>
-    </div>
+
+      <div id="seven_checkbox_label1">
+        <input
+          type="checkbox"
+          id="seven_id_remember"
+          name="id_remember"
+          value="on"
+        />
+        <label for="id_remember" id="seven_checkbox_label2">아이디 기억하기</label>
+      </div>
+
+      <div>
+        <button type="button" id="seven_login" 
+        >로그인</button>
+      </div>
     </div>
     <div id="seven_service">
       <br>

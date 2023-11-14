@@ -8,27 +8,29 @@
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
+
+  
   <body>
     <header>
-      <h2><a href="/index" class="one_sub_title">이화마켓</a></h2>
-      <h1>
-        <a href="" class="one_main_title">상품 등록</a>
-      </h1>
-      <br />
-      <hr />
+      <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
+        <hr class="one-hr" />
     </header>
-    <div class="one_input_content">
+
+    <div class="one-container">
+
+      <h1 href="" class="four-sub_title">상품 등록</h1>
+      <br><br>
+
       <form
         action="/submit_item_post"
         method="post"
         enctype="multipart/form-data"
       >
         <div class="one_image_box">
-          <!--이미지 저장하는 영역: 사진 추가 버튼, 양옆 이동 버튼, 사진 갯수
-<input type="file" name="file" />-->
           <button type="button" id="one_add_images">+</button>
           <br />
         </div>
+
         <div class="one_input_form">
           <!--짧은 이미지 폼 넣는 곳: id, 상품명, 가격, 카테고리, 옵션, 기타 정보, 이벤트 글-->
           <div>
@@ -63,7 +65,7 @@
           </div>
           <div class>
             <label for="category" id="one_category_lab">*카테고리: </label>
-            <select id="one_category" class="one_input_type" name="category">
+            <select id="one_category" class="one_select_type" name="category">
               <option value="Cake" selected>케이크</option>
               <option value="Macaroon">마카롱</option>
               <option value="Bagel">베이글</option>
@@ -82,30 +84,21 @@
               id="one_option_dsc"
             /><br />
           </div>
-          <div>
-            <label for="ect_info">기타 정보: </label>
-            <input
-              type="text"
-              class="one_input_type"
-              name="ect_info"
-              id="one_ect_info"
-            /><br />
-          </div>
+          
           <div>
             <label for="event_check">이벤트: </label>
             <input
-              type="checkbox"
+              type="text"
               class="one_input_type"
-              id="one_event_check"
-              name="event_check"
-              value="on"
-            />
+              name="option_dsc"
+              id="one_option_dsc"
+            /><br />
           </div>
         </div>
         <div id="one_explain">
           <!--설명 추가하는 곳 <input type="text" name="explain" id="explain" required/><br />-->
-          <br /><label for="explain">설명: </label>
-          <textarea id="one_explain_area" name="explain" rows="18"></textarea>
+          <br /><label for="explain">상품 설명: </label>
+          <textarea id="one_explain_area" name="explain" rows="18" placeholder="내용을 입력하세요."></textarea>
         </div>
         <div class="one_submit_btn">
           <!--제출 버튼: submit, 돌아가기 버튼: 클릭 시 팝업 <input type="submit" value="Submit!"><br><br>-->
