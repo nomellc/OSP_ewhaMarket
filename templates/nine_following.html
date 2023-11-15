@@ -6,57 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팔로잉</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <script src="{{url_for('static', filename='main.js')}}" defer></script>
+    <script src = "main.js"></script>
     </head> 
-    <body style = "background-color : white";>
-    
-        <div class="nine_navbar1">
-            <ul>
-                <li><a class = "nine_default" href="/home">마이페이지</a></li>
-                <li><a class = "nine_default" href="/login">로그아웃</a></li>
-                <li><a class = "nine_default" href="/my_page">홈</a></li>
-            </ul>
-          </div>
-
-    <div class="nine_logo">
-    <a class = "nine_default">팔로잉</a> 
+    <body>
+    <div class="nine_navbar1">
+        <ul style = "background-color: #f5ebe0;">
+            <li><a href="/my_page" style = "color: #71513c;">홈</a></li>
+            <li><a href="/home" style = "color: #71513c;">마이페이지</a></li>
+            <li><a href="/login" style = "color: #71513c;">로그아웃</a></li>
+        </ul>
     </div>
-    <hr class = "nine_following_hr">
-    <br>
+    <div class="nine_name">
+        <p href="buy.html" class = "nine_love">팔로잉</p>
+    </div>
+    <div class = "nine_separator"></div>
     <section>
-        <div id = "follow1">
-            <div class = "nine_profile_box">
-                    <img class ="nine_profile" src = "nine_profile.png">
+        <div class = "nine_follow">
+            <div class = "nine_profile">
+                <a><img src = "nine_profile.png"></a>
+            </div>
+            <div class = "nine_profile_name">
+                    <a>FOLLOWER</a>
+            </div>
+            <button class = "nine_following_button1">450 ❤</button>
+            <button class = "nine_following_button2" onclick = "location.href = '/profile'">
+                    <img src = "nine_arrow.png">
+            </button>
+            
+            <div class = "nine_hot">HOT</div>
+            <div class = "nine_about">
+                <div clas = "nine_follow_cards">
+                <div class = "nine_fgallery">
+                    <a href="/product"><img src = "nine_cake.jpeg" style = "border: 4px solid yellow;"></a>
+                    <div class  ="nine_fheart"  id= "likebtn1" onclick = 'like1()'>♡</div>
                 </div>
-                <div class = "nine_name">
-                    <a class = "nine_default">이대생 20</a>
+                <div class = "nine_fgallery">
+                    <a href="/product"><img src = "nine_cake.jpeg"></a>
+                    <div class  ="nine_fheart"  id= "likebtn2" onclick = 'like2()'>♡</div>
                 </div>
-                <button class = "nine_following_button1">450 ❤</button>
-                <button class = "nine_following_button2" onclick = "location.href = '/profile'">
-                    <img class = "nine_more" src = "nine_arrow.png">
-                </button>
-
-                <div class = "nine_about">
-                <div class = "nine_following_gallery">
-                    <a href="/product">
-                        <img src = "nine_cake.jpeg" style = "border: 4px solid yellow;">
-                    </a>
-                    <div class = "nine_hot">HOT</div>
-                    <div class  ="nine_following_heart"  id= "likebtn1" onclick = 'like1()'>♡</div>
+                <div class = "nine_fgallery">
+                    <a href="/product"><img src = "nine_cake.jpeg"></a>
+                    <div class  ="nine_fheart"  id= "likebtn3" onclick = 'like3()'>♡</div>
+                </div>                       
                 </div>
-                <div class = "nine_following_gallery">
-                    <a href="/product">
-                        <img src = "nine_cake.jpeg">
-                    </a>
-                    <div class  ="nine_following_heart"  id= "likebtn2" onclick = 'like2()'>♡</div>
+            </div> 
+        </div>
+<div class = "nine_follow">
+            <div class = "nine_profile">
+                <a><img src = "nine_profile.png"></a>
+            </div>
+            <div class = "nine_profile_name">
+                    <a>FOLLOWER</a>
+            </div>
+            <button class = "nine_following_button1">450 ❤</button>
+            <button class = "nine_following_button2" onclick = "location.href = '/profile'">
+                    <img src = "nine_arrow.png">
+            </button>
+            
+            <div class = "nine_hot">HOT</div>
+            <div class = "nine_about">
+                <div clas = "nine_follow_cards">
+                <div class = "nine_fgallery">
+                    <a href="/product"><img src = "nine_cake.jpeg" style = "border: 4px solid yellow;"></a>
+                    <div class  ="nine_fheart"  id= "likebtn1" onclick = 'like1()'>♡</div>
                 </div>
-                <div class = "nine_following_gallery">
-                    <a href="/product">
-                        <img src = "nine_cake.jpeg">
-                    </a>
-                    <div class  ="nine_following_heart"  id = "likebtn3" onclick = 'like3()'>♡</div>
+                <div class = "nine_fgallery">
+                    <a href="/product"><img src = "nine_cake.jpeg"></a>
+                    <div class  ="nine_fheart"  id= "likebtn2" onclick = 'like2()'>♡</div>
                 </div>
-        </div> 
+                <div class = "nine_fgallery">
+                    <a href="/product"><img src = "nine_cake.jpeg"></a>
+                    <div class  ="nine_fheart"  id= "likebtn3" onclick = 'like3()'>♡</div>
+                </div>                       
+                </div>
+            </div> 
+        </div>
     </section>
     </body>
     </html>
