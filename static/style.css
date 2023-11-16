@@ -324,7 +324,7 @@ a {
     letter-spacing : 2px;
 }
 
-.two_sort_bar ul : hover ul{
+.two_sort_bar ul:hover ul{
     display: block;
     background-color : #CADFDC;
     color : #71513C;
@@ -1449,7 +1449,7 @@ a {
     letter-spacing : 2px;
 }
 
-.nine_sort_bar ul : hover ul{
+.nine_sort_bar ul:hover ul{
     display: block;
     background-color : #CADFDC;
     color : #71513C;
