@@ -738,23 +738,64 @@ a {
   align-items: center;
 }
 
+
+.six-container {
+  width: 50vw;
+  max-width: 800px;
+  min-width: 700px;
+
+  margin: 5vh auto;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+}
+
+
 .six-avatar {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: #ccc;
-  margin-right: 10px;
-  margin-left: 20px;
+  margin: 20px;
 }
 
 .six-user-details {
   flex-grow: 1;
 }
 
-.six-nickname,
-.six-product-name,
+.six-nickname {
+  font-size: 15px;
+}
+
+.six-product-name {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.six-review-title {
+  font-size: 25px;
+  margin-top: -10px;
+  padding: 5px 0;
+}
+
 .six-date {
-  margin: 15px;
+  font-size: 15px;
+  margin-top: -20px;
+}
+
+.six-review-content {
+  resize: none;
+
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
 
 #six-readonly {
@@ -779,8 +820,8 @@ a {
 #six-wrap_image {
   float: left;
   overflow: hidden;
-  margin: 10px;
-  margin-left: 20px;
+  margin-left: 15px;
+  margin-bottom: 10px;
 }
 
 .six-article {
@@ -789,11 +830,13 @@ a {
 }
 
 .six-img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
+
+  margin-right: 7px;
 }
 
 #six-thumb {
