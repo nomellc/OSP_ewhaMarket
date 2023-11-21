@@ -13,9 +13,9 @@
     <body>
     <div class="nine_navbar1">
         <ul>
-            <li><a href="/my_page">홈</a></li>
-            <li><a href="/home">마이페이지</a></li>
-            <li><a href="/login">로그아웃</a></li>
+            <li><a href="two_item.html">홈</a></li>
+            <li><a href="nine_mypage.html">마이페이지</a></li>
+            <li><a href="login.html">로그아웃</a></li>
         </ul>
     </div>
     <div class="nine_name">
@@ -23,15 +23,13 @@
     </div>
     <div class = "nine_separator"></div>
     <div class = "nine_sort">
-            <button class = "nine_sort_button">▼</button>
-            <div class = "nine_sort_bar">
-                <ul>
-                    <li><a>최신순</a></li>
-                    <!--<li><a>오래된순</a></li>-->
-                    <!--<li><a>이름순</a></li>-->
-                    <!--<li><a>낮은 가격순</a></li>-->
-                    <!--<li><a>높은 가격순</a></li>-->
-                </ul>
+            <button class = "nine_sort_button" onclick = "dropDown()">▼</button>
+            <div class = "nine_sort_bar" id = "dropdownContent">
+                <a href = "#">최신순</a>
+                <a href = "#">오래된순</a>
+                <a href = "#">이름순</a>
+                <a href = "#">낮은 가격순</a>
+                <a href = "#">높은 가격순</a>
             </div>
     </div>
 
