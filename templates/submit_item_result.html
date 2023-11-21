@@ -1,32 +1,15 @@
 <p>
-    Seller {{data.seller}} sells {{data.name}} and its category is {{data.category}}.
-    
-    The item is
-    {% if data['status'] == "lnew" %}
-    likely new!
-    {% endif %}
-    {% if data['status'] == "new" %}
-    new!
-    {% endif %}
-    {% if data['status'] == "used" %}
-    used!
-    {% endif %}
+    Seller {{data.id_i}} sells {{data.item_title}} and its category is {{data.category}}.
+</p>
+<p>
+    The price is {{data.price}} and its option is {{data.option_dsc}}.
 </p>
 
 <img src="{{img_path}}"/>
 
 <p>
-    Contact via {{data.email}} or {{data.phone}} if you are interested!
-    
-    The address is {{data.addr}}
+    기타 정보는 {{data.ect_info}}.
 </p>
-
 <p>
-    For payment, the credit card is
-    {% if data['card'] == "Y" %}
-    accepted!
-    {% endif %}
-    {% if data['card'] == "N" %}
-    NOT accepted!
-    {% endif %}
+    현재 이벤트 {{data.event_check}}!
 </p>

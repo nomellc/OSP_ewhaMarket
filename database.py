@@ -11,24 +11,39 @@ class DBhandler:
     
     def insert_item(self, name, data, img_path):
         item_info = {
-            "seller":data['seller'],
-            "addr":data['addr'],
-            "email":data['email'],
-            "category":data['category'],
-            "card":data['card'],
-            "status":data['status'],
-            "phone":data['phone'],
+            "seller": data['id_i'],  # ID를 'seller'로 변경
+            "item_title": data['item_title'],
+            "price": data['price'],
+            "category": data['category'],
+            "option_dsc": data['option_dsc'],  # 'option_dsc'로 변경
+            "event_check": data['event_check'],
+            "item_explain": data['explain'],
             "img_path":img_path
         }
         self.db.child("item").child(name).set(item_info)
-        print(data, img_path)
         return True
     
-    def insert_user(self, data, pw):
+    def get_items(self):
+        items = self.db.child("item").get().val()
+        return items
+    
+    def get_item_byname(self, name):
+        items = self.db.child("item").get()
+        target_value=""
+        print("###########", name)
+        for res in items.each():
+            key_value = res.key()
+            
+            if key_value == name:
+                target_value = res.val()
+        return target_value
+    
+    def insert_user(self, data):
         user_info ={
             "id":data['id'],
-            "pw":pw,
-            "nickname":data['nickname']
+            "pw":data['pw'],
+            "nickname":data['nickname'],
+            "phonenum":data['phonenum']
         }
         if self.user_duplicate_check(str(data['id'])):
             self.db.child("user").push(user_info)
@@ -50,3 +65,14 @@ class DBhandler:
                 if value['id'] == id_string:
                     return False
             return True
+        
+    def find_user(self, id_, pw_):
+        users = self.db.child("user").get()
+        target_value=[]
+        for res in users.each():
+            value = res.val()
+            
+            if value['id'] == id_ and value['pw'] == pw_:
+                return True
+
+        return False
