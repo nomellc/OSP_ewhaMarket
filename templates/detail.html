@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../../static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="{{url_for('static', filename='main.js')}}" defer></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <nav class="home-navbar">
+    <div class="home-navbar__logo">
+        <a class="home-a" href="">EwhaMarket</a>
+    </div>
+    <ul class="home-ul">
+        {% if session['id']%}
+        <li class="home-li"><a class="home-a" href="/logout"><b>{{session['id']}}님 반값습니다!</b>logout</a></li>
+        {% else %}
+        <li class="home-li"><a class="home-a" href="/login">login</a></li>
+        {% endif %}
+        <li class="home-li"><a class="home-a" href="/list">List</a></li>
+        <li class="home-li"><a class="home-a" href="/review">Review</a></li>
+        <li class="home-li"><a class="home-a" href="/review_detail">Review Detail</a></li>
+        <li class="home-li"><a class="home-a" href="/reg_items">Register Items</a></li>
+        <li class="home-li"><a class="home-a" href="/contact">Contact</a></li>
+    </ul>
+    <a href="#" class="navbar__toogleBtn">
+        <i class="fas fa-bars"></i>
+    </a>
+    </nav>
 <p>
     item name is <b>{{name}}</b> and seller is <b>{{data.seller}}</b>.
     The price is <b>{{data.price}}원</b>.<br>
@@ -7,3 +39,57 @@
     <br>상품 설명 <b>{{data.item_explain}}</b>
 </p>
 <img src="../../static/images/{{data.img_path}}", width=140, height=200>
+<button onclick="location.href='/reg_review_init/{{name}}/';">
+    리뷰등록
+</button>
+<i class="fa fa-heart" id="heart" ></i>
+<script>
+    function showHeart() {
+    $.ajax({
+        type: 'GET',
+        url: '/show_heart/{{name}}/',
+        data: {},
+        success: function (response){
+            let my_heart = response['my_heart'];
+            if (my_heart['interested'] == 'Y')
+            {
+                $("#heart").css("color","red");
+                $("#heart").attr("onclick","unlike()");
+            }
+            else
+            {
+                $("#heart").css("color","grey");
+                $("#heart").attr("onclick","like()");
+            }
+            //alert("showheart!")
+        }
+    }); 
+    }
+    
+    function like() {
+        $.ajax({
+            type: 'POST',
+            url: '/like/{{name}}/',
+            data: {interested : "Y"},
+            success: function (response) {
+                alert(response['msg']);
+                window.location.reload()
+             }
+         });
+     }
+    
+    function unlike() {
+         $.ajax({
+             type: 'POST',
+             url: '/unlike/{{name}}/',
+             data: {interested : "N"},
+             success: function (response) {
+                 alert(response['msg']);
+                 window.location.reload()
+             }
+         });
+     }
+     $(document).ready(function () {
+     showHeart();
+     });
+</script>

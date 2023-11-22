@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -28,10 +28,10 @@
         <i class="fas fa-bars"></i>
     </a>
     </nav>
-    <section>
-        {% block section %}
-        
-        {% endblock section %}
-    </section>
-</body>
-</html>
+<p>
+    리뷰제목: <b>{{data.title}}</b><br>
+    상품: <b>{{name}}</b><br>
+    별점: <b>{{data.rate}}</b><br>
+    리뷰 상세: <b>{{data.review}}</b>
+</p>
+<img src="../../static/images/{{data.img_path}}", width=140, height=200>

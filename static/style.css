@@ -204,155 +204,304 @@ a {
 }
 
 /* two */
-.two_mypage a {
-  text-decoration: none;
-  font-size: 15px;
-  color: #71513c;
-  float: right;
-  padding: 10px;
-}
-.two_mypage a:hover {
-  color: #d4927d;
+.two_top_navbar{
+    min-width : 1000px;
+    max-height : 25px;
+    margin-top : 0;
+    margin-bottom : -30px;
 }
 
-.two_navbar__logo {
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
-  padding: 15px;
-  color: #71513c;
+.two_top_navbar ul {
+    overflow: hidden;
+    background-color: #f5ebe0;
+    margin-left : 1090px;
+    max-height : 25px;
+    list-style : none;
 }
 
-.two_navbar__logo a {
-  text-decoration: none;
-  color: #71513c;
+.two_top_navbar li{
+  display:inline;
 }
 
-.two_navbar__logo a:hover {
-  text-shadow: 0px 0px 3px #a0a19c;
+.two_top_navbar a{
+  display : inline-block;
+  color: #CADFDC;
+  font-size : 18px;
+  text-align : center;
+  padding : 8px;
 }
 
+
+
+.two_navbar p {
+    min-width : 900px;
+    font-size : 60px;
+    color:#71513C;
+    letter-spacing : 10px;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom : 10px;
+
+}
+
+.two_navbar p:hover{
+    text-shadow:0px 0px 3px #A0A19C;
+}
+
+.two_navbar_container{
+    min-width : 900px;
+    margin: 0 auto;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .two_navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
 }
 
 .two_navbar li {
-  float: left;
+    float: left;
 }
 
 .two_navbar li a {
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  padding: 25px 25px;
-  padding-bottom: 15px;
-  color: #d4927d;
-  font-size: 18px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 25px 40px;
+    padding-bottom: 15px;
+    color: #D4927D;
+    font-size: 25px;
+    letter-spacing : 10px;
 }
 
-.two_navbar li a:hover {
-  color: #71513c;
+.two_navbar li a:hover{
+    color:#71513c;
 }
 
-.two hr {
-  border-color: #d4927d;
+.two_separator {
+    border : 2px solid #D4927D;
+    width : 1360px;
+    margin : 0 auto;
 }
 
-.two_item_order {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.two_sort{
+    margin-left:1250px;
+    margin-top : 10px;
 }
 
-.two_item_order h1 {
-  font-size: 16px;
-  font-weight: 500;
+.two_sort_button{
+    color: #CADFDC;
+    background-color : #f5ebe0;
+    border : none;
+    font-size : 20px;
 }
 
-.two_item_order img {
-  width: 10px;
-  height: 8px;
+.two_sort_bar{
+    margin-top : -35px;
+    margin-left : -10px;
+    margin-bottom : 20px;
 }
 
-.two_item_order a {
-  text-decoration: none;
-  color: #71513c;
+.two_sort_bar ul{
+    overflow: hidden;
+    list-style : none;
+    width : 150px;
+    min-height : 20px;
 }
 
-.two_item_order a:hover {
-  color: #d4927d;
+.two_sort_bar li{
+    margin-bottom : 5px;
+}
+
+.two_sort_bar a{
+    display : border;
+    color: #CADFDC;
+    font-size : 18px;
+    letter-spacing : 2px;
+}
+
+.two_sort_bar ul:hover ul{
+    display: block;
+    background-color : #CADFDC;
+    color : #71513C;
 }
 
 .two_container {
-  max-width: 1600px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-.two_container img {
-  width: 300px;
-  height: 350px;
-  border-radius: 5%;
-}
-
-.two_container a {
-  text-decoration: none;
+    min-width : 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top : 60px;
 }
 
 .two_card {
-  display: block;
-  padding: 20px;
-  position: relative;
+    display: block;
+    margin-bottom : 60px;
+    margin-right : 40px;
+    margin-left : 40px;
+    float: left;
 }
 
+.two_container a{
+    text-decoration:none;
+}
+
+
+.two_container img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+
 .two_text {
-  text-align: left;
-  margin: 5px;
+    text-align: left;
+    margin: 5px;
 }
 
 .two_item_name {
-  font-size: 18px;
-  color: #71513c;
-  margin: 5px;
+    font-size: 18px;
+    color: #71513C;
+    margin: 5px;
 }
 
 .two_item_price {
-  font-size: 15px;
-  color: #d4927d;
-  margin: 5px;
+    font-size: 15px;
+    color: #CADFDC;
+    margin: 5px;
 }
 
-.two_pagination {
-  position: absolute;
-  left: 0;
+.two_pagination{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.two_pagination ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.two_pagination li{
+    display: inline;
+    margin: 5px;
+}
+
+.two_pagination a{
+    text-decoration: none;
+    padding: 5px 0px;
+    color: #71513C;
+}
+
+.two_pagination a:hover{
+    color: #D4927D;
+}
+
+/* three */
+
+.three-container {
+  width: 50vw;
+  max-width: 800px;
+  min-width: 700px;
+
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+}
+
+.three-content {
   width: 100%;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.two_pagination ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+.three-item-image {
+  background: #ddd;
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  border-radius:5px;
+  margin-right: 30px;
+
 }
 
-.two_pagination li {
-  display: inline;
-  margin: 5px;
+.three-item-sum {
+  flex: 1; 
+  height:300px; 
+  border-radius:5px;
+  padding:5px;
 }
 
-.two_pagination a {
-  text-decoration: none;
-  padding: 5px 0px;
-  color: #71513c;
+.three-item-sum p {
+  padding: 5px;
 }
 
-.two_pagination a:hover {
+.three-item-detail {
+  width: 100%;
+  height: 300px;
+
+  border: 1px solid #ddd;
+  border-radius:5px; 
+  display: block;
+
+  padding: 10px;
+  margin: 30px 0px;
+
+  /*넘치면 스크롤 생김*/
+  overflow-y: auto;
+  
+}
+
+.three-reviews {
+  width: 100%;
+}
+
+.three-review-header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.three-review-header h3 {
+  margin-bottom: 5px;
+  
+}
+
+.three-mini-reviews label {
+  font-size: 10pt;
   color: #d4927d;
+  margin-bottom: 10px;
 }
+
+.three-review-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.three-sort-toggle {
+  height: 10px; 
+  width: 10px;
+}
+
+.three-mini-review {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
 
 /* four */
 .four-home {
@@ -688,23 +837,64 @@ a {
   align-items: center;
 }
 
+
+.six-container {
+  width: 50vw;
+  max-width: 800px;
+  min-width: 700px;
+
+  margin: 5vh auto;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+}
+
+
 .six-avatar {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: #ccc;
-  margin-right: 10px;
-  margin-left: 20px;
+  margin: 20px;
 }
 
 .six-user-details {
   flex-grow: 1;
 }
 
-.six-nickname,
-.six-product-name,
+.six-nickname {
+  font-size: 15px;
+}
+
+.six-product-name {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.six-review-title {
+  font-size: 25px;
+  margin-top: -10px;
+  padding: 5px 0;
+}
+
 .six-date {
-  margin: 15px;
+  font-size: 15px;
+  margin-top: -20px;
+}
+
+.six-review-content {
+  resize: none;
+
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
 
 #six-readonly {
@@ -729,8 +919,8 @@ a {
 #six-wrap_image {
   float: left;
   overflow: hidden;
-  margin: 10px;
-  margin-left: 20px;
+  margin-left: 15px;
+  margin-bottom: 10px;
 }
 
 .six-article {
@@ -739,11 +929,13 @@ a {
 }
 
 .six-img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
+
+  margin-right: 7px;
 }
 
 #six-thumb {
@@ -942,527 +1134,709 @@ a {
 /*nine*/
 
 .nine-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    min-height: 100vh; 
 }
 
-.nine-market-name {
-  padding: 20px;
-  text-align: center;
-}
-.nine-market-name .separator {
-  border-top: 1px solid #d4927d;
-  width: 100%;
-  margin-left: -20px;
+
+
+.nine-market-name{
+    margin-bottom : 50px;
 }
 
-.nine-user-profile {
-  display: flex;
-  align-items: center;
-  border: 2px solid #d4927d;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: white;
-  margin-top: 10px;
-  width: 900px;
-
-  position: static;
-}
-
-.nine-user-profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
-
-.nine-user-profile .nine-user-name {
-  margin-left: 20px;
-  position: relative;
-  left: 0px;
-  top: -15px;
-  margin-bottom: 30px;
-
-  font-size: 15pt;
-}
-
-.nine-follow-button {
-  background-color: #cadfdc;
-  color: #71513c;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 15pt;
-
-  position: relative;
-  bottom: -30px;
-  right: -380px;
-}
-
-.nine-bell-button {
-  padding: 5px 5px;
-  border-radius: 5px;
-  border: none;
-  background-color: white;
-
-  position: relative;
-  top: -30px;
-  right: -510px;
-}
-.nine-bell-button img {
-  width: 30px;
-  height: 30px;
-}
-
-.nine-setting-button {
-  border: none;
-  background-color: white;
-  position: relative;
-  top: -30px;
-  right: -510px;
-}
-.nine-setting-button img {
-  width: 30px;
-  height: 30px;
-}
-
-.nine-following {
-  font-size: 10pt;
-  padding: 3px 3px;
-  border-radius: 5px;
-  background-color: #cadfdc;
-  margin: 3px;
-
-  left: -50px;
-  top: 10px;
-
-  position: relative;
-}
-
-.nine-follower {
-  font-size: 10pt;
-  padding: 3px 3px;
-  border-radius: 5px;
-  background-color: #cadfdc;
-  margin: 3px;
-
-  left: -50px;
-  top: 10px;
-  position: relative;
-}
-
-.nine-product-containers {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 930px;
-  padding: 10px;
-}
-
-.nine-product-container {
-  flex: 1;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-
-  position: static;
-}
-
-.nine-product-container h2 {
-  align-self: flex-start;
+.nine-market-name p{
+    font-size : 60px;
+    color:#71513C;
+    letter-spacing : 10px;
+    text-align: center;
+    margin-bottom : 30px;
 }
 
 .nine-separator {
   border-top: 2px solid #d4927d;
-  margin-bottom: -20px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+.nine-separator2 {
+  border-top: 2px solid #d4927d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+
+.nine-user-profile {
+    display: flex;
+    align-items: center;
+    border: 2px solid #d4927d; 
+    border-radius: 10px; 
+    padding: 10px; 
+    background-color: white;
+    margin-top: 10px;
+    width: 1000px; 
+    height : 200px;
+
+
+    position: static;
+}
+
+.nine-user-profile img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    margin-left:10px;
+}
+
+.nine-user-profile .nine-user-name {
+    margin-left: 30px; 
+    margin-top : -20px;
+    margin-bottom: 60px;
+
+    font-size: 40px;
+    letter-spacing : 5px;
+}
+
+
+.nine-follow-button {
+    background-color: #cadfdc; 
+    color: #71513c; 
+    padding: 10px 30px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 25px;
+    
+    margin-left :-160px;
+    margin-top : 50px;
+}
+
+.nine-bell-button {
+    padding: 5px 5px; 
+    border-radius: 5px; 
+    border: none;
+    background-color: white;
+    
+    margin-left : 520px;
+    margin-top : -100px;
+
+
+
+}
+.nine-bell-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.nine-setting-button {
+    border: none;
+    background-color: white;
+    
+    margin-left : 520px;
+    margin-top : -130px;
+}
+.nine-setting-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.nine-following1 {
+    font-size: 20px;
+    padding: 3px 3px;
+    border-radius: 5px; 
+    background-color: #cadfdc; 
+    margin: 3px;    
+    margin-top : 30px;
+}
+
+.nine-follower1 {
+    font-size: 20px;
+    padding: 3px 3px;
+    border-radius: 5px;
+    background-color: #cadfdc; 
+    margin: 3px;
+    margin-left : -100px;
+    margin-top : 30px;
+
+}
+
+.nine-following2 {
+    font-size: 20px;
+    padding: 3px 3px;
+    border-radius: 5px;
+    background-color: #cadfdc; 
+    margin: 3px;
+    margin-left : -100px;
+    margin-top : 10px;
+}
+
+.nine-follower2 {
+    font-size: 20px;
+    padding: 3px 3px;
+    border-radius: 5px;
+    background-color: #cadfdc; 
+    margin: 3px;
+    margin-top : 10px;
+}
+
+.nine-product-containers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    width: 1030px;
+    padding: 10px;
+
+}
+
+.nine-product-container {
+    flex: 1; 
+    border-radius: 10px; 
+    padding: 10px; 
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+    position: static;
+}
+
+.nine-product-container h2 {
+    align-self: flex-start;
+    font-size : 35px;
+    letter-spacing : 5px;
+    margin-left : 8px;
+}
+
+.nine-separator {
+    border-top: 2px solid #d4927d;
+    margin-bottom: -20px;
 }
 
 .nine-page-button {
-  align-self: flex-end;
-  background-color: white;
-  border: none;
-  cursor: pointer;
+    align-self: flex-end; 
+    background-color: white;
+    border: none;
+    cursor: pointer;
 
-  position: relative;
-  top: -35px;
+    margin-top : -50px;
 }
 .nine-page-button img {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .nine-product-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: hidden;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    overflow : hidden;
+    margin-top : 30px;
+    margin-bottom : 90px;
+    
 }
 
 .nine-product-card {
-  width: 120px;
-  height: 150px;
-  margin: 8px;
+    width: 120px;
+    height: 180px;
+    margin: 8px;
 }
 
 .nine-product-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
 }
 
 .nine-product-card p {
-  align-self: start;
-  margin: 0;
+    align-self: start;
+    margin: 0;
 }
 
 .nine-product-card h5 {
-  align-self: start;
-  margin: 0;
+    align-self: start;
+    margin: 0;
+}
+
+.nine-your-product-card {
+    width: 120px;
+    height: 180px;
+    margin-left :50px;
+    margin-right : 50px;
+    
+    margin-top : 20px;
+    margin-bottom : 40px;
+    
+}
+
+.nine-your-product-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.nine-your-product-card p {
+    align-self: start;
+    margin: 0;
+}
+
+.nine-your-product-card h5 {
+    align-self: start;
+    margin: 0;
 }
 
 .nine-profile-button {
-  background-color: #3498db;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
+    background-color: #3498db; 
+    color: #fff; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    margin-right: 10px; 
 }
 
 .nine-hot-cards {
-  width: 870px;
-  border: 1px solid #d4927d;
-  border-radius: 10px;
+    width: 970px;
+    height : 250px;
+    border: 2px solid #d4927d;
+    border-radius: 10px;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: hidden;
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 
-  padding: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    overflow: hidden;
 }
 
-.nine-hot-cards h3 {
-  padding: 10px;
+.nine-hot-title {
+    padding: 10px;
+    font-size : 40px;
+    color :#D4927D;
+    font-weight : bold;
+    font-style: italic;
+    text-shadow: -2px 0 #71513C, 2px 0 #71513C, 2px 0 #71513C,  -2px 0 #71513C ;
+    
+    margin-left : 10px;
+    margin-top : -5px;
+    margin-bottom : -20px;
 }
 
-.nine_logo {
-  position: absolute;
-  top: 70px;
-  left: 40px;
-  font-size: 60px;
-  text-align: start;
-  padding: 10px;
+.nine-sort{
+    margin-top : -15px;
+    margin-left: 800px;
+    margin-bottom : -20px;
 }
 
-.nine_love {
-  color: #d4927d;
+
+.nine_name{
+    margin-bottom : 15px;
+    position:absolute;
+}
+.nine_name p{
+    font-size : 60px;
+    color:#71513C;
+    letter-spacing : 3px;
+    margin-top : 8px;
+    margin-bottom : 15px;
 }
 
-.nine_default {
-  list-style-type: none;
-  color: #71513c;
-  text-decoration: none;
+
+.nine_separator{
+    border : 3px solid #D4927D;
+    width : 1360px;
+    margin : 0 auto;
+    margin-top : 98px;
+    
 }
 
-.nine_navbar1 {
-  position: absolute;
-  right: 5px;
+.nine_navbar1{
+    min-width : 1000px;
+    max-height : 25px;
+    margin-top : 0;
 }
+
 .nine_navbar1 ul {
-  margin: 5px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: white;
-  text-align: center;
+    overflow: hidden;
+    background-color: #f5ebe0;
+    margin-left: 1070px;
+    max-height : 25px;
+    list-style : none;
 }
 
-.nine_navbar1 li {
-  display: inline;
+.nine_navbar1 li{
+  display:inline;
 }
 
-.nine_navbar1 a {
-  display: border;
-  color: #cadfdc;
-  float: right;
-  font-size: 18px;
-  text-align: center;
-  padding: 10px;
+.nine_navbar1 a{
+  display : inline-block;
+  font-size : 18px;
+  text-align : center;
+  padding : 8px;
 }
+
 
 .nine_write_button {
-  position: absolute;
-  top: 80px;
-  right: 30px;
-  background-color: #cadfdc;
+  background-color: #CADFDC;
   font-weight: bold;
-  font-size: 28px;
-  color: #71513c;
-  border: none;
-  border-radius: 10px;
-  padding: 5px;
-  min-height: 60px;
-  min-width: 150px;
+  font-size : 28px;
+  color :#71513C;
+  border : none;
+  border-radius : 10px;
+  height : 60px;
+  width: 150px;
+  margin-top : 10px;
+  margin-left : 1150px;
 }
 
+
+.nine_navpart2{
+    position : absolute;
+    margin-top : 20px;
+}
 .nine_navbar2 {
-  position: absolute;
-  top: 150px;
-  left: 140px;
-  text-align: center;
+    margin-top : -5px;
+    margin-left : 120px;
+    min-width : 1000px;
+    max-height : 80px;
+    
 }
 
-.nine_navbar2 ul {
-  list-style: none;
-  overflow: hidden;
+.nine_navbar2 ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style : none;
+      overflow : hidden;
+      margin-bottom : -4px;
+      min-width : 1000px;
+      max-height : 80px;
 }
 
-.nine_navbar2 li {
-  display: inline;
+.nine_navbar2 li{
+    margin : 10px;
+    margin-bottom : 0px;
+    margin-left: 15px;
+    display:inline;
 }
 
 .nine_navbar2 a {
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  padding: 10px 250px;
-  font-weight: bold;
-  border-radius: 10px;
-  display: inline-block;
-  border: 4px solid white;
+    padding : 10px 200px;
+    text-align: center;
+    letter-spacing : 5px;
+    font-size : 30px;
+    font-weight : bold;
+    border-radius : 10px;
+    display : inline-block;
+    border : none;
 }
 
-.nine_navbar2 a:hover {
-  background-color: #d4927d;
-  border: 4px solid #d4927d;
+.nine_navbar2 a:hover{
+  background-color : #D4927D;
+  border : 4px solid #D4927D;
 }
-.nine_navbar2 a.active {
-  background-color: white;
-  border: 4px solid #d4927d;
+.nine_navbar2 a.active{
+  background-color : #f5ebe0;
+  border : 4px solid #D4927D;
 }
 
-#sellingbar {
+#bar{
   list-style-type: none;
-  color: #71513c;
+  color:#71513C;
   text-decoration: none;
 }
 
-#soldbar {
-  list-style-type: none;
-  color: #71513c;
-  text-decoration: none;
+.nine_sold{
+  display : none;
 }
 
-.nine_sold {
-  display: none;
+
+.nine_sort{
+    margin-left:1250px;
+    padding : 15px;
 }
 
-.nine_sell_hr {
-  position: absolute;
-  top: 215px;
-  width: 100%;
-  height: 4px;
-  background-color: #d4927d;
-  border: none;
+.nine_sort_button{
+    color: #CADFDC;
+    background-color : #f5ebe0;
+    border : none;
+    font-size : 20px;
 }
 
-.nine_buy_like_hr {
-  position: absolute;
-  top: 150px;
-  width: 100%;
-  height: 4px;
-  background-color: #d4927d;
-  border: none;
+.nine_sort_bar{
+    margin-top : -35px;
+    margin-left : -10px;
+    margin-bottom : 20px;
 }
 
-.nine_following_hr {
-  position: absolute;
-  top: 150px;
-  width: 100%;
-  height: 4px;
-  background-color: #d4927d;
-  border: none;
+.nine_sort_bar ul{
+    overflow: hidden;
+    list-style : none;
+    width : 150px;
 }
 
-p.nine_sort {
-  position: absolute;
-  top: 220px;
-  right: 5px;
-  font-size: 20px;
-  color: #cadfdc;
+.nine_sort_bar li{
+    margin-bottom : 5px;
 }
 
-p.nine_buy_like_sort {
-  position: absolute;
-  top: 160px;
-  right: 5px;
-  font-size: 20px;
-  color: #cadfdc;
+.nine_sort_bar a{
+    display : border;
+    color: #CADFDC;
+    font-size : 18px;
+    letter-spacing : 2px;
 }
 
-.nine_list {
-  position: absolute;
-  top: 200px;
+.nine_sort_bar ul:hover ul{
+    display: block;
+    background-color : #CADFDC;
+    color : #71513C;
 }
 
-.nine_sell_list {
-  position: absolute;
-  top: 240px;
+.nine_list{
+    margin : 0 auto;
+    min-width : 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nine_selling{
+    margin : 0 auto;
+    min-width : 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-div.nine_heart {
-  position: absolute;
-  top: 65%;
-  left: 100%;
-  font-size: 50px;
-  color: #d4927d;
-  font-weight: bold;
+.nine_gallery {
+    margin-right : 30px;
+    margin-left : 0px;
+    float: left;
+  }
+
+
+.nine_gallery img {
+    width: 300px;
+    height: 300px;
+    border-radius : 10px;
+  }
+
+.nine_fgallery{
+    float : left;
+    margin-top : 30px;
 }
 
-div.nine_buy_like_heart {
-  position: absolute;
-  top: 65%;
-  left: 100%;
-  font-size: 50px;
-  color: #d4927d;
-  font-weight: bold;
+.nine_fgallery img {
+    width: 280px;
+    height: 280px;
+    border-radius : 10px;
+    margin : 15px;
+    border : 4px solid white;
+  }
+  
+.nine_desc {
+    font-size : 20px;
+    color : #71513C;
+    text-align: left;
+    margin-left: 10px;
+  }
+
+.nine_desc2{
+    font-size : 15px;
+    color: #CADFDC;
+    text-align: left;
+    margin-top : -10px;
+    margin-left: 13px;
+  }
+
+.nine_heart{
+    font-size : 50px;
+    color:#D4927D;
+    font-weight:bold;
+    margin-top : -60px;
+    margin-left : 250px;
+  }
+
+.nine_fheart{
+    font-size : 50px;
+    color:#D4927D;
+    font-weight:bold;
+    margin-top : -90px;
+    margin-left : 240px;
+  }
+
+/*위치 고정 필요 팔로우하는 프로필 마다 컨테이너 */
+
+.nine_follow{
+
+    border-radius: 10px; 
+    padding: 30px; 
+    background-color: white;
+    margin-left:120px;
+    margin-top : 60px;
+    width: 1100px; 
+    height : 600px;
+}
+  .nine_profile_name{
+      font-size : 45px;
+      position : absolute;
+      margin-left : 210px;
+      margin-top : -100px;
+      max-height : 60px;
+      letter-spacing : 3px;
+      
+  }
+  
+  .nine_profile{
+
+      width : 150px;
+      height : 150px;
+      border-radius : 50%;
+      overflow : hidden;
+      border : 2px solid #71513C;
+  }
+  
+  .nine_profile img{
+      width : 100%;
+      height : 100%;
+      object-fit : cover;
+  }
+  
+  .nine_following_button1{
+      background-color: #cadfdc; 
+      color: #71513c; 
+      padding: 10px 30px; 
+      border: none; 
+      border-radius: 5px; 
+      font-size: 30px;
+      position : absolute;
+      margin-left : 900px;
+      margin-top : -100px;
+  }
+  
+  .nine_following_button2{
+      border-radius : 50%;
+      overflow : hidden;
+      min-height : 5px;
+      min-width: 5px;
+      position : absolute;
+      margin-left : 1000px;
+      margin-top : -40px;
+  
+  }
+  
+  .nine_following_button2 img{
+      object-fit : cover;
+      width : 20px;
+      height : 20px;
+  }
+  
+  .nine_about{
+    
+    width: 1040px;
+    height : 360px;
+    border: 2px solid #d4927d;
+    border-radius: 10px;
+    
+    margin-top : 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  div.nine_hot{
+      position : absolute;
+      margin-left: 90px;
+      margin-top : 50px;
+      font-size : 40px;
+      color :#D4927D;
+      font-weight : bold;
+      font-style: italic;
+      text-shadow: -2px 0 #71513C, 2px 0 #71513C, 2px 0 #71513C,  -2px 0 #71513C ;
+  }
+
+  /* list.html */
+  .page-nation li{
+    list-style: none;
+   }
+   
+   .page-wrap{
+    text-align: center;
+    font-size: 0;
+   }
+
+   .page-nation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+   }
+
+   .page-nation a{
+    display: block;
+    margin: 0 3px;
+    float: left;
+    border: 1px solid #e6e6e6;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    font-weight:bold;
+   }
+
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border:0;
+}
+#myform fieldset legend{
+    text-align: right;
+}
+#myform input[type=radio]{
+    display: none;
+}
+#myform label{
+    font-size: 3em;
+    color: transparent;
+    text-shadow: 0 0 0 #f0f0f0;
 }
 
-div.nine_following_heart {
-  position: absolute;
-  top: 75%;
-  left: 100%;
-  font-size: 50px;
-  color: #d4927d;
-  font-weight: bold;
+#myform label:hover{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
 
-div.nine_gallery {
-  position: relative;
-  margin: 30px;
-  float: left;
-  width: 280px;
-  padding: 25px;
+#reviewContents {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 1.5px #D3D3D3;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
 }
 
-div.nine_following_gallery {
-  position: relative;
-  margin: 40px;
-  float: left;
-  width: 280px;
-  padding: 10px;
+
+#heart {
+    color: grey;
+    font-size:50px;
 }
 
-div.nine_gallery img {
-  width: 320px;
-  height: 320px;
-  border-radius: 10px;
-}
-
-div.nine_following_gallery img {
-  width: 340px;
-  height: 340px;
-  border-radius: 10px;
-  border: 4px solid white;
-}
-
-div.nine_desc {
-  padding: 3px;
-  color: #71513c;
-  text-align: left;
-}
-div.nine_desc2 {
-  color: #cadfdc;
-  text-align: left;
-}
-
-.nine_name {
-  position: absolute;
-  top: 240px;
-  left: 240px;
-  font-size: 50px;
-}
-
-.nine_profile_box {
-  position: absolute;
-  top: 200px;
-  left: 40px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #71513c;
-}
-
-.nine_profile {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.nine_following_button1 {
-  position: absolute;
-  top: 220px;
-  right: 80px;
-  background-color: white;
-  font-weight: bold;
-  font-size: 40px;
-  color: #d4927d;
-  border: 3px groove #cadfdc;
-  border-radius: 10px;
-  padding: 5px;
-  min-height: 80px;
-  min-width: 160px;
-}
-
-.nine_following_button2 {
-  position: absolute;
-  top: 310px;
-  right: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  min-height: 15px;
-  min-width: 15px;
-}
-
-.nine_more {
-  object-fit: cover;
-  width: 30px;
-  height: 30px;
-}
-
-div.nine_follow1 {
-  position: relative;
-  padding: 20px;
-}
-
-div.nine_about {
-  position: absolute;
-  top: 370px;
-  left: 40px;
-  text-align: center;
-  width: 1310px;
-  height: 400px;
-  border: 2px solid #71513c;
-  border-radius: 10px;
-}
-
-div.nine_hot {
-  font-size: 40px;
-  color: #d4927d;
-  font-weight: bold;
-  font-style: italic;
-  position: absolute;
-  text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
-  top: -5%;
-  left: 5%;
+#heart.red {
+    color:red;
 }
