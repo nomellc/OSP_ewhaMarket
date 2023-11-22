@@ -229,6 +229,7 @@ a {
   font-size : 18px;
   text-align : center;
   padding : 8px;
+
 }
 
 
@@ -244,6 +245,24 @@ a {
     margin-bottom : 10px;
 
 }
+
+
+}
+
+
+
+.two_navbar p {
+    min-width : 900px;
+    font-size : 60px;
+    color:#71513C;
+    letter-spacing : 10px;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom : 10px;
+
+}
+
 
 .two_navbar p:hover{
     text-shadow:0px 0px 3px #A0A19C;
@@ -374,6 +393,7 @@ a {
     font-size: 15px;
     color: #CADFDC;
     margin: 5px;
+
 }
 
 .two_pagination{
@@ -421,6 +441,54 @@ a {
   overflow: hidden;
 }
 
+}
+
+.two_pagination{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.two_pagination ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.two_pagination li{
+    display: inline;
+    margin: 5px;
+}
+
+.two_pagination a{
+    text-decoration: none;
+    padding: 5px 0px;
+    color: #71513C;
+}
+
+.two_pagination a:hover{
+    color: #D4927D;
+}
+
+/* three */
+
+.three-container {
+  width: 50vw;
+  max-width: 800px;
+  min-width: 700px;
+
+  margin: 0 auto;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+}
+
+
 .three-content {
   width: 100%;
   display: flex;
@@ -446,6 +514,26 @@ a {
 
 .three-item-sum p {
   padding: 5px;
+
+}
+
+.three-item-detail {
+  width: 100%;
+  height: 300px;
+
+  border: 1px solid #ddd;
+  border-radius:5px; 
+  display: block;
+
+  padding: 10px;
+  margin: 30px 0px;
+
+  /*넘치면 스크롤 생김*/
+  overflow-y: auto;
+  
+}
+
+
 }
 
 .three-item-detail {
@@ -482,6 +570,7 @@ a {
   font-size: 10pt;
   color: #d4927d;
   margin-bottom: 10px;
+
 }
 
 .three-review-icon {
@@ -493,6 +582,20 @@ a {
   height: 10px; 
   width: 10px;
 }
+
+
+}
+
+.three-review-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.three-sort-toggle {
+  height: 10px; 
+  width: 10px;
+}
+
 
 .three-mini-review {
   width: 100%;
@@ -624,210 +727,220 @@ a {
 /* five */
 
 .five_logo h1 {
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center;
-  color: #71513c;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: #71513c;
 }
 
 .five_logo a {
-  font-size: 25px;
-  text-align: left;
-  padding: 25px;
-  text-decoration: none;
-  color: #71513c;
-  font-weight: 500;
+    font-size: 25px;
+    text-align: left;
+    padding: 25px;
+    text-decoration: none;
+    color: #71513c;
+    font-weight: 500;
 }
 
 .five_logo hr {
-  border-color: #d4927d;
+    border-color: #d4927d;
 }
 
 .five_rate_avg {
-  margin: 10px 20px;
-  display: flex;
-  flex-direction: row;
+    margin: 20px 25px;
+    display: flex;
+    flex-direction: row;
 }
 
-.five_unstar,
-.five_star {
-  font-size: 25px;
-  color: #d4927d;
+.five_unstar, .five_star {
+    font-size: 25px;
+    color: #D4927D;
 }
 
 .five_star_numbers {
-  font-size: 25px;
-  color: #d4927d;
-  font-weight: 500;
+    font-size: 25px;
+    color: #D4927D;
+    font-weight: 500;
 }
 
+
 .five_container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 10px 70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap : wrap;
+    margin-top : 20px;
 }
 
 .five_title_img {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* 수평 중앙 정렬 */
-  margin: 30px 0px;
-  align-items: center;
-  border: 2px solid #71513c;
-  border-radius: 10px;
-  background-color: #fffef6;
+    display: flex;
+    flex-direction: column;
+    padding : 20px;
+    margin: 10px 0px;
+    margin-bottom : 20px;
+    align-items: flex;
+    border: 2px solid #71513c;
+    border-radius: 10px;
+    background-color: #FFFEF6;
 }
 
-.five_title_img a {
-  padding: 20px;
+/*장*/
+
+.five_img_box{
+    display: flex;
+    justify-content: center; 
+    flex-wrap : wrap;
+}
+.five_img_box img {
+        padding : 5px;
+        width : 230px;
+        height : 230px;
+        border-radius : 10px;
 }
 
-.five_title_img img,
+
 .five_review_img img {
-  border-radius: 5%;
+        border-radius: 10px;  
+    }
+
+#five_back, #five_next {
+    color: #CADFDC;
+    font-size: 25px;
+    font-weight: bolder;
+    border: none;
+    background: none;
 }
 
-#five_back,
-#five_next {
-  color: #cadfdc;
-  font-size: 25px;
-  font-weight: bolder;
-  border: none;
-  background: none;
+#five_back:hover, #five_next:hover{
+    color:#778e8a;
 }
 
-#five_back:hover,
-#five_next:hover {
-  color: #778e8a;
-}
 
 .five_review {
-  background-color: #fffef6;
-  padding-bottom: 20px;
-  margin-bottom: 40px;
-  border: 2px solid #71513c;
-  border-radius: 10px;
+    background-color: #FFFEF6;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border: 2px solid #71513c;
+    border-radius: 10px;
 }
 
 /* .satisfaction 스타일 변경 */
 .five_review_header {
-  display: flex;
-  margin: 30px 90px;
+    display: flex;
+    margin: 30px 90px;
 }
 
 .five_satisfaction {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
-.five_satisfaction p {
-  text-align: left;
-  font-size: 15px;
-  color: #a0a19c;
-}
+    .five_satisfaction p {
+        text-align: left;
+        font-size: 15px;
+        color: #A0A19C;
+    }
 
 .five_order h2 {
-  text-align: left;
-  font-size: 15px;
-  color: black;
+    text-align: left;
+    font-size: 15px;
+    color: black;
 }
 
 .five_order a {
-  text-decoration: none;
-  color: #71513c;
-}
+        text-decoration: none;
+        color: #71513C;
+    }
 
-.five_order a:hover {
-  color: #d4927d;
-}
+        .five_order a:hover {
+            color: #D4927D;
+        }
 
 .five_user_reviews {
-  margin: 10px 90px;
+    margin: 10px 90px;
 }
 
 .five_user_info {
-  display: flex;
+    display: flex;
 }
 
 .five_review_profile {
-  margin: 0px 10px;
+    margin: 0px 10px;
 }
 
 .five_user_details {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .five_user_name {
-  margin: 0px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #71513c;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #71513c;
 }
 
 .five_user_rating .five_date {
-  display: inline-block;
+    display: inline-block;
 }
 
 .five_date {
-  color: #a0a19c;
+    color: #A0A19C;
 }
 
 .five_review_title {
-  font-size: 15px;
-  color: black;
-  font-weight: 500;
+    font-size: 15px;
+    color: black;
+    font-weight: 500;
 }
 
+
 .five_review_img img {
-  height: 120px;
-  width: 120px;
+    height: 120px;
+    width: 120px;
 }
 
 #five_thumb {
-  display: flex;
-  margin: 10px;
-  align-items: flex-end;
+    display: flex;
+    margin: 10px;
+    align-items: flex-end;
 }
 
-#five_thumb h1 {
-  color: #71513c;
-  font-size: 15px;
-  font-weight: 500;
-  margin-bottom: 0px;
-}
+    #five_thumb h1 {
+        color: #71513c;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
 
-.five_thumbs_num,
-#five_thumb_image {
-  margin: 0px 5px;
-  color: #d4927d;
+.five_thumbs_num, #five_thumb_image {
+    margin: 0px 5px;
+    color: #D4927D;
 }
 
 .five_pagination {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.five_pagination ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .five_pagination ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-.five_pagination li {
-  display: inline;
-  margin: 5px;
-}
+    .five_pagination li{
+        display: inline;
+        margin: 5px;
+    }
 
-.five_pagination a {
-  text-decoration: none;
-  padding: 5px 0px;
-  color: #71513c;
-}
+    .five_pagination a{
+        text-decoration: none;
+        padding: 5px 0px;
+        color: #71513C;
+    }
 
 .five_pagination a:hover {
-  color: #d4927d;
+            color: #D4927D;
 }
 
 /* six */
@@ -1145,6 +1258,26 @@ a {
 
 .nine-market-name{
     margin-bottom : 50px;
+
+}
+
+.nine-market-name p{
+    font-size : 60px;
+    color:#71513C;
+    letter-spacing : 10px;
+    text-align: center;
+    margin-bottom : 30px;
+}
+
+.nine-separator {
+  border-top: 2px solid #d4927d;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+
 }
 
 .nine-market-name p{
@@ -1791,6 +1924,7 @@ a {
     color: black;
     text-decoration: none;
     font-weight:bold;
+
    }
 
 #myform fieldset{
@@ -1840,3 +1974,5 @@ a {
 #heart.red {
     color:red;
 }
+   }   
+

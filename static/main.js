@@ -39,3 +39,112 @@ function toggleImage() {
         img.src = 'static/images/thumb-up.png'; // 다시 원래의 이미지 경로
     }
 }
+
+
+function menu1(){
+  document.getElementById('nine_sellingbar').className = 'active';
+  document.getElementById('nine_soldbar').classList.remove('active');
+  
+  var list =  document.querySelector('.nine_list');
+  var sold = document.querySelector('.nine_sold');
+  var selling = document.querySelector('.nine_selling');
+
+  selling.style.display = 'flex';
+  sold.style.display = 'none';
+  
+  list.appendChild(sold);
+}
+
+function menu2(){
+      document.getElementById('nine_sellingbar').classList.remove('active');
+      document.getElementById('nine_soldbar').className = 'active';
+      
+      var list =  document.querySelector('.nine_list');
+      var sold = document.querySelector('.nine_sold');
+      var selling = document.querySelector('.nine_selling');
+
+      selling.style.display = 'none';
+      sold.style.display = 'flex';
+
+      list.appendChild(selling);
+
+}
+
+
+function like1(){
+  const element = document.getElementById('likebtn1');
+  if(element.innerText == '♡'){
+    element.innerText = '❤';
+  }else{
+   element.innerText = '♡';
+    }
+  }
+  function like2(){
+    const element = document.getElementById('likebtn2');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+  function like3(){
+    const element = document.getElementById('likebtn3');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+  function like4(){
+    const element = document.getElementById('likebtn4');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+
+
+  function like5(){
+    const element = document.getElementById('likebtn5');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+  function like6(){
+    const element = document.getElementById('likebtn6');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+  function like7(){
+    const element = document.getElementById('likebtn7');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+  function like8(){
+    const element = document.getElementById('likebtn8');
+    if(element.innerText == '♡'){
+      element.innerText = '❤';
+    }else{
+     element.innerText = '♡';
+      }
+  }
+
+function dropDown(){
+    var dropdownContent = document.getElementById("dropdownContent");
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+    
+}
+

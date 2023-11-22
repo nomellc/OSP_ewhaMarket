@@ -8,63 +8,76 @@
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
+
+
   <body>
-    <header>
-      <h2><a href="/index" class="one_sub_title">이화마켓</a></h2>
-      <h1>
-        <a href="" class="one_main_title">상품 상세보기</a>
-      </h1>
-      <br />
-      <hr />
-    </header>
-    
-    <div class="three_input_content" style="margin:0px 50px">
-      <div style="display: flex; margin-bottom:10px;align-items:center;">
-      <div class="three_box" style="background: white;flex:1; height:300px; border-radius:5px;display:inline-block; margin-right:10px">
-        <!--<img src="three_arrow.png"/>-->
-      </div>
-      <div class="three_box" style="background: white; flex:2; height:300px; border-radius:5px;display:inline-block; padding:5px">
-        <p>상품명:</p>
-<p>가격:</p>
-<p>카테고리:</p>
-<p>옵션:</p>
-<p>기타 정보:</p>
-      </div>
+
+    <div class="sub_header">
+      <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
+      <hr class="four-hr" />
     </div>
-      <div id="three_explain" style="background-color:white; border-radius:5px; padding:1px 1px;">
-        <!--설명 추가하는 곳 <input type="text" name="explain" id="explain" required/><br />-->
-        <p><pre>  설명:</pre></p>
-        <p><pre  style="font-size: 13px;">    안녕하세요....
 
-
-
-
-        </pre></p>
-      </div>
-    </div>
-    <hr />
+    <!-- 네비게이터 -->
     <div>
-      <h3>
-        상품 리뷰
-        <a href="">
-          <img src="three_next.png" style="width: 15px; height: 15px" /></a>
-      </h3>
-      <div>
-        <form
-        action="/submit_item_post"
-        method="post"
-        enctype="multipart/form-data"
-      >
-      <div>
-        <label for="array" style="font-size:17px;">최신순 <a href=""></a><img src="three_toggleDown.png" style="margin-top:5px; height: 15px; width:15px;"></a></label>
+      
+    </div>
+
+    <div class="three-container">
+
+      <header>
+        <h1>
+          <a href="" class="one_main_title">상품 상세</a>
+        </h1>
+      </header>
+
+      <div class="three-content">
+
+        <div class="three-item-image"><img src="">
+        </div>
+
+        <div class="three-item-sum">
+          <p class="three-product-name">상품명:</p>
+          <p class="three-price">가격:</p>
+          <p class="three-category">카테고리:</p>
+          <p class="three-option">옵션:</p>
+        </div>
+
+        <div class="three-item-detail">
+          <p>상품 설명입니다.</p>
+        </div>
+
       </div>
-      <div>
-        <p>ID1(2023.10.11):</p>
-        <p>ID1(2023.10.11):</p>
-        <p>ID1(2023.10.11):</p>
-        <p>ID1(2023.10.11):</p>
-      </div>
+
+      <hr />
+      <div class="three-reviews">
+
+        <div>
+          <form
+          action="/submit_item_post"
+          method="post"
+          enctype="multipart/form-data"
+        >
+        <div class="three-review-header">
+          <h3>
+            상품 리뷰
+            <a href="">
+              <img class="three-review-icon" src="../static/images/three_arrow.png"/></a>
+          </h3>
+        </div>
+
+        <div class="three-mini-reviews">
+
+          <label for="array">최신순</label>
+          <a href=""><img class="three-sort-toggle" src="../static/images/three_toggleDown.png"></a>
+
+          <div class="three-mini-review">ID1(2023.10.11): 아주 훌륭해요~!</div>
+          <div class="three-mini-review">ID2(2023.10.11): 리뷰 믿고 샀다가...</div>
+          <div class="three-mini-review">ID3(2023.10.11): 성공했습니다</div>
+          <div class="three-mini-review">ID4(2023.10.11): 은은한 달달함을 찾으신다면</div>
+        </div>
+
       </div>
     </div>
+    
   </body>
 </html>
