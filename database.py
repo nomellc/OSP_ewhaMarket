@@ -24,13 +24,15 @@ class DBhandler:
         print(data, img_path)
         return True
     
-    def insert_user(self, data, pw):
+    def insert_user(self, data):
         user_info ={
             "id":data['id'],
-            "pw":pw,
-            "nickname":data['nickname']
+            "pw":data['pw'],
+            "nickname":data['nickname'],
+            "email":data['email'],
+            "phonenum":data['phonenum']
         }
-        if self.user_duplicate_check(str(data['id'])):
+        if self.user_duplicate_check(data['id']):
             self.db.child("user").push(user_info)
             print(data)
             return True
@@ -50,3 +52,29 @@ class DBhandler:
                 if value['id'] == id_string:
                     return False
             return True
+        
+    def find_user(self, id_, pw_):
+        users = self.db.child("user").get()
+        target_value = []
+        for res in users.each():
+            value = res.val()
+
+            if value['id'] == id_ and value['pw'] == pw_:
+                return True
+        
+        return False
+    
+    def get_items(self):
+        items = self.db.child("item").get().val()
+        return items
+    
+    def get_item_byname(self, name):
+        items = self.db.child("item").get()
+        target_value=""
+        print("###########",name)
+        for res in items.each():
+            key_value = res.key()
+            
+            if key_value == name:
+                target_value=res.val()
+        return target_value
