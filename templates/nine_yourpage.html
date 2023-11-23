@@ -38,8 +38,6 @@
             <div class="nine-product-container">
                 <h2>판매 상품</h2>
                 <div class="nine-separator2"></div> 
-                <button class="nine-page-button"><img class="nine-button-mark" src="arrowicon.png" alt="arrow"></button>
-
 
                 <div class="nine-product-cards">
                     
@@ -88,18 +86,10 @@
                         </div>
 
                     </div>
-                    <div class = "nine_sort">
-                    <button class = "nine_sort_button" onclick = "dropDown()">▼</button>
-                    <div class = "nine_sort_bar" id = "dropdownContent">
-                        <a href = "#">최신순</a>
-                        <a href = "#">오래된순</a>
-                        <a href = "#">이름순</a>
-                        <a href = "#">낮은 가격순</a>
-                        <a href = "#">높은 가격순</a>
-                    </div>
-                    </div>
 
-                     <a target="_blank">
+                    <!-- 페이지네이션시 바뀌는 것들-->
+                    <div class = "else-product-container">
+                         <a target="_blank">
                             <div class="nine-your-product-card">
                                 <img src="nine_cake3.jpeg" alt="상품 이미지">
                                 <h5>
@@ -180,10 +170,21 @@
                                 <p>0000-00-00</p>
                             </div>
                     </a>
-
-
-                </div>
+                    </div>
+                    
+                <div class="two_pagination">
+                <ul>
+                    <li><a href="#"><</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">></a></li>
+                <!-- 페이지 번호들을 원하는 만큼 추가하세요 -->
+                </ul>
             </div>
-
+            </div>
+        </div>
 </body>
 </html>
