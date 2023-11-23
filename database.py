@@ -11,41 +11,28 @@ class DBhandler:
     
     def insert_item(self, name, data, img_path):
         item_info = {
-            "seller": data['id_i'],  # ID를 'seller'로 변경
-            "item_title": data['item_title'],
-            "price": data['price'],
-            "category": data['category'],
-            "option_dsc": data['option_dsc'],  # 'option_dsc'로 변경
-            "event_check": data['event_check'],
-            "item_explain": data['explain'],
+            "seller":data['seller'],
+            "addr":data['addr'],
+            "email":data['email'],
+            "category":data['category'],
+            "card":data['card'],
+            "status":data['status'],
+            "phone":data['phone'],
             "img_path":img_path
         }
         self.db.child("item").child(name).set(item_info)
+        print(data, img_path)
         return True
-    
-    def get_items(self):
-        items = self.db.child("item").get().val()
-        return items
-    
-    def get_item_byname(self, name):
-        items = self.db.child("item").get()
-        target_value=""
-        print("###########", name)
-        for res in items.each():
-            key_value = res.key()
-            
-            if key_value == name:
-                target_value = res.val()
-        return target_value
     
     def insert_user(self, data):
         user_info ={
             "id":data['id'],
             "pw":data['pw'],
             "nickname":data['nickname'],
+            "email":data['email'],
             "phonenum":data['phonenum']
         }
-        if self.user_duplicate_check(str(data['id'])):
+        if self.user_duplicate_check(data['id']):
             self.db.child("user").push(user_info)
             print(data)
             return True
@@ -68,54 +55,26 @@ class DBhandler:
         
     def find_user(self, id_, pw_):
         users = self.db.child("user").get()
-        target_value=[]
+        target_value = []
         for res in users.each():
             value = res.val()
-            
+
             if value['id'] == id_ and value['pw'] == pw_:
                 return True
-
+        
         return False
     
-    def reg_review(self, data, img_path):
-        review_info ={
-        "title":data['title'],
-        "rate": data['reviewStar'],
-        "review": data['reviewContents'],
-        "img_path":img_path
-        }
-        self.db.child("review").child(data['name']).set(review_info)
-        return True
+    def get_items(self):
+        items = self.db.child("item").get().val()
+        return items
     
-    def get_reviews(self):
-        reviews = self.db.child("review").get().val()
-        return reviews
-    
-    def get_review_byname(self, name):
-        reviews = self.db.child("review").get()
+    def get_item_byname(self, name):
+        items = self.db.child("item").get()
         target_value=""
-        print("###########", name)
-        for res in reviews.each():
+        print("###########",name)
+        for res in items.each():
             key_value = res.key()
             
-            if key_value == name:
-                target_value = res.val()
-        return target_value
-    
-    def get_heart_byname(self, uid, name):
-        hearts = self.db.child("heart").child(uid).get()
-        target_value=""
-        if hearts.val() == None:
-            return target_value
-
-        for res in hearts.each():
-            key_value = res.key()
-
             if key_value == name:
                 target_value=res.val()
         return target_value
-
-    def update_heart(self, user_id, isHeart, item):
-        heart_info = {"interested": isHeart}
-        self.db.child("heart").child(user_id).child(item).set(heart_info)
-        return True
