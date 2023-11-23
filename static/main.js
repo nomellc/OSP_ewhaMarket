@@ -41,6 +41,7 @@ function toggleImage() {
 }
 
 
+
 function menu1(){
   document.getElementById('nine_sellingbar').className = 'active';
   document.getElementById('nine_soldbar').classList.remove('active');
@@ -71,75 +72,16 @@ function menu2(){
 }
 
 
-function like1(){
-  const element = document.getElementById('likebtn1');
-  if(element.innerText == '♡'){
-    element.innerText = '❤';
-  }else{
-   element.innerText = '♡';
-    }
-  }
-  function like2(){
-    const element = document.getElementById('likebtn2');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
+function like(likeDiv){
+    if(likeDiv.textContent == '♡'){
+      likeDiv.textContent = '❤';
     }else{
-     element.innerText = '♡';
-      }
-  }
-  function like3(){
-    const element = document.getElementById('likebtn3');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
-    }else{
-     element.innerText = '♡';
-      }
-  }
-  function like4(){
-    const element = document.getElementById('likebtn4');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
-    }else{
-     element.innerText = '♡';
+     likeDiv.textContent = '♡';
       }
   }
 
-
-  function like5(){
-    const element = document.getElementById('likebtn5');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
-    }else{
-     element.innerText = '♡';
-      }
-  }
-  function like6(){
-    const element = document.getElementById('likebtn6');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
-    }else{
-     element.innerText = '♡';
-      }
-  }
-  function like7(){
-    const element = document.getElementById('likebtn7');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
-    }else{
-     element.innerText = '♡';
-      }
-  }
-  function like8(){
-    const element = document.getElementById('likebtn8');
-    if(element.innerText == '♡'){
-      element.innerText = '❤';
-    }else{
-     element.innerText = '♡';
-      }
-  }
-
-function dropDown(){
-    var dropdownContent = document.getElementById("dropdownContent");
+function toggleDiv(){
+    var dropdownContent = document.getElementById("sortContents");
     if (dropdownContent.style.display === "block") {
       dropdownContent.style.display = "none";
     } else {
