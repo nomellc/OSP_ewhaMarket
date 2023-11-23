@@ -1,42 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>이화마켓 리뷰</title>
+    <meta charset="UTF-8">
+    <title>EWHA MARKET</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <script src="{{url_for('static', filename='main.js')}}" defer></script>
+    <script src = "main.js"></script>
 </head>
 <body>
-	<div class="five_logo">
-		<h1>상품리뷰</h1>
-		<a href="/index">이화마켓</a>
-		<hr>
-	</div>
-	<div class="five_rate_avg">
-		<span class="five_star">&#9733;</span>
-		<span class="five_star">&#9733;</span>
-		<span class="five_star">&#9733;</span>
-		<span class="five_unstar">&#9734;</span>
-		<span class="five_unstar">&#9734;</span>
-		<span class="five_star_numbers">(516)</span>
-	</div>
+    <!-- 공통 부분 -->
+    <div class="two_top_navbar">
+        <ul>
+            <li><a href="two_item.html">홈</a></li>
+            <li><a href="nine_mypage.html">마이페이지</a></li>
+            <li><a href="login.html">로그아웃</a></li>
+        </ul>
+    </div>
+    
+    <nav class="two_navbar">
+        <p>이화마켓</p>
+        <div class = "two_navbar_container">
+            <ul>
+                <li><a href="">전체 상품</a></li>
+                <li><a href="">상품 등록</a></li>
+                <li><a href="">전체 리뷰</a></li>
+                <li><a href="">리뷰 등록</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="two_separator"></div>
+    <!-- 전체 리뷰 파트 -->
 	<div class="five_container">
 		<div class="five_title_img">
-			<button type="button" id="five_back"><</button>
-			<a><img src="five_cake.jpeg" width="200" height="250"></a>
-			<a><img src="five_cake.jpeg" width="200" height="250"></a>
-			<a><img src="five_cake.jpeg" width="200" height="250"></a>
-			<a><img src="five_cake.jpeg" width="200" height="250"></a>
-			<a><img src="five_cake.jpeg" width="200" height="250"></a>
-			<button type="button" id="five_next">></button>
+            <div class="five_rate_avg">
+		        <span class="five_star">&#9733;</span>
+		        <span class="five_star">&#9733;</span>
+		        <span class="five_star">&#9733;</span>
+		        <span class="five_unstar">&#9734;</span>
+		        <span class="five_unstar">&#9734;</span>
+		        <span class="five_star_numbers">(516)</span>
+	        </div>
+            <div class = "five_img_box">
+                <button type="button" id="five_back"><</button>
+			    <a><img src="two_cake.jpeg"></a>
+			    <a><img src="two_cake.jpeg"></a>
+			    <a><img src="two_cake.jpeg"></a>
+			    <a><img src="two_cake.jpeg"></a>
+			    <a><img src="two_cake.jpeg"></a>
+			    <button type="button" id="five_next">></button>
+            </div>
 		</div>
+            
 		<div class="five_review">
 			<div class="five_review_header">
 				<div class="five_satisfaction">
 					<p>60%가 만족한 상품입니다.</p>
 				</div>
 				<div class="five_order">
-					<a href="">최신순<img src="five_button.png"></a>
+					<a href="">▼ 최신순</a>
 				</div>
 			</div>
 			<div class="five_user_reviews">

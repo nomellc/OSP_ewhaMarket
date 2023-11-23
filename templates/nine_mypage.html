@@ -4,7 +4,7 @@
     <title>EWHA MARKET</title>
 
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <script src = "main.js"></script>
+    <script src="{{url_for('static', filename='main.js')}}" defer></script>
 </head>
 
 <body>
@@ -12,9 +12,9 @@
     <div class= "nine-box"></div>
     <div class="nine_navbar1" style = "margin-bottom : -30px";>
         <ul style = "background-color: #f5ebe0;">
-            <li><a href="/my_page" style = "color: #71513c;">홈</a></li>
-            <li><a href="/home" style = "color: #71513c;">마이페이지</a></li>
-            <li><a href="/login" style = "color: #71513c;">로그아웃</a></li>
+            <li><a href="two_item.html" style = "color: #71513c;">홈</a></li>
+            <li><a href="nine_mypage.html" style = "color: #71513c;">마이페이지</a></li>
+            <li><a href="login.html" style = "color: #71513c;">로그아웃</a></li>
         </ul>
     </div>
     
@@ -39,7 +39,7 @@
             <div class="nine-product-container">
                 <h2>판매 상품</h2>
                 <div class="nine-separator2"></div> 
-                <button class="nine-page-button">
+                <button class="nine-page-button" onclick = "location.href = 'nine_sell.html'">
                     <img class="nine-button-mark" src="arrowicon.png" alt="arrow">
                 </button>
 
@@ -113,7 +113,9 @@
             <div class="nine-product-container">
                 <h2>관심 상품</h2>
                 <div class="nine-separator2"></div> 
-                <button class="nine-page-button"><img class="nine-button-mark" src="arrowicon.png" alt="arrow"></button>
+                <button class="nine-page-button" onclick = "location.href = 'nine_like.html'">
+                    <img class="nine-button-mark" src="arrowicon.png" alt="arrow">
+                </button>
 
                 <div class="nine-product-cards">
                     <a target="_blank">
@@ -183,7 +185,9 @@
             <div class="nine-product-container">
                 <h2>구매 상품</h2>
                 <div class="nine-separator2"></div> 
-                <button class="nine-page-button"><img class="nine-button-mark" src="arrowicon.png" alt="arrow"></button>
+                <button class="nine-page-button" onclick = ""location.href = 'nine_buy.html'"">
+                    <img class="nine-button-mark" src="arrowicon.png" alt="arrow">
+                </button>
 
                 <div class="nine-product-cards">
                     <a target="_blank">
