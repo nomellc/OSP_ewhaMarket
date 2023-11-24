@@ -7,7 +7,7 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
-    <div class="two_top_navbar">
+    <div class="top_navbar">
       <ul>
         <li><a href="/">홈</a></li>
         <li><a href="/mypage">마이페이지</a></li>
@@ -22,9 +22,9 @@
       </ul>
     </div>
 
-    <nav class="two_navbar">
+    <nav class="navbar">
       <p><a href="/">이화마켓</a></p>
-      <div class="two_navbar_container">
+      <div class="navbar_container">
         <ul>
           <li><a href="/">전체 상품</a></li>
           <li><a href="/reg_items">상품 등록</a></li>
@@ -34,7 +34,7 @@
       </div>
     </nav>
 
-    <div class="two_separator"></div>
+    <div class="separator"></div>
 
     {% block section %} {% endblock %}
   </body>

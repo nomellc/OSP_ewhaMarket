@@ -4,29 +4,36 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>구매 내역</title>
+    <title>관심 목록</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
     </head> 
 
     <body>
-    <div class="nine_navbar1">
-        <ul>
-            <li><a href="two_item.html">홈</a></li>
-            <li><a href="nine_mypage.html">마이페이지</a></li>
-            <li><a href="login.html">로그아웃</a></li>
-        </ul>
+    <div class="top_navbar">
+      <ul>
+        <li><a href="/">홈</a></li>
+        <li><a href="/mypage">마이페이지</a></li>
+        {% if session['id'] %}
+        <li>
+          <a href="/logout">로그아웃</a>
+          <b>{{session['id']}}님</b>
+        </li>
+        {% else %}
+        <li><a href="/login">로그인</a></li>
+        {% endif %}
+      </ul>
     </div>
-    <div class="nine_name">
-        <p href="buy.html">구매 내역</p>
+    <div class = "nine_container">
+        <p><a href="nine_sell.html">관심 목록 ❤</a></p>
     </div>
-    <div class = "nine_separator"></div>
-    <div class = "nine_sort">
-   <!-- 정렬 기능 -->
-   <div class = "nine_sort">
-         <div class ="nine_sort_mark">▼</div>
-         <button class = "nine_sort_button" onclick = "toggleDiv()">최신순</button>
-         <div class = "nine_sort_content" id = "sortContents">
+    <div class = "separator"></div>
+        
+    <!-- 정렬 기능 -->
+   <div class = "sort">
+         <div class ="sort_mark">▼</div>
+         <button class = "sort_button" onclick = "toggleDiv()">최신순</button>
+         <div class = "sort_content" id = "sortContents">
            <a href = "#">최신순</a>
            <a href = "#">오래된순</a>
            <a href = "#">이름순</a>
@@ -35,58 +42,80 @@
          </div>
     </div>
 
-    <section>
-        <div class = "nine_list">
-            <div class = "nine_gallery" id = "start">
-                <a href="/product"><img src = "nine_cake.jpeg"></a>
-                <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                <p class = "nine_desc">상품명</p>
-                <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_gallery">
-                 <a href="/product"><img src = "nine_cake.jpeg"></a>
-                 <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                 <p class = "nine_desc">상품명</p>
-                 <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_gallery">
-                <a href="/product"><img src = "nine_cake.jpeg"></a>
-                <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                <p class = "nine_desc">상품명</p>
-                <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_gallery">
-                <a href="/product"><img src = "nine_cake.jpeg"></a>
-                <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                <p class = "nine_desc">상품명</p>
-                <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_list">
-            <div class = "nine_gallery">
-                <a href="/product"><img src = "nine_cake.jpeg"></a>
-                <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                <p class = "nine_desc">상품명</p>
-                <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_gallery">
-                 <a href="/product"><img src = "nine_cake.jpeg"></a>
-                 <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                 <p class = "nine_desc">상품명</p>
-                 <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_gallery">
-                <a href="/product"><img src = "nine_cake.jpeg"></a>
-                <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                <p class = "nine_desc">상품명</p>
-                <p class = "nine_desc2">10000원</p>
-            </div>
-            <div class = "nine_gallery">
-                <a href="/product"><img src = "nine_cake.jpeg"></a>
-                <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
-                <p class = "nine_desc">상품명</p>
-                <p class = "nine_desc2">10000원</p>
-            </div>
-       </div>
-    </section>
-    </body>
-    </html>
+        <div class = "nine_container1">
+            <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+          <div class="card">
+              <a href="#"><img src="../static/images/nine_cake.jpeg" /></a>
+              <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
+              <div class="text">
+                <p class="item_name">케이크</p>
+                <p class="item_price">10000원</p>
+              </div>
+          </div>
+      </div>
+
+</body>
+</html>
