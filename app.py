@@ -9,25 +9,21 @@ DB = DBhandler()
 
 @application.route("/")
 def hello():
-    return render_template("index.html")
+    return render_template("two_item.html")
     #return redirect(url_for("view_list"))
 
 @application.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("seven_login.html")
 
 @application.route("/logout")
 def logout_user():
     session.clear()
-    return render_template("index.html")
-
-@application.route("/mypage")
-def view_mypage():
-    return render_template("mypage.html")
+    return render_template("two_item.html")
 
 @application.route("/signup")
 def view_signup():
-    return render_template("signup.html")
+    return render_template("eight_register.html")
 
 @application.route("/list")
 def view_list():
@@ -65,7 +61,7 @@ def view_review():
 
 @application.route("/reg_items")
 def reg_item():
-    return render_template("reg_items.html")
+    return render_template("one_item_regi.html")
 
 @application.route("/contact")
 def view_contact():
@@ -78,10 +74,10 @@ def login_user():
     pw_hash = hashlib.sha256(pw.encode('utf-8')).hexdigest()
     if DB.find_user(id_, pw_hash):
         session['id']=id_
-        return render_template("index.html")
+        return render_template("two_item.html")
     else:
         flash("Wrong ID or PW!")
-        return render_template("login.html")
+        return render_template("seven_login.html")
 
 @application.route("/submit_item_post", methods=['POST'])
 def reg_item_submit_post():
@@ -104,10 +100,30 @@ def register_user():
         'phonenum' : data.get('phonenum', '')
     }
     if DB.insert_user(data_with_more_info):
-        return render_template("login.html")
+        return render_template("seven_login.html")
     else:
         flash("user id already exist!")
-        return render_template("signup.html")
+        return render_template("eight_register.html")
+    
+@application.route("/mypage")
+def my_page():
+    return render_template("nine_mypage.html")
+
+@application.route("/mysell")
+def my_sell():
+    per_page=6
+    per_row=3
+    row_count=int(per_page/per_row)
+    data=DB.get_items() #read the table
+    tot_count=len(data)
+    for i in range(row_count): #last low
+        if(i== row_count-1) and (tot_count%per_row!=0):
+            locals()['data_{}'.format(i)]=dict(list(data.items())[i*per_row:])
+        else:
+            locals()['data_{}'.format(i)]=dict(list(data.items())[i*per_row:(i+1)*per_row])
+    return render_template("nine_sell.html", datas=data.items(), row1=locals()['data_0'].items(), row2=locals()['data_1'].items(),total=tot_count)
+
+
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
