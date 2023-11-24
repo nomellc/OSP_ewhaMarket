@@ -57,7 +57,7 @@ def view_review_detail():
 
 @application.route("/review")
 def view_review():
-    return render_template("four_review.html")
+    return render_template("five_review_1109.html")
 
 @application.route("/reg_items")
 def reg_item():
