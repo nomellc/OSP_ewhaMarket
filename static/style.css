@@ -1189,6 +1189,7 @@ a {
   height: 150px;
   border-radius: 50%;
   margin-left: 10px;
+  border : 2px solid #71513c;
 }
 
 .nine-user-profile .nine-user-name {
@@ -1226,17 +1227,6 @@ a {
   height: 40px;
 }
 
-.nine-setting-button {
-  border: none;
-  background-color: white;
-
-  margin-left: 520px;
-  margin-top: -130px;
-}
-.nine-setting-button img {
-  width: 30px;
-  height: 30px;
-}
 
 .nine-following1 {
   font-size: 20px;
@@ -1285,7 +1275,7 @@ a {
 }
 
 .nine-product-container {
-  flex: 1;
+  flex : 1;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
@@ -1333,14 +1323,11 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
-  margin-top: 30px;
-  margin-bottom: 90px;
+  margin : 20px;
 }
 
 .nine-product-card {
-  width: 120px;
-  height: 180px;
-  margin: 8px;
+  margin: 15px;
 }
 
 .nine-product-card img {
@@ -1496,8 +1483,7 @@ a {
   border: 3px solid #d4927d;
 }
 
-.nine_navbar a.active {
-  background-color: #f5ebe0;
+.active {
   border: 3px solid #d4927d;
 }
 
@@ -1532,43 +1518,58 @@ a {
   margin-left : 285px;
 }
 
+.sell-icon{
+      position : relative;
+      left : 250px;
+      top : -354px;
+}
+.sell-triangle {
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent; /* 왼쪽 변 */
+      border-top: 100px solid #CADFDC; /* 위쪽 변 */
+      border-top-right-radius: 10px;
+      position : absolute;
+}
+
+.sell-text {
+      transform: rotate(45deg); /* 텍스트를 45도 회전 */
+      transform-origin: left bottom; /* 회전의 기준점 설정 (왼쪽 하단) */
+      white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
+      font-size : 20px;
+      letter-spacing : 3px;
+      position : absolute;
+      left : 40px;
+    }
+
+
 
 /*following.html*/
-.nine_fgallery {
-  float: left;
-  margin-top: 30px;
+
+.nine_followers{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin : 50px;
 }
 
-.nine_fgallery img {
-  width: 280px;
-  height: 280px;
+.nine_follow_container{
+  text-align: center;
   border-radius: 10px;
-  margin: 15px;
-  border: 4px solid white;
-}
-
-.nine_fheart {
-  font-size: 50px;
-  color: #d4927d;
-  font-weight: bold;
-  margin-top: -90px;
-  margin-left: 240px;
-}
-
-.nine_follow {
-  border-radius: 10px;
-  padding: 30px;
   background-color: white;
-  margin-left: 120px;
-  margin-top: 60px;
-  width: 1100px;
-  height: 600px;
+    
+  width: 1200px;
+  height: 650px;
+  margin-bottom : 50px;
+  position : relative;
 }
+
 .nine_profile_name {
   font-size: 45px;
   position: absolute;
-  margin-left: 210px;
-  margin-top: -100px;
+  top : 120px;
+  left : 280px;
   max-height: 60px;
   letter-spacing: 3px;
 }
@@ -1579,6 +1580,10 @@ a {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #71513c;
+  
+  position : absolute;
+  top : 80px;
+  left : 100px;
 }
 
 .nine_profile img {
@@ -1594,9 +1599,10 @@ a {
   border: none;
   border-radius: 5px;
   font-size: 30px;
+    
   position: absolute;
-  margin-left: 900px;
-  margin-top: -100px;
+  top : 120px;
+  left : 960px;
 }
 
 .nine_following_button2 {
@@ -1605,8 +1611,8 @@ a {
   min-height: 5px;
   min-width: 5px;
   position: absolute;
-  margin-left: 1000px;
-  margin-top: -40px;
+  top : 180px;
+  left : 1060px;
 }
 
 .nine_following_button2 img {
@@ -1615,28 +1621,416 @@ a {
   height: 20px;
 }
 
-.nine_about {
-  width: 1040px;
-  height: 360px;
+.nine_more_container {
+  width: 1000px;
+  height: 320px;
   border: 2px solid #d4927d;
   border-radius: 10px;
 
-  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
+    
+  position : absolute;
+  top : 270px;
+  left : 100px;
 }
 
-div.nine_hot {
-  position: absolute;
-  margin-left: 90px;
-  margin-top: 50px;
+.nine_follow_card {
+  float: left;
+  margin : 20px;
+}
+
+.nine_follow_card img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.nine_hot {
+  position : absolute;
+  top : 280px;
+  left : 150px;
   font-size: 40px;
   color: #d4927d;
   font-weight: bold;
   font-style: italic;
   text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
+}
+
+.nine_fheart {
+  font-size: 50px;
+  color: #d4927d;
+  font-weight: bold;
+  margin-top: -80px;
+  margin-left: 220px;
+}
+/*following.html*/
+
+.nine_followers{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin : 50px;
+}
+
+.nine_follow_container{
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+    
+  width: 1200px;
+  height: 650px;
+  margin-bottom : 50px;
+  position : relative;
+}
+
+.nine_profile_name {
+  font-size: 45px;
+  position: absolute;
+  top : 120px;
+  left : 280px;
+  max-height: 60px;
+  letter-spacing: 3px;
+}
+
+.nine_profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #71513c;
+  
+  position : absolute;
+  top : 80px;
+  left : 100px;
+}
+
+.nine_profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nine_following_button1 {
+  background-color: #cadfdc;
+  color: #71513c;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+    
+  position: absolute;
+  top : 120px;
+  left : 960px;
+}
+
+.nine_following_button2 {
+  border-radius: 50%;
+  overflow: hidden;
+  min-height: 5px;
+  min-width: 5px;
+  position: absolute;
+  top : 180px;
+  left : 1060px;
+}
+
+.nine_following_button2 img {
+  object-fit: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.nine_more_container {
+  width: 1000px;
+  height: 320px;
+  border: 2px solid #d4927d;
+  border-radius: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+    
+  position : absolute;
+  top : 270px;
+  left : 100px;
+}
+
+.nine_follow_card {
+  float: left;
+  margin : 20px;
+}
+
+.nine_follow_card img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.nine_hot {
+  position : absolute;
+  top : 280px;
+  left : 150px;
+  font-size: 40px;
+  color: #d4927d;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
+}
+
+.nine_fheart {
+  font-size: 50px;
+  color: #d4927d;
+  font-weight: bold;
+  margin-top: -80px;
+  margin-left: 220px;
+}
+/*following.html*/
+
+.nine_followers{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin : 50px;
+}
+
+.nine_follow_container{
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+    
+  width: 1200px;
+  height: 650px;
+  margin-bottom : 50px;
+  position : relative;
+}
+
+.nine_profile_name {
+  font-size: 45px;
+  position: absolute;
+  top : 120px;
+  left : 280px;
+  max-height: 60px;
+  letter-spacing: 3px;
+}
+
+.nine_profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #71513c;
+  
+  position : absolute;
+  top : 80px;
+  left : 100px;
+}
+
+.nine_profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nine_following_button1 {
+  background-color: #cadfdc;
+  color: #71513c;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+    
+  position: absolute;
+  top : 120px;
+  left : 960px;
+}
+
+.nine_following_button2 {
+  border-radius: 50%;
+  overflow: hidden;
+  min-height: 5px;
+  min-width: 5px;
+  position: absolute;
+  top : 180px;
+  left : 1060px;
+}
+
+.nine_following_button2 img {
+  object-fit: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.nine_more_container {
+  width: 1000px;
+  height: 320px;
+  border: 2px solid #d4927d;
+  border-radius: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+    
+  position : absolute;
+  top : 270px;
+  left : 100px;
+}
+
+.nine_follow_card {
+  float: left;
+  margin : 20px;
+}
+
+.nine_follow_card img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.nine_hot {
+  position : absolute;
+  top : 280px;
+  left : 150px;
+  font-size: 40px;
+  color: #d4927d;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
+}
+
+.nine_fheart {
+  font-size: 50px;
+  color: #d4927d;
+  font-weight: bold;
+  margin-top: -80px;
+  margin-left: 220px;
+}
+/*following.html*/
+
+.nine_followers{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin : 50px;
+}
+
+.nine_follow_container{
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+    
+  width: 1200px;
+  height: 650px;
+  margin-bottom : 50px;
+  position : relative;
+}
+
+.nine_profile_name {
+  font-size: 45px;
+  position: absolute;
+  top : 120px;
+  left : 280px;
+  max-height: 60px;
+  letter-spacing: 3px;
+}
+
+.nine_profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #71513c;
+  
+  position : absolute;
+  top : 80px;
+  left : 100px;
+}
+
+.nine_profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nine_following_button1 {
+  background-color: #cadfdc;
+  color: #71513c;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+    
+  position: absolute;
+  top : 120px;
+  left : 960px;
+}
+
+.nine_following_button2 {
+  border-radius: 50%;
+  overflow: hidden;
+  min-height: 5px;
+  min-width: 5px;
+  position: absolute;
+  top : 180px;
+  left : 1060px;
+}
+
+.nine_following_button2 img {
+  object-fit: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.nine_more_container {
+  width: 1000px;
+  height: 320px;
+  border: 2px solid #d4927d;
+  border-radius: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+    
+  position : absolute;
+  top : 270px;
+  left : 100px;
+}
+
+.nine_follow_card {
+  float: left;
+  margin : 20px;
+}
+
+.nine_follow_card img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.nine_hot {
+  position : absolute;
+  top : 280px;
+  left : 150px;
+  font-size: 40px;
+  color: #d4927d;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
+}
+
+.nine_fheart {
+  font-size: 50px;
+  color: #d4927d;
+  font-weight: bold;
+  margin-top: -80px;
+  margin-left: 220px;
 }
 
 /* list.html */
