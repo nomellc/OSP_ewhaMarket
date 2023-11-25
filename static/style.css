@@ -410,6 +410,14 @@ a {
   background-color: #503c2c;
 }
 
+.two_total {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
 /* three */
 
 .three-container {
@@ -521,6 +529,11 @@ a {
   width: 100%;
   padding: 20px;
   border-bottom: 1px solid #ddd;
+}
+
+.list_page_nation {
+  display: inline;
+  margin-right: 10px;
 }
 
 /* four */
@@ -1087,11 +1100,6 @@ a {
   text-decoration: underline;
   font-size: 12px;
   float: right;
-}
-
-.eight_check_word {
-  font-size: 12px;
-  color: #cadfdc;
 }
 
 #seven_userid {

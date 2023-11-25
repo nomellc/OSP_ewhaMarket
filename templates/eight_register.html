@@ -31,10 +31,8 @@
           id="eight_userid"
           placeholder="아이디"
           required/><br>
-          <button type="button" id="eight_id_check">아이디 체크</button><br>
+          <button type="button" id="eight_id_check" onclick="checkId()">아이디 체크</button><br>
         </div> 
-
-        <label class="eight_check_word">*영문 8 - 21자, 숫자 포함</label>
         <div>
           <input
           type="password"
@@ -53,7 +51,7 @@
           id="eight_userpwd_check"
           placeholder="비밀번호 확인"
           required/><br>
-          <button type="button" id="eight_pwd_check">비밀번호 체크</button>    
+          <button type="button" id="eight_pwd_check" onclick="checkPassword()">비밀번호 체크</button> 
         </div><br><br>
         
       <div>
@@ -90,7 +88,7 @@
     </div>
 
     <div>
-      <button type="submit" id="eight_register" >회원가입</button>
+      <button type="button" id="eight_register" onclick="submitForm()">회원가입</button>
     </div>
   </form>
   {% endblock section %}

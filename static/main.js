@@ -90,3 +90,48 @@ function toggleDiv(){
     
 }
 
+var isIdChecked = false;
+var isPasswordChecked = false;
+
+function checkId() {
+    var userId = document.getElementById('eight_userid').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/check_id', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+            alert(this.responseText);
+        }
+    }
+    xhr.send(JSON.stringify({id: userId}));
+    isIdChecked = true;
+}
+
+function checkPassword() {
+    var password = document.getElementById('eight_userpwd').value;
+    var confirmPassword = document.getElementById('eight_userpwd_check').value;
+
+    if (password === confirmPassword) {
+        alert("비밀번호가 일치합니다.");
+    } else {
+        alert("비밀번호가 일치하지 않습니다.");
+    }
+    isPasswordChecked = true;
+}
+
+function submitForm() {
+    var form = document.querySelector('form');
+    var hiddenFieldId = document.createElement('input');
+    hiddenFieldId.type = 'hidden';
+    hiddenFieldId.name = 'isIdChecked';
+    hiddenFieldId.value = isIdChecked;
+    form.appendChild(hiddenFieldId);
+
+    var hiddenFieldPw = document.createElement('input');
+    hiddenFieldPw.type = 'hidden';
+    hiddenFieldPw.name = 'isPasswordChecked';
+    hiddenFieldPw.value = isPasswordChecked;
+    form.appendChild(hiddenFieldPw);
+
+    form.submit();
+}

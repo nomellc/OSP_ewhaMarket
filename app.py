@@ -92,18 +92,30 @@ def register_user():
     data=request.form
     pw=request.form['pw']
     pw_hash = hashlib.sha256(pw.encode('utf-8')).hexdigest()
-    data_with_more_info = {
-        'id' : data['id'],
-        'pw' : pw_hash,
-        'nickname' : data['nickname'],
-        'email' : data['email'],
-        'phonenum' : data.get('phonenum', '')
-    }
-    if DB.insert_user(data_with_more_info):
-        return render_template("seven_login.html")
+
+    is_id_checked = request.form.get('isIdChecked') == 'true'
+    is_password_checked = request.form.get('isPasswordChecked') == 'true'
+
+    if is_id_checked and is_password_checked:
+        if DB.insert_user({'id': data['id'], 'pw': pw_hash, 'nickname': data['nickname'], 'email': data['email'], 'phonenum': data.get('phonenum', '')}):
+            flash("회원가입이 완료되었습니다. 환영합니다.")
+            return render_template("seven_login.html")
+        else:
+            flash("user id already exist!")
+            return render_template("eight_register.html")
     else:
-        flash("user id already exist!")
+        flash("아이디/비밀번호 체크를 해주세요.")
         return render_template("eight_register.html")
+
+    
+@application.route('/check_id', methods=['POST'])
+def check_id():
+    data = request.json
+    user_id = data['id']
+    if DB.user_duplicate_check(user_id):
+        return "사용 가능한 ID입니다."
+    else:
+        return "이미 존재하는 ID입니다."
     
 @application.route("/mypage")
 def my_page():
