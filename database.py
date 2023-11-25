@@ -11,17 +11,16 @@ class DBhandler:
     
     def insert_item(self, name, data, img_path):
         item_info = {
-            "seller":data['seller'],
-            "addr":data['addr'],
-            "email":data['email'],
-            "category":data['category'],
-            "card":data['card'],
-            "status":data['status'],
-            "phone":data['phone'],
+            "seller": data['id_i'],  # ID를 'seller'로 변경
+            "item_title": data['item_title'],
+            "price": data['price'],
+            "category": data['category'],
+            "option_dsc": data['option_dsc'],  # 'option_dsc'로 변경
+            "event_check": data['event_check'],
+            "item_explain": data['explain'],
             "img_path":img_path
         }
         self.db.child("item").child(name).set(item_info)
-        print(data, img_path)
         return True
     
     def insert_user(self, data):
