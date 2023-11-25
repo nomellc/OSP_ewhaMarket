@@ -350,6 +350,14 @@ a {
   color: #d4927d;
 }
 
+.two_total {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
 /* three */
 
 .three-container {
@@ -461,6 +469,11 @@ a {
   width: 100%;
   padding: 20px;
   border-bottom: 1px solid #ddd;
+}
+
+.list_page_nation {
+  display: inline;
+  margin-right: 10px;
 }
 
 /* four */
