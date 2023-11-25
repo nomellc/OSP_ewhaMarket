@@ -1,38 +1,55 @@
+{% extends "top.html" %}
+
+{% block section %}
 {% if total > 0 %}
-<p>
-    상품 리스트 -- 현재까지 {{total}}개 등록됨
+<div class="nine_sort">
+    <button class="nine_sort_button" onclick="dropDown()">▼</button>
+    <div class="nine_sort_bar" id="dropdownContent">
+        <a href="#">최신순</a>
+        <a href="#">오래된순</a>
+        <a href="#">이름순</a>
+        <a href="#">낮은 가격순</a>
+        <a href="#">높은 가격순</a>
+    </div>
+</div>
+<p class="two_total">
+    현재까지 상품 {{total}}개가 등록되었습니다.
 </p>
+<div class="two_container">
 <table>
     <tr>
         {% for key, value in row1 %}
-        <td onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;"><img src="static/images/{{value.img_path}}", width=140, height=200></td>
+        <td onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;"><img
+                src="../static/images/{{value.img_path}}"></td>
         {% endfor %}
     </tr>
-<tr>
-    {% for key, value in row2 %}
-    <td>상품이름: {{key}}</td>
-    {% endfor %}
-</tr>
-<tr>
-    {% for key, value in row2 %}
-    <td onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;"><img src="static/images/{{value.img_path}}", width=140, height=200></td>
-    {% endfor %}
-</tr>
+    <tr>
+        {% for key, value in row2 %}
+        <td class="two_item_name">상품이름: {{key}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for key, value in row2 %}
+        <td onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;"><img
+                src="../static/images/{{value.img_path}}"></td>
+        {% endfor %}
+    </tr>
 </table>
+</div>
 <!-- 페이지네이션을 위한 코드 시작 -->
-<div class="page-wrap">
-    <div class="page-nation">
-        <ul>
-            <li>
-                {% for i in range(page_count)%}
-                <a href="{{url_for('view_list', page=i)}}" color="black">{{i}}</a>
-                {% endfor %}
-            </li>
-        </ul>
-    </div>
+<div class="two_pagination">
+    <ul>
+        {% for i in range(1, page_count + 1) %}
+        <li class="list_page_nation">
+            <a href="{{url_for('view_list', page=i - 1)}}" color="black">{{i}}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
 {% else %}
 <p>
     등록된 상품이 없습니다.
 </p>
 {% endif %}
+
+{% endblock section %}
