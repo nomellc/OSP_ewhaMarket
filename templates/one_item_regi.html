@@ -27,17 +27,33 @@
         enctype="multipart/form-data"
       >
         <div class="one_image_box">
-          <button type="button" id="one_add_images">+</button>
+          <label for="fileInput" style="cursor: pointer;">
+            <input type="file" id="fileInput" name="file" accept="image/*" onchange="setThumbnail(event);" />
+          </label>
+          <button type="button" id="one_add_images" style="background: url('../static/images/Rectangle 45.png') no-repeat center center; background-size: cover; cursor: pointer;"></button>
+          <script>
+            function setThumbnail(event) {
+                var reader = new FileReader();
+
+                reader.onload = function (event) {
+                    var img = document.createElement("img");
+                    img.setAttribute("src", event.target.result);
+
+                    // 수정된 부분
+                    var imageBox = document.querySelector("div.one_image_box");
+                    var button = document.getElementById("one_add_images");
+                    button.style.background = "url('" + event.target.result + "') no-repeat center center";
+                    button.style.backgroundSize = "cover";
+                };
+
+                reader.readAsDataURL(event.target.files[0]);
+            }
+          </script>
           <br />
         </div>
 
         <div class="one_input_form">
           <!--짧은 이미지 폼 넣는 곳: id, 상품명, 가격, 카테고리, 옵션, 기타 정보, 이벤트 글-->
-          <div>
-            <label for="img">Represantation Images upload: </label>
-            <input type="file" name="file" />
-            <br<br>
-          </div>
           <div>
             <label for="id_i">*ID: </label>
             <input
