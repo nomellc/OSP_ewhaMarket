@@ -43,12 +43,12 @@ function toggleImage() {
 
 
 function menu1(){
-  document.getElementById('nine_sellingbar').className = 'active';
-  document.getElementById('nine_soldbar').classList.remove('active');
+  document.getElementById('nine_container1').className = 'active';
+  document.getElementById('nine_container2').classList.remove('active');
   
   var list =  document.querySelector('.nine_list');
-  var sold = document.querySelector('.nine_sold');
-  var selling = document.querySelector('.nine_selling');
+  var sold = document.querySelector('.nine_container2');
+  var selling = document.querySelector('.nine_container1');
 
   selling.style.display = 'flex';
   sold.style.display = 'none';
@@ -57,13 +57,13 @@ function menu1(){
 }
 
 function menu2(){
-      document.getElementById('nine_sellingbar').classList.remove('active');
-      document.getElementById('nine_soldbar').className = 'active';
+      document.getElementById('nine_container1').classList.remove('active');
+      document.getElementById('nine_container2').className = 'active';
       
       var list =  document.querySelector('.nine_list');
-      var sold = document.querySelector('.nine_sold');
-      var selling = document.querySelector('.nine_selling');
-
+      var sold = document.querySelector('.nine_container1');
+      var selling = document.querySelector('.nine_container2');
+    
       selling.style.display = 'none';
       sold.style.display = 'flex';
 
