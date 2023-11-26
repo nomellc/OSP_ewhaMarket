@@ -8,35 +8,35 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
 </head>
 <body>
-    <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
-        <hr class="four-hr" />
+    <h2 class="home-side"><a href="/">이화마켓</a></h2>
+      <hr class="home-side-hr" />
 
     <div class="four-container">
-        <h1 class="four-sub_title">리뷰 작성</h1>
+        <h1 class="sub-title">리뷰 작성</h1>
         
         <form>
             <div class="four-input-group">
-                <label for="id" class="four-label">ID:</label>
+                <label for="id" class="box-label">ID:</label>
                 <input type="text" class="four-text" name="id">
             </div>
 
             <div class="four-input-group">
-                <label for="name" class="four-label">상품명:</label>
+                <label for="name" class="box-label">상품명:</label>
                 <input type="text" class="four-text" name="name">
             </div>
 
             <div class="four-input-group">
-                <label for="option" class="four-label">옵션:</label>
+                <label for="option" class="box-label">옵션:</label>
                 <input type="text" class="four-text" name="option">
             </div>
 
             <div class="four-input-group">
-                <label for="review" class="four-label">리뷰 제목:</label>
+                <label for="review" class="box-label">리뷰 제목:</label>
                 <input type="text" class="four-text" name="review">
             </div>
 
             <div class="four-input-group four-rating-group">
-                <label class="four-label">평점:</label>
+                <label class="box-label">평점:</label>
                 <div class="four-rating">
                     <span>☆</span>
                     <span>☆</span>
@@ -47,15 +47,15 @@
             </div>
 
             <div class="four-input-group">
-                <label for="img" class="four-label"> 사진 첨부: </label>
+                <label for="img" class="box-label"> 사진 첨부: </label>
                 <input type="file" class="four-file" name="file" />
             </div>
 
             <div class="four-input-group">
-                <label for="review-content" class="four-label">리뷰 내용:</label>
+                <label for="review-content" class="box-label">리뷰 내용:</label>
                 <textarea class="four-review-content" name="review-content" rows="10" placeholder="내용을 입력하세요."></textarea>
             </div>
-            <button type="submit" class="four-button">등록</button>
+            <button type="submit" class="submit-button">등록</button>
         </form>
     </div>
 </body>
