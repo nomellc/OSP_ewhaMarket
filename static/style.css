@@ -278,20 +278,19 @@ a {
   padding: 20px 20px;
 }
 
-/* one */
-.one_main_title {
-  text-align: center;
-  display: inline-block;
-  width: 100%;
+/*sub-heading & sub-title*/
+
+.home-side {
+  padding: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
-.one_sub_title {
-  position: relative;
-  top: 90px;
-  left: 5px;
+.home-side a {
+  color: #71513c;
 }
 
-.one-hr {
+.home-side-hr {
   border-color: #d4927d;
   border-top: 1px;
   position: static;
@@ -299,13 +298,94 @@ a {
   padding-right: 20px;
 
   margin-bottom: 30px;
-  min-width: 1000px;
+  min-width: 700px;
 }
+
+home-center {
+  text-align: center;
+}
+
+.sub-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/*text-box*/
+.box-label {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.detail-txt {
+  width: 100%;
+  height: 300px;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: block;
+
+  padding: 10px;
+  margin: 30px 0px;
+
+  /*넘치면 스크롤 생김*/
+  overflow-y: auto;
+}
+
+.detail-txt {
+  resize: none;
+
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+
+  overflow-y: auto;
+
+}
+
+#readonly {
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 200px;
+}
+
+
+/*button*/
+
+.submit-button {
+  margin: 20px;
+  padding: 13px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #d4927d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /*버튼 색 서서히 변함*/
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+
+  float: right;
+}
+
+.submit-button:hover {
+  background-color: #503c2c;
+}
+
+
+/* one */
 
 .one-container {
   width: 70vw;
   max-width: 1000px;
-  min-width: 900px;
+  min-width: 970px;
 
   margin: 0 auto;
   border: 1px solid #fff;
@@ -381,7 +461,11 @@ a {
 #one_back_i {
   width: 100px;
   height: 40px;
+  margin: 20px;
+  padding: 15px;
+
   margin-right: 10px;
+  margin-top: 23px;
 
   background-color: #ccc;
   border-color: #ccc;
@@ -391,24 +475,6 @@ a {
   font-size: 15px;
 }
 
-#one_submit_i {
-  width: 120px;
-  height: 40px;
-  margin-top: 10px;
-
-  background-color: #d4927d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 15px;
-}
-
-#one_submit_i:hover {
-  background-color: #503c2c;
-}
 
 .two_total {
   display: flex;
@@ -446,7 +512,8 @@ a {
   width: 300px;
   height: 300px;
   border-radius: 5px;
-  margin-right: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .three-item-sum {
@@ -458,42 +525,6 @@ a {
 
 .three-item-sum p {
   padding: 5px;
-}
-
-.three-submit {
-  width: 150px;
-  height: 50px;
-  margin-top: 30px;
-
-  background-color: #d4927d;
-  color: white;
-  border: none;
-  border-radius: 10px;
-
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 20px;
-
-  float: right;
-}
-
-.three-submit:hover {
-  background-color: #503c2c;
-}
-
-.three-item-detail {
-  width: 100%;
-  height: 300px;
-
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  display: block;
-
-  padding: 10px;
-  margin: 30px 0px;
-
-  /*넘치면 스크롤 생김*/
-  overflow-y: auto;
 }
 
 .three-reviews {
@@ -537,26 +568,6 @@ a {
 }
 
 /* four */
-.four-home {
-  padding: 20px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-}
-
-.four-home a {
-  color: #71513c;
-}
-
-.four-hr {
-  border-color: #d4927d;
-  border-top: 1px;
-  position: static;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  margin-bottom: 30px;
-  min-width: 700px;
-}
 
 .four-container {
   width: 50vw;
@@ -573,11 +584,6 @@ a {
   overflow: hidden;
 }
 
-.four-sub_title {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-}
 
 .four-input-group {
   margin-bottom: 10px;
@@ -585,12 +591,6 @@ a {
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-}
-
-.four-label {
-  margin-left: 20px;
-  margin-bottom: 10px;
-  font-size: 1rem;
 }
 
 .four-text,
@@ -611,27 +611,6 @@ a {
 
 .four-review-content {
   resize: none;
-}
-
-.four-button {
-  margin: 20px;
-  padding: 13px;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: #d4927d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  /*버튼 색 서서히 변함*/
-  transition: background-color 0.3s ease;
-  font-size: 18px;
-
-  float: right;
-}
-
-.four-button:hover {
-  background-color: #503c2c;
 }
 
 .four-rating-group {
@@ -925,24 +904,6 @@ a {
   margin-top: -20px;
 }
 
-.six-review-content {
-  resize: none;
-
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
-#six-readonly {
-  width: calc(100% - 40px);
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  height: 200px;
-}
 
 .six-unstar_rating {
   display: flex;
@@ -1027,10 +988,7 @@ a {
   overflow: hidden;
 }
 
-#seven_h1,
-#eight_h1 {
-  text-align: center;
-}
+
 
 .seven_userid,
 .seven_userpwd {
