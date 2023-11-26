@@ -11,14 +11,14 @@
 
   
   <body>
-    <header>
-      <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
-        <hr class="one-hr" />
-    </header>
+
+    <h2 class="home-side"><a href="/">이화마켓</a></h2>
+      <hr class="home-side-hr" />
+
 
     <div class="one-container">
 
-      <h1 href="" class="four-sub_title">상품 등록</h1>
+      <h1 href="" class="sub-title">상품 등록</h1>
       <br><br>
 
       <form
@@ -55,7 +55,7 @@
         <div class="one_input_form">
           <!--짧은 이미지 폼 넣는 곳: id, 상품명, 가격, 카테고리, 옵션, 기타 정보, 이벤트 글-->
           <div>
-            <label for="id_i">*ID: </label>
+            <label for="id_i" class="box-label">ID: </label>
             <input
               type="text"
               class="one_input_type"
@@ -65,7 +65,7 @@
             /><br />
           </div>
           <div>
-            <label for="item_title">*상품명: </label>
+            <label for="item_title" class="box-label">상품명: </label>
             <input
               type="text"
               class="one_input_type"
@@ -75,7 +75,7 @@
             /><br />
           </div>
           <div>
-            <label for="price">*가격: </label>
+            <label for="price" class="box-label">가격: </label>
             <input
               type="number"
               class="one_input_type"
@@ -85,7 +85,7 @@
             /><br />
           </div>
           <div class>
-            <label for="category" id="one_category_lab">*카테고리: </label>
+            <label for="category" id="one_category_lab" class="box-label">카테고리: </label>
             <select id="one_category" class="one_select_type" name="category">
               <option value="Cake" selected>케이크</option>
               <option value="Macaroon">마카롱</option>
@@ -97,7 +97,7 @@
             </select>
           </div>
           <div>
-            <label for="option_dsc">옵션: </label>
+            <label for="option_dsc" class="box-label">옵션: </label>
             <input
               type="text"
               class="one_input_type"
@@ -107,7 +107,7 @@
           </div>
           
           <div>
-            <label for="event_check">이벤트: </label>
+            <label for="event_check" class="box-label">이벤트: </label>
             <input
               type="text"
               class="one_input_type"
@@ -118,13 +118,13 @@
         </div>
         <div id="one_explain">
           <!--설명 추가하는 곳 <input type="text" name="explain" id="explain" required/><br />-->
-          <br /><label for="explain">상품 설명: </label>
+          <br /><label for="explain" class="box-label">상품 설명: </label>
           <textarea id="one_explain_area" name="explain" rows="18" placeholder="내용을 입력하세요."></textarea>
         </div>
         <div class="one_submit_btn">
           <!--제출 버튼: submit, 돌아가기 버튼: 클릭 시 팝업 <input type="submit" value="Submit!"><br><br>-->
           <button type="button" id="one_back_i">돌아가기</button>
-          <button type="submit" id="one_submit_i">완료</button>
+          <button type="submit" class="submit-button">완료</button>
         </div>
       </form>
     </div>

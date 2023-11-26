@@ -8,6 +8,8 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
+
+    <!-- -->
     {% block section %}
     {% with mesg = get_flashed_messages() %}
     {% if mesg != [] %}
@@ -16,7 +18,7 @@
     {% endwith %}
     <div id="eight_register_box">
 
-      <h1 id="seven_h1" class="seven-home"><a href="/">이화마켓</a></h1>
+      <h1 class="home-center"><a href="/">이화마켓</a></h1>
 
       <form
       method="post" action="/signup_post"

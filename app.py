@@ -11,6 +11,10 @@ DB = DBhandler()
 def hello():
     return render_template("two_item.html")
     #return redirect(url_for("view_list"))
+    
+@application.route("/itemDetail")
+def item_detail():
+    return render_template("three_buy_item_view.html")
 
 @application.route("/login")
 def login():
@@ -123,17 +127,18 @@ def my_page():
 
 @application.route("/mysell")
 def my_sell():
-    per_page=6
-    per_row=3
-    row_count=int(per_page/per_row)
+    # per_page=6
+    # per_row=3
+    # row_count=int(per_page/per_row)
     data=DB.get_items() #read the table
     tot_count=len(data)
-    for i in range(row_count): #last low
-        if(i== row_count-1) and (tot_count%per_row!=0):
-            locals()['data_{}'.format(i)]=dict(list(data.items())[i*per_row:])
-        else:
-            locals()['data_{}'.format(i)]=dict(list(data.items())[i*per_row:(i+1)*per_row])
-    return render_template("nine_sell.html", datas=data.items(), row1=locals()['data_0'].items(), row2=locals()['data_1'].items(),total=tot_count)
+    # for i in range(row_count): #last low
+    #     if(i== row_count-1) and (tot_count%per_row!=0):
+    #         locals()['data_{}'.format(i)]=dict(list(data.items())[i*per_row:])
+    #     else:
+    #         locals()['data_{}'.format(i)]=dict(list(data.items())[i*per_row:(i+1)*per_row])
+    # return render_template("nine_sell.html", datas=data.items(), row1=locals()['data_0'].items(), row2=locals()['data_1'].items(),total=tot_count)
+    return render_template("nine_sell.html", datas=data.items(), total=tot_count)
 
 
 
