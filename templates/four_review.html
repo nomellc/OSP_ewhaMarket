@@ -14,36 +14,36 @@
     <div class="four-container">
         <h1 class="sub-title">리뷰 작성</h1>
         
-        <form>
+        <form class="mb-3" method="post" action="/reg_review" enctype="multipart/form-data">
             <div class="four-input-group">
                 <label for="id" class="box-label">ID:</label>
-                <input type="text" class="four-text" name="id">
+                <input type="text" class="four-text" name="id" value="{{session['id']}}">
             </div>
 
             <div class="four-input-group">
                 <label for="name" class="box-label">상품명:</label>
-                <input type="text" class="four-text" name="name">
+                <input type="text" class="four-text" name="name" value="{{name}}">
             </div>
 
             <div class="four-input-group">
                 <label for="option" class="box-label">옵션:</label>
-                <input type="text" class="four-text" name="option">
+                <input type="text" class="four-text" name="option" value="{{option}}">
             </div>
 
             <div class="four-input-group">
                 <label for="review" class="box-label">리뷰 제목:</label>
-                <input type="text" class="four-text" name="review">
+                <input type="text" class="four-text" name="review" value="{{title}}">
             </div>
 
             <div class="four-input-group four-rating-group">
                 <label class="box-label">평점:</label>
-                <div class="four-rating">
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
+                <span class="four-rating">
+                    <input type="radio" name="reviewStar" value="5" id="rate1"><label for="rate1">★</label>
+                    <input type="radio" name="reviewStar" value="4" id="rate2"><label for="rate2">★</label>
+                    <input type="radio" name="reviewStar" value="3" id="rate3"><label for="rate3">★</label>
+                    <input type="radio" name="reviewStar" value="2" id="rate4"><label for="rate4">★</label>
+                    <input type="radio" name="reviewStar" value="1" id="rate5"><label for="rate5">★</label>
+                </span>
             </div>
 
             <div class="four-input-group">
@@ -53,7 +53,7 @@
 
             <div class="four-input-group">
                 <label for="review-content" class="box-label">리뷰 내용:</label>
-                <textarea class="four-review-content" name="review-content" rows="10" placeholder="내용을 입력하세요."></textarea>
+                <textarea class="four-review-content" name="review-content" rows="10" value="{{reviewContents}}" placeholder="내용을 입력하세요."></textarea>
             </div>
             <button type="submit" class="submit-button">등록</button>
         </form>
