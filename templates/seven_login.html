@@ -1,3 +1,6 @@
+    <!-- -->
+
+
 {%extends "top.html"%} {% block section %} {% with mesg = get_flashed_messages()
 %} {% if mesg != [] %}
 <head>
@@ -9,7 +12,7 @@
 {% endif %} {% endwith %}
 <body>
   <div id="seven_login_box">
-    <h1 id="seven_h1" class="seven-home"><a href="/">이화마켓</a></h1>
+    <h1 class="home-center"><a href="/">이화마켓</a></h1>
     <form action="/login_confirm" method="post">
       <div>
         <div>
