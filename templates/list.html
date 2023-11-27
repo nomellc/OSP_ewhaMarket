@@ -18,32 +18,34 @@
 </p>
 
 <div class="container">
-<table>
-    <div class="card">
-        <tr>
+    <table>
+        <tr class="product-row">
             {% for key, value in row1 %}
-            <td onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;"><img
-                    src="../static/images/{{value.img_path}}"></td>
+                <td class="card">
+                    <div onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;">
+                        <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img"> <!-- 이미지 -->
+                        <div class="text">
+                            <p class="item_name">{{key}}</p> <!-- 상품 이름 -->
+                            <p class="item_price">{{value.price}}원</p> <!-- 상품 가격 -->
+                        </div>
+                    </div>
+                </td>
             {% endfor %}
         </tr>
-        <tr>
+        <tr class="product-row">
             {% for key, value in row2 %}
-            <td>
-                <p class="item_name">{{key}}</p>
-                <p class="item_price">{{value.price}}원</p>
-            </td>
+                <td class="card">
+                    <div onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;">
+                        <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img"> <!-- 이미지 -->
+                        <div class="text">
+                            <p class="item_name">{{key}}</p> <!-- 상품 이름 -->
+                            <p class="item_price">{{value.price}}원</p> <!-- 상품 가격 -->
+                        </div>
+                    </div>
+                </td>
             {% endfor %}
         </tr>
-        </div>
-        <div class="card">
-        <tr>
-            {% for key, value in row2 %}
-            <td onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;"><img
-                    src="../static/images/{{value.img_path}}"></td>
-            {% endfor %}
-        </tr>
-        </div>
-  </table>
+    </table>
 </div>
 <!-- 페이지네이션을 위한 코드 시작 -->
 <div class="pagination">
