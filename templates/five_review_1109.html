@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>EWHA MARKET</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <script src = "../static/main.js"></script>
-</head>
-<body>
-    <!-- 공통 부분 -->
-    <div class="top_navbar">
-        <ul>
-            <li><a href="/mypage">마이페이지</a></li>
-            {% if session['id'] %}
-        <li>
-          <a href="/logout">로그아웃</a>
-          <b>{{session['id']}}님</b>
-        </li>
-        {% else %}
-        <li><a href="/login">로그인</a></li>
-        {% endif %}
-        </ul>
-    </div>
-    
-    <nav class="navbar">
-        <p><a href="/">이화마켓</a></p>
-        <div class = "navbar_container">
-            <ul>
-                <li><a href="/list">전체 상품</a></li>
-                <li><a href="/reg_items">상품 등록</a></li>
-                <li><a href="">전체 리뷰</a></li>
-                <li><a href="/reg_review_init">리뷰 등록</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <div class="two_separator"></div>
+{%extends "top.html"%} {% block section %}
     <!-- 전체 리뷰 파트 -->
 	<div class="five_container">
 		<div class="five_title_img">
@@ -43,7 +7,7 @@
 	        </div>
             <div class = "five_img_box">
                 <button type="button" id="five_back"><</button>
-                {% for key, value in row1 %}
+			    {% for key, value in row1 %}
 			    <a><img src="static/images/{{value.img_path}}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
                 {% endfor %}
 			    {% for key, value in row2 %}
@@ -61,20 +25,13 @@
 			    <button type="button" id="five_next">></button>
             </div>
 		</div>
-        {% if total > 0 %}    
+    </div>
+        {% if total > 0 %}
 		<div class="five_review">
-			<div class="five_review_header">
-				<div class="five_satisfaction">
-					<p></p>
-				</div>
-				<div class="five_order">
-					<a href="">▼ 최신순</a>
-				</div>
-			</div>
-			{% for key, value in row1 %}
-            <div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
+            {% for key, value in row1 %}
+			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
-					<div class="five_review_profile"><img src="static/images/five_profile.png" alt="사용자 프로필 사진"></div>
+					<p class="user-profile-img"><img src="../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
 					<div class="five_user_details">
 						<p class="five_user_name">{{value.ID}}</p>
 						<div class="five_user_rating">
@@ -87,8 +44,8 @@
 							<span class="five_date">2023.11.11</span>
 						</div>
 						<div class="five_review_title">
+							<p>상품명: {{key}}</p>
 							<p>{{value.title}}</p>
-							<p>{{value.review}}</p>
 						</div>
 					</div>
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}" width="120" height="120"></div>
@@ -101,9 +58,9 @@
 			</div>
             {% endfor %}
             {% for key, value in row2 %}
-            <div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
+			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
-					<div class="five_review_profile"><img src="static/images/five_profile.png" alt="사용자 프로필 사진"></div>
+					<p class="user-profile-img"><img src="../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
 					<div class="five_user_details">
 						<p class="five_user_name">{{value.ID}}</p>
 						<div class="five_user_rating">
@@ -116,8 +73,8 @@
 							<span class="five_date">2023.11.11</span>
 						</div>
 						<div class="five_review_title">
+							<p>상품명: {{key}}</p>
 							<p>{{value.title}}</p>
-							<p>{{value.review}}</p>
 						</div>
 					</div>
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}" width="120" height="120"></div>
@@ -130,9 +87,9 @@
 			</div>
             {% endfor %}
             {% for key, value in row3 %}
-            <div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
+			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
-					<div class="five_review_profile"><img src="static/images/five_profile.png" alt="사용자 프로필 사진"></div>
+					<p class="user-profile-img"><img src="../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
 					<div class="five_user_details">
 						<p class="five_user_name">{{value.ID}}</p>
 						<div class="five_user_rating">
@@ -145,8 +102,8 @@
 							<span class="five_date">2023.11.11</span>
 						</div>
 						<div class="five_review_title">
+							<p>상품명: {{key}}</p>
 							<p>{{value.title}}</p>
-							<p>{{value.review}}</p>
 						</div>
 					</div>
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}" width="120" height="120"></div>
@@ -159,9 +116,9 @@
 			</div>
             {% endfor %}
             {% for key, value in row4 %}
-            <div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
+			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
-					<div class="five_review_profile"><img src="static/images/five_profile.png" alt="사용자 프로필 사진"></div>
+					<p class="user-profile-img"><img src="../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
 					<div class="five_user_details">
 						<p class="five_user_name">{{value.ID}}</p>
 						<div class="five_user_rating">
@@ -174,8 +131,8 @@
 							<span class="five_date">2023.11.11</span>
 						</div>
 						<div class="five_review_title">
+							<p>상품명: {{key}}</p>
 							<p>{{value.title}}</p>
-							<p>{{value.review}}</p>
 						</div>
 					</div>
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}" width="120" height="120"></div>
@@ -188,9 +145,9 @@
 			</div>
             {% endfor %}
             {% for key, value in row5 %}
-            <div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
+			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
-					<div class="five_review_profile"><img src="static/images/five_profile.png" alt="사용자 프로필 사진"></div>
+					<p class="user-profile-img"><img src="../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
 					<div class="five_user_details">
 						<p class="five_user_name">{{value.ID}}</p>
 						<div class="five_user_rating">
@@ -203,8 +160,8 @@
 							<span class="five_date">2023.11.11</span>
 						</div>
 						<div class="five_review_title">
+							<p>상품명: {{key}}</p>
 							<p>{{value.title}}</p>
-							<p>{{value.review}}</p>
 						</div>
 					</div>
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}" width="120" height="120"></div>
@@ -217,9 +174,9 @@
 			</div>
             {% endfor %}
             {% for key, value in row6 %}
-            <div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
+			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
-					<div class="five_review_profile"><img src="static/images/five_profile.png" alt="사용자 프로필 사진"></div>
+					<p class="user-profile-img"><img src="../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
 					<div class="five_user_details">
 						<p class="five_user_name">{{value.ID}}</p>
 						<div class="five_user_rating">
@@ -232,8 +189,8 @@
 							<span class="five_date">2023.11.11</span>
 						</div>
 						<div class="five_review_title">
+							<p>상품명: {{key}}</p>
 							<p>{{value.title}}</p>
-							<p>{{value.review}}</p>
 						</div>
 					</div>
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}" width="120" height="120"></div>
@@ -254,15 +211,10 @@
                     </li>
 		        </ul>
 	        </div>
-        {% else %}
+	{% else %}
         <p>
         등록된 리뷰가 없습니다.
         </p>
-            
-		</div>
-	</div>
-    {% endif %}
-    </div>
-
-</body>
-</html>
+        {% endif %}
+	    </div>
+{% endblock section %}
