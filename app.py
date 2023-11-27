@@ -34,19 +34,32 @@ def view_list():
     page = request.args.get("page", 0, type=int)
     per_page = 6
     per_row = 3
-    row_count = int(per_page/per_row)
-    start_idx=per_page*page
-    end_idx=per_page*(page+1)
+    row_count = int(per_page / per_row)
+    start_idx = per_page * page
+    end_idx = per_page * (page + 1)
     data = DB.get_items()
     item_counts = len(data)
     data = dict(list(data.items())[start_idx:end_idx])
     tot_count = len(data)
+
     for i in range(row_count):
-        if(i == row_count-1) and (tot_count%per_row != 0):
-            locals()['data_{}'.format(i)] = dict(list(data.items())[i*per_row])
-        else:
-            locals()['data_{}'.format(i)] = dict(list(data.items())[i*per_row:(i+1)*per_row])
-    return render_template("list.html", datas=data.items(), row1=locals()['data_0'].items(), row2=locals()['data_1'].items(), limit=per_page, page=page, page_count=int((item_counts/per_page)+1), total=item_counts)
+        start = i * per_row
+        end = start + per_row
+        data_key = 'data_{}'.format(i)
+        if start < tot_count:
+            if end > tot_count:  # 마지막 페이지의 마지막 행 처리
+                locals()[data_key] = dict(list(data.items())[start:])
+            else:
+                locals()[data_key] = dict(list(data.items())[start:end])
+
+    # 여기서 locals()['data_0'] 또는 locals()['data_1']이 존재하지 않을 수 있으므로, 이를 고려하여 템플릿에 데이터 전달
+    return render_template("list.html", 
+                           row1=locals().get('data_0', {}).items(), 
+                           row2=locals().get('data_1', {}).items(), 
+                           limit=per_page, 
+                           page=page, 
+                           page_count=int((item_counts / per_page) + 1), 
+                           total=item_counts)
 
 @application.route("/view_detail/<name>/")
 def view_item_detail(name):
