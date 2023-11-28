@@ -153,7 +153,9 @@ def my_sell():
     # return render_template("nine_sell.html", datas=data.items(), row1=locals()['data_0'].items(), row2=locals()['data_1'].items(),total=tot_count)
     return render_template("nine_sell.html", datas=data.items(), total=tot_count)
 
-
+@application.route("/yourpage/<name>/")
+def view_yourpage(name):
+    return render_template("yourpage.html", name=name)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
