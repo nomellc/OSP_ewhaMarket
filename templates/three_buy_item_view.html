@@ -12,10 +12,8 @@
 
   <body>
 
-    <div class="sub_header">
-      <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
-      <hr class="four-hr" />
-    </div>
+    <h2 class="home-side"><a href="/">이화마켓</a></h2>
+      <hr class="home-side-hr" />
 
     <!-- 네비게이터 -->
     <div>
@@ -26,7 +24,7 @@
 
       <header>
         <h1>
-          <a href="" class="one_main_title">상품 상세</a>
+          <a href="" class="sub-title">상품 상세</a>
         </h1>
       </header>
 
@@ -41,13 +39,12 @@
           <p class="three-category">카테고리:</p>
           <p class="three-option">옵션:</p>
 
-
-          <button type="submit" class="three-submit">구매하기</button>
+          <button class="submit-button" onclick="location.href='/buybutton/{{ session['id'] }}'">구매하기</button>
 
         </div>
 
 
-        <div class="three-item-detail">
+        <div class="detail-txt">
           <p>상품 설명입니다.</p>
         </div>
 

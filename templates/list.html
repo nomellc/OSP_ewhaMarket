@@ -16,86 +16,36 @@
 <p class="two_total">
     현재까지 상품 {{total}}개가 등록되었습니다.
 </p>
+
 <div class="container">
-<table>
-    <tbody>
-      <tr>
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-        
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-          
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-      </tr>
-      <tr>
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-        
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-          
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-      </tr>
-      <tr>
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-        
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-          
-        <td class = "card">
-            <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-            <div class="text">
-                <p class="item_name">케이크</p>
-                <p class="item_price">10000원</p>
-            </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table>
+        <tr class="product-row">
+            {% for key, value in row1 %}
+                <td class="card">
+                    <div onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;">
+                        <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img"> <!-- 이미지 -->
+                        <div class="text">
+                            <p class="item_name">{{key}}</p> <!-- 상품 이름 -->
+                            <p class="item_price">{{value.price}}원</p> <!-- 상품 가격 -->
+                        </div>
+                    </div>
+                </td>
+            {% endfor %}
+        </tr>
+        <tr class="product-row">
+            {% for key, value in row2 %}
+                <td class="card">
+                    <div onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;">
+                        <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img"> <!-- 이미지 -->
+                        <div class="text">
+                            <p class="item_name">{{key}}</p> <!-- 상품 이름 -->
+                            <p class="item_price">{{value.price}}원</p> <!-- 상품 가격 -->
+                        </div>
+                    </div>
+                </td>
+            {% endfor %}
+        </tr>
+    </table>
 </div>
 <!-- 페이지네이션을 위한 코드 시작 -->
 <div class="pagination">
@@ -114,3 +64,81 @@
 {% endif %}
 
 {% endblock section %}
+
+<!-- <tbody>
+    <tr>
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+      
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+        
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+      
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+        
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+      
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+        
+      <td class = "card">
+          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
+          <div class="text">
+              <p class="item_name">케이크</p>
+              <p class="item_price">10000원</p>
+          </div>
+      </td>
+    </tr>
+  </tbody> -->

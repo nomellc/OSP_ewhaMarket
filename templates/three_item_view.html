@@ -9,21 +9,14 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
 
-
   <body>
-
     <div class="sub_header">
       <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
       <hr class="four-hr" />
     </div>
 
     <!-- 네비게이터 -->
-    <div>
-      
-    </div>
-
     <div class="three-container">
-
       <header>
         <h1>
           <a href="" class="one_main_title">상품 상세</a>
@@ -31,9 +24,7 @@
       </header>
 
       <div class="three-content">
-
-        <div class="three-item-image"><img src="">
-        </div>
+        <div class="three-item-image"><img src="" /></div>
 
         <div class="three-item-sum">
           <p class="three-product-name">상품명:</p>
@@ -45,39 +36,48 @@
         <div class="three-item-detail">
           <p>상품 설명입니다.</p>
         </div>
-
       </div>
 
       <hr />
       <div class="three-reviews">
-
         <div>
           <form
-          action="/submit_item_post"
-          method="post"
-          enctype="multipart/form-data"
-        >
-        <div class="three-review-header">
-          <h3>
-            상품 리뷰
-            <a href="">
-              <img class="three-review-icon" src="../static/images/three_arrow.png"/></a>
-          </h3>
+            action="/submit_item_post"
+            method="post"
+            enctype="multipart/form-data"
+          ></form>
+          <div class="three-review-header">
+            <h3>
+              상품 리뷰
+              <a href="">
+                <img
+                  class="three-review-icon"
+                  src="../static/images/three_arrow.png"
+              /></a>
+            </h3>
+          </div>
+
+          <div class="three-mini-reviews">
+            <label for="array">최신순</label>
+            <a href=""
+              ><img
+                class="three-sort-toggle"
+                src="../static/images/three_toggleDown.png"
+            /></a>
+
+            <div class="three-mini-review">
+              ID1(2023.10.11): 아주 훌륭해요~!
+            </div>
+            <div class="three-mini-review">
+              ID2(2023.10.11): 리뷰 믿고 샀다가...
+            </div>
+            <div class="three-mini-review">ID3(2023.10.11): 성공했습니다</div>
+            <div class="three-mini-review">
+              ID4(2023.10.11): 은은한 달달함을 찾으신다면
+            </div>
+          </div>
         </div>
-
-        <div class="three-mini-reviews">
-
-          <label for="array">최신순</label>
-          <a href=""><img class="three-sort-toggle" src="../static/images/three_toggleDown.png"></a>
-
-          <div class="three-mini-review">ID1(2023.10.11): 아주 훌륭해요~!</div>
-          <div class="three-mini-review">ID2(2023.10.11): 리뷰 믿고 샀다가...</div>
-          <div class="three-mini-review">ID3(2023.10.11): 성공했습니다</div>
-          <div class="three-mini-review">ID4(2023.10.11): 은은한 달달함을 찾으신다면</div>
-        </div>
-
       </div>
     </div>
-    
   </body>
 </html>
