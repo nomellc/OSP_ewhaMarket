@@ -28,6 +28,12 @@
             <div class="three-item-image"><img src="../../static/images/{{data.img_path}}" /></div>
 
             <div class="three-item-sum">
+                <style>
+                  .three-seller-name:hover {
+                    color: black;  /* 마우스를 위에 올렸을 때의 색상 */
+                  }
+                </style>
+                <p class="three-seller-name"  onclick="location.href='/yourpage/{{data.seller}}/';" style="cursor:pointer;" >판매자 : {{data.seller}}</p>
                 <p class="three-product-name">상품명 : {{name}}</p>
                 <p class="three-price">가격 : {{data.price}}</p>
                 <p class="three-category">카테고리 : {{data.category}}</p>
