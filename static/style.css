@@ -1448,18 +1448,19 @@ a {
   letter-spacing: 5px;
   font-size: 30px;
     
-  border: 3px solid #d4927d;
-  border-radius : 10px;
+
 }
 
 
 .nine_navbar a:hover {
   background-color: #d4927d;
   border: 3px solid #d4927d;
+  border-radius : 10px;
 }
 
 .active {
   border: 3px solid #d4927d;
+  border-radius : 10px;
 }
 
 .nine_list {
@@ -1501,23 +1502,49 @@ a {
 .sell-triangle {
       width: 0;
       height: 0;
-      border-left: 100px solid transparent; /* 왼쪽 변 */
-      border-top: 100px solid #CADFDC; /* 위쪽 변 */
+      border-left: 100px solid transparent;
+      border-top: 100px solid #CADFDC;
       border-top-right-radius: 10px;
       position : absolute;
 }
 
 .sell-text {
-      transform: rotate(45deg); /* 텍스트를 45도 회전 */
-      transform-origin: left bottom; /* 회전의 기준점 설정 (왼쪽 하단) */
-      white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
-      font-size : 20px;
+      transform: rotate(45deg);
+      transform-origin: left bottom;
+      white-space: nowrap;
+      font-size : 18px;
       letter-spacing : 3px;
       position : absolute;
-      left : 40px;
+      left : 37px;
     }
 
+/*구매 목록 리뷰 작성 버튼*/
 
+.nine_review_button {
+      width: 120px;
+      height: 40px;
+      margin-top : -51px;
+      margin-left : 225px;
+
+      background-color: #CADFDC;
+      color: #503c2c;
+      border: none;
+      border-radius: 10px;
+
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 18px;
+      letter-spacing : 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.nine_review_button:active {
+      background-color: #503c2c;
+      transform: scale(0.95);
+      color : white;
+}
 /*following.html*/
 
 .nine_followers{
