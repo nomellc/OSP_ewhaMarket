@@ -41,37 +41,39 @@ function toggleImage() {
 }
 
 
-
-function menu1(){
-  document.getElementById('nine_container1').className = 'active';
-  document.getElementById('nine_container2').classList.remove('active');
+//판매 목록 네비게이션바
+function menu(){
+  var sellingbar = document.getElementById('nine_sellingbar');
+  var soldbar = document.getElementById('nine_soldbar');
+    if(sellingbar.className == 'active'){
+        sellingbar.classList.remove('active');
+        soldbar.className = 'active';
+    }
+    else{
+        soldbar.classList.remove('active');
+        sellingbar.className = 'active';
+    }
   
   var list =  document.querySelector('.nine_list');
-  var sold = document.querySelector('.nine_container2');
-  var selling = document.querySelector('.nine_container1');
+  var sold = document.querySelector('.nine_container1');
+  var selling = document.querySelector('.nine_container2');
 
-  selling.style.display = 'flex';
-  sold.style.display = 'none';
-  
-  list.appendChild(sold);
-}
-
-function menu2(){
-      document.getElementById('nine_container1').classList.remove('active');
-      document.getElementById('nine_container2').className = 'active';
-      
-      var list =  document.querySelector('.nine_list');
-      var sold = document.querySelector('.nine_container1');
-      var selling = document.querySelector('.nine_container2');
-    
+  if(selling.style.display != 'flex'){
+      selling.style.display = 'flex';
+      sold.style.display = 'none';
+      container.insertBefore(selling, sold);
+  }
+  else{
       selling.style.display = 'none';
       sold.style.display = 'flex';
-
-      list.appendChild(selling);
-
+      container.insertBefore(sold, selling);
+  }
+  
+    
 }
 
 
+//좋아요 버튼
 function like(likeDiv){
     if(likeDiv.textContent == '♡'){
       likeDiv.textContent = '❤';
@@ -80,6 +82,7 @@ function like(likeDiv){
       }
   }
 
+// 정렬 버튼
 function toggleDiv(){
     var dropdownContent = document.getElementById("sortContents");
     if (dropdownContent.style.display === "block") {
@@ -88,6 +91,11 @@ function toggleDiv(){
       dropdownContent.style.display = "block";
     }
     
+}
+
+//리뷰 작성 버튼
+function toReview(){
+    window.location.href = '/write_review';
 }
 
 var isIdChecked = false;
