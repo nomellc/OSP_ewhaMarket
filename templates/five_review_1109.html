@@ -4,22 +4,11 @@
 		<div class="five_title_img">
             <div class="five_rate_avg">
 		        <span class="five_star_numbers">{{total}}개의 리뷰가 등록되었습니다.</span>
+                    베스트 리뷰
 	        </div>
-            <div class = "five_img_box">
-			    {% for key, value in row1 %}
-			    <a><img src="static/images/{{value.img_path}}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
-                {% endfor %}
-			    {% for key, value in row2 %}
-			    <a><img src="static/images/{{value.img_path}}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
-                {% endfor %}
-                {% for key, value in row3 %}
-			    <a><img src="static/images/{{value.img_path}}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
-                {% endfor %}
-                {% for key, value in row4 %}
-			    <a><img src="static/images/{{value.img_path}}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
-                {% endfor %}
-                {% for key, value in row5 %}
-			    <a><img src="static/images/{{value.img_path}}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
+            <div class="five_img_box">
+                {% for key, value in top_images %}
+                    <a><img src="static/images/{{ value.img_path }}" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;"></a>
                 {% endfor %}
             </div>
 		</div>
@@ -39,7 +28,7 @@
                             {% for _ in range(5 - value.rate|int) %}
                                 <span class="five_unstar">&#9734;</span>
                             {% endfor %}
-							<span class="five_date">2023.11.11</span>
+							<span class="five_date">{{value.timestamp}}</span>
 						</div>
 						<div class="five_review_title">
 							<p>상품명: {{key}}</p>
@@ -49,7 +38,13 @@
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}"></div>
 					<div id="five_thumb">
 						<h1>도움이 되었어요</h1><img id="five_thumb_image" src="static/images/five_thumb.png">
-						<span class="five_thumbs_num">25</span>
+						<span class="five_thumbs_num">
+                           {% if value.thumb_count is not defined %}
+                             0
+                           {% else %}
+                             {{ value.thumb_count }}
+                           {% endif %}
+                        </span>
 					</div>
 				</div>
 				<hr>
@@ -68,7 +63,7 @@
                             {% for _ in range(5 - value.rate|int) %}
                                 <span class="five_unstar">&#9734;</span>
                             {% endfor %}
-							<span class="five_date">2023.11.11</span>
+							<span class="five_date">{{value.timestamp}}</span>
 						</div>
 						<div class="five_review_title">
 							<p>상품명: {{key}}</p>
@@ -78,7 +73,13 @@
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}"></div>
 					<div id="five_thumb">
 						<h1>도움이 되었어요</h1><img id="five_thumb_image" src="static/images/five_thumb.png">
-						<span class="five_thumbs_num">25</span>
+						<span class="five_thumbs_num">
+                           {% if value.thumb_count is not defined %}
+                             0
+                           {% else %}
+                             {{ value.thumb_count }}
+                           {% endif %}
+                        </span>
 					</div>
 				</div>
 				<hr>
@@ -97,7 +98,7 @@
                             {% for _ in range(5 - value.rate|int) %}
                                 <span class="five_unstar">&#9734;</span>
                             {% endfor %}
-							<span class="five_date">2023.11.11</span>
+							<span class="five_date">{{value.timestamp}}</span>
 						</div>
 						<div class="five_review_title">
 							<p>상품명: {{key}}</p>
@@ -107,7 +108,13 @@
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}"></div>
 					<div id="five_thumb">
 						<h1>도움이 되었어요</h1><img id="five_thumb_image" src="static/images/five_thumb.png">
-						<span class="five_thumbs_num">25</span>
+						<span class="five_thumbs_num">
+                           {% if value.thumb_count is not defined %}
+                             0
+                           {% else %}
+                             {{ value.thumb_count }}
+                           {% endif %}
+                        </span>
 					</div>
 				</div>
 				<hr>
@@ -126,7 +133,7 @@
                             {% for _ in range(5 - value.rate|int) %}
                                 <span class="five_unstar">&#9734;</span>
                             {% endfor %}
-							<span class="five_date">2023.11.11</span>
+							<span class="five_date">{{value.timestamp}}</span>
 						</div>
 						<div class="five_review_title">
 							<p>상품명: {{key}}</p>
@@ -136,7 +143,13 @@
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}"></div>
 					<div id="five_thumb">
 						<h1>도움이 되었어요</h1><img id="five_thumb_image" src="static/images/five_thumb.png">
-						<span class="five_thumbs_num">25</span>
+						<span class="five_thumbs_num">
+                           {% if value.thumb_count is not defined %}
+                             0
+                           {% else %}
+                             {{ value.thumb_count }}
+                           {% endif %}
+                        </span>
 					</div>
 				</div>
 				<hr>
@@ -155,7 +168,7 @@
                             {% for _ in range(5 - value.rate|int) %}
                                 <span class="five_unstar">&#9734;</span>
                             {% endfor %}
-							<span class="five_date">2023.11.11</span>
+							<span class="five_date">{{value.timestamp}}</span>
 						</div>
 						<div class="five_review_title">
 							<p>상품명: {{key}}</p>
@@ -165,7 +178,13 @@
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}"></div>
 					<div id="five_thumb">
 						<h1>도움이 되었어요</h1><img id="five_thumb_image" src="static/images/five_thumb.png">
-						<span class="five_thumbs_num">25</span>
+						<span class="five_thumbs_num">
+                           {% if value.thumb_count is not defined %}
+                             0
+                           {% else %}
+                             {{ value.thumb_count }}
+                           {% endif %}
+                        </span>
 					</div>
 				</div>
 				<hr>
@@ -184,7 +203,7 @@
                             {% for _ in range(5 - value.rate|int) %}
                                 <span class="five_unstar">&#9734;</span>
                             {% endfor %}
-							<span class="five_date">2023.11.11</span>
+							<span class="five_date">{{value.timestamp}}</span>
 						</div>
 						<div class="five_review_title">
 							<p>상품명: {{key}}</p>
@@ -194,7 +213,13 @@
 					<div class="five_review_img"><img src="static/images/{{value.img_path}}"></div>
 					<div id="five_thumb">
 						<h1>도움이 되었어요</h1><img id="five_thumb_image" src="static/images/five_thumb.png">
-						<span class="five_thumbs_num">25</span>
+						<span class="five_thumbs_num">
+                           {% if value.thumb_count is not defined %}
+                             0
+                           {% else %}
+                             {{ value.thumb_count }}
+                           {% endif %}
+                        </span>
 					</div>
 				</div>
 				<hr>
@@ -209,7 +234,7 @@
                     </li>
 		        </ul>
 	        </div>
-	{% else %}
+        {% else %}
         <p>
         등록된 리뷰가 없습니다.
         </p>
