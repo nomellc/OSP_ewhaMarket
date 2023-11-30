@@ -716,21 +716,9 @@ home-center {
 
 .five_review_img img {
   border-radius: 10px;
+
 }
 
-#five_back,
-#five_next {
-  color: #cadfdc;
-  font-size: 25px;
-  font-weight: bolder;
-  border: none;
-  background: none;
-}
-
-#five_back:hover,
-#five_next:hover {
-  color: #778e8a;
-}
 
 .five_review {
   background-color: #fffef6;
@@ -814,6 +802,8 @@ home-center {
 .five_review_img img {
   height: 120px;
   width: 120px;
+  margin-top : 13px;
+  maring-right : 5px;
 }
 
 #five_thumb {
