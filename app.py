@@ -19,12 +19,7 @@ def login():
 @application.route("/logout")
 def logout_user():
     session.clear()
-    return render_template("index.html")
-
-@application.route("/mypage")
-def view_mypage():
-    data = DB.get_mypage()
-    return render_template("mypage.html", data=data)
+    return redirect(url_for('view_list'))
 
 @application.route("/signup")
 def view_signup():
@@ -259,6 +254,37 @@ def unfollow(name):
 @application.route("/yourpage/<name>/")
 def view_yourpage(name):
     return render_template("yourpage.html", name=name)
+
+@application.route("/mypage/<id>/")
+def my_page(id):
+    return render_template("nine_mypage.html")
+
+@application.route("/mysell/<id>/")
+def my_sell(id):
+    data=DB.get_sellitems_by_id(str(id)) #read the table
+    tot_count=len(data)
+    return render_template("nine_sell.html", datas=data, total=tot_count)
+
+@application.route("/mybuy/<id>/")
+def my_buy(id):
+    data=DB.get_buyitems_by_id(str(id)) #read the table
+    tot_count=len(data)
+    return render_template("nine_buy.html", datas=data, total=tot_count)
+
+@application.route("/buyButton/<name>/")
+def buy_button(name):
+    timestamp = int(datetime.timestamp(datetime.now()))
+    item_name = request.args.get('item_name')  # URL 쿼리 매개변수에서 item_name 가져오기
+    data = {
+    'id': name,
+    'item_name': item_name,
+    'timestamp': timestamp}
+    # DB.insert_buy_item 함수 호출 시 item_name도 함께 전달
+    DB.insert_buy_item(data)
+    flash("상품이 구매되었습니다.")
+    #return render_template("detail.html", data=data)
+    #return redirect(url_for('view_item_detail(item_name)'))
+    return redirect(url_for('view_list'))
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
