@@ -23,15 +23,29 @@ class DBhandler:
         self.db.child("item").child(name).set(item_info)
         return True
     
+    def get_items(self):
+        items = self.db.child("item").get().val()
+        return items
+    
+    def get_item_byname(self, name):
+        items = self.db.child("item").get()
+        target_value=""
+        print("###########", name)
+        for res in items.each():
+            key_value = res.key()
+            
+            if key_value == name:
+                target_value = res.val()
+        return target_value
+    
     def insert_user(self, data):
         user_info ={
             "id":data['id'],
             "pw":data['pw'],
             "nickname":data['nickname'],
-            "email":data['email'],
             "phonenum":data['phonenum']
         }
-        if self.user_duplicate_check(data['id']):
+        if self.user_duplicate_check(str(data['id'])):
             self.db.child("user").push(user_info)
             print(data)
             return True
@@ -54,26 +68,112 @@ class DBhandler:
         
     def find_user(self, id_, pw_):
         users = self.db.child("user").get()
-        target_value = []
+        target_value=[]
         for res in users.each():
             value = res.val()
-
+            
             if value['id'] == id_ and value['pw'] == pw_:
                 return True
-        
+
         return False
     
-    def get_items(self):
-        items = self.db.child("item").get().val()
-        return items
+
+    def reg_review(self, data, img_path, current_time):
+        review_info ={
+        "ID":data['id'],
+        "title":data['review'],
+        "rate": data['reviewStar'],
+        "option": data['option'],
+        "review": data['review-content'],
+        "img_path":img_path,
+        "timestamp":current_time
+        }
+        self.db.child("review").child(data['name']).set(review_info)
+        
+        return True
+
+    def get_mypage(self):
+        mypage_info = self.db.child("mypage").get().val()
+
+    def get_reviews(self):
+        reviews = self.db.child("review").get().val()
+        return reviews
     
-    def get_item_byname(self, name):
-        items = self.db.child("item").get()
+    def get_review_byname(self, name):
+        reviews = self.db.child("review").get()
         target_value=""
-        print("###########",name)
-        for res in items.each():
+        print("###########", name)
+        for res in reviews.each():
             key_value = res.key()
             
             if key_value == name:
+                target_value = res.val()
+        return target_value
+    
+    def get_thumbs(self):
+        thumbs = self.db.child("thumb").get().val()
+    
+    def get_thumb_byname(self, item, name):
+        thumbs = self.db.child("thumb").child(item).get()
+        target_value=""
+        if thumbs.val() == None:
+            return target_value
+
+        for res in thumbs.each():
+            key_value = res.key()
+
+            if key_value == name:
                 target_value=res.val()
         return target_value
+    
+    def update_thumb(self, item_, isThumb, user_id):
+        thumb_info = {"thumbed": isThumb}
+        self.db.child("thumb").child(item_).child(user_id).set(thumb_info)
+        thumbs = self.db.child("thumb").child(item_).get().val()
+        if thumbs is None:
+            return 0
+        count = 0
+        for thumb_status in thumbs.values():
+            if thumb_status and thumb_status.get("thumbed", "") == 'Y':
+                count += 1
+        print("Current count:", count)
+        current_review_data = self.db.child("review").child(item_).get().val()
+        if current_review_data is not None:
+            current_review_data["thumb_count"] = count
+            self.db.child("review").child(item_).update(current_review_data)
+    
+        return True
+    
+    def get_follow_byname(self, uid, name):
+        follow = self.db.child("follow").child(uid).get()
+        target_value=""
+        if follow.val() == None:
+            return target_value
+
+        for res in follow.each():
+            key_value = res.key()
+
+            if key_value == name:
+                target_value=res.val()
+        return target_value
+    
+    def update_follow(self, user_id, isFollow, name):
+        follow_info = {"following": isFollow}
+        self.db.child("follow").child(user_id).child(name).set(follow_info)
+        follow = self.db.child("follow").child(user_id).get().val()
+        if follow is None:
+            return 0
+        count = 0
+        for follow_status in follow.values():
+            if isinstance(follow_status, dict) and follow_status.get("following", "") == 'Y':
+                count += 1
+        print("Current count:", count)
+        current_follow_data = self.db.child("follow").child(user_id).get().val()
+        if current_follow_data is not None:
+            current_follow_data["following_count"] = count
+            self.db.child("follow").child(user_id).update(current_follow_data)
+            self.db.child("mypage").child(user_id).set(current_follow_data)
+    
+        return True
+
+
