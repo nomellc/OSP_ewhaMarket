@@ -58,7 +58,6 @@ a {
   padding: 8px;
 }
 
-
 .navbar p {
   min-width: 900px;
   font-size: 60px;
@@ -112,6 +111,13 @@ a {
     border : 2px solid #D4927D;
     width : 1360px;
     margin : 0 auto; 
+}
+
+
+.invisible_list {
+  display: inline-block;
+  padding: 8px;
+  visibility: hidden;
 }
 
 /*이미지 리스트*/
@@ -577,6 +583,21 @@ home-center {
   margin-right: 10px;
 }
 
+.three-seller-name {
+  cursor:pointer;
+}
+
+.three-seller-name:hover {
+  color: black;  /* 마우스를 위에 올렸을 때의 색상 */
+}
+
+.three-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 /* four */
 
 .four-container {
@@ -716,9 +737,21 @@ home-center {
 
 .five_review_img img {
   border-radius: 10px;
-
 }
 
+#five_back,
+#five_next {
+  color: #cadfdc;
+  font-size: 25px;
+  font-weight: bolder;
+  border: none;
+  background: none;
+}
+
+#five_back:hover,
+#five_next:hover {
+  color: #778e8a;
+}
 
 .five_review {
   background-color: #fffef6;
@@ -802,8 +835,6 @@ home-center {
 .five_review_img img {
   height: 120px;
   width: 120px;
-  margin-top : 13px;
-  maring-right : 5px;
 }
 
 #five_thumb {
