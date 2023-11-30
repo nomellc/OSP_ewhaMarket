@@ -23,9 +23,22 @@ class DBhandler:
         self.db.child("item").child(name).set(item_info)
         return True
     
-    def get_items(self):
+    def get_items(self, sort='name'):
         items = self.db.child("item").get().val()
-        return items
+        if not items:
+            return {}
+    
+        items_list = list(items.items()) 
+        
+        if sort == 'price_asc':
+            items_list.sort(key=lambda x: int(x[1].get('price', 0)))
+        elif sort == 'price_desc':
+            items_list.sort(key=lambda x: int(x[1].get('price', 0)), reverse=True)
+        elif sort == 'name':
+        # Check if 'item_title' key exists, use an empty string as default
+            items_list.sort(key=lambda x: x[1].get('item_title', '').lower())
+
+        return dict(items_list)
     
     def get_item_byname(self, name):
         items = self.db.child("item").get()
@@ -38,14 +51,31 @@ class DBhandler:
                 target_value = res.val()
         return target_value
     
+    def get_items_bycategory(self, cate, sort='name'):
+        items = self.db.child("item").get().val()
+        if not items:
+            return {}
+        
+        filtered_items = {k: v for k, v in items.items() if v['category'] == cate}
+
+        if sort == 'price_asc':
+            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1]['price']))
+        elif sort == 'price_desc':
+            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1]['price']), reverse=True)
+        elif sort == 'name':
+            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1]['item_title'])
+
+        return dict(filtered_items)
+    
     def insert_user(self, data):
         user_info ={
             "id":data['id'],
             "pw":data['pw'],
             "nickname":data['nickname'],
+            "email":data['email'],
             "phonenum":data['phonenum']
         }
-        if self.user_duplicate_check(str(data['id'])):
+        if self.user_duplicate_check(data['id']):
             self.db.child("user").push(user_info)
             print(data)
             return True

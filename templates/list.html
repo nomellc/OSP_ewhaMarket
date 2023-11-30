@@ -1,18 +1,28 @@
 {% extends "top.html" %}
 
 {% block section %}
-{% if total > 0 %}
-<div class = "sort">
-    <div class ="sort_mark">▼</div>
-    <button class = "sort_button" onclick = "toggleDiv()">최신순</button>
-    <div class = "sort_content" id = "sortContents">
-      <a href = "#">최신순</a>
-      <a href = "#">오래된순</a>
-      <a href = "#">이름순</a>
-      <a href = "#">낮은 가격순</a>
-      <a href = "#">높은 가격순</a>
+<div class="sort">
+    <div class="sort_mark">▼</div>
+    <button class="sort_button" onclick="toggleDiv()">정렬</button>
+    <div class="sort_content" id="sortContents" style="display: none;">
+        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
+        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
+        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
+        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
+        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
     </div>
 </div>
+
+{% if total > 0 %}
+<!-- <div>
+    <select id="category" name="category" onchange="location=this.value">>
+        <option value="{{url_for('view_list', page=page, category=category, sort='name')}}">이름순</option>
+        <option value="{{url_for('view_list', page=page, category=category, sort='price_asc')}}">낮은 가격순</option>
+        <option value="{{url_for('view_list', page=page, category=category, sort='price_desc')}}">높은 가격순</option>
+    </select>
+    </div>-->
 <p class="two_total">
     현재까지 상품 {{total}}개가 등록되었습니다.
 </p>
@@ -52,93 +62,43 @@
     <ul>
         {% for i in range(1, page_count + 1) %}
         <li class="list_page_nation">
-            <a href="{{url_for('view_list', page=i - 1)}}" color="black">{{i}}</a>
+            <a href="{{url_for('view_list', page=i - 1, category=category, sort=sort)}}" color="black">{{i}}</a>
         </li>
         {% endfor %}
     </ul>
 </div>
+<!-- 페이지네이션을 위한 코드 끝 -->
+
 {% else %}
-<p>
+<p class="two_total">
     등록된 상품이 없습니다.
 </p>
 {% endif %}
 
 {% endblock section %}
 
-<!-- <tbody>
-    <tr>
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-      
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-        
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-    </tr>
-    <tr>
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-      
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-        
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-    </tr>
-    <tr>
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-      
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-        
-      <td class = "card">
-          <a href="#"><img src="../static/images/two_cake.jpeg" /></a>
-          <div class="text">
-              <p class="item_name">케이크</p>
-              <p class="item_price">10000원</p>
-          </div>
-      </td>
-    </tr>
-  </tbody> -->
+<script>
+    $(document).ready(function () {
+        //alert("{{category}}")
+    })
+    $('#category option:contains("{{category}}")').prop("selected", true);
+
+    $(document).ready(function () {
+        var currentCategory = "{{category}}";
+        $('.sort_content a').each(function() {
+            if($(this).text() === currentCategory) {
+                $(this).addClass('active');
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        var currentSort = "{{sort}}";
+        $('.sort_content a').each(function() {
+            var linkSort = new URL($(this).attr('href')).searchParams.get('sort');
+            if(linkSort === currentSort) {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>

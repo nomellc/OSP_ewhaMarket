@@ -28,12 +28,8 @@
             <div class="three-item-image"><img src="../../static/images/{{data.img_path}}" /></div>
 
             <div class="three-item-sum">
-                <style>
-                  .three-seller-name:hover {
-                    color: black;  /* 마우스를 위에 올렸을 때의 색상 */
-                  }
-                </style>
-                <p class="three-seller-name"  onclick="location.href='/yourpage/{{data.seller}}/';" style="cursor:pointer;" >판매자 : {{data.seller}}</p>
+                <p class="three-seller-name" onclick="location.href='/yourpage/{{data.seller}}/';">판매자 : {{data.seller}}
+                </p>
                 <p class="three-product-name">상품명 : {{name}}</p>
                 <p class="three-price">가격 : {{data.price}}</p>
                 <p class="three-category">카테고리 : {{data.category}}</p>
@@ -43,53 +39,13 @@
             <div class="detail-txt">
                 <p>{{data.item_explain}}</p>
             </div>
-            <button type="submit" class="submit-button">구매하기</button>
+            {% if is_logged_in %}
+            <button type="submit" class="submit-button"
+                onclick="location.href='/buybutton/{{ session['id'] }}';">구매하기</button>
+            {% endif %}
+
         </div>
-        <hr />
-        <div class="three-reviews">
-
-            <div>
-                <form action="/submit_item_post" method="post" enctype="multipart/form-data">
-                    <div class="three-review-header">
-                        <h3>
-                            상품 리뷰
-                            <a href="">
-                                <img class="three-review-icon" src="../static/images/three_arrow.png" /></a>
-                        </h3>
-                    </div>
-
-                    <div class="three-mini-reviews">
-
-                        <label for="array">최신순</label>
-                        <a href=""><img class="three-sort-toggle" src="../static/images/three_toggleDown.png"></a>
-
-                        <div class="three-mini-review">ID1(2023.10.11): 아주 훌륭해요~!</div>
-                        <div class="three-mini-review">ID2(2023.10.11): 리뷰 믿고 샀다가...</div>
-                        <div class="three-mini-review">ID3(2023.10.11): 성공했습니다</div>
-                        <div class="three-mini-review">ID4(2023.10.11): 은은한 달달함을 찾으신다면</div>
-                    </div>
-
-            </div>
-        </div>
-
+    </div>
 </body>
 
 </html>
-
-
-<!-- <p>
-    item name is <b>{{name}}</b> and address is {{data.addr}}
-</p>
-<p>
-    item tel. is {{data.phone}} and category is {{data.category}}
-</p>
-<p>
-    For payment, the credit card is
-    {% if data['card'] == "Y" %}
-    accepted!
-    {% endif %}
-    {% if data['card'] == "N" %}
-    NOT accepted!
-    {% endif %}
-</p>
-<img src="../../static/images/{{data.img_path}}", width=140, height=200> -->

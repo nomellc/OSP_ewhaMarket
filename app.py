@@ -30,6 +30,15 @@ def view_mypage():
 def view_signup():
     return render_template("signup.html")
 
+@application.route('/check_id', methods=['POST'])
+def check_id():
+    data = request.json
+    user_id = data['id']
+    if DB.user_duplicate_check(user_id):
+        return "사용 가능한 ID입니다."
+    else:
+        return "이미 존재하는 ID입니다."
+
 @application.route("/login_confirm", methods=['POST'])
 def login_user():
     id_ = request.form['id']
@@ -46,37 +55,53 @@ def login_user():
 @application.route("/list")
 def view_list():
     page = request.args.get("page", 0, type=int)
+    category = request.args.get("category", "all")
+    sort = request.args.get("sort", "name")
     per_page = 6
     per_row = 3
-    row_count = int(per_page/per_row)
-    start_idx = per_page*page
-    end_idx = per_page*(page+1)
-    data= DB.get_items()
+    row_count = int(per_page / per_row)
+    start_idx = per_page * page
+    end_idx = per_page * (page + 1)
+    if category == "all":
+        data = DB.get_items(sort=sort) # 정렬 파라미터를 get_items에 전달
+    else:
+        data = DB.get_items_bycategory(category, sort=sort)
+    data = dict(sorted(data.items(), key=lambda x: x[0], reverse=False))
     item_counts = len(data)
-    data = dict(list(data.items())[start_idx:end_idx])
-    tot_count = len(data)
-    for i in range(row_count):
-        if (i == row_count-1) and (tot_count % per_row != 0):
-            locals()['data_{}'.format(i)] = dict(list(data.items())[i*per_row:])
-        else:
-            locals()['data_{}'.format(i)] = dict(list(data.items())[i*per_row:(i+1)*per_row])
-    
-    return render_template(
-        "list.html",
-        datas=data.items(),
-        row1=locals()['data_0'].items(),
-        row2=locals()['data_1'].items(),
-        limit=per_page,
-        page=page,
-        page_count=int((item_counts/per_page)+1),
-        total=item_counts)
+    if item_counts <= per_page:
+        data = dict(list(data.items())[:item_counts])
+    else:
+        data = dict(list(data.items())[start_idx:end_idx])
 
-@application.route("/view_detail/<name>/")
+    tot_count = len(data)
+
+    for i in range(row_count):
+        start = i * per_row
+        end = start + per_row
+        data_key = 'data_{}'.format(i)
+        if start < tot_count:
+            if end > tot_count:  # 마지막 페이지의 마지막 행 처리
+                locals()[data_key] = dict(list(data.items())[start:])
+            else:
+                locals()[data_key] = dict(list(data.items())[start:end])
+
+    # 여기서 locals()['data_0'] 또는 locals()['data_1']이 존재하지 않을 수 있으므로, 이를 고려하여 템플릿에 데이터 전달
+    return render_template("list.html", 
+                           row1=locals().get('data_0', {}).items(), 
+                           row2=locals().get('data_1', {}).items(), 
+                           limit=per_page, 
+                           page=page, 
+                           page_count=int((item_counts / per_page) + 1), 
+                           total=item_counts,
+                           category=category)
+
+@application.route("/view_detail/<name>/", endpoint='view_detail_by_name')
 def view_item_detail(name):
-    print("###name:",name)
-    data = DB.get_item_byname(name)
+    print("###name:", name)
+    data = DB.get_item_byname(str(name))
     print("####data:", data)
-    return render_template("detail.html", name=name, data=data)
+    is_logged_in = 'id' in session  # 로그인 상태인지 확인
+    return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
 def view_review_detail(name):
@@ -122,6 +147,9 @@ def view_review():
 
 @application.route("/reg_items")
 def reg_item():
+    if 'id' not in session:
+        flash("로그인이 필요한 페이지입니다.")
+        return redirect(url_for('login'))
     return render_template("one_item_regi.html")
 
 @application.route("/contact")
@@ -142,17 +170,20 @@ def register_user():
     data=request.form
     pw=request.form['pw']
     pw_hash = hashlib.sha256(pw.encode('utf-8')).hexdigest()
-    data_with_more_info = {
-        'id' : data['id'],
-        'pw' : pw_hash,
-        'nickname' : data['nickname'],
-        'phonenum' : data.get('phonenum', '')
-    }
-    if DB.insert_user(data_with_more_info):
-        return render_template("login.html")
+
+    is_id_checked = request.form.get('isIdChecked') == 'true'
+    is_password_checked = request.form.get('isPasswordChecked') == 'true'
+
+    if is_id_checked and is_password_checked:
+        if DB.insert_user({'id': data['id'], 'pw': pw_hash, 'nickname': data['nickname'], 'email': data['email'], 'phonenum': data.get('phonenum', '')}):
+            flash("회원가입이 완료되었습니다. 환영합니다.")
+            return render_template("seven_login.html")
+        else:
+            flash("user id already exist!")
+            return render_template("eight_register.html")
     else:
-        flash("user id already exist!")
-        return render_template("signup.html")
+        flash("아이디/비밀번호 체크를 해주세요.")
+        return render_template("eight_register.html")
     
 #@application.route('dynamicurl/<varible_name>/')
 #def DynamicUrl(varible_name):
