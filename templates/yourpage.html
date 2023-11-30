@@ -2,32 +2,80 @@
 <html>
 <head>
     <title>EWHA MARKET</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
     <div class="nine-container">
         <div class="nine-market-name">
-            <h2>이화마켓</h2>
+            <h2><a href="/list">이화마켓</a></h2>
             <div class="nine-separator"></div>
         </div>
         
         <div class="nine-user-profile">
 
-            <img src="사용자_프로필.png" alt="사용자 프로필 사진">
-            <div class="nine-user-name">USER</div>
+            <p class="user-profile-img"><img src="../../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
+            <div class="nine-user-name">{{name}}</div>
             <div class="nine-following">following00</div>
             <div class="nine-follower">follower00</div>
-            <button class="nine-bell-button"><img src="종.png" alt="bell"></button>
-            <button class="nine-follow-button">following</button>
+            <button class="nine-bell-button"><img src="../../static/images/ring.png" alt="bell"></button>
+            <button class="nine-follow-button" id="follow">follow</button>
         </div>
+        <script>
+            function showFollow() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/show_follow/{{name}}/',
+                    data: {},
+                    success: function (response) {
+                        let user_follow = response['user_follow'];
+                        if (user_follow['following'] == 'Y') {
+                            $("#follow").text("following");
+                            $("#follow").attr("onclick", "unfollow()");
+                        } else {
+                            $("#follow").text("follow");
+                            $("#follow").attr("onclick", "follow()");
+                        }
+                    }
+                });
+            }
+            function follow() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/follow/{{name}}/',
+                    data: {following : "Y"},
+                    success: function (response) {
+                        alert(response['msg']);
+                        window.location.reload()
+                     }
+                 });
+             }
+
+            function unfollow() {
+                 $.ajax({
+                     type: 'POST',
+                     url: '/unfollow/{{name}}/',
+                     data: {
+                         following : "N"
+                     },
+                     success: function (response) {
+                         alert(response['msg']);
+                         window.location.reload()
+                     }
+                 });
+             }
+             $(document).ready(function () {
+                 showFollow();
+             });
+        </script>
 
         <div class="nine-product-containers">
             <div class="nine-product-container">
                 <h2>판매중인 상품</h2>
                 <div class="nine-separator"></div> 
-                <button class="nine-page-button"><img class="nine-button-mark" src="화살표.png" alt="arrow"></button>
+                <button class="nine-page-button"><img class="nine-button-mark" src="../../static/images/화살표.png" alt="arrow"></button>
 
 
                 <div class="nine-product-cards">
@@ -37,7 +85,7 @@
 
                         <a target="_blank">
                             <div class="nine-product-card">
-                                <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                                 <h5>
                                     name
                                 </h5>
@@ -47,7 +95,7 @@
 
                         <a target="_blank">
                             <div class="nine-product-card">
-                                <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                                 <h5>
                                     name
                                 </h5>
@@ -57,7 +105,7 @@
 
                         <a target="_blank">
                             <div class="nine-product-card">
-                                <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                                 <h5>
                                     name
                                 </h5>
@@ -67,7 +115,7 @@
 
                         <a target="_blank">
                             <div class="nine-product-card">
-                                <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                                 <h5>
                                     name
                                 </h5>
@@ -79,7 +127,7 @@
 
                     <a target="_blank">
                         <div class="nine-product-card">
-                            <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                             <h5>
                                 name
                             </h5>
@@ -90,7 +138,7 @@
 
                     <a target="_blank">
                         <div class="nine-product-card">
-                            <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                             <h5>
                                 name
                             </h5>
@@ -100,7 +148,7 @@
 
                     <a target="_blank">
                         <div class="nine-product-card">
-                            <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                             <h5>
                                 name
                             </h5>
@@ -110,7 +158,7 @@
 
                     <a target="_blank">
                         <div class="nine-product-card">
-                            <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                             <h5>
                                 name
                             </h5>
@@ -120,7 +168,7 @@
 
                     <a target="_blank">
                         <div class="nine-product-card">
-                            <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                             <h5>
                                 name
                             </h5>
@@ -130,7 +178,7 @@
 
                     <a target="_blank">
                         <div class="nine-product-card">
-                            <img src="이미지_파일의_경로.png" alt="상품 이미지">
+                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
                             <h5>
                                 name
                             </h5>
