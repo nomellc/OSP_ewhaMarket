@@ -248,13 +248,20 @@ def unfollow(name):
     user_follow = DB.update_follow(session['id'],'N', name)
     return jsonify({'msg': '팔로잉 취소!'})
 
+@application.route("/view_following/<name>/")
+def view_following(name):
+    data = DB.get_follow(name)
+    print(data)
+    return render_template("nine_following.html", data=data)
+
 @application.route("/yourpage/<name>/")
 def view_yourpage(name):
     return render_template("yourpage.html", name=name)
 
 @application.route("/mypage/<id>/")
 def my_page(id):
-    return render_template("nine_mypage.html")
+    data = DB.get_followingcount_byname(str(id))
+    return render_template("nine_mypage.html", data=data)
 
 @application.route("/mysell/<id>/")
 def my_sell(id):
