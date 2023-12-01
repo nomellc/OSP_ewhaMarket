@@ -227,10 +227,6 @@ class DBhandler:
         data = self.db.child("following_count").child(id).get().val()
         return data
     
-    def get_followingcount_byname(self, id):
-        data = self.db.child("following_count").child(id).get().val()
-        return data
-    
     def get_followercount_byname(self, name):
         data = self.db.child("follower_count").child(name).get().val()
         return data
