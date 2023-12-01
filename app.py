@@ -45,7 +45,7 @@ def login_user():
         return redirect(url_for('view_list'))
     else:
         flash("Wrong ID or PW!")
-        return render_template("login.html")
+        return render_template("seven_login.html")
 
 @application.route("/list")
 def view_list():
@@ -92,17 +92,13 @@ def view_list():
 
 @application.route("/view_detail/<name>/", endpoint='view_detail_by_name')
 def view_item_detail(name):
-    print("###name:", name)
     data = DB.get_item_byname(str(name))
-    print("####data:", data)
     is_logged_in = 'id' in session  # 로그인 상태인지 확인
     return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
 def view_review_detail(name):
-    print("###name:",name)
     data = DB.get_review_byname(name)
-    print("####data:", data)
     return render_template("six_review_detail.html", name=name, data=data)
 
 @application.route("/review")
@@ -184,9 +180,10 @@ def register_user():
 #def DynamicUrl(varible_name):
 #    return str(varible_name)
 
-@application.route("/reg_review_init/<name>/")
-def reg_review_init(name):
-    return render_template("four_review.html", name=name)
+@application.route("/reg_review_init/<name>/<item_title>")
+def reg_review_init(name, item_title):
+    print("제목: ", item_title)
+    return render_template("four_review.html", name=name, item_title=item_title)
 
 @application.route("/reg_review", methods=['POST'])
 def reg_review():
@@ -251,19 +248,46 @@ def unfollow(name):
     user_follow = DB.update_follow(session['id'],'N', name)
     return jsonify({'msg': '팔로잉 취소!'})
 
+@application.route("/view_following/<name>/")
+def view_following(name):
+    data = DB.get_follow(name)
+    print(data)
+    return render_template("nine_following.html", data=data)
+
 @application.route("/yourpage/<name>/")
 def view_yourpage(name):
     return render_template("yourpage.html", name=name)
 
 @application.route("/mypage/<id>/")
 def my_page(id):
-    return render_template("nine_mypage.html")
+    data = DB.get_followingcount_byname(str(id))
+    return render_template("nine_mypage.html", data=data)
 
 @application.route("/mysell/<id>/")
 def my_sell(id):
     data=DB.get_sellitems_by_id(str(id)) #read the table
-    tot_count=len(data)
-    return render_template("nine_sell.html", datas=data, total=tot_count)
+    tot_count1=len(data)
+    sold=DB.get_solditems_by_id(str(id)) #read the table
+    tot_count2=len(sold)
+    return render_template("nine_sell.html", datas=data, total1=tot_count1, solds=sold, total2=tot_count2)
+
+
+    """_summary_
+    판매중 버튼 클릭 -> 
+    데이터베이스 item의 해당 id의 아이템 sold seller에 저장 -> 
+    데이터베이스 item의 해당 id의 아이템 삭제 -> 
+    html에 sold seller에 해당하는 부분을 출력
+    """
+@application.route("/sellsold/<id>/<item_title>/")
+def sell_sold(id, item_title):
+    success=DB.move_sell_item_to_sold(id, item_title)
+    if success:
+        flash("해당 상품이 판매완료 되었습니다.")
+        return redirect(url_for('my_sell', id=id))
+    else:
+        flash("해당 상품이 없습니다.")
+        return redirect(url_for('my_sell', id=id))
+
 
 @application.route("/mybuy/<id>/")
 def my_buy(id):
@@ -271,7 +295,7 @@ def my_buy(id):
     tot_count=len(data)
     return render_template("nine_buy.html", datas=data, total=tot_count)
 
-@application.route("/buyButton/<name>/")
+@application.route("/buybutton/<name>/")
 def buy_button(name):
     timestamp = int(datetime.timestamp(datetime.now()))
     item_name = request.args.get('item_name')  # URL 쿼리 매개변수에서 item_name 가져오기
@@ -283,8 +307,7 @@ def buy_button(name):
     DB.insert_buy_item(data)
     flash("상품이 구매되었습니다.")
     #return render_template("detail.html", data=data)
-    #return redirect(url_for('view_item_detail(item_name)'))
-    return redirect(url_for('view_list'))
+    return redirect(url_for('view_detail_by_name', name=item_name))
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)

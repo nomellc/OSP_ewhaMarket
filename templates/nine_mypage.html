@@ -7,11 +7,17 @@
     <div class="nine-container">
       <div class="nine-user-profile">
         <p class="user-profile-img">
-          <img src="../static/images/mypage.jpeg" />
+          <img src="../../static/images/mypage.jpeg" />
         </p>
-        <div class="nine-user-name">USER</div>
+        <div class="nine-user-name">{{session['id']}}</div>
         <div class="nine-follower1">follower 00</div>
-        <div class="nine-following1">following 00</div>
+        <div class="nine-following1" onclick="location.href='/view_following/{{session['id']}}/';">
+          {% if data is none %}
+            following 00
+          {% else %}
+            following {{data}}
+          {% endif %}
+         </div>
       </div>
 
       <div class="nine-product-containers">
@@ -24,44 +30,62 @@
           >
             <img
               class="nine-button-mark"
-              src="../static/images/arrowicon.png"
+              src="../../static/images/arrowicon.png"
               alt="arrow"
             />
           </button>
 
           <div class="nine-product-cards">
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
@@ -77,44 +101,62 @@
           >
             <img
               class="nine-button-mark"
-              src="../static/images/arrowicon.png"
+              src="../../static/images/arrowicon.png"
               alt="arrow"
             />
           </button>
 
           <div class="nine-product-cards">
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
@@ -130,44 +172,62 @@
           >
             <img
               class="nine-button-mark"
-              src="../static/images/arrowicon.png"
+              src="../../static/images/arrowicon.png"
               alt="arrow"
             />
           </button>
 
           <div class="nine-product-cards">
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
 
             <div class="nine-product-card">
-              <img src="../static/images/nine_cake3.jpeg" alt="상품 이미지" />
+              <img
+                src="../../static/images/nine_cake3.jpeg"
+                alt="상품 이미지"
+              />
               <h5>name</h5>
               <p>0000-00-00</p>
             </div>
