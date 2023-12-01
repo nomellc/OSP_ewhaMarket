@@ -31,9 +31,11 @@
       <div class="nine_navbar">
         <ul>
           <li>
-            <a id="nine_sellingbar" class="active" onclick="menu1()">판매중</a>
+            <a id="nine_sellingbar" class="active" onclick="menu();">판매중</a>
           </li>
-          <li><a id="nine_soldbar" onclick="menu2()">판매 완료</a></li>
+          <li>
+            <a id="nine_soldbar" onclick="menu();">판매 완료</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -52,150 +54,70 @@
       </div>
     </div>
 
-    {% if total > 0 %}
     <div class="nine_list">
       <div class="nine_container1">
+        {% if total1 > 0 %}
         <table>
           <tbody>
-            {% for item in datas %}
             <tr>
+              {% for item in datas %}
               <td class="card">
                 <a href="#"
-                  ><img src="../../static/images/{{ item.img_path }}"
+                  ><img
+                    class="card_img"
+                    src="../../static/images/{{ item.img_path }}"
                 /></a>
                 <div class="sell-icon">
                   <div class="sell-triangle"></div>
-                  <div class="sell-text">판매중</div>
+                  <div
+                    class="sell-text"
+                    onclick="location.href='/sellsold/{{session['id']}}/{{ item.item_title }}';"
+                    style="cursor: pointer"
+                  >
+                    판매중
+                  </div>
                 </div>
                 <div class="text">
                   <p class="item_name">{{ item.item_title }}</p>
                   <p class="item_price">{{ item.price }}</p>
                 </div>
               </td>
+              {% endfor %}
             </tr>
-            {% endfor %}
           </tbody>
         </table>
+        {% else %}
+        <p>등록된 상품이 없습니다.</p>
+        {% endif %}
       </div>
-      {% else %}
-      <p>등록된 상품이 없습니다.</p>
-      {% endif %}
       <div class="nine_container2">
+        {% if total2 > 0 %}
         <table>
           <tbody>
             <tr>
+              {% for item in solds %}
               <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
+                <a href="#"
+                  ><img
+                    class="card_img"
+                    src="../../static/images/{{ item.img_path }}"
+                /></a>
                 <div class="sell-icon">
                   <div class="sell-triangle"></div>
                   <div class="sell-text">판매완료</div>
                 </div>
                 <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
+                  <p class="item_name">{{ item.item_title }}</p>
+                  <p class="item_price">{{ item.price }}</p>
                 </div>
               </td>
-
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
-
-              <td class="card">
-                <a href="#"><img src="../static/images/nine_cake2.jpeg" /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">케이크</p>
-                  <p class="item_price">10000원</p>
-                </div>
-              </td>
+              {% endfor %}
             </tr>
           </tbody>
         </table>
+        {% else %}
+        <p>판매완료된 상품이 없습니다.</p>
+        {% endif %}
       </div>
     </div>
   </body>

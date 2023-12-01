@@ -45,7 +45,7 @@ def login_user():
         return redirect(url_for('view_list'))
     else:
         flash("Wrong ID or PW!")
-        return render_template("login.html")
+        return render_template("seven_login.html")
 
 @application.route("/list")
 def view_list():
@@ -262,8 +262,28 @@ def my_page(id):
 @application.route("/mysell/<id>/")
 def my_sell(id):
     data=DB.get_sellitems_by_id(str(id)) #read the table
-    tot_count=len(data)
-    return render_template("nine_sell.html", datas=data, total=tot_count)
+    tot_count1=len(data)
+    sold=DB.get_solditems_by_id(str(id)) #read the table
+    tot_count2=len(sold)
+    return render_template("nine_sell.html", datas=data, total1=tot_count1, solds=sold, total2=tot_count2)
+
+
+    """_summary_
+    판매중 버튼 클릭 -> 
+    데이터베이스 item의 해당 id의 아이템 sold seller에 저장 -> 
+    데이터베이스 item의 해당 id의 아이템 삭제 -> 
+    html에 sold seller에 해당하는 부분을 출력
+    """
+@application.route("/sellsold/<id>/<item_title>/")
+def sell_sold(id, item_title):
+    success=DB.move_sell_item_to_sold(id, item_title)
+    if success:
+        flash("해당 상품이 판매완료 되었습니다.")
+        return redirect(url_for('my_sell', id=id))
+    else:
+        flash("해당 상품이 없습니다.")
+        return redirect(url_for('my_sell', id=id))
+
 
 @application.route("/mybuy/<id>/")
 def my_buy(id):
