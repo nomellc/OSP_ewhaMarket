@@ -209,24 +209,24 @@ class DBhandler:
     def get_sellitems_by_id(self, id):
         items = self.db.child("item").get()
         matching_items = []
+        if items.val() is not None:
+            for res in items.each():
+                # 각 물건(케이크, 쿠키, 마들렌 등)의 데이터에 접근
+                item_data = res.val()
 
-        for res in items.each():
-            # 각 물건(케이크, 쿠키, 마들렌 등)의 데이터에 접근
-            item_data = res.val()
-
-            # 만약 해당 물건에 id 키가 있다면
-            if "seller" in item_data and item_data["seller"] == id:
-                matching_items.append(item_data)
+                # 만약 해당 물건에 id 키가 있다면
+                if "seller" in item_data and item_data["seller"] == id:
+                    matching_items.append(item_data)
         return matching_items
     
     def get_solditems_by_id(self, id):
         items = self.db.child("sold").child(id).get()
         matching_items = []
-
-        for res in items.each():
-            # 각 물건(케이크, 쿠키, 마들렌 등)의 데이터에 접근
-            item_data = res.val()
-            matching_items.append(item_data)
+        if items.val() is not None:
+            for res in items.each():
+                # 각 물건(케이크, 쿠키, 마들렌 등)의 데이터에 접근
+                item_data = res.val()
+                matching_items.append(item_data)
         return matching_items
         
     def move_sell_item_to_sold(self, id, item_title):
@@ -251,19 +251,21 @@ class DBhandler:
         self.db.child("buy").child(data['id']).push(buy_info)
         return True
     
-    def get_buyitems_by_id(self, id):    
-        buy_items = self.db.child("buy").child(id).get()
+    def get_buyitems_by_id(self, id):
         matching_items = []
+        buy_items_ref = self.db.child("buy").child(id).get()
 
-        if buy_items:
-            for res in buy_items.each(): #buy 리스트에서 이름 1개씩 가져옴
+        if buy_items_ref.val() is not None:
+            for res in buy_items_ref.each():
                 value = res.val()
                 item_ref = self.db.child("item").child(value['item_name']).get()
-                if item_ref:
-                        item_data = item_ref.val()
-                        matching_items.append({
-                        "item_title": item_data["item_title"],
-                        "img_path": item_data["img_path"],
-                        "price": item_data["price"]
-                        })
+
+                if item_ref.val() is not None:
+                    item_data = item_ref.val()
+                    matching_items.append({
+                        "item_title": item_data.get("item_title"),
+                        "img_path": item_data.get("img_path"),
+                        "price": item_data.get("price")
+                    })
+
         return matching_items
