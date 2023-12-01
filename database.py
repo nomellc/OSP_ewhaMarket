@@ -209,6 +209,10 @@ class DBhandler:
             self.db.child("following_count").child(user_id).set(count)
     
         return True
+
+    def get_followingcount_byname(self, id):
+        data = self.db.child("following_count").child(id).get().val()
+        return data
     
     def get_sellitems_by_id(self, id):
         items = self.db.child("item").get()
