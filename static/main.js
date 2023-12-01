@@ -85,11 +85,6 @@ function toggleDiv() {
   }
 }
 
-//리뷰 작성 버튼
-function toReview() {
-  window.location.href = "/write_review";
-}
-
 var isIdChecked = false;
 var isPasswordChecked = false;
 

@@ -92,17 +92,13 @@ def view_list():
 
 @application.route("/view_detail/<name>/", endpoint='view_detail_by_name')
 def view_item_detail(name):
-    print("###name:", name)
     data = DB.get_item_byname(str(name))
-    print("####data:", data)
     is_logged_in = 'id' in session  # 로그인 상태인지 확인
     return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
 def view_review_detail(name):
-    print("###name:",name)
     data = DB.get_review_byname(name)
-    print("####data:", data)
     return render_template("six_review_detail.html", name=name, data=data)
 
 @application.route("/review")
@@ -184,9 +180,10 @@ def register_user():
 #def DynamicUrl(varible_name):
 #    return str(varible_name)
 
-@application.route("/reg_review_init/<name>/")
-def reg_review_init(name):
-    return render_template("four_review.html", name=name)
+@application.route("/reg_review_init/<name>/<item_title>")
+def reg_review_init(name, item_title):
+    print("제목: ", item_title)
+    return render_template("four_review.html", name=name, item_title=item_title)
 
 @application.route("/reg_review", methods=['POST'])
 def reg_review():
@@ -291,7 +288,7 @@ def my_buy(id):
     tot_count=len(data)
     return render_template("nine_buy.html", datas=data, total=tot_count)
 
-@application.route("/buyButton/<name>/")
+@application.route("/buybutton/<name>/")
 def buy_button(name):
     timestamp = int(datetime.timestamp(datetime.now()))
     item_name = request.args.get('item_name')  # URL 쿼리 매개변수에서 item_name 가져오기
@@ -303,8 +300,7 @@ def buy_button(name):
     DB.insert_buy_item(data)
     flash("상품이 구매되었습니다.")
     #return render_template("detail.html", data=data)
-    #return redirect(url_for('view_item_detail(item_name)'))
-    return redirect(url_for('view_list'))
+    return redirect(url_for('view_detail_by_name', name=item_name))
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
