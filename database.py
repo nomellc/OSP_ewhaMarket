@@ -173,6 +173,11 @@ class DBhandler:
             self.db.child("review").child(item_).update(current_review_data)
     
         return True
+
+    def get_follow(self, name):
+        following = self.db.child("follow").child(name).get().val()
+
+        return following
     
     def get_follow_byname(self, uid, name):
         follow = self.db.child("follow").child(uid).get()
@@ -201,8 +206,7 @@ class DBhandler:
         current_follow_data = self.db.child("follow").child(user_id).get().val()
         if current_follow_data is not None:
             current_follow_data["following_count"] = count
-            self.db.child("follow").child(user_id).update(current_follow_data)
-            self.db.child("mypage").child(user_id).set(current_follow_data)
+            self.db.child("following_count").child(user_id).set(count)
     
         return True
     
