@@ -25,15 +25,16 @@
       </ul>
     </div>
     <div class = "nine_container">
-        <p><a href="nine_following.html">팔로잉</a></p>
+        <p><a href="">팔로잉</a></p>
     </div>
     <div class = "separator"></div>
+    {% if data is not none %}
     {% for key, value in data.items() %}
-    {% if value.following == 'Y' %}
+        {% if value.following == 'Y' %}
     <div class = "nine_followers"> <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
         <div class = "nine_follow_container">
             <div class = "nine_profile">
-                <a><img src="../static/images/nine_profile.png"></a>
+                <a><img src="../../static/images/nine_profile.png"></a>
             </div>
             <div class = "nine_profile_name">
                 <a>{{key}}</a>
@@ -41,7 +42,7 @@
 
             <button class = "nine_following_button1">450 ❤</button>
             <button class = "nine_following_button2" onclick="location.href='/yourpage/{{key}}/';">
-                <img src = "nine_arrow.png">
+                <img src = "../../static/images/nine_arrow.png">
             </button>
 
             <div class = "nine_more_container">
@@ -63,6 +64,7 @@
     </div>
     {% endif %}
 {% endfor %}
+{% endif %}        
 
     </body>
     </html>
