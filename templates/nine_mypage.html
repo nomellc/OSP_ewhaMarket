@@ -9,9 +9,15 @@
         <p class="user-profile-img">
           <img src="../../static/images/mypage.jpeg" />
         </p>
-        <div class="nine-user-name">USER</div>
+        <div class="nine-user-name">{{session['id']}}</div>
         <div class="nine-follower1">follower 00</div>
-        <div class="nine-following1">following 00</div>
+        <div class="nine-following1" onclick="location.href='/view_following/{{session['id']}}/';">
+          {% if data is none %}
+            following 00
+          {% else %}
+            following {{data}}
+          {% endif %}
+         </div>
       </div>
 
       <div class="nine-product-containers">
