@@ -24,7 +24,7 @@
       </ul>
     </div>
     <div class="nine_container">
-      <p><a href="nine_sell.html">구매 내역</a></p>
+      <p><a href="/mybuy//{{session['id']}}">구매 내역</a></p>
     </div>
     <div class="separator"></div>
 
@@ -41,31 +41,37 @@
       </div>
     </div>
 
-    {% if total > 0 %}
     <div class="nine_container1">
+      {% if total > 0 %}
       <table>
         <tbody>
-          {% for item in datas %}
           <tr>
+            {% for item in datas %}
             <td class="card">
               <a href="#"
-                ><img src="../../static/images/{{ item.img_path }}"
+                ><img
+                  class="card_img"
+                  src="../../static/images/{{ item.img_path }}"
               /></a>
               <div class="text">
                 <p class="item_name">{{ item.item_title }}</p>
                 <p class="item_price">{{ item.price }}</p>
               </div>
-              <button class="nine_review_button" onclick="toReview()">
+              <button
+                class="nine_review_button"
+                onclick="location.href
+                ='/reg_review_init/{{session['id']}}/{{ item.item_title }}'"
+              >
                 리뷰 작성
               </button>
             </td>
+            {%endfor%}
           </tr>
-          {%endfor%}
         </tbody>
       </table>
+      {% else %}
+      <p>등록된 상품이 없습니다.</p>
+      {% endif %}
     </div>
-    {% else %}
-    <p>등록된 상품이 없습니다.</p>
-    {% endif %}
   </body>
 </html>
