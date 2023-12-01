@@ -222,6 +222,10 @@ class DBhandler:
             current_follower_data["follower_count"] = follower_count
             self.db.child("follower_count").child(name).set(follower_count)
         return True
+
+    def get_followingcount_byname(self, id):
+        data = self.db.child("following_count").child(id).get().val()
+        return data
     
     def get_followingcount_byname(self, id):
         data = self.db.child("following_count").child(id).get().val()
