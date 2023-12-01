@@ -28,6 +28,7 @@
         <p><a href="nine_following.html">팔로잉</a></p>
     </div>
     <div class = "separator"></div>
+    {% if data is not none %}
     {% for key, value in data.items() %}
     {% if value.following == 'Y' %}
     <div class = "nine_followers"> <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
@@ -63,6 +64,6 @@
     </div>
     {% endif %}
 {% endfor %}
-
+{% endif %}
     </body>
     </html>
