@@ -3,20 +3,22 @@
 * {
   box-sizing: border-box;
   color: #71513c;
-  font-family: "SeoulHangang";
+  font-family: "NotoSansKR";
 }
 
 @font-face {
-  font-family: "SeoulHangang";
-  src: url("SeoulHangang_CEB_Regular.ttf") format("truetype");
+  font-family: "NotoSansKR";
+  src: url("NotoSansKR-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
 }
 
 body {
   margin: 0;
-  padding: 40px;
+  width : 100%;
+  padding : 40px;
   color: #71513c;
   background-color: #f5ebe0;
+  box-sizing: border-box;
 }
 
 hr {
@@ -31,19 +33,29 @@ a {
 
 /*top.html*/
 
+.full-container{
+    position : relative;
+    width : 100%;
+    position : absolute;
+    top: 0;
+    left : 0;
+}
 .top_navbar {
-  min-width: 200px;
-  max-height: 25px;
+  width: 100%;
+  max-height: 50px;
   margin : 0 auto;
-  position : absolute;
-  left : 1090px;
+  background-color: #f5ebe0;
+  
 }
 
 .top_navbar ul {
   overflow: hidden;
-  background-color: #f5ebe0;
-  max-height: 25px;
+  padding : 10px;
   list-style: none;
+  position : absolute;
+  left : 1050px;
+  top : 18px;
+  min-width : 300px;
 }
 
 .top_navbar li {
@@ -53,47 +65,85 @@ a {
 .top_navbar a {
   display: inline-block;
   color: #cadfdc;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   padding: 8px;
+  font-weight : bold;
 }
 
+.top_navbar b{
+    color : #f5ebe0;
+}
 
-.navbar p {
-  min-width: 900px;
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 420px;
+    width : 100%;
+    padding : 30px;
+    padding-top : 100px;
+    padding-left : -40px;
+    padding-right : -40px;
+    margin : 0px;
+    background-color : #71513c;
+    position : relative;
+    top : 0;
+
+}
+
+.christ-icon{
+    width : 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar img{
+    width : 90px;
+    height : 90px;
+    margin : 0 ;
+}
+
+.title a {
+  min-width: 100%;
   font-size: 60px;
-  color: #71513c;
+  color: #f5ebe0;
   letter-spacing: 10px;
-    
+  margin : 0 ;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 10px;
+
 }
 
-.navbar p:hover {
+.title a:hover {
   text-shadow: 0px 0px 3px #a0a19c;
 }
 
 .navbar_container {
-  min-width: 900px;
+  min-width: 100%;
+  
   margin: 0 auto;
-    
+  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+    
 }
-.navbar ul {
+
+.navbar_container ul {
+  max-height : 80px;
   list-style-type: none;
   padding: 0;
   overflow: hidden;
 }
 
-.navbar li {
+.navbar_container li {
   float: left;
 }
 
-.navbar li a {
+.navbar_container li a {
   text-decoration: none;
   display: block;
   text-align: center;
@@ -104,22 +154,36 @@ a {
   letter-spacing: 10px;
 }
 
-.navbar li a:hover {
-  color: #71513c;
+.navbar_container li a:hover {
+  color: #cadfdc;
 }
 
 .separator{
-    border : 2px solid #D4927D;
-    width : 1360px;
-    margin : 0 auto; 
+    border : 3px solid #d4927d;
+    width : 100%;
+    margin : 0;
+    position : absolute;
+    top : 410px;
+}
+
+
+ 
+
+.lower-section{
+    position : relative;
+    top : 40px;
+    width : 100%;
+    height : 300px;
+    background-color : #71513c;
 }
 
 /*이미지 리스트*/
 
 .container {
   position : relative;
-  min-width: 1300px;
-  margin : 40px;
+  width: 100%;
+  margin : 20px;
+  top : 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -163,13 +227,14 @@ a {
 /*정렬 기능*/
 .sort{
     position : relative;
+    left : 1250px;
     display : inline-block;
 }
 
 .sort_mark{
     position : absolute;
     top : -10px;
-    left : 1230px;
+
     color: #CADFDC;
     background : none;
     border : none;
@@ -180,7 +245,7 @@ a {
 .sort_button{
     position:absolute;
     top : 10px;
-    left : 1230px;
+
     color: #CADFDC;
     background : none;
     border : none;
@@ -228,6 +293,9 @@ a {
   left: 0;
   width: 100%;
   text-align: center;
+  position : relative;
+  top : 20px;
+  margin : 20px;
 }
 
 .pagination ul {
@@ -592,6 +660,7 @@ home-center {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   overflow: hidden;
+  position : relative;
 }
 
 
@@ -686,7 +755,7 @@ home-center {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin : 80px;
 }
 
 .five_title_img {
@@ -726,6 +795,7 @@ home-center {
   margin-bottom: 40px;
   border: 2px solid #71513c;
   border-radius: 10px;
+  margin : 80px;
 }
 
 
@@ -1336,23 +1406,27 @@ home-center {
 
 .nine_container {
   position: relative;
-  top : 50px;
+  width : 100%;
+  height : 40vh;
 }
 
-.nine_container p{
-   margin-left : 40px;
-   margin-bottom : 60px;
+.nine_title{
+    position : relative;
+    left : 80px;
+    top : 100px;
 }
 
-.nine_container a {
+.nine_title a{
+  
   font-size: 60px;
   color: #71513c;
   letter-spacing: 3px;
+  margin : 0;
 }
 
 .nine_write_button {
-  position : absolute;
-  top : 0px;
+  position : relative;
+  top : 22px;
   left : 1100px;
   background-color: #cadfdc;
   font-weight: bold;
@@ -1365,8 +1439,10 @@ home-center {
 }
 
 .nine_navbar{
-   margin : 0 auto;
+   margin-top : 40px;
+   margin-bottom : 0px;
    overflow :hidden;
+   width : 100%;
 }
 
 .nine_navbar ul {
@@ -1382,6 +1458,7 @@ home-center {
     margin-left : 10px;
     margin-right : 10px;
 }
+
 .nine_navbar li a {
   text-decoration: none;
   display: flex;
@@ -1390,13 +1467,11 @@ home-center {
   overflow : hidden;
     
   width : 500px;
-  height : 60px;
+  height : 80px;
   color : #71513c;
   text-align: center;
   letter-spacing: 5px;
-  font-size: 30px;
-    
-
+  font-size: 30px;  
 }
 
 
@@ -1417,7 +1492,7 @@ home-center {
 
 .nine_container1 {
   position : relative;
-  min-width: 1300px;
+  width 100%;
   margin : 30px;
   display: flex;
   flex-wrap: wrap;
@@ -1426,7 +1501,7 @@ home-center {
 
 .nine_container2 {
   position : relative;
-  min-width: 1300px;
+  width : 100%;
   margin : 30px;
   flex-wrap: wrap;
   justify-content: center;
@@ -1438,8 +1513,8 @@ home-center {
   color: #d4927d;
   font-weight: bold;
   padding : 5px;
-  margin-top : -65px;
-  margin-left : 285px;
+  margin-top : -100px;
+  margin-left : 280px;
 }
 
 .sell-icon{
@@ -1615,6 +1690,7 @@ home-center {
   margin-top: -80px;
   margin-left: 220px;
 }
+
 
 
 /* list.html */

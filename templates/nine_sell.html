@@ -8,6 +8,7 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
+    <div class="nine_container">
     <div class="top_navbar">
       <ul>
         <li><a href="/">홈</a></li>
@@ -22,8 +23,7 @@
         {% endif %}
       </ul>
     </div>
-    <div class="nine_container">
-      <p><a href="nine_sell.html">판매 목록</a></p>
+      <p class = "nine_title"><a href="nine_sell.html">판매 목록</a></p>
       <button class="nine_write_button" onclick="location.href='/reg_items'">
         글쓰기
       </button>
@@ -36,8 +36,8 @@
           <li><a id="nine_soldbar" onclick="menu2()">판매 완료</a></li>
         </ul>
       </div>
+        <div style = "margin-top : -115px;" class="separator"></div>
     </div>
-    <div class="separator"></div>
 
     <!-- 정렬 기능 -->
     <div class="sort">

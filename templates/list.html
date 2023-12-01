@@ -33,7 +33,8 @@
             {% for key, value in row1 %}
                 <td class="card">
                     <div onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;">
-                        <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img"> <!-- 이미지 -->
+                        <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img">
+                        <div class  ="nine_heart" onclick = 'like(this)'>♡</div><!-- 이미지 -->
                         <div class="text">
                             <p class="item_name">{{key}}</p> <!-- 상품 이름 -->
                             <p class="item_price">{{value.price}}원</p> <!-- 상품 가격 -->
@@ -47,6 +48,7 @@
                 <td class="card">
                     <div onclick="location.href='/view_detail/{{key}}/';" style="cursor:pointer;">
                         <img src="../static/images/{{value.img_path}}" alt="{{key}}" class="card_img"> <!-- 이미지 -->
+                         <div class  ="nine_heart" onclick = 'like(this)'>♡</div>
                         <div class="text">
                             <p class="item_name">{{key}}</p> <!-- 상품 이름 -->
                             <p class="item_price">{{value.price}}원</p> <!-- 상품 가격 -->
