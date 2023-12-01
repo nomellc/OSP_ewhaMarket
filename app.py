@@ -251,8 +251,10 @@ def unfollow(name):
 @application.route("/view_following/<name>/")
 def view_following(name):
     data = DB.get_follow(name)
+    follower = DB.get_followercount_byname("")
     print(data)
-    return render_template("nine_following.html", data=data)
+    print(follower)
+    return render_template("nine_following.html", data=data, follower=follower)
 
 @application.route("/yourpage/<name>/")
 def view_yourpage(name):
