@@ -34,7 +34,6 @@ a {
 /*top.html*/
 
 .full-container{
-    position : relative;
     width : 100%;
     position : absolute;
     top: 0;
@@ -42,21 +41,20 @@ a {
 }
 
 .top_navbar {
-  width: 100%;
+  width : 100%;
   max-height: 50px;
   margin : 0 auto;
-  background-color: #f5ebe0;
   
 }
 
 .top_navbar ul {
-  overflow: hidden;
   padding : 10px;
   list-style: none;
+  min-width : 300px;
+  
   position : absolute;
   left : 1050px;
-  top : 18px;
-  min-width : 300px;
+  top : 10px;
 }
 
 .top_navbar li {
@@ -83,7 +81,7 @@ a {
     max-height: 420px;
     width : 100%;
     padding : 30px;
-    padding-top : 100px;
+    padding-top : 80px;
 
     margin : 0px;
     background-color : #71513c;
@@ -93,6 +91,7 @@ a {
 }
 
 .christ-icon{
+    margin-top : 25px;
     width : 100%;
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +166,7 @@ a {
     width : 100%;
     margin : 0;
     position : absolute;
-    top : 410px;
+    top : 420px;
 }
 
 .lower-section{
@@ -176,7 +175,7 @@ a {
     width : 100%;
     height : 300px;
     background-color : #71513c;
-
+}
 
 .invisible_list {
   display: inline-block;
@@ -189,7 +188,7 @@ a {
 .container {
   position : relative;
   width: 100%;
-  margin : 20px;
+  padding : 20px;
   top : 40px;
     
   display: flex;
@@ -203,6 +202,7 @@ a {
   margin-right: 40px;
   margin-left: 40px;
   float: left;
+  flex : 1;
 }
 
 .card a {
@@ -217,7 +217,7 @@ a {
 
 .text {
   text-align: left;
-  margin: 10px;
+  margin: 20px;
 }
 
 .item_name {
@@ -237,27 +237,22 @@ a {
 .sort {
   position: relative;
   display: inline-block;
+  min-width : 100%;
+  margin-top : 30px;
+    
 }
 
-.sort_mark {
-  position: absolute;
-  top: -10px;
-  left: 1230px;
-  color: #cadfdc;
-  background: none;
-  border: none;
-  font-size: 20px;
-}
 
 .sort_button {
-  position: absolute;
-  top: 10px;
-  left: 1230px;
+  position: relative;
+  top: 20px;
+  left : 1230px;
   color: #cadfdc;
   background: none;
   border: none;
   font-size: 20px;
   min-width: 100px;
+
 }
 
 .sort_content {
@@ -786,11 +781,13 @@ home-center {
   background-color: #fffef6;
 }
 
+
 .five_img_box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .five_img_box img {
   padding: 5px;
   width: 230px;
@@ -1421,7 +1418,6 @@ home-center {
 }
 
 .nine_container {
-  position: relative;
   width : 100%;
   height : 40vh;
 }
@@ -1430,12 +1426,6 @@ home-center {
     position : relative;
     left : 80px;
     top : 100px;
-  top: 50px;
-}
-
-.nine_container p {
-  margin-left: 40px;
-  margin-bottom: 60px;
 }
 
 .nine_title a{
@@ -1449,7 +1439,6 @@ home-center {
 .nine_write_button {
 
   position : relative;
-  top : 22px;
   left : 1100px;
     
   background-color: #cadfdc;
@@ -1464,8 +1453,10 @@ home-center {
 
 
 .nine_navbar {
-  margin: 0 auto;
-  overflow: hidden;
+  margin-top : 40px;
+   margin-bottom : 0px;
+   overflow :hidden;
+   width : 100%;
 
 }
 
@@ -1492,7 +1483,7 @@ home-center {
   overflow: hidden;
 
   width: 500px;
-  height: 60px;
+  height: 80px;
   color: #71513c;
   text-align: center;
   letter-spacing: 5px;
@@ -1539,9 +1530,9 @@ home-center {
   color: #d4927d;
   font-weight: bold;
 
-  padding: 5px;
-  margin-top: -65px;
-  margin-left: 285px;
+  padding : 5px;
+  margin-top : -105px;
+  margin-left : 280px;
 }
 
 .sell-icon {
