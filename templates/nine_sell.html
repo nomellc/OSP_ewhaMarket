@@ -8,6 +8,7 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
+    <div class="nine_container">
     <div class="top_navbar">
       <ul>
         <li><a href="/">홈</a></li>
@@ -22,8 +23,12 @@
         {% endif %}
       </ul>
     </div>
+<<<<<<< HEAD
+      <p class = "nine_title"><a href="nine_sell.html">판매 목록</a></p>
+=======
     <div class="nine_container">
       <p><a href="/mysell//{{session['id']}}">판매 목록</a></p>
+>>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
       <button class="nine_write_button" onclick="location.href='/reg_items'">
         글쓰기
       </button>
@@ -38,8 +43,8 @@
           </li>
         </ul>
       </div>
+        <div style = "margin-top : -115px;" class="separator"></div>
     </div>
-    <div class="separator"></div>
 
     <!-- 정렬 기능 -->
     <div class="sort">
