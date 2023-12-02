@@ -10,14 +10,14 @@
           <img src="../../static/images/mypage.jpeg" />
         </p>
         <div class="nine-user-name">{{session['id']}}</div>
-        <div class="nine-follower1">
+        <div class="nine-follower1" style="cursor:default;">
         {% if follower is none %}
             follower 00
         {% else %}
             follower {{follower}}
         {% endif %}  
         </div>
-        <div class="nine-following1" onclick="location.href='/view_following/{{session['id']}}/';">
+        <div class="nine-following1" onclick="location.href='/view_following/{{session['id']}}/';" style="cursor:pointer;">
           {% if data is none %}
             following 00
           {% else %}
