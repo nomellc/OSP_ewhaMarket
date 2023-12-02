@@ -34,36 +34,27 @@ a {
 /*top.html*/
 
 .full-container{
-    position : relative;
     width : 100%;
     position : absolute;
     top: 0;
     left : 0;
 }
+
 .top_navbar {
-<<<<<<< HEAD
-  width: 100%;
+  width : 100%;
   max-height: 50px;
   margin : 0 auto;
-  background-color: #f5ebe0;
   
-=======
-  min-width: 200px;
-  max-height: 25px;
-  margin: 0 auto;
-  position: absolute;
-  left: 1090px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
 }
 
 .top_navbar ul {
-  overflow: hidden;
   padding : 10px;
   list-style: none;
+  min-width : 300px;
+  
   position : absolute;
   left : 1050px;
-  top : 18px;
-  min-width : 300px;
+  top : 10px;
 }
 
 .top_navbar li {
@@ -79,7 +70,6 @@ a {
   font-weight : bold;
 }
 
-<<<<<<< HEAD
 .top_navbar b{
     color : #f5ebe0;
 }
@@ -91,9 +81,8 @@ a {
     max-height: 420px;
     width : 100%;
     padding : 30px;
-    padding-top : 100px;
-    padding-left : -40px;
-    padding-right : -40px;
+    padding-top : 80px;
+
     margin : 0px;
     background-color : #71513c;
     position : relative;
@@ -102,6 +91,7 @@ a {
 }
 
 .christ-icon{
+    margin-top : 25px;
     width : 100%;
     display: flex;
     flex-wrap: wrap;
@@ -116,18 +106,15 @@ a {
 
 .title a {
   min-width: 100%;
-=======
-.navbar p {
+}
+
+.title a {
   min-width: 900px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
   font-size: 60px;
   color: #f5ebe0;
   letter-spacing: 10px;
-<<<<<<< HEAD
   margin : 0 ;
-=======
-
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+    
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -142,11 +129,6 @@ a {
   min-width: 100%;
   
   margin: 0 auto;
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -179,17 +161,13 @@ a {
   color: #cadfdc;
 }
 
-<<<<<<< HEAD
 .separator{
     border : 3px solid #d4927d;
     width : 100%;
     margin : 0;
     position : absolute;
-    top : 410px;
+    top : 420px;
 }
-
-
- 
 
 .lower-section{
     position : relative;
@@ -197,33 +175,22 @@ a {
     width : 100%;
     height : 300px;
     background-color : #71513c;
-=======
-.separator {
-  border: 2px solid #d4927d;
-  width: 1360px;
-  margin: 0 auto;
 }
 
 .invisible_list {
   display: inline-block;
   padding: 8px;
   visibility: hidden;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
 }
 
 /*이미지 리스트*/
 
 .container {
-<<<<<<< HEAD
   position : relative;
   width: 100%;
-  margin : 20px;
+  padding : 20px;
   top : 40px;
-=======
-  position: relative;
-  min-width: 1300px;
-  margin: 40px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+    
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -235,9 +202,10 @@ a {
   margin-right: 40px;
   margin-left: 40px;
   float: left;
+  flex : 1;
 }
 
-.container a {
+.card a {
   text-decoration: none;
 }
 
@@ -249,7 +217,7 @@ a {
 
 .text {
   text-align: left;
-  margin: 10px;
+  margin: 20px;
 }
 
 .item_name {
@@ -265,80 +233,26 @@ a {
 }
 
 /*정렬 기능*/
-<<<<<<< HEAD
-.sort{
-    position : relative;
-    left : 1250px;
-    display : inline-block;
-}
 
-.sort_mark{
-    position : absolute;
-    top : -10px;
-
-    color: #CADFDC;
-    background : none;
-    border : none;
-    font-size : 20px;
-    margin-top : 20px;
-}
-
-.sort_button{
-    position:absolute;
-    top : 10px;
-
-    color: #CADFDC;
-    background : none;
-    border : none;
-    font-size : 20px;
-    min-width : 100px;
-}
-
-.sort_content{
-    position: absolute;
-    top: 40px;
-    left : 1230px;
-    display: none;
-    background-color: #f1f1f1;
-    min-width: 130px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    
-}
-
-.sort_content a{
-    color: #CADFDC;
-    font-size : 18px;
-    letter-spacing : 2px;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-=======
 .sort {
   position: relative;
   display: inline-block;
+  min-width : 100%;
+  margin-top : 30px;
+    
 }
 
-.sort_mark {
-  position: absolute;
-  top: -10px;
-  left: 1230px;
-  color: #cadfdc;
-  background: none;
-  border: none;
-  font-size: 20px;
-  margin-top: 20px;
-}
 
 .sort_button {
-  position: absolute;
-  top: 10px;
-  left: 1230px;
+  position: relative;
+  top: 20px;
+  left : 1230px;
   color: #cadfdc;
   background: none;
   border: none;
   font-size: 20px;
   min-width: 100px;
+
 }
 
 .sort_content {
@@ -359,8 +273,7 @@ a {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
-}
+    }
 
 .sort_content a:hover {
   background-color: #71513c;
@@ -868,11 +781,13 @@ home-center {
   background-color: #fffef6;
 }
 
+
 .five_img_box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .five_img_box img {
   padding: 5px;
   width: 230px;
@@ -1503,8 +1418,6 @@ home-center {
 }
 
 .nine_container {
-  position: relative;
-<<<<<<< HEAD
   width : 100%;
   height : 40vh;
 }
@@ -1513,14 +1426,6 @@ home-center {
     position : relative;
     left : 80px;
     top : 100px;
-=======
-  top: 50px;
-}
-
-.nine_container p {
-  margin-left: 40px;
-  margin-bottom: 60px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
 }
 
 .nine_title a{
@@ -1532,15 +1437,10 @@ home-center {
 }
 
 .nine_write_button {
-<<<<<<< HEAD
+
   position : relative;
-  top : 22px;
   left : 1100px;
-=======
-  position: absolute;
-  top: 0px;
-  left: 1100px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+    
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 28px;
@@ -1551,17 +1451,13 @@ home-center {
   width: 150px;
 }
 
-<<<<<<< HEAD
-.nine_navbar{
-   margin-top : 40px;
+
+.nine_navbar {
+  margin-top : 40px;
    margin-bottom : 0px;
    overflow :hidden;
    width : 100%;
-=======
-.nine_navbar {
-  margin: 0 auto;
-  overflow: hidden;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+
 }
 
 .nine_navbar ul {
@@ -1583,25 +1479,15 @@ home-center {
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  overflow : hidden;
-    
-  width : 500px;
-  height : 80px;
-  color : #71513c;
-  text-align: center;
-  letter-spacing: 5px;
-  font-size: 30px;  
-=======
+
   overflow: hidden;
 
   width: 500px;
-  height: 60px;
+  height: 80px;
   color: #71513c;
   text-align: center;
   letter-spacing: 5px;
   font-size: 30px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
 }
 
 .nine_navbar a:hover {
@@ -1620,30 +1506,20 @@ home-center {
 }
 
 .nine_container1 {
-<<<<<<< HEAD
   position : relative;
   width 100%;
   margin : 30px;
-=======
-  position: relative;
-  min-width: 1300px;
-  margin: 30px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .nine_container2 {
-<<<<<<< HEAD
   position : relative;
   width : 100%;
   margin : 30px;
-=======
-  position: relative;
-  min-width: 1300px;
-  margin: 30px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+
   flex-wrap: wrap;
   justify-content: center;
   display: none;
@@ -1653,15 +1529,10 @@ home-center {
   font-size: 50px;
   color: #d4927d;
   font-weight: bold;
-<<<<<<< HEAD
+
   padding : 5px;
-  margin-top : -100px;
+  margin-top : -105px;
   margin-left : 280px;
-=======
-  padding: 5px;
-  margin-top: -65px;
-  margin-left: 285px;
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
 }
 
 .sell-icon {
@@ -1669,6 +1540,7 @@ home-center {
   left: 250px;
   top: -354px;
 }
+    
 .sell-triangle {
   width: 0;
   height: 0;
@@ -1838,11 +1710,6 @@ home-center {
   margin-left: 220px;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
 /* list.html */
 .page-nation li {
   list-style: none;

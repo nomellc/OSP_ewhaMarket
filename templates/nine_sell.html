@@ -23,12 +23,8 @@
         {% endif %}
       </ul>
     </div>
-<<<<<<< HEAD
-      <p class = "nine_title"><a href="nine_sell.html">판매 목록</a></p>
-=======
     <div class="nine_container">
-      <p><a href="/mysell//{{session['id']}}">판매 목록</a></p>
->>>>>>> c714fee1cab742171bceae5593631fd7d10f7d60
+      <p class = "nine_title"><a href="/mysell//{{session['id']}}">판매 목록</a></p>
       <button class="nine_write_button" onclick="location.href='/reg_items'">
         글쓰기
       </button>
@@ -43,13 +39,12 @@
           </li>
         </ul>
       </div>
-        <div style = "margin-top : -115px;" class="separator"></div>
+        <div style = "margin-top : -70px;" class="separator"></div>
     </div>
 
     <!-- 정렬 기능 -->
     <div class="sort">
-      <div class="sort_mark">▼</div>
-      <button class="sort_button" onclick="toggleDiv()">최신순</button>
+      <button class="sort_button" onclick="toggleDiv()">▼ 최신순</button>
       <div class="sort_content" id="sortContents">
         <a href="#">최신순</a>
         <a href="#">오래된순</a>
