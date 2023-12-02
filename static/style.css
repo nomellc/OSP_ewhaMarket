@@ -191,7 +191,7 @@ a {
   width: 100%;
   margin : 20px;
   top : 40px;
-  
+    
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -247,7 +247,6 @@ a {
   background: none;
   border: none;
   font-size: 20px;
-  margin-top: 20px;
 }
 
 .sort_button {
