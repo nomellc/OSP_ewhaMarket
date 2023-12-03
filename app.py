@@ -112,7 +112,8 @@ def view_review():
     data = DB.get_reviews() #read the table
     sorted_reviews = sorted(data.items(), key=lambda x: x[1].get('thumb_count', 0), reverse=True)
     item_counts = len(data)
-    data = dict(list(data.items())[start_idx:end_idx])
+    data = sorted(data.items(), key=lambda x: x[1].get('timestamp', 0), reverse=True)
+    data = dict(data[start_idx:end_idx])
     tot_count = len(data)
     top_images = list(sorted_reviews)[:5]
     for i in range(row_count):#last row
