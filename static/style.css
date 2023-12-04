@@ -173,7 +173,7 @@ a {
     position : relative;
     top : 40px;
     width : 100%;
-    height : 300px;
+    height : 200px;
     background-color : #71513c;
 }
 
@@ -1507,7 +1507,7 @@ home-center {
 
 .nine_container1 {
   position : relative;
-  width 100%;
+  width : 100%;
   margin : 30px;
 
   display: flex;
