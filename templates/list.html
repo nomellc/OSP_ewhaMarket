@@ -2,7 +2,7 @@
 
 {% block section %}
 <div class="sort">
-    <button class="sort_button" onclick="toggleDiv()">▼ 정렬</button>
+    <button class="sort_button" onclick="toggleDiv()">▼ All</button>
     <div class="sort_content" id="sortContents" style="display: none;">
         <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
         <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
