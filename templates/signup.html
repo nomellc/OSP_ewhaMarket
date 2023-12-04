@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <title>회원가입</title>
     <link rel="stylesheet" type="text/css" href="../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
-</head>
+  </head>
+  <body>
 
-<body>
-
+    <!-- -->
     {% block section %}
     {% with mesg = get_flashed_messages() %}
     {% if mesg != [] %}
@@ -18,50 +17,82 @@
     {% endif %}
     {% endwith %}
     <div id="eight_register_box">
-        <h1 id="seven_h1" class="seven-home"><a href="/">이화마켓</a></h1>
-        <form method="post" action="/signup_post">
-            <div>
-                <div>
-                    <input type="text" name="id" class="eight_placeholder" id="eight_userid" placeholder="아이디"
-                        required /><br>
-                    <button type="button" id="eight_id_check">아이디 중복 체크</button><br>
-                </div>
 
-                <label class="eight_check_word">*영문 8 - 21자, 숫자 포함</label>
-                <div>
-                    <input type="password" name="pw" class="eight_placeholder" id="eight_userpwd" placeholder="비밀번호"
-                        required />
-                </div><br />
+      <h1 class="home-center"><a href="/">이화마켓</a></h1>
 
-                <div>
-                    <input type="password" name="userpwd" class="eight_placeholder" id="eight_userpwd_check"
-                        placeholder="비밀번호 확인" required /><br>
-                    <button type="button" id="eight_pwd_check">비밀번호 체크</button>
-                </div><br><br>
+      <form
+      method="post" action="/signup_post"
+      >
 
-                <div>
-                    <input type="text" name="nickname" class="eight_placeholder" id="eight_nickname" placeholder="닉네임"
-                        required />
-                </div><br>
+      <div>
+        <div>
+          <input
+          type="text"
+          name="id"
+          class="eight_placeholder"
+          id="eight_userid"
+          placeholder="아이디"
+          required/><br>
+          <button type="button" id="eight_id_check" onclick="checkId()">아이디 체크</button><br>
+        </div> 
+        <div>
+          <input
+          type="password"
+          name="pw"
+          class="eight_placeholder"
+          id="eight_userpwd"
+          placeholder="비밀번호"
+          required/>
+        </div><br /> 
 
-                <div>
-                    <input type="email" name="email" class="eight_placeholder" id="eight_email" maxlength="30"
-                        placeholder="이메일" required />
-                </div><br>
+        <div>
+          <input
+          type="password"
+          name="pw"
+          class="eight_placeholder"
+          id="eight_userpwd_check"
+          placeholder="비밀번호 확인"
+          required/><br>
+          <button type="button" id="eight_pwd_check" onclick="checkPassword()">비밀번호 체크</button> 
+        </div><br><br>
+        
+      <div>
+        <input
+          type="text"
+          name="nickname"
+          class="eight_placeholder"
+          id="eight_nickname"
+          placeholder="닉네임"
+          required/>
+        </div><br>
+      
+        <div>
+          <input
+          type="email"
+          name="email"
+          class="eight_placeholder"
+          id="eight_email"
+          maxlength="30"
+          placeholder="이메일"
+          required
+          />
+        </div><br>
+      
+      <div>
+        <input
+        type="text"
+        name="phonenum"
+        class="eight_placeholder"
+        id="eight_phonenum"
+        placeholder="[선택]휴대전화번호"
+        />
+      </div><br />
+    </div>
 
-                <div>
-                    <input type="text" name="phonenum" class="eight_placeholder" id="eight_phonenum"
-                        placeholder="[선택]휴대전화번호" />
-                </div><br>
-            </div>
-
-            <div>
-                <button type="submit" id="eight_register">회원가입</button>
-            </div>
-        </form>
-
-        {% endblock section %}
-
-</body>
-
+    <div>
+      <button type="button" id="eight_register" onclick="submitForm()">회원가입</button>
+    </div>
+  </form>
+  {% endblock section %}
+  </body>
 </html>
