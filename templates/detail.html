@@ -29,12 +29,21 @@
         </div>
 
         <div class="three-item-sum">
+        {% if data.seller == session['id'] %}
+          <p
+            class="three-seller-name"
+            onclick="location.href='/mypage/{{session['id']}}/';"
+          >
+          판매자 : {{data.seller}}
+          </p>
+        {% else %}
           <p
             class="three-seller-name"
             onclick="location.href='/yourpage/{{data.seller}}/';"
           >
             판매자 : {{data.seller}}
           </p>
+        {% endif %}
           <p class="three-product-name">상품명 : {{name}}</p>
           <p class="three-price">가격 : {{data.price}}</p>
           <p class="three-category">카테고리 : {{data.category}}</p>
