@@ -3,20 +3,22 @@
 * {
   box-sizing: border-box;
   color: #71513c;
-  font-family: "SeoulHangang";
+  font-family: "NotoSansKR";
 }
 
 @font-face {
-  font-family: "SeoulHangang";
-  src: url("SeoulHangang_CEB_Regular.ttf") format("truetype");
+  font-family: "NotoSansKR";
+  src: url("NotoSansKR-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
 }
 
 body {
   margin: 0;
-  padding: 40px;
+  width : 100%;
+  padding : 40px;
   color: #71513c;
   background-color: #f5ebe0;
+  box-sizing: border-box;
 }
 
 hr {
@@ -31,19 +33,28 @@ a {
 
 /*top.html*/
 
+.full-container{
+    width : 100%;
+    position : absolute;
+    top: 0;
+    left : 0;
+}
+
 .top_navbar {
-  min-width: 200px;
-  max-height: 25px;
-  margin: 0 auto;
-  position: absolute;
-  left: 1090px;
+  width : 100%;
+  max-height: 50px;
+  margin : 0 auto;
+  
 }
 
 .top_navbar ul {
-  overflow: hidden;
-  background-color: #f5ebe0;
-  max-height: 25px;
+  padding : 10px;
   list-style: none;
+  min-width : 300px;
+  
+  position : absolute;
+  left : 1050px;
+  top : 10px;
 }
 
 .top_navbar li {
@@ -53,46 +64,89 @@ a {
 .top_navbar a {
   display: inline-block;
   color: #cadfdc;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   padding: 8px;
+  font-weight : bold;
 }
 
-.navbar p {
+.top_navbar b{
+    color : #f5ebe0;
+}
+
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 420px;
+    width : 100%;
+    padding : 30px;
+    padding-top : 80px;
+
+    margin : 0px;
+    background-color : #71513c;
+    position : relative;
+    top : 0;
+
+}
+
+.christ-icon{
+    margin-top : 25px;
+    width : 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar img{
+    width : 90px;
+    height : 90px;
+    margin : 0 ;
+}
+
+.title a {
+  min-width: 100%;
+}
+
+.title a {
   min-width: 900px;
   font-size: 60px;
-  color: #71513c;
+  color: #f5ebe0;
   letter-spacing: 10px;
-
+  margin : 0 ;
+    
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 10px;
+
 }
 
-.navbar p:hover {
+.title a:hover {
   text-shadow: 0px 0px 3px #a0a19c;
 }
 
 .navbar_container {
-  min-width: 900px;
+  min-width: 100%;
+  
   margin: 0 auto;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+    
 }
-.navbar ul {
+
+.navbar_container ul {
+  max-height : 80px;
   list-style-type: none;
   padding: 0;
   overflow: hidden;
 }
 
-.navbar li {
+.navbar_container li {
   float: left;
 }
 
-.navbar li a {
+.navbar_container li a {
   text-decoration: none;
   display: block;
   text-align: center;
@@ -103,14 +157,24 @@ a {
   letter-spacing: 10px;
 }
 
-.navbar li a:hover {
-  color: #71513c;
+.navbar_container li a:hover {
+  color: #cadfdc;
 }
 
-.separator {
-  border: 2px solid #d4927d;
-  width: 1360px;
-  margin: 0 auto;
+.separator{
+    border : 3px solid #d4927d;
+    width : 100%;
+    margin : 0;
+    position : absolute;
+    top : 420px;
+}
+
+.lower-section{
+    position : relative;
+    top : 40px;
+    width : 100%;
+    height : 300px;
+    background-color : #71513c;
 }
 
 .invisible_list {
@@ -122,9 +186,11 @@ a {
 /*이미지 리스트*/
 
 .container {
-  position: relative;
-  min-width: 1300px;
-  margin: 40px;
+  position : relative;
+  width: 100%;
+  padding : 20px;
+  top : 40px;
+    
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -136,9 +202,10 @@ a {
   margin-right: 40px;
   margin-left: 40px;
   float: left;
+  flex : 1;
 }
 
-.container a {
+.card a {
   text-decoration: none;
 }
 
@@ -150,7 +217,7 @@ a {
 
 .text {
   text-align: left;
-  margin: 10px;
+  margin: 20px;
 }
 
 .item_name {
@@ -166,31 +233,26 @@ a {
 }
 
 /*정렬 기능*/
+
 .sort {
   position: relative;
   display: inline-block;
+  min-width : 100%;
+  margin-top : 30px;
+    
 }
 
-.sort_mark {
-  position: absolute;
-  top: -10px;
-  left: 1230px;
-  color: #cadfdc;
-  background: none;
-  border: none;
-  font-size: 20px;
-  margin-top: 20px;
-}
 
 .sort_button {
-  position: absolute;
-  top: 10px;
-  left: 1230px;
+  position: relative;
+  top: 20px;
+  left : 1230px;
   color: #cadfdc;
   background: none;
   border: none;
   font-size: 20px;
   min-width: 100px;
+
 }
 
 .sort_content {
@@ -211,7 +273,7 @@ a {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-}
+    }
 
 .sort_content a:hover {
   background-color: #71513c;
@@ -232,6 +294,9 @@ a {
   left: 0;
   width: 100%;
   text-align: center;
+  position : relative;
+  top : 20px;
+  margin : 20px;
 }
 
 .pagination ul {
@@ -607,6 +672,7 @@ home-center {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   overflow: hidden;
+  position : relative;
 }
 
 .four-input-group {
@@ -700,7 +766,7 @@ home-center {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin : 80px;
 }
 
 .five_title_img {
@@ -715,11 +781,13 @@ home-center {
   background-color: #fffef6;
 }
 
+
 .five_img_box {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .five_img_box img {
   padding: 5px;
   width: 230px;
@@ -751,6 +819,7 @@ home-center {
   margin-bottom: 40px;
   border: 2px solid #71513c;
   border-radius: 10px;
+  margin : 80px;
 }
 
 /* .satisfaction 스타일 변경 */
@@ -1349,25 +1418,29 @@ home-center {
 }
 
 .nine_container {
-  position: relative;
-  top: 50px;
+  width : 100%;
+  height : 40vh;
 }
 
-.nine_container p {
-  margin-left: 40px;
-  margin-bottom: 60px;
+.nine_title{
+    position : relative;
+    left : 80px;
+    top : 100px;
 }
 
-.nine_container a {
+.nine_title a{
+  
   font-size: 60px;
   color: #71513c;
   letter-spacing: 3px;
+  margin : 0;
 }
 
 .nine_write_button {
-  position: absolute;
-  top: 0px;
-  left: 1100px;
+
+  position : relative;
+  left : 1100px;
+    
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 28px;
@@ -1378,9 +1451,13 @@ home-center {
   width: 150px;
 }
 
+
 .nine_navbar {
-  margin: 0 auto;
-  overflow: hidden;
+  margin-top : 40px;
+   margin-bottom : 0px;
+   overflow :hidden;
+   width : 100%;
+
 }
 
 .nine_navbar ul {
@@ -1396,15 +1473,17 @@ home-center {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .nine_navbar li a {
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
 
   width: 500px;
-  height: 60px;
+  height: 80px;
   color: #71513c;
   text-align: center;
   letter-spacing: 5px;
@@ -1427,18 +1506,20 @@ home-center {
 }
 
 .nine_container1 {
-  position: relative;
-  min-width: 1300px;
-  margin: 30px;
+  position : relative;
+  width 100%;
+  margin : 30px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .nine_container2 {
-  position: relative;
-  min-width: 1300px;
-  margin: 30px;
+  position : relative;
+  width : 100%;
+  margin : 30px;
+
   flex-wrap: wrap;
   justify-content: center;
   display: none;
@@ -1448,9 +1529,10 @@ home-center {
   font-size: 50px;
   color: #d4927d;
   font-weight: bold;
-  padding: 5px;
-  margin-top: -65px;
-  margin-left: 285px;
+
+  padding : 5px;
+  margin-top : -105px;
+  margin-left : 280px;
 }
 
 .sell-icon {
@@ -1458,6 +1540,7 @@ home-center {
   left: 250px;
   top: -354px;
 }
+    
 .sell-triangle {
   width: 0;
   height: 0;

@@ -195,7 +195,9 @@ class DBhandler:
     def update_follow(self, user_id, isFollow, name):
         follow_info = {"following": isFollow}
         self.db.child("follow").child(user_id).child(name).set(follow_info)
+        self.db.child("follower").child(name).child(user_id).set(follow_info)
         follow = self.db.child("follow").child(user_id).get().val()
+        follower = self.db.child("follower").child(name).get().val()
         if follow is None:
             return 0
         count = 0
@@ -207,8 +209,27 @@ class DBhandler:
         if current_follow_data is not None:
             current_follow_data["following_count"] = count
             self.db.child("following_count").child(user_id).set(count)
-    
+        
+        if follower is None:
+            return 0
+        follower_count = 0
+        for follower_status in follower.values():
+            if isinstance(follower_status, dict) and follower_status.get("following", "") == 'Y':
+                follower_count += 1
+        print("follower Current count:", follower_count)
+        current_follower_data = self.db.child("follower").child(name).get().val()
+        if current_follower_data is not None:
+            current_follower_data["follower_count"] = follower_count
+            self.db.child("follower_count").child(name).set(follower_count)
         return True
+
+    def get_followingcount_byname(self, id):
+        data = self.db.child("following_count").child(id).get().val()
+        return data
+    
+    def get_followercount_byname(self, name):
+        data = self.db.child("follower_count").child(name).get().val()
+        return data
     
     def get_sellitems_by_id(self, id):
         items = self.db.child("item").get()

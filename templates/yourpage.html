@@ -1,6 +1,5 @@
 {%extends "top.html"%} {% block section %}
-<html>
-<<<<<<< Updated upstream
+
 <head>
     <title>EWHA MARKET</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
@@ -10,38 +9,26 @@
 
 <body>
     <div class="nine-container">
-        <div class="nine-market-name">
-            <h2><a href="/list">이화마켓</a></h2>
-            <div class="nine-separator"></div>
-        </div>
-        
         <div class="nine-user-profile">
-
             <p class="user-profile-img"><img src="../../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
             <div class="nine-user-name">{{name}}</div>
-            <div class="nine-following">following00</div>
-            <div class="nine-follower">follower00</div>
+            <div class="nine-following2">
+            {% if following is none %}
+                following 00
+            {% else %}
+                following {{following}}
+            {% endif %}
+            </div>
+            <div class="nine-follower2">
+            {% if data is none %}
+              follower 00
+            {% else %}
+              follower {{data}}
+            {% endif %}
+            </div>
             <button class="nine-bell-button"><img src="../../static/images/ring.png" alt="bell"></button>
             <button class="nine-follow-button" id="follow">follow</button>
-=======
-  <head>
-    <title>MYPAGE</title>
-  </head>
-  <body>
-<div class="nine-container">
-        
-        <div class="nine-user-profile">
 
-            <p class = "user-profile-img">
-            <img src="../static/images/yourpage.jpeg"/>
-            </p>
-            <div class="nine-user-name">USER</div>
-            <div class="nine-following2">following 00</div>
-            <div class="nine-follower2">follower 00</div>
-            <button class="nine-bell-button"><img src="../../static/images/ring.png" alt="bell"></button>
-            <button class="nine-follow-button">following</button>
-            
->>>>>>> Stashed changes
         </div>
         <script>
             function showFollow() {
@@ -94,7 +81,6 @@
             <div style="width: 1000px; margin-top : 20px;" class="nine-product-container">
                 <h2>판매 상품</h2>
                 <div class="nine-separator"></div> 
-<<<<<<< Updated upstream
                 <button class="nine-page-button"><img class="nine-button-mark" src="../../static/images/화살표.png" alt="arrow"></button>
 
 
@@ -106,7 +92,7 @@
                         <a target="_blank">
                             <div class="nine-product-card">
                                 <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-=======
+
 
                 <div class="nine-product-cards">
                     
@@ -116,7 +102,6 @@
                             <a target="_blank">
                             <div class="nine-your-product-card">
                                 <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
->>>>>>> Stashed changes
                                 <h5>
                                     name
                                 </h5>
@@ -125,45 +110,35 @@
                         </a>
 
                         <a target="_blank">
-<<<<<<< Updated upstream
                             <div class="nine-product-card">
                                 <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-=======
+
                             <div class="nine-your-product-card">
                                 <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
->>>>>>> Stashed changes
                                 <h5>
                                     name
                                 </h5>
                                 <p>0000-00-00</p>
                             </div>
                         </a>
-
-<<<<<<< Updated upstream
                         <a target="_blank">
                             <div class="nine-product-card">
                                 <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-=======
                          <a target="_blank">
                             <div class="nine-your-product-card">
                                 <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
->>>>>>> Stashed changes
                                 <h5>
                                     name
                                 </h5>
                                 <p>0000-00-00</p>
                             </div>
                         </a>
-
-<<<<<<< Updated upstream
                         <a target="_blank">
                             <div class="nine-product-card">
                                 <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-=======
                          <a target="_blank">
                             <div class="nine-your-product-card">
                                 <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
->>>>>>> Stashed changes
                                 <h5>
                                     name
                                 </h5>
@@ -174,7 +149,6 @@
 
                     </div>
 
-<<<<<<< Updated upstream
                     <a target="_blank">
                         <div class="nine-product-card">
                             <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
@@ -214,7 +188,6 @@
                             </h5>
                             <p>0000-00-00</p>
                         </div>
-=======
                     <!-- 페이지네이션시 바뀌는 것들-->
                     <div class = "nine-else-product-container">
                          <a target="_blank">
@@ -256,11 +229,9 @@
                                 </h5>
                                 <p>0000-00-00</p>
                             </div>
->>>>>>> Stashed changes
                     </a>
                     
 
-<<<<<<< Updated upstream
                     <a target="_blank">
                         <div class="nine-product-card">
                             <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
@@ -279,7 +250,6 @@
                             </h5>
                             <p>0000-00-00</p>
                         </div>
-=======
                      <a target="_blank">
                             <div class="nine-your-product-card">
                                 <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
@@ -298,7 +268,6 @@
                                 </h5>
                                 <p>0000-00-00</p>
                             </div>
->>>>>>> Stashed changes
                     </a>
                     
                      <a target="_blank">
@@ -334,8 +303,7 @@
                 <!-- 페이지 번호들을 원하는 만큼 추가하세요 -->
                 </ul>
             </div>
-            </div>
+        </div>
     <!-- 나머지 컨텐츠를 이어서 추가하세요 -->
   </body>
   {% endblock section %}
-</html>

@@ -2,15 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>EWHA MARKET</title>
+    <title>EWHA SANTA</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
+      <div class = "full-container">
+          
+    <nav class="navbar">
+        
     <div class="top_navbar">
       <ul>
         {% if session['id'] %}
-        <li><a href="/mypage/{{ session['id'] }}">마이페이지</a></li>
+        <li><a href="/mypage/{{ session['id'] }}/">마이페이지</a></li>
             <li>
                 <a href="/logout">로그아웃</a>
                 <b>{{ session['id'] }}님</b>
@@ -20,9 +24,11 @@
         {% endif %}
       </ul>
     </div>
-
-    <nav class="navbar">
-      <p><a href="/">이화마켓</a></p>
+    
+      <div class = "christ-icon">
+          <img src ="../../static/images/tree.webp">
+        </div>
+      <div class = "title"><a href="/">이화산타</a></div>
       <div class="navbar_container">
         <ul>
           <li><a href="/">전체 상품</a></li>
@@ -36,5 +42,9 @@
     <div class="separator"></div>
 
     {% block section %} {% endblock %}
+    <div class = "lower-section">
+    </div>
+
+      </div>
   </body>
 </html>
