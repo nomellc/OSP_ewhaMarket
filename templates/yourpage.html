@@ -1,14 +1,16 @@
 {%extends "top.html"%} {% block section %}
 
 <head>
-    <title>EWHA MARKET</title>
+    <title>EWHA SANTA</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
-    <div class="nine-container">
+    <div class = "box-container">
+        
+    <div class="nine-user-container">
         <div class="nine-user-profile">
             <p class="user-profile-img"><img src="../../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
             <div class="nine-user-name">{{name}}</div>
@@ -305,5 +307,6 @@
             </div>
         </div>
     <!-- 나머지 컨텐츠를 이어서 추가하세요 -->
+  </div>
   </body>
   {% endblock section %}
