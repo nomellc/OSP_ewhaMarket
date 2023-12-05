@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리뷰 페이지</title>
-    <link rel="stylesheet" type="text/css" href="../../static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 
-    <div class="sub_header">
-        <h2 class="four-home"><a class="home-a" href="/">이화마켓</a></h2>
-        <hr class="four-hr" />
-    </div>
+    <div class = "full-container">
+          
+        <nav class="navbar">
+            
+        <div class="top_navbar">
+          <ul>
+            {% if session['id'] %}
+            <li><a href="/mypage/{{ session['id'] }}/">마이페이지</a></li>
+                <li>
+                    <a href="/logout">로그아웃</a>
+                    <b>{{ session['id'] }}님</b>
+                </li>
+                {% else %}
+                <li><a href="/login">로그인</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+          <div class = "title"><a href="/">이화산타</a></div>
+          <div class="navbar_container">
+            <ul>
+              <li><a href="/">전체 상품</a></li>
+              <li><a href="/reg_items">상품 등록</a></li>
+              <li><a href="/review">전체 리뷰</a></li>
+              <li><a href="">리뷰 등록</a></li>
+            </ul>
+          </div>
+        </nav>
 
 
     <div class="six-container">
