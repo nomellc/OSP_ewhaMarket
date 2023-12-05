@@ -235,7 +235,6 @@ class DBhandler:
             for res in items.each():
                 # 각 물건(케이크, 쿠키, 마들렌 등)의 데이터에 접근
                 item_data = res.val()
-
                 # 만약 해당 물건에 id 키가 있다면
                 if "seller" in item_data and item_data["seller"] == id:
                     matching_items.append(item_data)

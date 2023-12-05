@@ -269,8 +269,11 @@ def view_following(name):
 def view_yourpage(name):
     data = DB.get_followercount_byname(name)
     following = DB.get_followingcount_byname(name)
+    data1=DB.get_sellitems_by_id(str(name)) #read the table
+    tot_count1=len(data1)
     print(data)
-    return render_template("yourpage.html", name=name, data=data, following=following)
+    print(tot_count1)
+    return render_template("yourpage.html", name=name, data=data, following=following, datas=data1, total1=tot_count1)
 
 @application.route("/mypage/<id>/")
 def my_page(id):
