@@ -99,7 +99,7 @@ def view_item_detail(name):
 @application.route("/view_review_detail/<name>/")
 def view_review_detail(name):
     data = DB.get_review_byname(name)
-    return render_template("six_review_detail.html", name=name, data=data)
+    return render_template("review_detail.html", name=name, data=data)
 
 @application.route("/review")
 def view_review():
@@ -123,7 +123,7 @@ def view_review():
             locals()['data_{}'.format(i)] = dict(list(data.items())[i*per_row:(i+1)*per_row])
     
     return render_template(
-     "five_review_1109.html",
+     "review.html",
      datas=data.items(),
      top_images=top_images,
      row1=locals()['data_0'].items(),
@@ -142,7 +142,7 @@ def reg_item():
     if 'id' not in session:
         flash("로그인이 필요한 페이지입니다.")
         return redirect(url_for('login'))
-    return render_template("one_item_regi.html")
+    return render_template("reg_items.html")
 
 @application.route("/contact")
 def view_contact():
@@ -180,15 +180,10 @@ def register_user():
     else:
         flash("아이디/비밀번호 체크를 해주세요.")
         return render_template("eight_register.html")
-    
-#@application.route('dynamicurl/<varible_name>/')
-#def DynamicUrl(varible_name):
-#    return str(varible_name)
 
 @application.route("/reg_review_init/<name>/<item_title>")
 def reg_review_init(name, item_title):
-    print("제목: ", item_title)
-    return render_template("four_review.html", name=name, item_title=item_title)
+    return render_template("reg_reviews.html", name=name, item_title=item_title)
 
 @application.route("/reg_review", methods=['POST'])
 def reg_review():
@@ -196,12 +191,8 @@ def reg_review():
     current_time_utc = datetime.utcnow()
     # 한국 시간대로 변환
     current_time_korea = current_time_utc + timedelta(hours=9)
-    #print(current_time_korea)
-    #current_time=datetime.utcnow().isoformat()
-    #current_time_date_only = datetime.fromisoformat(current_time).strftime("%Y-%m-%d")
     # ISO 형식의 문자열로 변환
     current_time_date_only = current_time_korea.strftime("%Y-%m-%d")
-    #print(current_time_date_only)
     image_file=request.files["file"]
     image_file.save("static/images/{}".format(image_file.filename))
     data=request.form
@@ -257,15 +248,12 @@ def unfollow(name):
 def view_following(name):
     data = DB.get_follow(name)
     follower = DB.get_followercount_byname("")
-    print(data)
-    print(follower)
     return render_template("nine_following.html", data=data, follower=follower)
 
 @application.route("/yourpage/<name>/")
 def view_yourpage(name):
     data = DB.get_followercount_byname(name)
     following = DB.get_followingcount_byname(name)
-    print(data)
     return render_template("yourpage.html", name=name, data=data, following=following)
 
 @application.route("/mypage/<id>/")
