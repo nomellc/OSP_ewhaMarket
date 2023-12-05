@@ -302,7 +302,6 @@ class DBhandler:
             return target_value
         else:
             target_value=hearts['isHeart']
-            print("새로고침 후 상태", target_value)
         return target_value
 
     def update_heart(self, user_id, isHeart, item):
@@ -316,8 +315,6 @@ class DBhandler:
             }
             if sell_items is not None:
                 self.db.child("heart").child(user_id).child(item).set(like_info)
-                print("새 거고,", isHeart)
         else :
             self.db.child("heart").child(user_id).child(item).update({"isHeart": isHeart})
-            print("헌 거고,", isHeart)
         return True

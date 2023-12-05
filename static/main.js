@@ -151,10 +151,10 @@ function showHeart(name) {
       let my_heart = response["my_heart"];
       if (my_heart == "Y") {
         $("#heart").css("color", "#d4927d");
-        $("#heart").attr("onclick", "unlike(" + name + ")");
+        $("#heart").attr("onclick", "unlike('" + name + "')");
       } else {
         $("#heart").css("color", "grey");
-        $("#heart").attr("onclick", "like(" + name + ")");
+        $("#heart").attr("onclick", "like('" + name + "')");
       }
     },
   });

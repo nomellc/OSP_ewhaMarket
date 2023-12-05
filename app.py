@@ -94,6 +94,7 @@ def view_list():
 def view_item_detail(name):
     data = DB.get_item_byname(str(name))
     is_logged_in = 'id' in session  # 로그인 상태인지 확인
+    print("웹사이트에 들어갑니다", name)
     return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
