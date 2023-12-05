@@ -14,8 +14,8 @@
 
 body {
   margin: 0;
-  width : 100%;
-  padding : 40px;
+  width: 100%;
+  padding: 40px;
   color: #71513c;
   background-color: #f5ebe0;
   box-sizing: border-box;
@@ -33,28 +33,27 @@ a {
 
 /*top.html*/
 
-.full-container{
-    width : 100%;
-    position : absolute;
-    top: 0;
-    left : 0;
+.full-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .top_navbar {
-  width : 100%;
+  width: 100%;
   max-height: 50px;
-  margin : 0 auto;
-  
+  margin: 0 auto;
 }
 
 .top_navbar ul {
-  padding : 10px;
+  padding: 10px;
   list-style: none;
-  min-width : 300px;
-  
-  position : absolute;
-  left : 1050px;
-  top : 10px;
+  min-width: 300px;
+
+  position: absolute;
+  left: 1050px;
+  top: 10px;
 }
 
 .top_navbar li {
@@ -67,41 +66,40 @@ a {
   font-size: 20px;
   text-align: center;
   padding: 8px;
-  font-weight : bold;
+  font-weight: bold;
 }
 
-.top_navbar b{
-    color : #f5ebe0;
+.top_navbar b {
+  color: #f5ebe0;
 }
 
-.navbar{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-height: 420px;
-    width : 100%;
-    padding : 30px;
-    padding-top : 80px;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 420px;
+  width: 100%;
+  padding: 30px;
+  padding-top: 80px;
 
-    margin : 0px;
-    background-color : #71513c;
-    position : relative;
-    top : 0;
-
+  margin: 0px;
+  background-color: #71513c;
+  position: relative;
+  top: 0;
 }
 
-.christ-icon{
-    margin-top : 25px;
-    width : 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.christ-icon {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.navbar img{
-    width : 90px;
-    height : 90px;
-    margin : 0 ;
+.navbar img {
+  width: 90px;
+  height: 90px;
+  margin: 0;
 }
 
 .title a {
@@ -113,12 +111,11 @@ a {
   font-size: 60px;
   color: #f5ebe0;
   letter-spacing: 10px;
-  margin : 0 ;
-    
+  margin: 0;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .title a:hover {
@@ -127,16 +124,15 @@ a {
 
 .navbar_container {
   min-width: 100%;
-  
+
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-    
 }
 
 .navbar_container ul {
-  max-height : 80px;
+  max-height: 80px;
   list-style-type: none;
   padding: 0;
   overflow: hidden;
@@ -161,20 +157,20 @@ a {
   color: #cadfdc;
 }
 
-.separator{
-    border : 3px solid #d4927d;
-    width : 100%;
-    margin : 0;
-    position : absolute;
-    top : 420px;
+.separator {
+  border: 3px solid #d4927d;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 420px;
 }
 
-.lower-section{
-    position : relative;
-    top : 40px;
-    width : 100%;
-    height : 200px;
-    background-color : #71513c;
+.lower-section {
+  position: relative;
+  top: 40px;
+  width: 100%;
+  height: 200px;
+  background-color: #71513c;
 }
 
 .invisible_list {
@@ -186,11 +182,11 @@ a {
 /*이미지 리스트*/
 
 .container {
-  position : relative;
+  position: relative;
   width: 100%;
-  padding : 20px;
-  top : 40px;
-    
+  padding: 20px;
+  top: 40px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -202,7 +198,7 @@ a {
   margin-right: 40px;
   margin-left: 40px;
   float: left;
-  flex : 1;
+  flex: 1;
 }
 
 .card a {
@@ -237,22 +233,19 @@ a {
 .sort {
   position: relative;
   display: inline-block;
-  min-width : 100%;
-  margin-top : 30px;
-    
+  min-width: 100%;
+  margin-top: 30px;
 }
-
 
 .sort_button {
   position: relative;
   top: 20px;
-  left : 1230px;
+  left: 1230px;
   color: #cadfdc;
   background: none;
   border: none;
   font-size: 20px;
   min-width: 100px;
-
 }
 
 .sort_content {
@@ -273,7 +266,7 @@ a {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-    }
+}
 
 .sort_content a:hover {
   background-color: #71513c;
@@ -294,9 +287,9 @@ a {
   left: 0;
   width: 100%;
   text-align: center;
-  position : relative;
-  top : 20px;
-  margin : 20px;
+  position: relative;
+  top: 20px;
+  margin: 20px;
 }
 
 .pagination ul {
@@ -672,7 +665,7 @@ home-center {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   overflow: hidden;
-  position : relative;
+  position: relative;
 }
 
 .four-input-group {
@@ -766,7 +759,7 @@ home-center {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin : 80px;
+  margin: 80px;
 }
 
 .five_title_img {
@@ -780,7 +773,6 @@ home-center {
   border-radius: 10px;
   background-color: #fffef6;
 }
-
 
 .five_img_box {
   display: flex;
@@ -819,7 +811,7 @@ home-center {
   margin-bottom: 40px;
   border: 2px solid #71513c;
   border-radius: 10px;
-  margin : 80px;
+  margin: 80px;
 }
 
 /* .satisfaction 스타일 변경 */
@@ -1418,29 +1410,27 @@ home-center {
 }
 
 .nine_container {
-  width : 100%;
-  height : 40vh;
+  width: 100%;
+  height: 40vh;
 }
 
-.nine_title{
-    position : relative;
-    left : 80px;
-    top : 100px;
+.nine_title {
+  position: relative;
+  left: 80px;
+  top: 100px;
 }
 
-.nine_title a{
-  
+.nine_title a {
   font-size: 60px;
   color: #71513c;
   letter-spacing: 3px;
-  margin : 0;
+  margin: 0;
 }
 
 .nine_write_button {
+  position: relative;
+  left: 1100px;
 
-  position : relative;
-  left : 1100px;
-    
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 28px;
@@ -1451,13 +1441,11 @@ home-center {
   width: 150px;
 }
 
-
 .nine_navbar {
-  margin-top : 40px;
-   margin-bottom : 0px;
-   overflow :hidden;
-   width : 100%;
-
+  margin-top: 40px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .nine_navbar ul {
@@ -1506,9 +1494,9 @@ home-center {
 }
 
 .nine_container1 {
-  position : relative;
-  width : 100%;
-  margin : 30px;
+  position: relative;
+  width: 100%;
+  margin: 30px;
 
   display: flex;
   flex-wrap: wrap;
@@ -1516,9 +1504,9 @@ home-center {
 }
 
 .nine_container2 {
-  position : relative;
-  width : 100%;
-  margin : 30px;
+  position: relative;
+  width: 100%;
+  margin: 30px;
 
   flex-wrap: wrap;
   justify-content: center;
@@ -1530,9 +1518,19 @@ home-center {
   color: #d4927d;
   font-weight: bold;
 
-  padding : 5px;
-  margin-top : -105px;
-  margin-left : 280px;
+  padding: 5px;
+  margin-top: -105px;
+  margin-left: 280px;
+}
+
+#heart {
+  font-size: 50px;
+  color: grey;
+  font-weight: bold;
+
+  padding: 5px;
+  margin-top: -105px;
+  margin-left: 280px;
 }
 
 .sell-icon {
@@ -1540,7 +1538,7 @@ home-center {
   left: 250px;
   top: -354px;
 }
-    
+
 .sell-triangle {
   width: 0;
   height: 0;
