@@ -297,13 +297,15 @@ class DBhandler:
         like_items_ref = self.db.child("heart").child(id).get()
         
         if like_items_ref.val() is not None:
-            for res in like_items_ref.each():                
+            for res in like_items_ref.each(): 
+                print("res",res)            
                 item_data = res.val()
-                matching_items.append({
-                    "item_title": item_data.get("item_title"),
-                    "img_path": item_data.get("img_path"),
-                    "price": item_data.get("price")
-                })
+                if item_data["isHeart"]=='Y':
+                    matching_items.append({
+                        "item_title": item_data.get("item_title"),
+                        "img_path": item_data.get("img_path"),
+                        "price": item_data.get("price")
+                    })
 
         return matching_items
     

@@ -306,7 +306,6 @@ def sell_sold(id, item_title):
 @application.route("/mylike/<id>/")
 def my_like(id):
     data=DB.get_likeitems_by_id(str(id))
-    print(data)
     tot_count=len(data)
     return render_template("nine_like.html", datas=data, total=tot_count)
 
