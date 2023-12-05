@@ -38,60 +38,23 @@
               alt="arrow"
             />
           </button>
-
           <div class="nine-product-cards">
             <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
+              {% for item1 in datas1 %} {% if loop.index0 < 6 %}
+              <div
+                onclick="location.href='/view_detail/{{item1.item_title}}/';"
+                style="cursor: pointer"
+              >
+                <img
+                  class="card_img"
+                  src="../../static/images/{{ item1.img_path }}"
+                />
+              </div>
+              <h5 class="item_name_small" style="overflow: hidden">
+                {{ item1.item_title }}
+              </h5>
+              <p class="item_price">{{ item1.price }}</p>
+              {% endif %} {% endfor %}
             </div>
           </div>
         </div>
@@ -109,60 +72,23 @@
               alt="arrow"
             />
           </button>
-
           <div class="nine-product-cards">
             <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
+              {% for item2 in datas2 %} {% if loop.index0 < 6 %}
+              <div
+                onclick="location.href='/view_detail/{{item2.item_title}}/';"
+                style="cursor: pointer"
+              >
+                <img
+                  class="card_img"
+                  src="../../static/images/{{ item2.img_path }}"
+                />
+              </div>
+              <h5 class="item_name_small" style="overflow: hidden">
+                {{ item2.item_title }}
+              </h5>
+              <p class="item_price">{{ item2.price }}</p>
+              {% endif %} {% endfor %}
             </div>
           </div>
         </div>
@@ -180,67 +106,26 @@
               alt="arrow"
             />
           </button>
-
           <div class="nine-product-cards">
             <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
-            </div>
-
-            <div class="nine-product-card">
-              <img
-                src="../../static/images/nine_cake3.jpeg"
-                alt="상품 이미지"
-              />
-              <h5>name</h5>
-              <p>0000-00-00</p>
+              {% for item3 in datas3 %} {% if loop.index0 < 6 %}
+              <div
+                onclick="location.href='/view_detail/{{item3.item_title}}/';"
+                style="cursor: pointer"
+              >
+                <img
+                  class="card_img"
+                  src="../../static/images/{{ item3.img_path }}"
+                />
+              </div>
+              <h5 class="item_name_small">{{ item3.item_title }}</h5>
+              <p class="item_price">{{ item3.price }}</p>
+              {% endif %} {% endfor %}
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- 나머지 컨텐츠를 이어서 추가하세요 -->
   </body>
   {% endblock section %}
 </html>

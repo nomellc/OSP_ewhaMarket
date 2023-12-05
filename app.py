@@ -276,7 +276,16 @@ def view_yourpage(name):
 def my_page(id):
     data = DB.get_followingcount_byname(str(id))
     follower = DB.get_followercount_byname(str(id))
-    return render_template("nine_mypage.html", data=data, follower=follower)
+    data1=DB.get_sellitems_by_id(str(id)) #read the table
+    tot_count1=len(data1)
+    data2=DB.get_likeitems_by_id(str(id))
+    tot_count2=len(data2)
+    data3=DB.get_buyitems_by_id(str(id)) #read the table
+    tot_count3=len(data3)
+    return render_template("nine_mypage.html", data=data, follower=follower, 
+                           datas1=data1, total1=tot_count1,
+                           datas2=data2, total2=tot_count2,
+                           datas3=data3, total3=tot_count3)
 
 @application.route("/mysell/<id>/")
 def my_sell(id):

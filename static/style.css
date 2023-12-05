@@ -222,6 +222,15 @@ a {
   margin: 5px;
 }
 
+.item_name_small {
+  font-size: 20px;
+  color: #71513c;
+  margin: 5px;
+  width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .item_price {
   font-size: 15px;
   color: #cadfdc;
@@ -1322,6 +1331,9 @@ home-center {
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
   margin: 20px;
 }
 
