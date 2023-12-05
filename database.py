@@ -43,7 +43,6 @@ class DBhandler:
     def get_item_byname(self, name):
         items = self.db.child("item").get()
         target_value=""
-        print("###########", name)
         for res in items.each():
             key_value = res.key()
             
@@ -85,7 +84,6 @@ class DBhandler:
     def user_duplicate_check(self, id_string):
         users = self.db.child("user").get()
 
-        print("users###", users.val())
         if str(users.val()) == "None": # first registration
             return True
         else:
@@ -132,7 +130,6 @@ class DBhandler:
     def get_review_byname(self, name):
         reviews = self.db.child("review").get()
         target_value=""
-        print("###########", name)
         for res in reviews.each():
             key_value = res.key()
             

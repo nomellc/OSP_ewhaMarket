@@ -68,10 +68,11 @@ function menu() {
 
 //좋아요 버튼
 function like(likeDiv) {
-  if (likeDiv.textContent == "♡") {
+  if (this.textContent == "♡") {
     likeDiv.textContent = "❤";
   } else {
     likeDiv.textContent = "♡";
+    location.href = "/unlike/{{likeDiv}}";
   }
 }
 
