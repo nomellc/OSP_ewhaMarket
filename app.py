@@ -94,6 +94,7 @@ def view_list():
 def view_item_detail(name):
     data = DB.get_item_byname(str(name))
     is_logged_in = 'id' in session  # 로그인 상태인지 확인
+    print("웹사이트에 들어갑니다", name)
     return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
@@ -201,16 +202,19 @@ def reg_review():
 
 @application.route('/show_heart/<name>/', methods=['GET'])
 def show_heart(name):
+    print("왜 나에게 이런 일이?1", name)
     my_heart = DB.get_heart_byname(session['id'],name)
     return jsonify({'my_heart': my_heart})
 
 @application.route('/like/<name>/', methods=['POST'])
 def like(name):
+    print("왜 나에게 이런 일이?2", name)
     my_heart = DB.update_heart(session['id'],'Y',name)
     return jsonify({'msg': '좋아요 완료!'})
 
 @application.route('/unlike/<name>/', methods=['POST'])
 def unlike(name):
+    print("왜 나에게 이런 일이?3", name)
     my_heart = DB.update_heart(session['id'],'N',name)
     return jsonify({'msg': '안좋아요 완료!'})
 
@@ -254,13 +258,26 @@ def view_following(name):
 def view_yourpage(name):
     data = DB.get_followercount_byname(name)
     following = DB.get_followingcount_byname(name)
-    return render_template("yourpage.html", name=name, data=data, following=following)
+    data1=DB.get_sellitems_by_id(str(name)) #read the table
+    tot_count1=len(data1)
+    print(data)
+    print(tot_count1)
+    return render_template("yourpage.html", name=name, data=data, following=following, datas=data1, total1=tot_count1)
 
 @application.route("/mypage/<id>/")
 def my_page(id):
     data = DB.get_followingcount_byname(str(id))
     follower = DB.get_followercount_byname(str(id))
-    return render_template("nine_mypage.html", data=data, follower=follower)
+    data1=DB.get_sellitems_by_id(str(id)) #read the table
+    tot_count1=len(data1)
+    data2=DB.get_likeitems_by_id(str(id))
+    tot_count2=len(data2)
+    data3=DB.get_buyitems_by_id(str(id)) #read the table
+    tot_count3=len(data3)
+    return render_template("nine_mypage.html", data=data, follower=follower, 
+                           datas1=data1, total1=tot_count1,
+                           datas2=data2, total2=tot_count2,
+                           datas3=data3, total3=tot_count3)
 
 @application.route("/mysell/<id>/")
 def my_sell(id):
@@ -287,6 +304,11 @@ def sell_sold(id, item_title):
         flash("해당 상품이 없습니다.")
         return redirect(url_for('my_sell', id=id))
 
+@application.route("/mylike/<id>/")
+def my_like(id):
+    data=DB.get_likeitems_by_id(str(id))
+    tot_count=len(data)
+    return render_template("nine_like.html", datas=data, total=tot_count)
 
 @application.route("/mybuy/<id>/")
 def my_buy(id):
