@@ -303,6 +303,12 @@ def sell_sold(id, item_title):
         flash("해당 상품이 없습니다.")
         return redirect(url_for('my_sell', id=id))
 
+@application.route("/mylike/<id>/")
+def my_like(id):
+    data=DB.get_likeitems_by_id(str(id))
+    print(data)
+    tot_count=len(data)
+    return render_template("nine_like.html", datas=data, total=tot_count)
 
 @application.route("/mybuy/<id>/")
 def my_buy(id):

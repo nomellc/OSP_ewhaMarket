@@ -10,20 +10,18 @@
           <img src="../../static/images/mypage.jpeg" />
         </p>
         <div class="nine-user-name">{{session['id']}}</div>
-        <div class="nine-follower1" style="cursor:default;">
-        {% if follower is none %}
-            follower 00
-        {% else %}
-            follower {{follower}}
-        {% endif %}  
-        </div>
-        <div class="nine-following1" onclick="location.href='/view_following/{{session['id']}}/';" style="cursor:pointer;">
-          {% if data is none %}
-            following 00
-          {% else %}
-            following {{data}}
+        <div class="nine-follower1" style="cursor: default">
+          {% if follower is none %} follower 00 {% else %} follower {{follower}}
           {% endif %}
-         </div>
+        </div>
+        <div
+          class="nine-following1"
+          onclick="location.href='/view_following/{{session['id']}}/';"
+          style="cursor: pointer"
+        >
+          {% if data is none %} following 00 {% else %} following {{data}} {%
+          endif %}
+        </div>
       </div>
 
       <div class="nine-product-containers">
@@ -103,7 +101,7 @@
           <div class="nine-separator"></div>
           <button
             class="nine-page-button"
-            onclick="location.href = 'nine_like.html'"
+            onclick="window.location.href='/mylike/{{ session['id'] }}'"
           >
             <img
               class="nine-button-mark"

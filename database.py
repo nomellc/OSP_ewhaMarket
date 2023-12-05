@@ -292,7 +292,20 @@ class DBhandler:
 
         return matching_items
 
+    def get_likeitems_by_id(self, id):
+        matching_items=[]
+        like_items_ref = self.db.child("heart").child(id).get()
+        
+        if like_items_ref.val() is not None:
+            for res in like_items_ref.each():                
+                item_data = res.val()
+                matching_items.append({
+                    "item_title": item_data.get("item_title"),
+                    "img_path": item_data.get("img_path"),
+                    "price": item_data.get("price")
+                })
 
+        return matching_items
     
     def get_heart_byname(self, uid, name):
         hearts = self.db.child("heart").child(uid).child(name).get().val()
