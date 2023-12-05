@@ -112,7 +112,8 @@ def view_review():
     data = DB.get_reviews() #read the table
     sorted_reviews = sorted(data.items(), key=lambda x: x[1].get('thumb_count', 0), reverse=True)
     item_counts = len(data)
-    data = dict(list(data.items())[start_idx:end_idx])
+    data = sorted(data.items(), key=lambda x: x[1].get('timestamp', 0), reverse=True)
+    data = dict(data[start_idx:end_idx])
     tot_count = len(data)
     top_images = list(sorted_reviews)[:5]
     for i in range(row_count):#last row
@@ -149,11 +150,15 @@ def view_contact():
 
 @application.route("/submit_item_post", methods=['POST'])
 def reg_item_submit_post():
-    image_file=request.files["file"]
+    image_file = request.files["file"]
     image_file.save("static/images/{}".format(image_file.filename))
-    data=request.form
-    DB.insert_item(data['item_title'], data, image_file.filename)
-    return render_template("submit_item_result.html", data=data, img_path="static/images/{}".format(image_file.filename))
+    data = request.form
+    item_name = data['item_title'] 
+    DB.insert_item(item_name, data, image_file.filename)
+
+    item_data = DB.get_item_byname(item_name) 
+
+    return render_template("detail.html", name=item_name, data=item_data)
 
 
 @application.route("/signup_post", methods=['POST'])

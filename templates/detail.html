@@ -12,7 +12,10 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
 
+<<<<<<< HEAD
   <body>
+=======
+>>>>>>> 5130d49e01ce6d594ff75f786d51ecc242f32de9
     <h2 class="home-side"><a href="/">이화 산타</a></h2>
     <hr class="home-side-hr" />
 
@@ -30,12 +33,21 @@
         </div>
 
         <div class="three-item-sum">
+        {% if data.seller == session['id'] %}
+          <p
+            class="three-seller-name"
+            onclick="location.href='/mypage/{{session['id']}}/';"
+          >
+          판매자 : {{data.seller}}
+          </p>
+        {% else %}
           <p
             class="three-seller-name"
             onclick="location.href='/yourpage/{{data.seller}}/';"
           >
             판매자 : {{data.seller}}
           </p>
+        {% endif %}
           <p class="three-product-name">상품명 : {{name}}</p>
           <p class="three-price">가격 : {{data.price}}</p>
           <p class="three-category">카테고리 : {{data.category}}</p>

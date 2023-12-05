@@ -192,7 +192,7 @@ a {
     position : relative;
     top : 40px;
     width : 100%;
-    height : 300px;
+    height : 200px;
     background-color : #71513c;
 }
 
@@ -1527,7 +1527,7 @@ home-center {
 
 .nine_container1 {
   position : relative;
-  width 100%;
+  width : 100%;
   margin : 30px;
 
   display: flex;
@@ -1623,7 +1623,7 @@ home-center {
   background-color: white;
 
   width: 1200px;
-  height: 650px;
+  height: 250px;
   margin-bottom: 50px;
   position: relative;
 }
@@ -1631,7 +1631,7 @@ home-center {
 .nine_profile_name {
   font-size: 45px;
   position: absolute;
-  top: 120px;
+  top: 80px;
   left: 280px;
   max-height: 60px;
   letter-spacing: 3px;
@@ -1645,7 +1645,7 @@ home-center {
   border: 2px solid #71513c;
 
   position: absolute;
-  top: 80px;
+  top: 40px;
   left: 100px;
 }
 
@@ -1664,7 +1664,7 @@ home-center {
   font-size: 30px;
 
   position: absolute;
-  top: 120px;
+  top: 80px;
   left: 960px;
 }
 
@@ -1674,8 +1674,8 @@ home-center {
   min-height: 5px;
   min-width: 5px;
   position: absolute;
-  top: 180px;
-  left: 1060px;
+  top: 100px;
+  left: 1090px;
 }
 
 .nine_following_button2 img {
