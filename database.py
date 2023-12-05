@@ -298,22 +298,29 @@ class DBhandler:
 
     
     def get_heart_byname(self, uid, name):
-        hearts = self.db.child("heart").child(uid).get()
+        hearts = self.db.child("heart").child(uid).child(name).get().val()
+        #hearts = self.db.child("heart").child(uid).get()
         target_value=""
-        if hearts.val() == None:
+        if hearts == None:
             return target_value
-
-        for res in hearts.each():
-            key_value = res.key()
-
-            if key_value == name:
-                target_value=res.val()
+        else:
+            target_value=hearts['isHeart']
+            print("새로고침 후 상태", target_value)
         return target_value
 
     def update_heart(self, user_id, isHeart, item):
-        sell_items=self.db.child("item").child(item).get().val()
-        
-        if sell_items is not None:
-            self.db.child("heart").child(user_id).child(item).set(sell_items)
-            
+        if self.db.child("heart").child(user_id).child(item).get().val()==None :
+            sell_items=self.db.child("item").child(item).get().val()
+            like_info={
+                "item_title":sell_items['item_title'],
+                "price":sell_items['price'],
+                "img_path": sell_items['img_path'],
+                "isHeart": isHeart
+            }
+            if sell_items is not None:
+                self.db.child("heart").child(user_id).child(item).set(like_info)
+                print("새 거고,", isHeart)
+        else :
+            self.db.child("heart").child(user_id).child(item).update({"isHeart": isHeart})
+            print("헌 거고,", isHeart)
         return True

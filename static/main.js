@@ -148,7 +148,7 @@ function showHeart(name) {
     data: {},
     success: function (response) {
       let my_heart = response["my_heart"];
-      if (my_heart["interested"] == "Y") {
+      if (my_heart == "Y") {
         $("#heart").css("color", "#d4927d");
         $("#heart").attr("onclick", "unlike(" + name + ")");
       } else {
