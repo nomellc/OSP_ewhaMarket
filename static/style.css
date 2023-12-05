@@ -34,16 +34,19 @@ a {
 /*top.html*/
 
 .full-container{
-    width : 100%;
+    width : calc(100%*1px);
     position : absolute;
-    top: 0;
-    left : 0;
+    left : 0px;
+    top : 0px;
+    overflow : auto;
 }
 
 .top_navbar {
   width : 100%;
   max-height: 50px;
   margin : 0 auto;
+  padding : 10px;
+  padding-left : 1000px;
   
 }
 
@@ -51,10 +54,7 @@ a {
   padding : 10px;
   list-style: none;
   min-width : 300px;
-  
-  position : absolute;
-  left : 1050px;
-  top : 10px;
+
 }
 
 .top_navbar li {
@@ -66,8 +66,12 @@ a {
   color: #cadfdc;
   font-size: 20px;
   text-align: center;
-  padding: 8px;
+  padding: 10px;
   font-weight : bold;
+}
+
+.top_navbar a:hover{
+    color : #d4927d;
 }
 
 .top_navbar b{
@@ -78,10 +82,8 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 420px;
     width : 100%;
     padding : 30px;
-    padding-top : 80px;
 
     margin : 0px;
     background-color : #71513c;
@@ -91,11 +93,12 @@ a {
 }
 
 .christ-icon{
-    margin-top : 25px;
+    margin : 30px;
     width : 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 .navbar img{
@@ -104,12 +107,8 @@ a {
     margin : 0 ;
 }
 
-.title a {
-  min-width: 100%;
-}
 
 .title a {
-  min-width: 900px;
   font-size: 60px;
   color: #f5ebe0;
   letter-spacing: 10px;
@@ -126,12 +125,14 @@ a {
 }
 
 .navbar_container {
-  min-width: 100%;
-  
+  width: 100%;
   margin: 0 auto;
+  padding-top : 40px;
+  padding-bottom : 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
     
 }
 
@@ -155,18 +156,36 @@ a {
   color: #d4927d;
   font-size: 25px;
   letter-spacing: 10px;
+  margin : 10px;
 }
 
-.navbar_container li a:hover {
+.menu {
+  display: flex;
+  align-items : center;
+  flex-direction : column;
+}
+
+.menu:hover a{
   color: #cadfdc;
+}
+
+.snow-icon {
+    display : none;
+    position : absolute;
+}
+.snow-icon img{
+    width : 25px;
+    height : 25px;
+}
+
+.menu:hover .snow-icon{
+    display : block;
 }
 
 .separator{
     border : 3px solid #d4927d;
     width : 100%;
     margin : 0;
-    position : absolute;
-    top : 420px;
 }
 
 .lower-section{
@@ -188,9 +207,7 @@ a {
 .container {
   position : relative;
   width: 100%;
-  padding : 20px;
-  top : 40px;
-    
+  margin : 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -198,9 +215,7 @@ a {
 
 .card {
   display: block;
-  margin-top: 30px;
-  margin-right: 40px;
-  margin-left: 40px;
+  padding : 30px;
   float: left;
   flex : 1;
 }
@@ -232,21 +247,26 @@ a {
   margin: 5px;
 }
 
+/*box들 묶는 컨테이너*/
+.box-container{
+    position : relative;
+    width: 100%;
+    margin : 0;
+}
 /*정렬 기능*/
 
 .sort {
   position: relative;
   display: inline-block;
-  min-width : 100%;
-  margin-top : 30px;
-    
+  width : 100%;
+  margin : 0 auto;
+  padding : 30px;
+  padding-left : 1220px;
 }
 
 
 .sort_button {
   position: relative;
-  top: 20px;
-  left : 1230px;
   color: #cadfdc;
   background: none;
   border: none;
@@ -257,8 +277,6 @@ a {
 
 .sort_content {
   position: absolute;
-  top: 40px;
-  left: 1230px;
   display: none;
   background-color: #f1f1f1;
   min-width: 130px;
@@ -296,7 +314,7 @@ a {
   text-align: center;
   position : relative;
   top : 20px;
-  margin : 20px;
+  padding : 20px;
 }
 
 .pagination ul {
@@ -554,9 +572,10 @@ home-center {
 .two_total {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  margin-left: 40px;
-  margin-top: 20px;
+  padding : 40px;
+  margin : 0 auto;
+  margin-top : -100px;
+  font-size : 20px;
 }
 
 /* three */
@@ -1174,7 +1193,8 @@ home-center {
 
 /*nine*/
 
-.nine-container {
+
+.nine-user-container {
   display: flex;
   flex-direction: column;
   align-items: center;
