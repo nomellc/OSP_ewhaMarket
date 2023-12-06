@@ -68,10 +68,11 @@ function menu() {
 
 //좋아요 버튼
 function like(likeDiv) {
-  if (likeDiv.textContent == "♡") {
+  if (this.textContent == "♡") {
     likeDiv.textContent = "❤";
   } else {
     likeDiv.textContent = "♡";
+    location.href = "/unlike/{{likeDiv}}";
   }
 }
 
@@ -90,46 +91,46 @@ var isIdChecked = false;
 var isPasswordChecked = false;
 
 function checkId() {
-    var userId = document.getElementById('eight_userid').value;
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/check_id', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function() {
-        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-            alert(this.responseText);
-        }
+  var userId = document.getElementById("eight_userid").value;
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/check_id", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+      alert(this.responseText);
     }
-    xhr.send(JSON.stringify({id: userId}));
-    isIdChecked = true;
+  };
+  xhr.send(JSON.stringify({ id: userId }));
+  isIdChecked = true;
 }
 
 function checkPassword() {
-    var password = document.getElementById('eight_userpwd').value;
-    var confirmPassword = document.getElementById('eight_userpwd_check').value;
+  var password = document.getElementById("eight_userpwd").value;
+  var confirmPassword = document.getElementById("eight_userpwd_check").value;
 
-    if (password === confirmPassword) {
-        alert("비밀번호가 일치합니다.");
-    } else {
-        alert("비밀번호가 일치하지 않습니다.");
-    }
-    isPasswordChecked = true;
+  if (password === confirmPassword) {
+    alert("비밀번호가 일치합니다.");
+  } else {
+    alert("비밀번호가 일치하지 않습니다.");
+  }
+  isPasswordChecked = true;
 }
 
 function submitForm() {
-    var form = document.querySelector('form');
-    var hiddenFieldId = document.createElement('input');
-    hiddenFieldId.type = 'hidden';
-    hiddenFieldId.name = 'isIdChecked';
-    hiddenFieldId.value = isIdChecked;
-    form.appendChild(hiddenFieldId);
+  var form = document.querySelector("form");
+  var hiddenFieldId = document.createElement("input");
+  hiddenFieldId.type = "hidden";
+  hiddenFieldId.name = "isIdChecked";
+  hiddenFieldId.value = isIdChecked;
+  form.appendChild(hiddenFieldId);
 
-    var hiddenFieldPw = document.createElement('input');
-    hiddenFieldPw.type = 'hidden';
-    hiddenFieldPw.name = 'isPasswordChecked';
-    hiddenFieldPw.value = isPasswordChecked;
-    form.appendChild(hiddenFieldPw);
+  var hiddenFieldPw = document.createElement("input");
+  hiddenFieldPw.type = "hidden";
+  hiddenFieldPw.name = "isPasswordChecked";
+  hiddenFieldPw.value = isPasswordChecked;
+  form.appendChild(hiddenFieldPw);
 
-    form.submit();
+  form.submit();
 }
 
 function toggleDiv() {
@@ -139,4 +140,50 @@ function toggleDiv() {
   } else {
     x.style.display = "none";
   }
+}
+
+function showHeart(name) {
+  $.ajax({
+    type: "GET",
+    url: "/show_heart/" + name + "/",
+    data: {},
+    success: function (response) {
+      let my_heart = response["my_heart"];
+      if (my_heart == "Y") {
+        $("#heart").css("color", "#d4927d");
+        $("#heart").attr("onclick", "unlike('" + name + "')");
+      } else {
+        $("#heart").css("color", "grey");
+        $("#heart").attr("onclick", "like('" + name + "')");
+      }
+    },
+  });
+}
+
+function like(name) {
+  $.ajax({
+    type: "POST",
+    url: "/like/" + name + "/",
+    data: {
+      interested: "Y",
+    },
+    success: function (response) {
+      alert(response["msg"]);
+      window.location.reload();
+    },
+  });
+}
+
+function unlike(name) {
+  $.ajax({
+    type: "POST",
+    url: "/unlike/" + name + "/",
+    data: {
+      interested: "N",
+    },
+    success: function (response) {
+      alert(response["msg"]);
+      window.location.reload();
+    },
+  });
 }

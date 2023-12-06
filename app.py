@@ -94,12 +94,13 @@ def view_list():
 def view_item_detail(name):
     data = DB.get_item_byname(str(name))
     is_logged_in = 'id' in session  # 로그인 상태인지 확인
+    print("웹사이트에 들어갑니다", name)
     return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
 def view_review_detail(name):
     data = DB.get_review_byname(name)
-    return render_template("six_review_detail.html", name=name, data=data)
+    return render_template("review_detail.html", name=name, data=data)
 
 @application.route("/review")
 def view_review():
@@ -123,7 +124,7 @@ def view_review():
             locals()['data_{}'.format(i)] = dict(list(data.items())[i*per_row:(i+1)*per_row])
     
     return render_template(
-     "five_review_1109.html",
+     "review.html",
      datas=data.items(),
      top_images=top_images,
      row1=locals()['data_0'].items(),
@@ -142,7 +143,7 @@ def reg_item():
     if 'id' not in session:
         flash("로그인이 필요한 페이지입니다.")
         return redirect(url_for('login'))
-    return render_template("one_item_regi.html")
+    return render_template("reg_items.html")
 
 @application.route("/contact")
 def view_contact():
@@ -180,15 +181,10 @@ def register_user():
     else:
         flash("아이디/비밀번호 체크를 해주세요.")
         return render_template("eight_register.html")
-    
-#@application.route('dynamicurl/<varible_name>/')
-#def DynamicUrl(varible_name):
-#    return str(varible_name)
 
 @application.route("/reg_review_init/<name>/<item_title>")
 def reg_review_init(name, item_title):
-    print("제목: ", item_title)
-    return render_template("four_review.html", name=name, item_title=item_title)
+    return render_template("reg_reviews.html", name=name, item_title=item_title)
 
 @application.route("/reg_review", methods=['POST'])
 def reg_review():
@@ -196,12 +192,8 @@ def reg_review():
     current_time_utc = datetime.utcnow()
     # 한국 시간대로 변환
     current_time_korea = current_time_utc + timedelta(hours=9)
-    #print(current_time_korea)
-    #current_time=datetime.utcnow().isoformat()
-    #current_time_date_only = datetime.fromisoformat(current_time).strftime("%Y-%m-%d")
     # ISO 형식의 문자열로 변환
     current_time_date_only = current_time_korea.strftime("%Y-%m-%d")
-    #print(current_time_date_only)
     image_file=request.files["file"]
     image_file.save("static/images/{}".format(image_file.filename))
     data=request.form
@@ -210,16 +202,19 @@ def reg_review():
 
 @application.route('/show_heart/<name>/', methods=['GET'])
 def show_heart(name):
+    print("왜 나에게 이런 일이?1", name)
     my_heart = DB.get_heart_byname(session['id'],name)
     return jsonify({'my_heart': my_heart})
 
 @application.route('/like/<name>/', methods=['POST'])
 def like(name):
+    print("왜 나에게 이런 일이?2", name)
     my_heart = DB.update_heart(session['id'],'Y',name)
     return jsonify({'msg': '좋아요 완료!'})
 
 @application.route('/unlike/<name>/', methods=['POST'])
 def unlike(name):
+    print("왜 나에게 이런 일이?3", name)
     my_heart = DB.update_heart(session['id'],'N',name)
     return jsonify({'msg': '안좋아요 완료!'})
 
@@ -257,22 +252,32 @@ def unfollow(name):
 def view_following(name):
     data = DB.get_follow(name)
     follower = DB.get_followercount_byname("")
-    print(data)
-    print(follower)
     return render_template("nine_following.html", data=data, follower=follower)
 
 @application.route("/yourpage/<name>/")
 def view_yourpage(name):
     data = DB.get_followercount_byname(name)
     following = DB.get_followingcount_byname(name)
+    data1=DB.get_sellitems_by_id(str(name)) #read the table
+    tot_count1=len(data1)
     print(data)
-    return render_template("yourpage.html", name=name, data=data, following=following)
+    print(tot_count1)
+    return render_template("yourpage.html", name=name, data=data, following=following, datas=data1, total1=tot_count1)
 
 @application.route("/mypage/<id>/")
 def my_page(id):
     data = DB.get_followingcount_byname(str(id))
     follower = DB.get_followercount_byname(str(id))
-    return render_template("nine_mypage.html", data=data, follower=follower)
+    data1=DB.get_sellitems_by_id(str(id)) #read the table
+    tot_count1=len(data1)
+    data2=DB.get_likeitems_by_id(str(id))
+    tot_count2=len(data2)
+    data3=DB.get_buyitems_by_id(str(id)) #read the table
+    tot_count3=len(data3)
+    return render_template("nine_mypage.html", data=data, follower=follower, 
+                           datas1=data1, total1=tot_count1,
+                           datas2=data2, total2=tot_count2,
+                           datas3=data3, total3=tot_count3)
 
 @application.route("/mysell/<id>/")
 def my_sell(id):
@@ -299,6 +304,11 @@ def sell_sold(id, item_title):
         flash("해당 상품이 없습니다.")
         return redirect(url_for('my_sell', id=id))
 
+@application.route("/mylike/<id>/")
+def my_like(id):
+    data=DB.get_likeitems_by_id(str(id))
+    tot_count=len(data)
+    return render_template("nine_like.html", datas=data, total=tot_count)
 
 @application.route("/mybuy/<id>/")
 def my_buy(id):
