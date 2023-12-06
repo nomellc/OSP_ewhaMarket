@@ -9,115 +9,123 @@
   </head>
   <body>
     <div class="nine_container">
-    <div class="top_navbar">
-      <ul>
-        <li><a href="/">홈</a></li>
-        <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
-        {% if session['id'] %}
-        <li>
-          <a href="/logout">로그아웃</a>
-          <b>{{session['id']}}님</b>
-        </li>
-        {% else %}
-        <li><a href="/login">로그인</a></li>
-        {% endif %}
-      </ul>
-    </div>
-    <div class="nine_container">
-      <p class = "nine_title"><a href="/mysell//{{session['id']}}">판매 목록</a></p>
-      <button class="nine_write_button" onclick="location.href='/reg_items'">
-        글쓰기
-      </button>
-
-      <div class="nine_navbar">
+      <div class="top_navbar">
         <ul>
+          <li><a href="/">홈</a></li>
+          <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
+          {% if session['id'] %}
           <li>
-            <a id="nine_sellingbar" class="active" onclick="menu();">판매중</a>
+            <a href="/logout">로그아웃</a>
+            <b>{{session['id']}}님</b>
           </li>
-          <li>
-            <a id="nine_soldbar" onclick="menu();">판매 완료</a>
-          </li>
+          {% else %}
+          <li><a href="/login">로그인</a></li>
+          {% endif %}
         </ul>
       </div>
-        <div style = "margin-top : -70px;" class="separator"></div>
-    </div>
+      <div class="nine_container">
+        <p class="nine_title">
+          <a href="/mysell//{{session['id']}}">판매 목록</a>
+        </p>
+        <button class="nine_write_button" onclick="location.href='/reg_items'">
+          글쓰기
+        </button>
 
-    <!-- 정렬 기능 -->
-    <div class="sort">
-      <button class="sort_button" onclick="toggleDiv()">▼ 최신순</button>
-      <div class="sort_content" id="sortContents">
-        <a href="#">최신순</a>
-        <a href="#">오래된순</a>
-        <a href="#">이름순</a>
-        <a href="#">낮은 가격순</a>
-        <a href="#">높은 가격순</a>
+        <div class="nine_navbar">
+          <ul>
+            <li>
+              <a id="nine_sellingbar" class="active" onclick="menu();"
+                >판매중</a
+              >
+            </li>
+            <li>
+              <a id="nine_soldbar" onclick="menu();">판매 완료</a>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-top: -70px" class="separator"></div>
       </div>
-    </div>
 
-    <div class="nine_list">
-      <div class="nine_container1">
-        {% if total1 > 0 %}
-        <table>
-          <tbody>
-            <tr>
-              {% for item in datas %}
-              <td class="card">
-                <a href="#"
-                  ><img
-                    class="card_img"
-                    src="../../static/images/{{ item.img_path }}"
-                /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
+      <!-- 정렬 기능 -->
+      <div class="sort">
+        <button class="sort_button" onclick="toggleDiv()">▼ 최신순</button>
+        <div class="sort_content" id="sortContents">
+          <a href="#">최신순</a>
+          <a href="#">오래된순</a>
+          <a href="#">이름순</a>
+          <a href="#">낮은 가격순</a>
+          <a href="#">높은 가격순</a>
+        </div>
+      </div>
+
+      <div class="nine_list">
+        <div class="nine_container1">
+          {% if total1 > 0 %}
+          <table>
+            <tbody>
+              <tr>
+                {% for item in datas %}
+                <td class="card">
                   <div
-                    class="sell-text"
-                    onclick="location.href='/sellsold/{{session['id']}}/{{ item.item_title }}';"
+                    onclick="location.href='/view_detail/{{item.item_title}}/';"
                     style="cursor: pointer"
                   >
-                    판매중
+                    <img
+                      class="card_img"
+                      src="../../static/images/{{ item.img_path }}"
+                    />
+                    <div class="sell-icon">
+                      <div class="sell-triangle"></div>
+                      <div
+                        class="sell-text"
+                        onclick="location.href='/sellsold/{{session['id']}}/{{ item.item_title }}';"
+                        style="cursor: pointer"
+                      >
+                        판매중
+                      </div>
+                    </div>
+                    <div class="text">
+                      <p class="item_name">{{ item.item_title }}</p>
+                      <p class="item_price">{{ item.price }}</p>
+                    </div>
                   </div>
-                </div>
-                <div class="text">
-                  <p class="item_name">{{ item.item_title }}</p>
-                  <p class="item_price">{{ item.price }}</p>
-                </div>
-              </td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
-        {% else %}
-        <p>등록된 상품이 없습니다.</p>
-        {% endif %}
-      </div>
-      <div class="nine_container2">
-        {% if total2 > 0 %}
-        <table>
-          <tbody>
-            <tr>
-              {% for item in solds %}
-              <td class="card">
-                <a href="#"
-                  ><img
+                </td>
+                {% endfor %}
+              </tr>
+            </tbody>
+          </table>
+          {% else %}
+          <p>등록된 상품이 없습니다.</p>
+          {% endif %}
+        </div>
+        <div class="nine_container2">
+          {% if total2 > 0 %}
+          <table>
+            <tbody>
+              <tr>
+                {% for item in solds %}
+                <td class="card">
+                  <img
                     class="card_img"
                     src="../../static/images/{{ item.img_path }}"
-                /></a>
-                <div class="sell-icon">
-                  <div class="sell-triangle"></div>
-                  <div class="sell-text">판매완료</div>
-                </div>
-                <div class="text">
-                  <p class="item_name">{{ item.item_title }}</p>
-                  <p class="item_price">{{ item.price }}</p>
-                </div>
-              </td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
-        {% else %}
-        <p>판매완료된 상품이 없습니다.</p>
-        {% endif %}
+                  />
+                  <div class="sell-icon">
+                    <div class="sell-triangle"></div>
+                    <div class="sell-text">판매완료</div>
+                  </div>
+                  <div class="text">
+                    <p class="item_name">{{ item.item_title }}</p>
+                    <p class="item_price">{{ item.price }}</p>
+                  </div>
+                </td>
+                {% endfor %}
+              </tr>
+            </tbody>
+          </table>
+          {% else %}
+          <p>판매완료된 상품이 없습니다.</p>
+          {% endif %}
+        </div>
       </div>
     </div>
   </body>

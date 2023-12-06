@@ -43,7 +43,6 @@ class DBhandler:
     def get_item_byname(self, name):
         items = self.db.child("item").get()
         target_value=""
-        print("###########", name)
         for res in items.each():
             key_value = res.key()
             
@@ -85,7 +84,6 @@ class DBhandler:
     def user_duplicate_check(self, id_string):
         users = self.db.child("user").get()
 
-        print("users###", users.val())
         if str(users.val()) == "None": # first registration
             return True
         else:
@@ -132,7 +130,6 @@ class DBhandler:
     def get_review_byname(self, name):
         reviews = self.db.child("review").get()
         target_value=""
-        print("###########", name)
         for res in reviews.each():
             key_value = res.key()
             
@@ -238,7 +235,6 @@ class DBhandler:
             for res in items.each():
                 # 각 물건(케이크, 쿠키, 마들렌 등)의 데이터에 접근
                 item_data = res.val()
-
                 # 만약 해당 물건에 id 키가 있다면
                 if "seller" in item_data and item_data["seller"] == id:
                     matching_items.append(item_data)
@@ -294,3 +290,45 @@ class DBhandler:
                     })
 
         return matching_items
+
+    def get_likeitems_by_id(self, id):
+        matching_items=[]
+        like_items_ref = self.db.child("heart").child(id).get()
+        
+        if like_items_ref.val() is not None:
+            for res in like_items_ref.each(): 
+                print("res",res)            
+                item_data = res.val()
+                if item_data["isHeart"]=='Y':
+                    matching_items.append({
+                        "item_title": item_data.get("item_title"),
+                        "img_path": item_data.get("img_path"),
+                        "price": item_data.get("price")
+                    })
+
+        return matching_items
+    
+    def get_heart_byname(self, uid, name):
+        hearts = self.db.child("heart").child(uid).child(name).get().val()
+        #hearts = self.db.child("heart").child(uid).get()
+        target_value=""
+        if hearts == None:
+            return target_value
+        else:
+            target_value=hearts['isHeart']
+        return target_value
+
+    def update_heart(self, user_id, isHeart, item):
+        if self.db.child("heart").child(user_id).child(item).get().val()==None :
+            sell_items=self.db.child("item").child(item).get().val()
+            like_info={
+                "item_title":sell_items['item_title'],
+                "price":sell_items['price'],
+                "img_path": sell_items['img_path'],
+                "isHeart": isHeart
+            }
+            if sell_items is not None:
+                self.db.child("heart").child(user_id).child(item).set(like_info)
+        else :
+            self.db.child("heart").child(user_id).child(item).update({"isHeart": isHeart})
+        return True

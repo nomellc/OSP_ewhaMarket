@@ -1,312 +1,116 @@
 {%extends "top.html"%} {% block section %}
 
 <head>
-    <title>EWHA SANTA</title>
-    <link rel="stylesheet" type="text/css" href="../../static/style.css" />
-    <script src="{{url_for('static', filename='main.js')}}" defer></script>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <title>EWHA MARKET</title>
+  <link rel="stylesheet" type="text/css" href="../../static/style.css" />
+  <script src="{{url_for('static', filename='main.js')}}" defer></script>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
-    <div class = "box-container">
-        
-    <div class="nine-user-container">
-        <div class="nine-user-profile">
-            <p class="user-profile-img"><img src="../../static/images/mypage.jpeg" alt="사용자 프로필 사진"></p>
-            <div class="nine-user-name">{{name}}</div>
-            <div class="nine-following2">
-            {% if following is none %}
-                following 00
-            {% else %}
-                following {{following}}
-            {% endif %}
-            </div>
-            <div class="nine-follower2">
-            {% if data is none %}
-              follower 00
-            {% else %}
-              follower {{data}}
-            {% endif %}
-            </div>
-            <button class="nine-bell-button"><img src="../../static/images/ring.png" alt="bell"></button>
-            <button class="nine-follow-button" id="follow">follow</button>
-
-        </div>
-        <script>
-            function showFollow() {
-                $.ajax({
-                    type: 'GET',
-                    url: '/show_follow/{{name}}/',
-                    data: {},
-                    success: function (response) {
-                        let user_follow = response['user_follow'];
-                        if (user_follow['following'] == 'Y') {
-                            $("#follow").text("following");
-                            $("#follow").attr("onclick", "unfollow()");
-                        } else {
-                            $("#follow").text("follow");
-                            $("#follow").attr("onclick", "follow()");
-                        }
-                    }
-                });
+  <div class="nine-container">
+    <div class="nine-user-profile">
+      <p class="user-profile-img">
+        <img src="../../static/images/mypage.jpeg" alt="사용자 프로필 사진" />
+      </p>
+      <div class="nine-user-name">{{name}}</div>
+      <div class="nine-following2">
+        {% if following is none %} following 00 {% else %} following
+        {{following}} {% endif %}
+      </div>
+      <div class="nine-follower2">
+        {% if data is none %} follower 00 {% else %} follower {{data}} {% endif
+        %}
+      </div>
+      <button class="nine-bell-button">
+        <img src="../../static/images/ring.png" alt="bell" />
+      </button>
+      <button class="nine-follow-button" id="follow">follow</button>
+    </div>
+    <script>
+      function showFollow() {
+        $.ajax({
+          type: "GET",
+          url: "/show_follow/{{name}}/",
+          data: {},
+          success: function (response) {
+            let user_follow = response["user_follow"];
+            if (user_follow["following"] == "Y") {
+              $("#follow").text("following");
+              $("#follow").attr("onclick", "unfollow()");
+            } else {
+              $("#follow").text("follow");
+              $("#follow").attr("onclick", "follow()");
             }
-            function follow() {
-                $.ajax({
-                    type: 'POST',
-                    url: '/follow/{{name}}/',
-                    data: {following : "Y"},
-                    success: function (response) {
-                        alert(response['msg']);
-                        window.location.reload()
-                     }
-                 });
-             }
+          },
+        });
+      }
+      function follow() {
+        $.ajax({
+          type: "POST",
+          url: "/follow/{{name}}/",
+          data: { following: "Y" },
+          success: function (response) {
+            alert(response["msg"]);
+            window.location.reload();
+          },
+        });
+      }
 
-            function unfollow() {
-                 $.ajax({
-                     type: 'POST',
-                     url: '/unfollow/{{name}}/',
-                     data: {
-                         following : "N"
-                     },
-                     success: function (response) {
-                         alert(response['msg']);
-                         window.location.reload()
-                     }
-                 });
-             }
-             $(document).ready(function () {
-                 showFollow();
-             });
-        </script>
+      function unfollow() {
+        $.ajax({
+          type: "POST",
+          url: "/unfollow/{{name}}/",
+          data: {
+            following: "N",
+          },
+          success: function (response) {
+            alert(response["msg"]);
+            window.location.reload();
+          },
+        });
+      }
+      $(document).ready(function () {
+        showFollow();
+      });
+    </script>
 
-            <div style="width: 1000px; margin-top : 20px;" class="nine-product-container">
-                <h2>판매 상품</h2>
-                <div class="nine-separator"></div> 
-                <button class="nine-page-button"><img class="nine-button-mark" src="../../static/images/화살표.png" alt="arrow"></button>
-
-
-                <div class="nine-product-cards">
-
-                    <div class="nine-hot-cards">
-                        <h3>HOT!</h3>
-
-                        <a target="_blank">
-                            <div class="nine-product-card">
-                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-
-
-                <div class="nine-product-cards">
-                    
-                    <div class="nine-hot">
-                        <p class = "nine-hot-title">HOT!</p>
-                        <div class = "nine-hot-cards">
-                            <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                        </a>
-
-                        <a target="_blank">
-                            <div class="nine-product-card">
-                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                        </a>
-                        <a target="_blank">
-                            <div class="nine-product-card">
-                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                         <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                        </a>
-                        <a target="_blank">
-                            <div class="nine-product-card">
-                                <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                         <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                        </a>
-                        </div>
-
+    <div class="nine-product-containers">
+      <div class="nine-product-container">
+        <h2>판매 상품</h2>
+        <div class="nine-separator">
+          <div class="nine_container1">
+            {% if total1 > 0 %}
+            <table>
+              <tbody>
+                <tr>
+                  {% for item in datas %}
+                  <td class="card">
+                    <div
+                      onclick="location.href='/view_detail/{{item.item_title}}/';"
+                      style="cursor: pointer"
+                    >
+                      <img
+                        class="card_img"
+                        src="../../static/images/{{ item.img_path }}"
+                      />
+                      <div class="text">
+                        <p class="item_name">{{ item.item_title }}</p>
+                        <p class="item_price">{{ item.price }}</p>
+                      </div>
                     </div>
-
-                    <a target="_blank">
-                        <div class="nine-product-card">
-                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                            <h5>
-                                name
-                            </h5>
-                            <p>0000-00-00</p>
-                        </div>
-                    </a>
-                    
-
-                    <a target="_blank">
-                        <div class="nine-product-card">
-                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                            <h5>
-                                name
-                            </h5>
-                            <p>0000-00-00</p>
-                        </div>
-                    </a>
-
-                    <a target="_blank">
-                        <div class="nine-product-card">
-                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                            <h5>
-                                name
-                            </h5>
-                            <p>0000-00-00</p>
-                        </div>
-                    </a>
-
-                    <a target="_blank">
-                        <div class="nine-product-card">
-                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                            <h5>
-                                name
-                            </h5>
-                            <p>0000-00-00</p>
-                        </div>
-                    <!-- 페이지네이션시 바뀌는 것들-->
-                    <div class = "nine-else-product-container">
-                         <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                    </a>
-                    
-
-                     <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                      </a>
-
-                     <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                    </a>
-
-                    <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                    </a>
-                    
-
-                    <a target="_blank">
-                        <div class="nine-product-card">
-                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                            <h5>
-                                name
-                            </h5>
-                            <p>0000-00-00</p>
-                        </div>
-                    </a>
-
-                    <a target="_blank">
-                        <div class="nine-product-card">
-                            <img src="../../static/images/이미지_파일의_경로.png" alt="상품 이미지">
-                            <h5>
-                                name
-                            </h5>
-                            <p>0000-00-00</p>
-                        </div>
-                     <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                      </a>
-
-                     <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                    </a>
-                    
-                     <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                    </a>
-                    
-                     <a target="_blank">
-                            <div class="nine-your-product-card">
-                                <img src="../../static/images/nine_cake3.jpeg" alt="상품 이미지">
-                                <h5>
-                                    name
-                                </h5>
-                                <p>0000-00-00</p>
-                            </div>
-                    </a>
-                    </div>
-                    
-                <div class="pagination">
-                <ul>
-                    <li><a href="#"><</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">></a></li>
-                <!-- 페이지 번호들을 원하는 만큼 추가하세요 -->
-                </ul>
-            </div>
+                  </td>
+                  {%endfor%}
+                </tr>
+              </tbody>
+            </table>
+            {% else %}
+            <p>판매하는 상품이 없습니다.</p>
+            {% endif %}
+          </div>
         </div>
-    <!-- 나머지 컨텐츠를 이어서 추가하세요 -->
+      </div>
+    </div>
   </div>
-  </body>
-  {% endblock section %}
+</body>
+{% endblock section %}

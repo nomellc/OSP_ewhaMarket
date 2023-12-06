@@ -14,8 +14,8 @@
 
 body {
   margin: 0;
-  width : 100%;
-  padding : 40px;
+  width: 100%;
+  padding: 40px;
   color: #71513c;
   background-color: #f5ebe0;
   box-sizing: border-box;
@@ -42,7 +42,7 @@ a {
 }
 
 .top_navbar {
-  width : 100%;
+  width: 100%;
   max-height: 50px;
   margin : 0 auto;
   padding : 10px;
@@ -51,7 +51,7 @@ a {
 }
 
 .top_navbar ul {
-  padding : 10px;
+  padding: 10px;
   list-style: none;
   min-width : 300px;
 
@@ -85,11 +85,10 @@ a {
     width : 100%;
     padding : 30px;
 
-    margin : 0px;
-    background-color : #71513c;
-    position : relative;
-    top : 0;
-
+  margin: 0px;
+  background-color: #71513c;
+  position: relative;
+  top: 0;
 }
 
 .christ-icon{
@@ -101,10 +100,10 @@ a {
     
 }
 
-.navbar img{
-    width : 90px;
-    height : 90px;
-    margin : 0 ;
+.navbar img {
+  width: 90px;
+  height: 90px;
+  margin: 0;
 }
 
 
@@ -112,12 +111,11 @@ a {
   font-size: 60px;
   color: #f5ebe0;
   letter-spacing: 10px;
-  margin : 0 ;
-    
+  margin: 0;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .title a:hover {
@@ -138,7 +136,7 @@ a {
 }
 
 .navbar_container ul {
-  max-height : 80px;
+  max-height: 80px;
   list-style-type: none;
   padding: 0;
   overflow: hidden;
@@ -240,7 +238,7 @@ a {
 /*이미지 리스트*/
 
 .container {
-  position : relative;
+  position: relative;
   width: 100%;
   margin : 0;
   display: flex;
@@ -252,7 +250,7 @@ a {
   display: block;
   padding : 30px;
   float: left;
-  flex : 1;
+  flex: 1;
 }
 
 .card a {
@@ -274,6 +272,15 @@ a {
   font-size: 20px;
   color: #71513c;
   margin: 5px;
+}
+
+.item_name_small {
+  font-size: 20px;
+  color: #71513c;
+  margin: 5px;
+  width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item_price {
@@ -299,7 +306,6 @@ a {
   padding-left : 1220px;
 }
 
-
 .sort_button {
   position: relative;
   color: #cadfdc;
@@ -307,7 +313,6 @@ a {
   border: none;
   font-size: 20px;
   min-width: 100px;
-
 }
 
 .sort_content {
@@ -326,7 +331,7 @@ a {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-    }
+}
 
 .sort_content a:hover {
   background-color: #71513c;
@@ -731,7 +736,7 @@ home-center {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   overflow: hidden;
-  position : relative;
+  position: relative;
 }
 
 .four-input-group {
@@ -827,7 +832,7 @@ home-center {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin : 80px;
+  margin: 80px;
 }
 
 .five_title_img {
@@ -841,7 +846,6 @@ home-center {
   border-radius: 10px;
   background-color: #fffef6;
 }
-
 
 .five_img_box {
   display: flex;
@@ -880,7 +884,7 @@ home-center {
   margin-bottom: 40px;
   border: 2px solid #71513c;
   border-radius: 10px;
-  margin : 80px;
+  margin: 80px;
 }
 
 /* .satisfaction 스타일 변경 */
@@ -1392,6 +1396,9 @@ home-center {
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
   margin: 20px;
 }
 
@@ -1480,29 +1487,27 @@ home-center {
 }
 
 .nine_container {
-  width : 100%;
-  height : 40vh;
+  width: 100%;
+  height: 40vh;
 }
 
-.nine_title{
-    position : relative;
-    left : 80px;
-    top : 100px;
+.nine_title {
+  position: relative;
+  left: 80px;
+  top: 100px;
 }
 
-.nine_title a{
-  
+.nine_title a {
   font-size: 60px;
   color: #71513c;
   letter-spacing: 3px;
-  margin : 0;
+  margin: 0;
 }
 
 .nine_write_button {
+  position: relative;
+  left: 1100px;
 
-  position : relative;
-  left : 1100px;
-    
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 28px;
@@ -1513,13 +1518,11 @@ home-center {
   width: 150px;
 }
 
-
 .nine_navbar {
-  margin-top : 40px;
-   margin-bottom : 0px;
-   overflow :hidden;
-   width : 100%;
-
+  margin-top: 40px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .nine_navbar ul {
@@ -1578,9 +1581,9 @@ home-center {
 }
 
 .nine_container2 {
-  position : relative;
-  width : 100%;
-  margin : 30px;
+  position: relative;
+  width: 100%;
+  margin: 30px;
 
   flex-wrap: wrap;
   justify-content: center;
@@ -1592,9 +1595,19 @@ home-center {
   color: #d4927d;
   font-weight: bold;
 
-  padding : 5px;
-  margin-top : -105px;
-  margin-left : 280px;
+  padding: 5px;
+  margin-top: -105px;
+  margin-left: 280px;
+}
+
+#heart {
+  font-size: 50px;
+  color: grey;
+  font-weight: bold;
+
+  padding: 5px;
+  margin-top: -105px;
+  margin-left: 280px;
 }
 
 .sell-icon {
@@ -1602,7 +1615,7 @@ home-center {
   left: 250px;
   top: -354px;
 }
-    
+
 .sell-triangle {
   width: 0;
   height: 0;
