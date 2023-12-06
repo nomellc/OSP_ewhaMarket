@@ -14,7 +14,7 @@ def hello():
 
 @application.route("/login")
 def login():
-    return render_template("seven_login.html")
+    return render_template("login.html")
 
 @application.route("/logout")
 def logout_user():
@@ -45,7 +45,7 @@ def login_user():
         return redirect(url_for('view_list'))
     else:
         flash("Wrong ID or PW!")
-        return render_template("seven_login.html")
+        return render_template("login.html")
 
 @application.route("/list")
 def view_list():
@@ -173,7 +173,7 @@ def register_user():
     if is_id_checked and is_password_checked:
         if DB.insert_user({'id': data['id'], 'pw': pw_hash, 'nickname': data['nickname'], 'email': data['email'], 'phonenum': data.get('phonenum', '')}):
             flash("회원가입이 완료되었습니다. 환영합니다.")
-            return render_template("seven_login.html")
+            return render_template("login.html")
         else:
             flash("user id already exist!")
             return render_template("eight_register.html")
