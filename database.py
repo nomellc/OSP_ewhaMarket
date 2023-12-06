@@ -227,8 +227,13 @@ class DBhandler:
     def get_followercount_byname(self, name):
         data = self.db.child("follower_count").child(name).get().val()
         return data
-    
-    def get_sellitems_by_id(self, id):
+        
+    def get_popularitems_sort(self, match):
+        sorted_popular = sorted(match, key=lambda x: x.get('isSold', 0), reverse=True)
+        # 맨 처음 3개만 가져오기. 리스트 길이가 3 미만이면 그대로 반환
+        return sorted_popular[:3] if len(sorted_popular) >= 3 else sorted_popular
+
+    def get_sellitems_by_id(self, id, isYour):
         items = self.db.child("item").get()
         matching_items = []
         if items.val() is not None:
@@ -238,7 +243,11 @@ class DBhandler:
                 # 만약 해당 물건에 id 키가 있다면
                 if "seller" in item_data and item_data["seller"] == id:
                     matching_items.append(item_data)
+            if isYour==True:
+                popular_items=self.get_popularitems_sort(matching_items)
+                return popular_items, matching_items
         return matching_items
+    
     
     def get_solditems_by_id(self, id):
         items = self.db.child("sold").child(id).get()
@@ -290,14 +299,14 @@ class DBhandler:
                     })
 
         return matching_items
+    
 
     def get_likeitems_by_id(self, id):
         matching_items=[]
         like_items_ref = self.db.child("heart").child(id).get()
         
         if like_items_ref.val() is not None:
-            for res in like_items_ref.each(): 
-                print("res",res)            
+            for res in like_items_ref.each():         
                 item_data = res.val()
                 if item_data["isHeart"]=='Y':
                     matching_items.append({
@@ -318,6 +327,13 @@ class DBhandler:
             target_value=hearts['isHeart']
         return target_value
 
+    def update_sell_count(self, item_name):
+        this_item = self.db.child("item").child(item_name).get().val()
+        self.db.child("item").child(item_name).update({"isSold": this_item.get('isSold', 0) + 1})
+            
+        return True
+            
+        
     def update_heart(self, user_id, isHeart, item):
         if self.db.child("heart").child(user_id).child(item).get().val()==None :
             sell_items=self.db.child("item").child(item).get().val()
