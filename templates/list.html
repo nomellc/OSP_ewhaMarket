@@ -1,15 +1,17 @@
 {% extends "top.html" %} {% block section %}
 <div class="sort">
-    <button class="sort_button" onclick="toggleDiv()">▼ All</button>
-    <div class="sort_content" id="sortContents" style="display: none;">
-        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
-        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
-        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
-        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
-        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
-        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
-        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
-    </div>
+  <button class="sort_button" onclick="toggleDiv()">▼ All</button>
+  <div class="sort_content" id="sortContents" style="display: none">
+    <a href="{{url_for('view_list', page=i, category='all')}}">All</a>
+    <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+    <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
+    <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
+    <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+    <a href="{{url_for('view_list', page=i, category='Croissant')}}"
+      >크로와상</a
+    >
+    <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
+  </div>
 </div>
 
 {% if total > 0 %}
@@ -60,8 +62,8 @@
             alt="{{key}}"
             class="card_img"
           />
-          <!-- 이미지 -->
           <div class="nine_heart" onclick="like(this)">♡</div>
+          <!-- 이미지 -->
           <div class="text">
             <p class="item_name">{{key}}</p>
             <!-- 상품 이름 -->

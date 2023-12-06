@@ -65,6 +65,7 @@
         <div class="three-item-image">
           <img src="../../static/images/{{data.img_path}}" />
         </div>
+          <i class="fas fa-heart" id="heart" style="cursor: pointer"></i>
 
         <div class="three-item-sum">
           {% if data.seller == session['id'] %}
@@ -99,7 +100,6 @@
         >
           구매하기
         </button>
-        <i class="fas fa-heart" id="heart" style="cursor: pointer"></i>
         {% endif %}
       </div>
     </div>
