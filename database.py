@@ -27,15 +27,21 @@ class DBhandler:
         items = self.db.child("item").get().val()
         if not items:
             return {}
-    
-        items_list = list(items.items()) 
-        
+
+        items_list = list(items.items())
+
+        # Add sorting logic
         if sort == 'price_asc':
             items_list.sort(key=lambda x: int(x[1].get('price', 0)))
         elif sort == 'price_desc':
             items_list.sort(key=lambda x: int(x[1].get('price', 0)), reverse=True)
-        elif sort == 'name':
-        # Check if 'item_title' key exists, use an empty string as default
+        elif sort == 'newest':
+            # Ensure timestamp is treated as integer for sorting
+            items_list.sort(key=lambda x: int(x[1].get('timestamp', 0)), reverse=True)
+        elif sort == 'oldest':
+            # Ensure timestamp is treated as integer for sorting
+            items_list.sort(key=lambda x: int(x[1].get('timestamp', 0)))
+        else:  # sort by name
             items_list.sort(key=lambda x: x[1].get('item_title', '').lower())
 
         return dict(items_list)
@@ -57,12 +63,17 @@ class DBhandler:
         
         filtered_items = {k: v for k, v in items.items() if v['category'] == cate}
 
+        # Sorting logic
         if sort == 'price_asc':
             filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1]['price']))
         elif sort == 'price_desc':
             filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1]['price']), reverse=True)
-        elif sort == 'name':
-            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1]['item_title'])
+        elif sort == 'newest':
+            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1].get('timestamp', ''), reverse=True)
+        elif sort == 'oldest':
+            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1].get('timestamp', ''))
+        else:  # sort by name
+            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1].get('item_title', '').lower())
 
         return dict(filtered_items)
     

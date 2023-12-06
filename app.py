@@ -58,7 +58,7 @@ def view_list():
     start_idx = per_page * page
     end_idx = per_page * (page + 1)
     if category == "all":
-        data = DB.get_items(sort=sort) # 정렬 파라미터를 get_items에 전달
+        data = DB.get_items(sort=sort)
     else:
         data = DB.get_items_bycategory(category, sort=sort)
     data = dict(sorted(data.items(), key=lambda x: x[0], reverse=False))
@@ -81,7 +81,7 @@ def view_list():
                 locals()[data_key] = dict(list(data.items())[start:end])
 
     # 여기서 locals()['data_0'] 또는 locals()['data_1']이 존재하지 않을 수 있으므로, 이를 고려하여 템플릿에 데이터 전달
-    return render_template("list.html", 
+    return render_template("index.html", 
                            row1=locals().get('data_0', {}).items(), 
                            row2=locals().get('data_1', {}).items(), 
                            limit=per_page, 
