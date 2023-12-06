@@ -187,3 +187,7 @@ function unlike(name) {
     },
   });
 }
+
+function updateSort(value) {
+  window.location.href = value;
+}

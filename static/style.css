@@ -1572,7 +1572,7 @@ home-center {
 
 .nine_container1 {
   position : relative;
-  width 100%;
+  width : 100%;
   margin : 30px;
 
   display: flex;
