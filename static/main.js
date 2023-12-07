@@ -65,16 +65,6 @@ function menu() {
   }
 }
 
-//좋아요 버튼
-function like(likeDiv) {
-  if (this.textContent == "♡") {
-    likeDiv.textContent = "❤";
-  } else {
-    likeDiv.textContent = "♡";
-    location.href = "/unlike/{{likeDiv}}";
-  }
-}
-
 // 정렬 버튼
 function toggleDiv() {
   var dropdownContent = document.getElementById("sortContents");
