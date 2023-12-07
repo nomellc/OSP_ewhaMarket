@@ -1,34 +1,8 @@
 {%extends "top.html"%} {% block section %}
 
 <head>
-  <title>EWHA MARKET</title>
-  <link rel="stylesheet" type="text/css" href="../../static/style.css" />
-  <script src="{{url_for('static', filename='main.js')}}" defer></script>
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-
-<body>
-   <div class = "box-container">
-
-    <div class="nine-user-container">
-        <div class="nine-user-profile">
-      <p class="user-profile-img">
-        <img src="../../static/images/mypage.jpeg" alt="사용자 프로필 사진" />
-      </p>
-      <div class="nine-user-name">{{name}}</div>
-      <div class="nine-following2">
-        {% if following is none %} following 00 {% else %} following
-        {{following}} {% endif %}
-      </div>
-      <div class="nine-follower2">
-        {% if data is none %} follower 00 {% else %} follower {{data}} {% endif
-        %}
-      </div>
-      <button class="nine-bell-button">
-        <img src="../../static/images/ring.png" alt="bell" />
-      </button>
-      <button class="nine-follow-button" id="follow">follow</button>
-    </div>
     <script>
       function showFollow() {
         $.ajax({
@@ -77,6 +51,31 @@
       });
     </script>
 
+<body>
+        
+    <div class="nine-user-container">
+      <div class="nine-user-profile">
+        <p class="user-profile-img">
+          <img src="../../static/images/mypage.jpeg" />
+        </p>
+        <div class="nine-user-name">{{session['id']}}</div>
+        <div class = "nine-button-container">
+        <div class="nine-follower" style="cursor: default">
+          {% if follower is none %} follower 00 {% else %} follower {{follower}}
+          {% endif %}
+        </div>
+        <div
+          class="nine-following"
+          onclick="location.href='/view_following/{{session['id']}}/';"
+          style="cursor: pointer"
+        >
+          {% if data is none %} following 00 {% else %} following {{data}} {%
+          endif %}
+        </div>
+        <button class="nine-follow-button" id="follow">follow</button>
+         </div>
+      </div>
+        
     <div class="nine-product-containers">
       <div class="nine-product-container">
         <h2>판매 상품</h2>
@@ -114,6 +113,6 @@
       </div>
     </div>
   </div>
-    </div>
+    
 </body>
 {% endblock section %}

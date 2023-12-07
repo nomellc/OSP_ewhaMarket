@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>관심 내역</title>
+    <title>구매 내역</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
     <div class="full-container">
-        
+         <nav class = "navbar" style = "background-color : #f5ebe0;">
       <div class="top_navbar">
         <ul>
           <li><a href="/">홈</a></li>
@@ -29,6 +29,8 @@
           <a href="/mysell//{{session['id']}}">구매 내역</a>
         </p>
         <div class="separator"></div>
+        </nav>
+
 
       <!-- 정렬 기능 -->
       <div class="sort">
@@ -77,7 +79,7 @@
         </tbody>
       </table>
       {% else %}
-      <p>구매한 상품이 없습니다.</p>
+      <div class = "none_warning">구매한 상품이 없습니다.</div>
       {% endif %}
     </div>
   </body>
