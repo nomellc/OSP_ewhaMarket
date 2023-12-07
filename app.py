@@ -176,11 +176,11 @@ def register_user():
             flash("회원가입이 완료되었습니다. 환영합니다.")
             return render_template("login.html")
         else:
-            flash("user id already exist!")
-            return render_template("eight_register.html")
+            flash("이미 존재하는 ID입니다.")
+            return render_template("signup.html")
     else:
         flash("아이디/비밀번호 체크를 해주세요.")
-        return render_template("eight_register.html")
+        return render_template("signup.html")
 
 @application.route("/reg_review_init/<name>/<item_title>")
 def reg_review_init(name, item_title):
