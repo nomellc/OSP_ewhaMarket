@@ -10,6 +10,7 @@
   <body>
     <div class="full-container">
         
+        <nav class = "navbar" style = "background-color : #f5ebe0;">
       <div class="top_navbar">
         <ul>
           <li><a href="/">홈</a></li>
@@ -28,15 +29,19 @@
         <p class="nine_title">
           <a href="/mysell//{{session['id']}}">판매 목록</a>
         </p>
+        
         <button class="nine_write_button" onclick="location.href='/reg_items'">글쓰기</button>
-
+        
+        <div class = "nine-mid">
         <div class="nine_navbar">
           <ul>
             <li><a id="nine_sellingbar" class="active" onclick="menu();">판매중</a></li>
             <li><a id="nine_soldbar" onclick="menu();">판매 완료</a></li>
           </ul>
-        </div>
+      </div>
+      </div>
         <div class="separator"></div>
+        </nav>
 
       <!-- 정렬 기능 -->
       <div class="sort">
@@ -88,7 +93,7 @@
             </tbody>
           </table>
           {% else %}
-          <p>등록된 상품이 없습니다.</p>
+          <p class = "none_warning">등록된 상품이 없습니다.</p>
           {% endif %}
         </div>
         <div class="nine_container2">
@@ -116,7 +121,7 @@
             </tbody>
           </table>
           {% else %}
-          <p>판매완료된 상품이 없습니다.</p>
+          <p class = "none_warning">판매완료된 상품이 없습니다.</p>
           {% endif %}
         </div>
    

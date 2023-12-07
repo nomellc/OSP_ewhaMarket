@@ -1,11 +1,39 @@
 {%extends "top.html"%} {% block section %}
 
 <head>
-  <title>EWHA MARKET</title>
-  <link rel="stylesheet" type="text/css" href="../../static/style.css" />
-  <script src="{{url_for('static', filename='main.js')}}" defer></script>
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
+<<<<<<< HEAD
+    <script>
+      function showFollow() {
+        $.ajax({
+          type: "GET",
+          url: "/show_follow/{{name}}/",
+          data: {},
+          success: function (response) {
+            let user_follow = response["user_follow"];
+            if (user_follow["following"] == "Y") {
+              $("#follow").text("following");
+              $("#follow").attr("onclick", "unfollow()");
+            } else {
+              $("#follow").text("follow");
+              $("#follow").attr("onclick", "follow()");
+            }
+          },
+        });
+      }
+      function follow() {
+        $.ajax({
+          type: "POST",
+          url: "/follow/{{name}}/",
+          data: { following: "Y" },
+          success: function (response) {
+            alert(response["msg"]);
+            window.location.reload();
+          },
+        });
+      }
+=======
 
 <body>
   <div class="box-container">
@@ -54,6 +82,7 @@
             },
           });
         }
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 
         function unfollow() {
           $.ajax({
@@ -73,6 +102,55 @@
         });
       </script>
 
+<<<<<<< HEAD
+<body>
+        
+    <div class="nine-user-container">
+      <div class="nine-user-profile">
+        <p class="user-profile-img">
+          <img src="../../static/images/mypage.jpeg" />
+        </p>
+        <div class="nine-user-name">{{session['id']}}</div>
+        <div class = "nine-button-container">
+        <div class="nine-follower" style="cursor: default">
+          {% if follower is none %} follower 00 {% else %} follower {{follower}}
+          {% endif %}
+        </div>
+        <div
+          class="nine-following"
+          onclick="location.href='/view_following/{{session['id']}}/';"
+          style="cursor: pointer"
+        >
+          {% if data is none %} following 00 {% else %} following {{data}} {%
+          endif %}
+        </div>
+        <button class="nine-follow-button" id="follow">follow</button>
+         </div>
+      </div>
+        
+    <div class="nine-product-containers">
+      <div class="nine-product-container">
+        <h2>판매 상품</h2>
+        <div class="nine-separator">
+          <div class="nine_container1">
+            {% if total1 > 0 %}
+            <table>
+              <tbody>
+                <tr>
+                  {% for item in datas %}
+                  <td class="card">
+                    <div
+                      onclick="location.href='/view_detail/{{item.item_title}}/';"
+                      style="cursor: pointer"
+                    >
+                      <img
+                        class="card_img"
+                        src="../../static/images/{{ item.img_path }}"
+                      />
+                      <div class="text">
+                        <p class="item_name">{{ item.item_title }}</p>
+                        <p class="item_price">{{ item.price }}</p>
+=======
       <div class="nine-product-containers">
         <div class="nine-product-container">
           <h2>판매 상품</h2>
@@ -96,6 +174,7 @@
                           <p class="item_name">{{ item.item_title }}</p>
                           <p class="item_price">{{ item.price }}</p>
                         </div>
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
                       </div>
                     </td>
                     {%endfor%}
@@ -140,5 +219,9 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 </body>
 {% endblock section %}

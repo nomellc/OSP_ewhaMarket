@@ -1254,7 +1254,7 @@ home-center {
 
 .nine-user-profile {
   display: flex;
-  align-items: center;
+
   border: 2px solid #d4927d;
   border-radius: 10px;
   padding: 30px;
@@ -1263,14 +1263,12 @@ home-center {
   width: 1000px;
   height: 200px;
 
-  position: static;
+  position: relative;
 }
 
 .nine-user-profile .nine-user-name {
-  margin-left: 30px;
-  margin-top: -20px;
-  margin-bottom: 60px;
-
+  margin : 20px;
+  padding-left : 10px;
   font-size: 40px;
   letter-spacing: 5px;
 }
@@ -1283,10 +1281,20 @@ home-center {
   border-radius: 5px;
   font-size: 25px;
 
-  margin-left: -160px;
-  margin-top: 50px;
+  position : relative;
+  top : -40px;
+  left : 250px;
 }
 
+<<<<<<< HEAD
+.nine-button-container{
+    position : relative;
+    left : -220px;
+    padding : 100px;
+    display: flex;
+    align-items: center;
+    justify-content: row;
+=======
 #follow {
   width: 160px;
   margin-left: 280px;
@@ -1304,27 +1312,41 @@ home-center {
 .nine-bell-button img {
   width: 40px;
   height: 40px;
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 }
 
-.nine-following1 {
+.nine-following {
   font-size: 20px;
   padding: 3px 3px;
   border-radius: 5px;
-  background-color: #cadfdc;
+  background-color: #f5ebe0;
   margin: 5px;
-  margin-top: 30px;
+  
+  width : 150px;
+  height : 45px;
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nine-follower1 {
+.nine-follower {
   font-size: 20px;
   padding: 3px 3px;
   border-radius: 5px;
-  background-color: #cadfdc;
+  background-color: #f5ebe0;
   margin: 5px;
-  margin-left: -100px;
-  margin-top: 30px;
+  
+  width : 150px;
+  height : 45px;
+    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
 .nine-following2 {
   font-size: 20px;
   align-content: center;
@@ -1347,6 +1369,7 @@ home-center {
   left: -60px;
   top: 30px;
 }
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 
 .nine-product-containers {
   display: flex;
@@ -1359,9 +1382,9 @@ home-center {
 .nine-product-container {
   flex: 1;
   border-radius: 10px;
-  display: flex;
   padding: 10px;
   margin: 5px;
+  width : 33%;
   flex-direction: column;
   background-color: white;
 
@@ -1381,7 +1404,9 @@ home-center {
   border: none;
   cursor: pointer;
 
-  margin-top: -50px;
+  position : relative;
+  left : 250px;
+  top : -68px;
 }
 .nine-page-button img {
   width: 30px;
@@ -1396,18 +1421,16 @@ home-center {
 }
 
 .nine-product-cards {
+  position: relative;
+  width: calc(100%*1px);
+  margin : 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-break: break-all;
-  margin: 20px;
 }
 
 .nine-product-card {
-  margin: 10px;
+  padding : 5px;
 }
 
 .nine-product-card img {
@@ -1496,8 +1519,13 @@ home-center {
 }
 
 .nine_title {
+<<<<<<< HEAD
+  padding : 40px;
+  width : 100%;
+=======
   padding: 40px;
   padding-left: 150px;
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 }
 
 .nine_title a {
@@ -1508,9 +1536,16 @@ home-center {
 }
 
 .nine_write_button {
+<<<<<<< HEAD
+
+  position : absolute;
+  left : 1130px;
+  top : 150px;
+=======
   position: absolute;
   left: 1100px;
   top: 130px;
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 30px;
@@ -1522,7 +1557,15 @@ home-center {
   width: 160px;
 }
 
+
 .nine_navbar {
+<<<<<<< HEAD
+  margin : 0px;
+  margin-bottom : -18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+=======
   position: relative;
   margin: 0px;
   margin-bottom: -18px;
@@ -1530,6 +1573,7 @@ home-center {
   width: 100%;
 
   overflow: hidden;
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 }
 
 .nine_navbar ul {
@@ -1537,8 +1581,14 @@ home-center {
   padding: 0;
 
   display: flex;
+<<<<<<< HEAD
+  flex-direction : row;
+    align-items: center;
+  justify-content : center;
+=======
   flex-direction: row;
   justify-content: center;
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 }
 
 .nine_navbar li {
@@ -1550,8 +1600,6 @@ home-center {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  overflow: hidden;
 
   width: 500px;
   height: 80px;
@@ -1574,7 +1622,12 @@ home-center {
 
 .nine_container1 {
   position: relative;
+<<<<<<< HEAD
+  width: 100%;
+  margin : 0;
+=======
   margin: 0;
+>>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1593,6 +1646,17 @@ home-center {
   padding: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.none_warning{
+  position: relative;
+  width: 100%;
+  margin : 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    
+  font-size : 30px;
 }
 
 .nine_heart {
