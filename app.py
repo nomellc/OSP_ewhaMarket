@@ -94,7 +94,6 @@ def view_list():
 def view_item_detail(name):
     data = DB.get_item_byname(str(name))
     is_logged_in = 'id' in session  # 로그인 상태인지 확인
-    print("웹사이트에 들어갑니다", name)
     return render_template("detail.html", name=name, data=data, is_logged_in=is_logged_in)
 
 @application.route("/view_review_detail/<name>/")
@@ -202,19 +201,16 @@ def reg_review():
 
 @application.route('/show_heart/<name>/', methods=['GET'])
 def show_heart(name):
-    print("왜 나에게 이런 일이?1", name)
     my_heart = DB.get_heart_byname(session['id'],name)
     return jsonify({'my_heart': my_heart})
 
 @application.route('/like/<name>/', methods=['POST'])
 def like(name):
-    print("왜 나에게 이런 일이?2", name)
     my_heart = DB.update_heart(session['id'],'Y',name)
     return jsonify({'msg': '좋아요 완료!'})
 
 @application.route('/unlike/<name>/', methods=['POST'])
 def unlike(name):
-    print("왜 나에게 이런 일이?3", name)
     my_heart = DB.update_heart(session['id'],'N',name)
     return jsonify({'msg': '안좋아요 완료!'})
 
@@ -258,17 +254,21 @@ def view_following(name):
 def view_yourpage(name):
     data = DB.get_followercount_byname(name)
     following = DB.get_followingcount_byname(name)
-    data1=DB.get_sellitems_by_id(str(name)) #read the table
-    tot_count1=len(data1)
-    print(data)
-    print(tot_count1)
-    return render_template("yourpage.html", name=name, data=data, following=following, datas=data1, total1=tot_count1)
+    popular, match=DB.get_sellitems_by_id(str(name), True) #read the table
+    tot_count1=len(popular)
+    tot_count2=len(match)
+    print("이건 popular", popular)
+    print("이건 match", match)
+    
+    return render_template("yourpage.html", name=name, data=data, following=following, 
+                           populars=popular, total1=tot_count1,
+                           matches=match, total2=tot_count2)
 
 @application.route("/mypage/<id>/")
 def my_page(id):
     data = DB.get_followingcount_byname(str(id))
     follower = DB.get_followercount_byname(str(id))
-    data1=DB.get_sellitems_by_id(str(id)) #read the table
+    data1=DB.get_sellitems_by_id(str(id), False) #read the table
     tot_count1=len(data1)
     data2=DB.get_likeitems_by_id(str(id))
     tot_count2=len(data2)
@@ -281,7 +281,7 @@ def my_page(id):
 
 @application.route("/mysell/<id>/")
 def my_sell(id):
-    data=DB.get_sellitems_by_id(str(id)) #read the table
+    data=DB.get_sellitems_by_id(str(id), False) #read the table
     tot_count1=len(data)
     sold=DB.get_solditems_by_id(str(id)) #read the table
     tot_count2=len(sold)
@@ -326,6 +326,7 @@ def buy_button(name):
     'timestamp': timestamp}
     # DB.insert_buy_item 함수 호출 시 item_name도 함께 전달
     DB.insert_buy_item(data)
+    DB.update_sell_count(item_name)
     flash("상품이 구매되었습니다.")
     #return render_template("detail.html", data=data)
     return redirect(url_for('view_detail_by_name', name=item_name))

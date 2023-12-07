@@ -86,7 +86,37 @@
             <table>
               <tbody>
                 <tr>
-                  {% for item in datas %}
+                  {% for item in populars %}
+                  <td class="card">
+                    <div
+                      onclick="location.href='/view_detail/{{item.item_title}}/';"
+                      style="cursor: pointer"
+                    >
+                      <img
+                        class="card_img"
+                        src="../../static/images/{{ item.img_path }}"
+                      />
+                      <div class="text">
+                        <p class="item_name">{{ item.item_title }}</p>
+                        <p class="item_price">{{ item.price }}</p>
+                      </div>
+                    </div>
+                  </td>
+                  {%endfor%}
+                </tr>
+              </tbody>
+            </table>
+            {% else %}
+            <p>판매하는 상품이 없습니다.</p>
+            {% endif %}
+          </div>
+          --------------------------------------------------
+          <div class="nine_container1">
+            {% if total2 > 0 %}
+            <table>
+              <tbody>
+                <tr>
+                  {% for item in matches %}
                   <td class="card">
                     <div
                       onclick="location.href='/view_detail/{{item.item_title}}/';"
