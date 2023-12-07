@@ -1288,8 +1288,9 @@ home-center {
 
 
 .nine-button-container{
-    position : relative;
-    left : -220px;
+    position : absolute;
+    left : 75px;
+    top : 10px;
     padding : 100px;
     display: flex;
     align-items: center;
@@ -1688,7 +1689,7 @@ home-center {
   align-items: center;
   margin: 40px;
 
-  position: relative;
+  position: absolute;
   width: calc(100% * 1px);
 }
 
