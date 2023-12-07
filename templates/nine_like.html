@@ -3,45 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>관심 목록</title>
+    <title>관심 내역</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
-
   <body>
-    <div class="top_navbar">
-      <ul>
-        <li><a href="/">홈</a></li>
-        <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
-        {% if session['id'] %}
-        <li>
-          <a href="/logout">로그아웃</a>
-          <b>{{session['id']}}님</b>
-        </li>
-        {% else %}
-        <li><a href="/login">로그인</a></li>
-        {% endif %}
-      </ul>
-    </div>
-    <div class="nine_container">
-      <p class="nine_title">
-        <a href="/mylike//{{session['id']}}">관심 목록</a>
-      </p>
-    </div>
-    <div style="margin-top: -115px" class="separator"></div>
-
-    <!-- 정렬 기능 -->
-    <div class="sort">
-      <div class="sort_mark">▼</div>
-      <button class="sort_button" onclick="toggleDiv()">최신순</button>
-      <div class="sort_content" id="sortContents">
-        <a href="#">최신순</a>
-        <a href="#">오래된순</a>
-        <a href="#">이름순</a>
-        <a href="#">낮은 가격순</a>
-        <a href="#">높은 가격순</a>
+    <div class="full-container">
+        
+      <div class="top_navbar">
+        <ul>
+          <li><a href="/">홈</a></li>
+          <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
+          {% if session['id'] %}
+          <li>
+            <a href="/logout">로그아웃</a>
+            <b>{{session['id']}}님</b>
+          </li>
+          {% else %}
+          <li><a href="/login">로그인</a></li>
+          {% endif %}
+        </ul>
       </div>
-    </div>
+
+        <p class="nine_title">
+          <a href="/mysell//{{session['id']}}">관심 내역</a>
+        </p>
+        <div class="separator"></div>
+
+      <!-- 정렬 기능 -->
+      <div class="sort">
+      <button class="sort_button" onclick="toggleDiv()">▼ All</button>
+      <div class="sort_content" id="sortContents" style="display: none;">
+        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
+        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
+        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
+        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
+        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
+      </div>
+      </div>
 
     <div class="nine_container1">
       {% if total > 0 %}

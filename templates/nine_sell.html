@@ -8,7 +8,8 @@
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
-    <div class="nine_container">
+    <div class="full-container">
+        
       <div class="top_navbar">
         <ul>
           <li><a href="/">홈</a></li>
@@ -23,42 +24,34 @@
           {% endif %}
         </ul>
       </div>
-      <div class="nine_container">
+        
         <p class="nine_title">
           <a href="/mysell//{{session['id']}}">판매 목록</a>
         </p>
-        <button class="nine_write_button" onclick="location.href='/reg_items'">
-          글쓰기
-        </button>
+        <button class="nine_write_button" onclick="location.href='/reg_items'">글쓰기</button>
 
         <div class="nine_navbar">
           <ul>
-            <li>
-              <a id="nine_sellingbar" class="active" onclick="menu();"
-                >판매중</a
-              >
-            </li>
-            <li>
-              <a id="nine_soldbar" onclick="menu();">판매 완료</a>
-            </li>
+            <li><a id="nine_sellingbar" class="active" onclick="menu();">판매중</a></li>
+            <li><a id="nine_soldbar" onclick="menu();">판매 완료</a></li>
           </ul>
         </div>
-        <div style="margin-top: -70px" class="separator"></div>
-      </div>
+        <div class="separator"></div>
 
       <!-- 정렬 기능 -->
       <div class="sort">
-        <button class="sort_button" onclick="toggleDiv()">▼ 최신순</button>
-        <div class="sort_content" id="sortContents">
-          <a href="#">최신순</a>
-          <a href="#">오래된순</a>
-          <a href="#">이름순</a>
-          <a href="#">낮은 가격순</a>
-          <a href="#">높은 가격순</a>
-        </div>
+      <button class="sort_button" onclick="toggleDiv()">▼ All</button>
+      <div class="sort_content" id="sortContents" style="display: none;">
+        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
+        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
+        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
+        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
+        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
       </div>
-
-      <div class="nine_list">
+      </div>
+          
         <div class="nine_container1">
           {% if total1 > 0 %}
           <table>
@@ -126,7 +119,8 @@
           <p>판매완료된 상품이 없습니다.</p>
           {% endif %}
         </div>
-      </div>
+   
     </div>
+        
   </body>
 </html>
