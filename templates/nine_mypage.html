@@ -1,116 +1,130 @@
 {%extends "top.html"%} {% block section %}
-        
-    <div class="nine-user-container">
-      <div class="nine_user-profile">
-        <p class="user-profile-img">
-          <img src="../../static/images/mypage.jpeg" />
-        </p>
-        <div class="nine-user-name">{{session['id']}}</div>
-        <div class = "nine-button-container">
-        <div class="nine-follower" style="cursor: default">
-          {% if follower is none %} follower 00 {% else %} follower {{follower}}
-          {% endif %}
-        </div>
-        <div
-          class="nine-following"
-          onclick="location.href='/view_following/{{session['id']}}/';"
-          style="cursor: pointer"
-        >
-          {% if data is none %} following 00 {% else %} following {{data}} {%
-          endif %}
-        </div>
-         </div>
+<div class="box-container">
+  <div class="nine-user-container">
+    <div class="nine-user-profile">
+      <p class="user-profile-img">
+        <img src="../../static/images/mypage.jpeg" />
+      </p>
+      <div class="nine-user-name">{{session['id']}}</div>
+      <div
+        class="nine-following2"
+        style="cursor: pointer"
+        onclick="location.href='/view_following/{{session['id']}}/';"
+      >
+        {% if following is none %} following 00 {% else %} following
+        {{following}} {% endif %}
       </div>
-        
-      <div class="nine-product-containers">
-          
-        <div class="nine-product-container">
-          <h2>판매 상품</h2>
-          <div class="nine-separator"></div>
-          <button
-            class="nine-page-button"
-            onclick="window.location.href='/mysell/{{ session['id'] }}'"
-          >
-            <img
-              class="nine-button-mark"
-              src="../../static/images/arrowicon.png"
-              alt="arrow"
-            />
-          </button>
-          <div class="nine-product-cards">
-            <div class="nine-product-card">
-              {% for item1 in datas1 %} {% if loop.index0 < 6 %}
-              <div onclick="location.href='/view_detail/{{item1.item_title}}/';" style="cursor: pointer">
-              <img class="card_img" src="../../static/images/{{ item1.img_path }}">
-              </div>
-
-              <h5 class="item_name_small" style="overflow: hidden">
-                {{ item1.item_title }}
-              </h5>
-              
-              <p class="item_price">{{ item1.price }}</p>
-              {% endif %} {% endfor %}
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="nine-product-container">
-          <h2>관심 상품</h2>
-          <div class="nine-separator"></div>
-          <button
-            class="nine-page-button"
-            onclick="window.location.href='/mylike/{{ session['id'] }}'"
-          >
-            <img
-              class="nine-button-mark"
-              src="../../static/images/arrowicon.png"
-              alt="arrow"
-            />
-          </button>
-          <div class="nine-product-cards">
-            <div class="nine-product-card">
-              {% for item2 in datas2 %} {% if loop.index0 < 6 %}
-              <div onclick="location.href='/view_detail/{{item2.item_title}}/';" style="cursor: pointer">
-              <img class="card_img" src="../../static/images/{{ item2.img_path }}">
-              </div>
-              
-              <h5 class="item_name_small" style="overflow: hidden">
-                {{ item2.item_title }}
-              </h5>
-              <p class="item_price">{{ item2.price }}</p>
-              {% endif %} {% endfor %}
-            </div>
-          </div>
-        </div>
-
-        <div class="nine-product-container">
-          <h2>구매 상품</h2>
-          <div class="nine-separator"></div>
-          <button
-            class="nine-page-button"
-            onclick="window.location.href='/mybuy/{{ session['id'] }}'"
-          >
-            <img
-              class="nine-button-mark"
-              src="../../static/images/arrowicon.png"
-              alt="arrow"
-            />
-          </button>
-          <div class="nine-product-cards">
-            <div class="nine-product-card">
-              {% for item3 in datas3 %} {% if loop.index0 < 6 %}
-              <div onclick="location.href='/view_detail/{{item3.item_title}}/';" style="cursor: pointer">
-              <img class="card_img" src="../../static/images/{{ item3.img_path }}">
-              </div>
-
-              <h5 class="item_name_small">{{ item3.item_title }}</h5>
-              <p class="item_price">{{ item3.price }}</p>
-              {% endif %} {% endfor %}
-            </div>
-          </div>
-        </div>
-      
+      <div class="nine-follower2">
+        {% if data is none %} follower 00 {% else %} follower {{data}} {% endif
+        %}
       </div>
     </div>
-  {% endblock section %}
+
+    <div class="nine-product-containers">
+      <div class="nine-product-container">
+        <h2>판매 상품</h2>
+        <div class="nine-separator"></div>
+        <button
+          class="nine-page-button"
+          onclick="window.location.href='/mysell/{{ session['id'] }}'"
+        >
+          <img
+            class="nine-button-mark"
+            src="../../static/images/arrowicon.png"
+            alt="arrow"
+          />
+        </button>
+        <div class="nine-product-cards">
+          <div class="nine-product-card">
+            {% for item1 in datas1 %} {% if loop.index0 < 6 %}
+            <div
+              onclick="location.href='/view_detail/{{item1.item_title}}/';"
+              style="cursor: pointer"
+            >
+              <img
+                class="card_img"
+                src="../../static/images/{{ item1.img_path }}"
+              />
+            </div>
+
+            <h5 class="item_name_small" style="overflow: hidden">
+              {{ item1.item_title }}
+            </h5>
+
+            <p class="item_price">{{ item1.price }}</p>
+            {% endif %} {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="nine-product-container">
+        <h2>관심 상품</h2>
+        <div class="nine-separator"></div>
+        <button
+          class="nine-page-button"
+          onclick="window.location.href='/mylike/{{ session['id'] }}'"
+        >
+          <img
+            class="nine-button-mark"
+            src="../../static/images/arrowicon.png"
+            alt="arrow"
+          />
+        </button>
+        <div class="nine-product-cards">
+          <div class="nine-product-card">
+            {% for item2 in datas2 %} {% if loop.index0 < 6 %}
+            <div
+              onclick="location.href='/view_detail/{{item2.item_title}}/';"
+              style="cursor: pointer"
+            >
+              <img
+                class="card_img"
+                src="../../static/images/{{ item2.img_path }}"
+              />
+            </div>
+
+            <h5 class="item_name_small" style="overflow: hidden">
+              {{ item2.item_title }}
+            </h5>
+            <p class="item_price">{{ item2.price }}</p>
+            {% endif %} {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="nine-product-container">
+        <h2>구매 상품</h2>
+        <div class="nine-separator"></div>
+        <button
+          class="nine-page-button"
+          onclick="window.location.href='/mybuy/{{ session['id'] }}'"
+        >
+          <img
+            class="nine-button-mark"
+            src="../../static/images/arrowicon.png"
+            alt="arrow"
+          />
+        </button>
+        <div class="nine-product-cards">
+          <div class="nine-product-card">
+            {% for item3 in datas3 %} {% if loop.index0 < 6 %}
+            <div
+              onclick="location.href='/view_detail/{{item3.item_title}}/';"
+              style="cursor: pointer"
+            >
+              <img
+                class="card_img"
+                src="../../static/images/{{ item3.img_path }}"
+              />
+            </div>
+
+            <h5 class="item_name_small">{{ item3.item_title }}</h5>
+            <p class="item_price">{{ item3.price }}</p>
+            {% endif %} {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock section %}

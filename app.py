@@ -274,7 +274,7 @@ def my_page(id):
     tot_count2=len(data2)
     data3=DB.get_buyitems_by_id(str(id)) #read the table
     tot_count3=len(data3)
-    return render_template("nine_mypage.html", data=data, follower=follower, 
+    return render_template("nine_mypage.html", data=data, following=follower, 
                            datas1=data1, total1=tot_count1,
                            datas2=data2, total2=tot_count2,
                            datas3=data3, total3=tot_count3)
