@@ -16,7 +16,6 @@ class DBhandler:
             "price": data['price'],
             "category": data['category'],
             "option_dsc": data['option_dsc'],  # 'option_dsc'로 변경
-            "event_check": data['event_check'],
             "item_explain": data['explain'],
             "img_path":img_path
         }
