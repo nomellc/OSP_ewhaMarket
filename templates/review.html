@@ -3,8 +3,7 @@
 	<div class="five_container">
 		<div class="five_title_img">
             <div class="five_rate_avg">
-		        <span class="five_star_numbers">{{total}}개의 리뷰가 등록되었습니다.</span>
-                    베스트 리뷰
+		        <span class="five_star_numbers" style="font-weight: bold; color: #D4927D">베스트 리뷰</span>
 	        </div>
             <div class="five_img_box">
                 {% for key, value in top_images %}
@@ -15,6 +14,9 @@
     </div>
         {% if total > 0 %}
 		<div class="five_review">
+            <div class="five_rate_avg">
+		        <span class="five_star_numbers"  style="font-weight: bold; color: #D4927D">{{total}}개의 리뷰가 등록되었습니다.</span>
+	        </div>
             {% for key, value in row1 %}
 			<div class="five_user_reviews" onclick="location.href='/view_review_detail/{{key}}/';" style="cursor:pointer;">
 				<div class="five_user_info">
