@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOLLOWING</title>
+    <title>팔로잉</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
   <body>
     <div class="full-container">
+         <nav class = "navbar" style = "background-color : #f5ebe0;">
       <div class="top_navbar">
         <ul>
           <li><a href="/">홈</a></li>
@@ -24,29 +25,32 @@
         </ul>
       </div>
 
-      <p class="nine_title">
-        <a href="/mysell//{{session['id']}}">팔로잉</a>
-      </p>
-      <div class="separator"></div>
+        <p class="nine_title">
+          <a href="/mysell//{{session['id']}}">팔로잉</a>
+        </p>
+        <div class="separator"></div>
+        </nav>
 
       {% if data is not none %} {% for key, value in data.items() %} {% if
       value.following == 'Y' %}
       <div class="nine_followers">
         <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
         <div class="nine_follow_container">
-          <div class="nine_profile">
+          <div class="nine_follow_img">
             <a><img src="../../static/images/nine_profile.png" /></a>
           </div>
-          <div class="nine_profile_name">
+          <div class="nine_profile">
             <a>{{key}}</a>
           </div>
-          <button class="nine_following_button1">{{follower[key]}} ❤</button>
-          <button
-            class="nine_following_button2"
-            onclick="location.href='/yourpage/{{key}}/';"
-          >
+            <div class = "nine_follow_button_container">
+                <button class="nine_following_button1">{{follower[key]}} ❤</button>
+              <button
+                class="nine_following_button2"
+                onclick="location.href='/yourpage/{{key}}/';"
+              >
             <img src="../../static/images/nine_arrow.png" />
-          </button>
+              </button>
+            </div>
         </div>
       </div>
       {% endif %} {% endfor %} {% endif %}
