@@ -51,7 +51,6 @@ function menu() {
     sellingbar.className = "active";
   }
 
-  var list = document.querySelector(".nine_list");
   var sold = document.querySelector(".nine_container1");
   var selling = document.querySelector(".nine_container2");
 
@@ -63,16 +62,6 @@ function menu() {
     selling.style.display = "none";
     sold.style.display = "flex";
     container.insertBefore(sold, selling);
-  }
-}
-
-//좋아요 버튼
-function like(likeDiv) {
-  if (this.textContent == "♡") {
-    likeDiv.textContent = "❤";
-  } else {
-    likeDiv.textContent = "♡";
-    location.href = "/unlike/{{likeDiv}}";
   }
 }
 

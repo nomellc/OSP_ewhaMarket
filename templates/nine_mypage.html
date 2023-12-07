@@ -44,9 +44,9 @@
             <div class="nine-product-card">
               {% for item1 in datas1 %} {% if loop.index0 < 6 %}
               <div
-                onclick="location.href='/view_detail/{{item1.item_title}}/';"
+                onclick= "location.href='/view_detail/{{item1.item_title}}/';" 
                 style="cursor: pointer"
-              >
+                >
                 <img
                   class="card_img"
                   src="../../static/images/{{ item1.img_path }}"

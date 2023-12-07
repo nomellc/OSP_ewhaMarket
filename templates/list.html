@@ -15,6 +15,13 @@
 </div>
 
 {% if total > 0 %}
+<!-- <div>
+    <select id="category" name="category" onchange="location=this.value">>
+        <option value="{{url_for('view_list', page=page, category=category, sort='name')}}">이름순</option>
+        <option value="{{url_for('view_list', page=page, category=category, sort='price_asc')}}">낮은 가격순</option>
+        <option value="{{url_for('view_list', page=page, category=category, sort='price_desc')}}">높은 가격순</option>
+    </select>
+    </div>-->
 <p class="two_total">현재까지 상품 {{total}}개가 등록되었습니다.</p>
 
 <div class="container">
@@ -55,7 +62,6 @@
             class="card_img"
           />
           <!-- 이미지 -->
-          <div class="nine_heart" onclick="like(this)">♡</div>
           <div class="text">
             <p class="item_name">{{key}}</p>
             <!-- 상품 이름 -->

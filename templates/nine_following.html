@@ -1,50 +1,55 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팔로잉</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOLLOWING</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
-    </head> 
+  </head>
+  <body>
+    <div class="full-container">
+      <div class="top_navbar">
+        <ul>
+          <li><a href="/">홈</a></li>
+          <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
+          {% if session['id'] %}
+          <li>
+            <a href="/logout">로그아웃</a>
+            <b>{{session['id']}}님</b>
+          </li>
+          {% else %}
+          <li><a href="/login">로그인</a></li>
+          {% endif %}
+        </ul>
+      </div>
 
-    <body>
-    <div class="top_navbar">
-      <ul>
-        <li><a href="/mypage/{{session['id']}}/">마이페이지</a></li>
-        {% if session['id'] %}
-        <li>
-          <a href="/logout">로그아웃</a>
-          <b>{{session['id']}}님</b>
-        </li>
-        {% else %}
-        <li><a href="/login">로그인</a></li>
-        {% endif %}
-      </ul>
-    </div>
-    <div class = "nine_container">
-        <p><a href="">팔로잉</a></p>
-    </div>
-    <div class = "separator"></div>
-    {% if data is not none %}
-    {% for key, value in data.items() %}
-        {% if value.following == 'Y' %}
-    <div class = "nine_followers"> <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
-        <div class = "nine_follow_container">
-            <div class = "nine_profile">
-                <a><img src="../../static/images/nine_profile.png"></a>
-            </div>
-            <div class = "nine_profile_name">
-                <a>{{key}}</a>
-            </div>
-            <button class = "nine_following_button1">{{follower[key]}} ❤</button>
-            <button class = "nine_following_button2" onclick="location.href='/yourpage/{{key}}/';">
-                <img src = "../../static/images/nine_arrow.png">
-            </button>
+      <p class="nine_title">
+        <a href="/mysell//{{session['id']}}">팔로잉</a>
+      </p>
+      <div class="separator"></div>
+
+      {% if data is not none %} {% for key, value in data.items() %} {% if
+      value.following == 'Y' %}
+      <div class="nine_followers">
+        <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
+        <div class="nine_follow_container">
+          <div class="nine_profile">
+            <a><img src="../../static/images/nine_profile.png" /></a>
+          </div>
+          <div class="nine_profile_name">
+            <a>{{key}}</a>
+          </div>
+          <button class="nine_following_button1">{{follower[key]}} ❤</button>
+          <button
+            class="nine_following_button2"
+            onclick="location.href='/yourpage/{{key}}/';"
+          >
+            <img src="../../static/images/nine_arrow.png" />
+          </button>
         </div>
+      </div>
+      {% endif %} {% endfor %} {% endif %}
     </div>
-    {% endif %}
-{% endfor %}
-{% endif %}        
-    </body>
-    </html>
+  </body>
+</html>
