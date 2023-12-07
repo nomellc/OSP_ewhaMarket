@@ -9,7 +9,6 @@
   </head>
   <body>
     <div class="full-container">
-        
       <div class="top_navbar">
         <ul>
           <li><a href="/">홈</a></li>
@@ -25,31 +24,32 @@
         </ul>
       </div>
 
-        <p class="nine_title">
-          <a href="/mysell//{{session['id']}}">팔로잉</a>
-        </p>
-        <div class="separator"></div>
-        
-    {% if data is not none %}
-    {% for key, value in data.items() %}
-        {% if value.following == 'Y' %}
-    <div class = "nine_followers"> <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
-        <div class = "nine_follow_container">
-            <div class = "nine_profile">
-                <a><img src="../../static/images/nine_profile.png"></a>
-            </div>
-            <div class = "nine_profile_name">
-                <a>{{key}}</a>
-            </div>
-            <button class = "nine_following_button1">{{follower[key]}} ❤</button>
-            <button class = "nine_following_button2" onclick="location.href='/yourpage/{{key}}/';">
-                <img src = "../../static/images/nine_arrow.png">
-            </button>
+      <p class="nine_title">
+        <a href="/mysell//{{session['id']}}">팔로잉</a>
+      </p>
+      <div class="separator"></div>
+
+      {% if data is not none %} {% for key, value in data.items() %} {% if
+      value.following == 'Y' %}
+      <div class="nine_followers">
+        <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
+        <div class="nine_follow_container">
+          <div class="nine_profile">
+            <a><img src="../../static/images/nine_profile.png" /></a>
+          </div>
+          <div class="nine_profile_name">
+            <a>{{key}}</a>
+          </div>
+          <button class="nine_following_button1">{{follower[key]}} ❤</button>
+          <button
+            class="nine_following_button2"
+            onclick="location.href='/yourpage/{{key}}/';"
+          >
+            <img src="../../static/images/nine_arrow.png" />
+          </button>
         </div>
-    </div>
-    {% endif %}
-{% endfor %}
-{% endif %}  
       </div>
-    </body>
-    </html>
+      {% endif %} {% endfor %} {% endif %}
+    </div>
+  </body>
+</html>
