@@ -1286,7 +1286,7 @@ home-center {
   left : 250px;
 }
 
-<<<<<<< HEAD
+
 .nine-button-container{
     position : relative;
     left : -220px;
@@ -1294,26 +1294,9 @@ home-center {
     display: flex;
     align-items: center;
     justify-content: row;
-=======
-#follow {
-  width: 160px;
-  margin-left: 280px;
 }
 
-.nine-bell-button {
-  padding: 5px 5px;
-  border-radius: 5px;
-  border: none;
-  background-color: white;
 
-  margin-left: 480px;
-  margin-top: -100px;
-}
-.nine-bell-button img {
-  width: 40px;
-  height: 40px;
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
-}
 
 .nine-following {
   font-size: 20px;
@@ -1345,31 +1328,6 @@ home-center {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
-.nine-following2 {
-  font-size: 20px;
-  align-content: center;
-  padding: 5px 5px;
-  border-radius: 5px;
-  background-color: #cadfdc;
-  margin: 5px;
-  position: relative;
-  left: -60px;
-  top: 30px;
-}
-
-.nine-follower2 {
-  font-size: 20px;
-  padding: 5px 5px;
-  border-radius: 5px;
-  background-color: #cadfdc;
-  margin: 5px;
-  position: relative;
-  left: -60px;
-  top: 30px;
-}
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 
 .nine-product-containers {
   display: flex;
@@ -1519,13 +1477,10 @@ home-center {
 }
 
 .nine_title {
-<<<<<<< HEAD
+
   padding : 40px;
   width : 100%;
-=======
-  padding: 40px;
-  padding-left: 150px;
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
+
 }
 
 .nine_title a {
@@ -1536,16 +1491,10 @@ home-center {
 }
 
 .nine_write_button {
-<<<<<<< HEAD
-
   position : absolute;
   left : 1130px;
   top : 150px;
-=======
-  position: absolute;
-  left: 1100px;
-  top: 130px;
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
+
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 30px;
@@ -1559,21 +1508,13 @@ home-center {
 
 
 .nine_navbar {
-<<<<<<< HEAD
+
   margin : 0px;
   margin-bottom : -18px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-=======
-  position: relative;
-  margin: 0px;
-  margin-bottom: -18px;
-  overflow: hidden;
-  width: 100%;
 
-  overflow: hidden;
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
 }
 
 .nine_navbar ul {
@@ -1581,14 +1522,11 @@ home-center {
   padding: 0;
 
   display: flex;
-<<<<<<< HEAD
+
   flex-direction : row;
     align-items: center;
   justify-content : center;
-=======
-  flex-direction: row;
-  justify-content: center;
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
+
 }
 
 .nine_navbar li {
@@ -1622,12 +1560,10 @@ home-center {
 
 .nine_container1 {
   position: relative;
-<<<<<<< HEAD
+
   width: 100%;
   margin : 0;
-=======
-  margin: 0;
->>>>>>> 14ac8410a563cd3a302ca7d00f77f47293acd3fc
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
