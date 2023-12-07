@@ -51,7 +51,6 @@ function menu() {
     sellingbar.className = "active";
   }
 
-  var list = document.querySelector(".nine_list");
   var sold = document.querySelector(".nine_container1");
   var selling = document.querySelector(".nine_container2");
 
