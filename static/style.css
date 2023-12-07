@@ -1695,43 +1695,51 @@ home-center {
 .nine_follow_container {
   border-radius: 10px;
   background-color: white;
+  border: 2px solid #d4927d;
 
-  width: 1200px;
-  height: 650px;
+  width: 1000px;
+  height: 200px;
 }
 
-.nine_profile_name {
+.nine_profile{
+  position: relative;
+  top : -140px;
+  left : 200px;
+}
+.nine_profile a {
   font-size: 45px;
   position: relative;
 
   letter-spacing: 3px;
 }
 
-.nine_profile {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #71513c;
-
-  position: relative;
-  top: 80px;
-  left: 80px;
+.nine_follow_img {
+  margin : 40px;
 }
 
-.nine_profile img {
-  width: 100%;
-  height: 100%;
+.nine_follow_img img {
   object-fit: cover;
+    
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 2px solid #71513c;
 }
 
+.nine_follow_button_container{
+    position : relative;
+    top : -210px;
+    left : 810px;
+}
 .nine_following_button1 {
   background-color: #cadfdc;
   color: #71513c;
-  padding: 10px 30px;
+  padding: 12px 32px;
   border: none;
   border-radius: 5px;
-  font-size: 30px;
+  font-size: 27px;
 
   position: relative;
 }
@@ -1742,6 +1750,9 @@ home-center {
   min-height: 5px;
   min-width: 5px;
   position: relative;
+  left : -40px;
+  top : 50px;
+
 }
 
 .nine_following_button2 img {
@@ -1750,49 +1761,6 @@ home-center {
   height: 20px;
 }
 
-.nine_more_container {
-  width: 1000px;
-  height: 320px;
-  border: 2px solid #d4927d;
-  border-radius: 10px;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow: hidden;
-
-  position: relative;
-}
-
-.nine_follow_card {
-  float: left;
-  margin: 20px;
-}
-
-.nine_follow_card img {
-  width: 280px;
-  height: 280px;
-  border-radius: 10px;
-}
-
-.nine_hot {
-  position: relative;
-  top: 280px;
-  left: 150px;
-  font-size: 40px;
-  color: #d4927d;
-  font-weight: bold;
-  font-style: italic;
-  text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
-}
-
-.nine_fheart {
-  font-size: 50px;
-  color: #d4927d;
-  font-weight: bold;
-  margin-top: -80px;
-  margin-left: 220px;
-}
 
 /* list.html */
 .page-nation li {
