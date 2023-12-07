@@ -1,43 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="../static/style.css" />
-    <script src="{{url_for('static', filename='main.js')}}" defer></script>
-  </head>
-  <body>
-    <h1>이 페이지 나오면 안 됨!</h1>
-    <nav class="home-navbar">
-      <div class="home-navbar__logo">
-        <a class="home-a" href="/">EwhaMarket</a>
-      </div>
-      <ul class="home-ul">
-        {% if session['id'] %}
-        <li class="home-li">
-          <a class="home-a" href="/logout"
-            ><b>{{session['id']}}님 반갑습니다!</b> logout</a
-          >
-        </li>
-        {% else %}
-        <li class="home-li"><a class="home-a" href="/login">Login</a></li>
-        {% endif %}
-        <li class="home-li"><a class="home-a" href="/mypage">Mypage</a></li>
-        <li class="home-li"><a class="home-a" href="/list">List</a></li>
-        <li class="home-li"><a class="home-a" href="/review">Review</a></li>
-        <li class="home-li">
-          <a class="home-a" href="/review_detail">Review Detail</a>
-        </li>
-        <li class="home-li">
-          <a class="home-a" href="/reg_items">Register Items</a>
-        </li>
-        <li class="home-li"><a class="home-a" href="/contact">Contact</a></li>
-      </ul>
-      <a href="#" class="navbar__toogleBtn">
-        <i class="fas fa-bars"></i>
-      </a>
-    </nav>
-    <section>{% block section %} {% endblock section %}</section>
-  </body>
-</html>
+{% extends "top.html" %} {% block section %}
+<div class="sort">
+    <button class="sort_button" onclick="toggleDiv()">▼ All</button>
+    <div class="sort_content" id="sortContents" style="display: none;">
+        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
+        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
+        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
+        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
+        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
+    </div>
+</div>
+
+{% if total > 0 %}
+<p class="two_total">현재까지 상품 {{total}}개가 등록되었습니다.</p>
+
+<div class="container">
+  <table>
+    <tr class="product-row">
+      {% for key, value in row1 %}
+      <td class="card">
+        <div
+          onclick="location.href='/view_detail/{{key}}/';"
+          style="cursor: pointer"
+        >
+          <img
+            src="../static/images/{{value.img_path}}"
+            alt="{{key}}"
+            class="card_img"
+          />
+          <div class="nine_heart" onclick="like(this)">♡</div>
+          <!-- 이미지 -->
+          <div class="text">
+            <p class="item_name">{{key}}</p>
+            <!-- 상품 이름 -->
+            <p class="item_price">{{value.price}}원</p>
+            <!-- 상품 가격 -->
+          </div>
+        </div>
+      </td>
+      {% endfor %}
+    </tr>
+    <tr class="product-row">
+      {% for key, value in row2 %}
+      <td class="card">
+        <div
+          onclick="location.href='/view_detail/{{key}}/';"
+          style="cursor: pointer"
+        >
+          <img
+            src="../static/images/{{value.img_path}}"
+            alt="{{key}}"
+            class="card_img"
+          />
+          <!-- 이미지 -->
+          <div class="nine_heart" onclick="like(this)">♡</div>
+          <div class="text">
+            <p class="item_name">{{key}}</p>
+            <!-- 상품 이름 -->
+            <p class="item_price">{{value.price}}원</p>
+            <!-- 상품 가격 -->
+          </div>
+        </div>
+      </td>
+      {% endfor %}
+    </tr>
+  </table>
+</div>
+<!-- 페이지네이션을 위한 코드 시작 -->
+<div class="pagination">
+  <ul>
+    {% for i in range(1, page_count + 1) %}
+    <li class="list_page_nation">
+      <a
+        href="{{url_for('view_list', page=i - 1, category=category, sort=sort)}}"
+        color="black"
+        >{{i}}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<!-- 페이지네이션을 위한 코드 끝 -->
+
+{% else %}
+<p class="two_total">등록된 상품이 없습니다.</p>
+{% endif %} {% endblock section %}
+
+<script>
+  $(document).ready(function () {
+    //alert("{{category}}")
+  });
+  $('#category option:contains("{{category}}")').prop("selected", true);
+
+  $(document).ready(function () {
+    var currentCategory = "{{category}}";
+    $(".sort_content a").each(function () {
+      if ($(this).text() === currentCategory) {
+        $(this).addClass("active");
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    var currentSort = "{{sort}}";
+    $(".sort_content a").each(function () {
+      var linkSort = new URL($(this).attr("href")).searchParams.get("sort");
+      if (linkSort === currentSort) {
+        $(this).addClass("active");
+      }
+    });
+  });
+</script>
