@@ -180,3 +180,8 @@ function unlike(name) {
 function updateSort(value) {
   window.location.href = value;
 }
+
+function updateSort(value) {
+  console.log("Redirecting to: " + value); // 콘솔 로그 추가
+  window.location.href = value;
+}

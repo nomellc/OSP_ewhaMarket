@@ -57,38 +57,42 @@ def view_list():
     row_count = int(per_page / per_row)
     start_idx = per_page * page
     end_idx = per_page * (page + 1)
+    
     if category == "all":
         data = DB.get_items(sort=sort)
     else:
         data = DB.get_items_bycategory(category, sort=sort)
-    data = dict(sorted(data.items(), key=lambda x: x[0], reverse=False))
+
+    if sort == '최신순':
+        sort = 'newest'
+    elif sort == '오래된순':
+        sort = 'oldest'
+    elif sort == '낮은 가격순':
+        sort = 'price_asc'
+    elif sort == '높은 가격순':
+        sort = 'price_desc'
+
     item_counts = len(data)
-    if item_counts <= per_page:
-        data = dict(list(data.items())[:item_counts])
-    else:
-        data = dict(list(data.items())[start_idx:end_idx])
+    page_count = int((item_counts / per_page) + 1)
 
-    tot_count = len(data)
+    # 데이터 슬라이싱
+    sliced_data = dict(list(data.items())[start_idx:end_idx])
 
-    for i in range(row_count):
-        start = i * per_row
-        end = start + per_row
-        data_key = 'data_{}'.format(i)
-        if start < tot_count:
-            if end > tot_count:  # 마지막 페이지의 마지막 행 처리
-                locals()[data_key] = dict(list(data.items())[start:])
-            else:
-                locals()[data_key] = dict(list(data.items())[start:end])
+    # 데이터를 행별로 분리
+    rows_data = [dict(list(sliced_data.items())[i*per_row:(i+1)*per_row]) for i in range(row_count)]
 
-    # 여기서 locals()['data_0'] 또는 locals()['data_1']이 존재하지 않을 수 있으므로, 이를 고려하여 템플릿에 데이터 전달
-    return render_template("index.html", 
-                           row1=locals().get('data_0', {}).items(), 
-                           row2=locals().get('data_1', {}).items(), 
-                           limit=per_page, 
-                           page=page, 
-                           page_count=int((item_counts / per_page) + 1), 
-                           total=item_counts,
-                           category=category)
+    # 전달할 데이터 준비
+    render_data = {
+        'row_data': rows_data,
+        'limit': per_page,
+        'page': page,
+        'page_count': page_count,
+        'total': item_counts,
+        'category': category,
+        'sort': sort
+    }
+
+    return render_template("index.html", **render_data)
 
 @application.route("/view_detail/<name>/", endpoint='view_detail_by_name')
 def view_item_detail(name):

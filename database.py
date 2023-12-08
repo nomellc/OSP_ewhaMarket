@@ -1,5 +1,6 @@
 import pyrebase
 import json
+from datetime import datetime
 
 class DBhandler:
     def __init__(self):
@@ -10,14 +11,19 @@ class DBhandler:
         self.db = firebase.database()
     
     def insert_item(self, name, data, img_path):
+        # 현재 UTC 시간을 타임스탬프로 변환
+        current_time_utc = int(datetime.utcnow().timestamp())
+        # 가격을 문자열에서 정수로 변환
+        price_int = int(data['price']) if data['price'].isdigit() else 0
         item_info = {
-            "seller": data['id_i'],  # ID를 'seller'로 변경
+            "seller": data['id_i'],
             "item_title": data['item_title'],
-            "price": data['price'],
+            "price": price_int,  # 정수형 가격
             "category": data['category'],
-            "option_dsc": data['option_dsc'],  # 'option_dsc'로 변경
+            "option_dsc": data['option_dsc'],
             "item_explain": data['explain'],
-            "img_path":img_path
+            "img_path": img_path,
+            "timestamp": current_time_utc  # 현재 시간 타임스탬프
         }
         self.db.child("item").child(name).set(item_info)
         return True
@@ -29,18 +35,15 @@ class DBhandler:
 
         items_list = list(items.items())
 
-        # Add sorting logic
         if sort == 'price_asc':
             items_list.sort(key=lambda x: int(x[1].get('price', 0)))
         elif sort == 'price_desc':
             items_list.sort(key=lambda x: int(x[1].get('price', 0)), reverse=True)
         elif sort == 'newest':
-            # Ensure timestamp is treated as integer for sorting
             items_list.sort(key=lambda x: int(x[1].get('timestamp', 0)), reverse=True)
         elif sort == 'oldest':
-            # Ensure timestamp is treated as integer for sorting
             items_list.sort(key=lambda x: int(x[1].get('timestamp', 0)))
-        else:  # sort by name
+        else:
             items_list.sort(key=lambda x: x[1].get('item_title', '').lower())
 
         return dict(items_list)
@@ -59,19 +62,18 @@ class DBhandler:
         items = self.db.child("item").get().val()
         if not items:
             return {}
-        
+
         filtered_items = {k: v for k, v in items.items() if v['category'] == cate}
 
-        # Sorting logic
         if sort == 'price_asc':
-            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1]['price']))
+            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1].get('price', 0)))
         elif sort == 'price_desc':
-            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1]['price']), reverse=True)
+            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1].get('price', 0)), reverse=True)
         elif sort == 'newest':
-            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1].get('timestamp', ''), reverse=True)
+            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1].get('timestamp', 0)), reverse=True)
         elif sort == 'oldest':
-            filtered_items = sorted(filtered_items.items(), key=lambda x: x[1].get('timestamp', ''))
-        else:  # sort by name
+            filtered_items = sorted(filtered_items.items(), key=lambda x: int(x[1].get('timestamp', 0)))
+        else:
             filtered_items = sorted(filtered_items.items(), key=lambda x: x[1].get('item_title', '').lower())
 
         return dict(filtered_items)
