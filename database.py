@@ -338,11 +338,18 @@ class DBhandler:
         return target_value
 
     def update_sell_count(self, item_name):
+        print(item_name, "item_name")
         this_item = self.db.child("item").child(item_name).get().val()
-        self.db.child("item").child(item_name).update({"isSold": this_item.get('isSold', 0) + 1})
-            
-        return True
-            
+
+        if this_item is not None:
+            check=self.db.child("item").child(item_name).update({"isSold": this_item.get('isSold', 0) + 1})
+            print("nonetype?", check)
+            return True
+        else:
+            # Handle the case where the item is not found in the database
+            print(f"Item {item_name} not found in the database.")
+            return False
+
         
     def update_heart(self, user_id, isHeart, item):
         if self.db.child("heart").child(user_id).child(item).get().val()==None :

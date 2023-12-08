@@ -55,12 +55,14 @@
               </div>
               <a href="/review">전체 리뷰</a>
             </li>
+            {% if session['id'] %}
             <li class="menu">
               <div class="snow-icon">
                 <img src="../../static/images/snow.png" />
               </div>
-              <a href="/">리뷰 등록</a>
+              <a href="/mybuy/{{session['id']}}">리뷰 등록</a>
             </li>
+            {% endif %}
           </ul>
         </div>
       </nav>
