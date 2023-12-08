@@ -263,8 +263,8 @@ a {
 }
 
 .card_img {
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   border-radius: 10px;
 }
 
@@ -1346,10 +1346,10 @@ home-center {
   border-radius: 5px;
   background-color: #f5ebe0;
   margin: 5px;
-  
-  width : 150px;
-  height : 45px;
-    
+
+  width: 150px;
+  height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1361,15 +1361,14 @@ home-center {
   border-radius: 5px;
   background-color: #f5ebe0;
   margin: 5px;
-  
-  width : 150px;
-  height : 45px;
-    
+
+  width: 150px;
+  height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .nine-product-containers {
   display: flex;
@@ -1679,14 +1678,8 @@ home-center {
 
 .sell-icon {
   position: absolute;
-  left: 282px;
+  left: 252px;
   top: 11px;
-}
-
-.sell-icon2 {
-  position: absolute;
-  left: 210px;
-  top: 10px;
 }
 
 .sell-triangle {
