@@ -70,18 +70,40 @@
         showFollow();
       });
     </script>
+    <div class="nine-hot-profile">
+      <h1 class="nine-hot-logo" style="display: block">HOT</h1>
+      {% if total1 > 0 %} {% for item in populars %}
+      <div
+        class="card2"
+        onclick="location.href='/view_detail/{{item.item_title}}/';"
+        style="cursor: pointer"
+      >
+        <img
+          class="card_img"
+          style="width: 300px; height: 300px"
+          src="../../static/images/{{ item.img_path }}"
+        />
+        <div class="text2">
+          <p class="item_name">{{ item.item_title }}</p>
+          <p class="item_price">{{ item.price }}</p>
+        </div>
+      </div>
+      {%endfor%} {% else %}
+      <p>판매하는 상품이 없습니다.</p>
+      {% endif %}
+    </div>
 
-    <div class="nine-product-containers">
-      <div class="nine-product-container">
+    <div class="nine-product-cards">
+      <div class="nine-product-container2">
         <h2>판매 상품</h2>
         <div class="nine-separator">
-          <div class="nine_container1">
-            {% if total1 > 0 %}
+          <div class="nine_container3">
+            {% if total2 > 0 %}
             <table>
               <tbody>
                 <tr>
-                  {% for item in populars %}
-                  <td class="card" >
+                  {% for item in matches %}
+                  <td class="card3">
                     <div
                       onclick="location.href='/view_detail/{{item.item_title}}/';"
                       style="cursor: pointer"
@@ -89,7 +111,6 @@
                       <img
                         class="card_img"
                         src="../../static/images/{{ item.img_path }}"
-                        style = "width : 200px; height : 200px;"
                       />
                       <div class="text">
                         <p class="item_name">{{ item.item_title }}</p>
@@ -105,9 +126,9 @@
             <p>판매하는 상품이 없습니다.</p>
             {% endif %}
           </div>
-          
         </div>
       </div>
     </div>
   </div>
-{% endblock section %}
+  {% endblock section %}
+</div>

@@ -247,19 +247,35 @@ a {
   flex: 1;
 }
 
+.card3 {
+  display: inline-block;
+  padding: 10px;
+  flex: 1;
+}
+
+.card2 {
+  display: inline-block;
+  margin-right: 15px;
+}
+
 .card a {
   text-decoration: none;
 }
 
 .card_img {
-  width: 350px;
-  height: 350px;
+  width: 340px;
+  height: 340px;
   border-radius: 10px;
 }
 
 .text {
   text-align: left;
   margin: 20px;
+}
+
+.text2 {
+  text-align: left;
+  margin: 5px;
 }
 
 .item_name {
@@ -291,7 +307,7 @@ a {
   display: inline-block;
   width: 100%;
   margin: 0 auto;
-  padding: 30px;
+  padding: 15px;
   padding-left: 1220px;
 }
 
@@ -608,6 +624,14 @@ home-center {
   font-size: 20px;
 }
 
+.two_total2 {
+  display: inline;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: -100px;
+  font-size: 20px;
+}
 /* three */
 
 .three-container {
@@ -647,7 +671,7 @@ home-center {
   height: 300px;
   border-radius: 5px;
   padding: 5px;
-  left: 25px;
+  padding-left: 20px;
 }
 
 .three-item-sum p {
@@ -1262,6 +1286,29 @@ home-center {
 
 }
 
+.nine-hot-profile {
+  display: flex;
+  align-items: center;
+  border: 2px solid #d4927d;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: white;
+  margin-top: 10px;
+  width: 1000px;
+  height: 420px;
+
+  position: relative;
+}
+
+.nine-hot-logo {
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  font-size: 40px;
+  transform: rotate(-30deg);
+  text-shadow: -1px 0px yellow, 0px 1px yellow, 1px 0px yellow, 0px -1px yellow;
+}
+
 .nine-user-profile .nine-user-name {
   margin-left: 30px;
   margin-top: -20px;
@@ -1284,15 +1331,14 @@ home-center {
    left : 1000px;
 }
 
-
-.nine-button-container{
-    position : absolute;
-    left : 300px;
-    top : 550px;
-    padding : 100px;
-    display: flex;
-    align-items: center;
-    justify-content: row;
+.nine-button-container {
+  position: absolute;
+  left: 75px;
+  top: 10px;
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: row;
 }
 
 .nine-following {
@@ -1301,10 +1347,10 @@ home-center {
   border-radius: 5px;
   background-color: #f5ebe0;
   margin: 5px;
-  
-  width : 150px;
-  height : 45px;
-    
+
+  width: 150px;
+  height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1316,15 +1362,14 @@ home-center {
   border-radius: 5px;
   background-color: #f5ebe0;
   margin: 5px;
-  
-  width : 150px;
-  height : 45px;
-    
+
+  width: 150px;
+  height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .nine-product-containers {
   display: flex;
@@ -1340,6 +1385,19 @@ home-center {
   display: flex;
   padding: 10px;
   margin: 5px;
+  flex-direction: column;
+  background-color: white;
+
+  position: static;
+}
+
+.nine-product-container2 {
+  flex: 1;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  margin: 5px;
+  width: 1000px;
   flex-direction: column;
   background-color: white;
 
@@ -1376,7 +1434,7 @@ home-center {
 .nine-product-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1474,8 +1532,12 @@ home-center {
 }
 
 .nine_title {
-  padding: 20px;
-  padding-top : 40px;
+  padding: 40px;
+  display: block;
+}
+
+.nine_title2 {
+  padding: 40px;
   padding-left: 150px;
 }
 
@@ -1488,8 +1550,8 @@ home-center {
 
 .nine_write_button {
   position: absolute;
-  left: 1100px;
-  top: 130px;
+  right: 0px;
+  top: 230px;
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 30px;
@@ -1499,6 +1561,11 @@ home-center {
   border-radius: 10px;
   height: 60px;
   width: 160px;
+  margin-right: 20px;
+}
+
+.nine_mid {
+  width: 100%;
 }
 
 .nine_navbar {
@@ -1556,7 +1623,7 @@ home-center {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   padding: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -1568,10 +1635,16 @@ home-center {
   margin: 0;
   display: none;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   padding: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.nine_container3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
 }
 
 .nine_heart {
@@ -1605,9 +1678,9 @@ home-center {
 }
 
 .sell-icon {
-  position: relative;
-  left: 250px;
-  top: -354px;
+  position: absolute;
+  left: 252px;
+  top: 11px;
 }
 
 .sell-triangle {
