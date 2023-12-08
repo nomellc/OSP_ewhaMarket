@@ -299,7 +299,6 @@ a {
   margin: 5px;
 }
 
-
 /*정렬 기능*/
 
 .sort {
@@ -1211,7 +1210,6 @@ home-center {
   float: right;
 }
 
-
 #seven_id_remember {
   border: 3px solid #d4927d;
 }
@@ -1283,7 +1281,6 @@ home-center {
   margin-top: 10px;
   width: 1000px;
   height: 200px;
-
 }
 
 .nine-hot-profile {
@@ -1326,15 +1323,15 @@ home-center {
   border-radius: 5px;
   font-size: 25px;
 
-   position : absolute;
-   top : 600px;
-   left : 1000px;
+  position: absolute;
+  top: 600px;
+  left: 1000px;
 }
 
 .nine-button-container {
   position: absolute;
-  left: 75px;
-  top: 10px;
+  left: 325px;
+  top: 520px;
   padding: 100px;
   display: flex;
   align-items: center;
@@ -1733,10 +1730,10 @@ home-center {
 
 /*following.html*/
 
-.nine_title{
-    position : relative;
-    left : -550px;
-    top : -30px;
+.nine_title {
+  position: relative;
+  left: -550px;
+  top: -30px;
 }
 .nine_followers {
   display: flex;
@@ -1887,7 +1884,7 @@ home-center {
 /*contact*/
 
 .contact-body {
-  background-image: url('images\contact_background.jpeg');
+  background-image: url("images\contact_background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1899,7 +1896,6 @@ home-center {
   width: 850px;
   overflow: auto;
   margin: 30px auto;
-
 }
 
 .member-list {
@@ -1921,7 +1917,7 @@ home-center {
 .member-list img,
 .member-list2 img {
   width: 100%;
-  height:180px;
+  height: 180px;
   border-radius: 50%;
   background-color: #ddd;
 }
@@ -1939,7 +1935,7 @@ home-center {
   text-align: center;
 }
 
-.member-info a{
+.member-info a {
   font-size: 18px;
   font-weight: 400;
   color: #848484;
