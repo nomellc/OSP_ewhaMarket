@@ -1175,6 +1175,19 @@ home-center {
   background-image: url(images/eight_password.png);
   background-repeat: no-repeat;
 }
+
+#eight_id_check,
+#eight_pwd_check {
+  background-color: transparent;
+  color: #cadfdc;
+  text-align: right;
+  border: none;
+  text-decoration: underline;
+  font-size: 12px;
+  float: right;
+}
+
+
 #seven_id_remember {
   border: 3px solid #d4927d;
 }
@@ -1204,17 +1217,17 @@ home-center {
   font-size: 15px;
 }
 
+#seven_service {
+  text-align: center;
+  font-size: 10pt;
+}
+
 #eight_register:hover {
   background-color: #503c2c;
 }
 
 #seven_login:hover {
   background-color: #503c2c;
-}
-
-#seven_service {
-  text-align: center;
-  font-size: 10pt;
 }
 
 /*nine*/
