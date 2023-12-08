@@ -283,12 +283,7 @@ a {
   margin: 5px;
 }
 
-/*box들 묶는 컨테이너*/
-.box-container {
-  position: relative;
-  width: 100%;
-  margin: 0;
-}
+
 /*정렬 기능*/
 
 .sort {
@@ -1259,7 +1254,6 @@ home-center {
   width: 1000px;
   height: 200px;
 
-  position: static;
 }
 
 .nine-user-profile .nine-user-name {
@@ -1279,15 +1273,16 @@ home-center {
   border-radius: 5px;
   font-size: 25px;
 
-  margin-left: -160px;
-  margin-top: 50px;
+   position : absolute;
+   top : 600px;
+   left : 1000px;
 }
 
 
 .nine-button-container{
     position : absolute;
-    left : 75px;
-    top : 10px;
+    left : 300px;
+    top : 550px;
     padding : 100px;
     display: flex;
     align-items: center;
@@ -1473,7 +1468,8 @@ home-center {
 }
 
 .nine_title {
-  padding: 40px;
+  padding: 20px;
+  padding-top : 40px;
   padding-left: 150px;
 }
 
@@ -1658,6 +1654,11 @@ home-center {
 
 /*following.html*/
 
+.nine_title{
+    position : relative;
+    left : -550px;
+    top : -30px;
+}
 .nine_followers {
   display: flex;
   flex-direction: column;
