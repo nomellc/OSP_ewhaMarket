@@ -1163,17 +1163,6 @@ home-center {
   background-repeat: no-repeat;
 }
 
-#eight_id_check,
-#eight_pwd_check {
-  background-color: transparent;
-  color: #cadfdc;
-  text-align: right;
-  border: none;
-  text-decoration: underline;
-  font-size: 12px;
-  float: right;
-}
-
 #seven_userid {
   background-image: url(images/eight_id.png);
   background-repeat: no-repeat;
