@@ -1307,35 +1307,29 @@ home-center {
 }
 
 .nine-user-profile .nine-user-name {
-  margin-left: 30px;
-  margin-top: -20px;
-  margin-bottom: 60px;
-
+  
   font-size: 40px;
   letter-spacing: 5px;
 }
 
+.nine-user-info {
+    flex-grow: 1;
+    padding: 20px;
+}
+
 .nine-follow-button {
-  background-color: #cadfdc;
+  background-color: #f5ebe0;
   color: #71513c;
   padding: 10px 30px;
   border: none;
   border-radius: 5px;
   font-size: 25px;
-
-  position: absolute;
-  top: 600px;
-  left: 1000px;
 }
 
 .nine-button-container {
-  position: absolute;
-  left: 325px;
-  top: 520px;
-  padding: 100px;
   display: flex;
   align-items: center;
-  justify-content: row;
+  
 }
 
 .nine-following {

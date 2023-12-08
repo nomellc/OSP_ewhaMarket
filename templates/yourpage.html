@@ -5,23 +5,25 @@
         <p class="user-profile-img">
           <img src="../../static/images/mypage.jpeg" />
         </p>
-        <div class="nine-user-name">{{name}}</div>
-        <div class = "nine-button-container">
-        <div class="nine-follower" style="cursor: default">
-          {% if data is none %} follower 00 {% else %} follower {{data}}
-          {% endif %}
-        </div>
-        <div
-          class="nine-following"
-          onclick="location.href='/view_following/{{session['id']}}/';"
-          style="cursor: pointer"
-        >
-          {% if following is none %} following 00 {% else %} following {{following}} {%
-          endif %}
-        </div>
-         </div>
+        <div class="nine-user-info">
+            <div class="nine-user-name">{{name}}</div>
+            <div class = "nine-button-container">
+                <div class="nine-follower" style="cursor: default">
+                  {% if data is none %} follower 00 {% else %} follower {{data}}
+                  {% endif %}
+                </div>
+                <div
+                  class="nine-following"
+                  style="cursor: pointer"
+                >
+                  {% if following is none %} following 00 {% else %} following {{following}} {%
+                  endif %}
+            </div>
+            </div>
+          </div>
+          <button class="nine-follow-button" id="follow">follow</button>
       </div>
-           <button class="nine-follow-button" id="follow">follow</button>
+           
 
     <script>
       function showFollow() {
