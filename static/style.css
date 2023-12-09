@@ -46,7 +46,10 @@ a {
   max-height: 50px;
   margin: 0 auto;
   padding: 10px;
-  padding-left: 1000px;
+  
+  position : absolute;
+  top : 0px;
+  left : 1000px;
 }
 
 .top_navbar ul {
@@ -234,7 +237,7 @@ a {
 .container {
   position: relative;
   width: 100%;
-  margin: 0;
+  margin: 10;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -306,8 +309,10 @@ a {
   display: inline-block;
   width: 100%;
   margin: 0 auto;
-  padding: 15px;
-  padding-left: 1220px;
+    
+  position: absolute;
+  top : 440px;
+  left: 1220px;
 }
 
 .sort_button {
@@ -622,10 +627,12 @@ home-center {
 .two_total {
   display: flex;
   flex-wrap: wrap;
-  padding: 40px;
-  margin: 0 auto;
-  margin-top: -100px;
+  padding: 60px;
+  margin: 40px;
   font-size: 20px;
+    
+  position : relative;
+  top : 50px;
 }
 
 .two_total2 {
