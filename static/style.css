@@ -346,6 +346,11 @@ a {
   background-color: #71513c;
 }
 
+.categories {
+  padding: 40px;
+  padding-top: 20px;
+}
+
 /*사용자 프로필 사진*/
 .user-profile-img img {
   width: 120px;
