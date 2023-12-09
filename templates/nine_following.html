@@ -32,16 +32,17 @@
         <div class="separator"></div>
         </nav>
 
-      {% if data is not none %} {% for key, value in data.items() %} {% if
-      value.following == 'Y' %}
+      
       <div class="nine_followers">
         <!-- 필요한 만큼 nine_follow_container 추가해주세요-->
+          {% if data is not none %} {% for key, value in data.items() %} {% if
+      value.following == 'Y' %}
         <div class="nine_follow_container">
-          <div class="nine_follow_img">
-            <a><img src="../../static/images/nine_profile.png" /></a>
+          <div class="user-profile-img">
+            <a><img src="../../static/images/mypage.jpeg" /></a>
           </div>
-          <div class="nine_profile">
-            <a>{{key}}</a>
+          <div class="nine_profile_name">
+            {{key}}
           </div>
             <div class = "nine_follow_button_container">
                 <button class="nine_following_button1">{{follower[key]}} ❤</button>
@@ -53,8 +54,8 @@
               </button>
             </div>
         </div>
+          {% endif %} {% endfor %} {% endif %}
       </div>
-      {% endif %} {% endfor %} {% endif %}
     </div>
   </body>
 </html>
