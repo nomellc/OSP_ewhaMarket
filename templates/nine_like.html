@@ -2,37 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>관심내역</title>
-    <link rel="stylesheet" type="text/css" href="../../static/style.css" />
+    <title>관심 내역</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
     <div class="full-container">
-         <nav class = "navbar" style = "background-color : #f5ebe0;">
-      <div class="top_navbar">
-        <ul>
-          <li><a href="/">홈</a></li>
-          <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
-          {% if session['id'] %}
-          <li>
-            <a href="/logout">로그아웃</a>
-            <b>{{session['id']}}님</b>
-          </li>
-          {% else %}
-          <li><a href="/login">로그인</a></li>
-          <li><a href="/signup">회원가입</a></li>
-          {% endif %}
-        </ul>
-      </div>
-        <p class="nine_title">
-          <a href="/mysell//{{session['id']}}">관심 목록</a>
-        </p>
+      <nav class="navbar">
+        <div class="top_navbar">
+          <ul>
+            {% if session['id'] %}
+            <li><a href="/mypage/{{ session['id'] }}/">마이페이지</a></li>
+            <li>
+              <a href="/logout">로그아웃</a>
+              <b>{{ session['id'] }}님</b>
+            </li>
+            {% else %}
+            <li><a href="/login">로그인</a></li>
+            <li><a href="/signup">회원가입</a></li>
+            {% endif %}
+          </ul>
+        </div>
 
-        <div class="separator"></div>
+        <div class="title" style = "padding : 50px;"><a href="/">관심 내역</a></div>
+        
       </nav>
 
-
+      <div class="separator"></div>
 
       <!-- 정렬 기능 -->
       <div class="sort">
@@ -48,6 +52,7 @@
       </div>
       </div>
 
+        <!--구매상품-->
     <div class="nine_container1">
       {% if total > 0 %}
       <table>
@@ -76,7 +81,34 @@
       {% else %}
       <p class = "none_warning">등록된 상품이 없습니다.</p>
       {% endif %}
+      </div>
+      <div class="lower-section">
+        <div class="about-us-container">
+          <div class="content-title">ABOUT PUBLIC OF COMPUTER</div>
+          <pre>
+Our team was formed in the "Open SW Platform" class.
+Our goal is to form a dessert market for students
+at EWHA Womans University.
+With the Christmas theme, we provide services 
+about dessert trading and communicating with users 
+using profile and follow functions.
+            </pre
+          >
         </div>
+        <div class="about-us-container">
+          <div class="content-title">SUPPORT</div>
+          <a href="/contact"><p>About us</p></a>
+          <p a href="/">FAQS</p>
+        </div>
+        <div class="about-us-container">
+          <p>
+            E-mail : poc@ewha.ac.kr<br />
+            Phone : 02)1886-1886
+          </p>
+          <div class="separator" style="border: 1px solid #f5ebe0"></div>
+          <p>Copyright ⓒ Public of Computer Company · All rights reserved</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

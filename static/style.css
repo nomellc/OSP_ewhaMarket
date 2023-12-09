@@ -47,15 +47,16 @@ a {
   margin: 0 auto;
   padding: 10px;
   
-  position : absolute;
-  top : 0px;
-  left : 1000px;
 }
 
 .top_navbar ul {
   padding: 10px;
   list-style: none;
   min-width: 300px;
+
+  position : absolute;
+  top : 0px;
+  right : 50px;
 }
 
 .top_navbar li {
@@ -1548,10 +1549,17 @@ home-center {
   margin: 0;
 }
 
+#nine_sellingbar{
+    font-size : 30px;
+}
+#nine_soldbar{
+    font-size : 30px;
+}
+
 .nine_write_button {
   position: absolute;
-  right: 0px;
-  top: 230px;
+  right: 60px;
+  top: 120px;
   background-color: #cadfdc;
   font-weight: bold;
   font-size: 30px;
@@ -1607,15 +1615,9 @@ home-center {
   font-size: 30px;
 }
 
-.nine_navbar a:hover {
-  background-color: #d4927d;
-  border: 3px solid #d4927d;
-  border-radius: 10px;
-}
 
 .active {
-  border: 3px solid #d4927d;
-  border-radius: 10px;
+  color : #f5ebe0;
 }
 
 .nine_container1 {
@@ -1624,9 +1626,10 @@ home-center {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-  padding: 100px;
-  padding-top: 0px;
+    
+  padding: 80px;
   padding-bottom: 0px;
+  min-height : 1000px;
 }
 
 .nine_container2 {
@@ -1637,8 +1640,9 @@ home-center {
   flex-wrap: wrap;
   justify-content: left;
   padding: 100px;
-  padding-top: 0px;
+  padding : 80px;
   padding-bottom: 0px;
+  min-height : 1000px;
 }
 
 .nine_container3 {
@@ -1733,33 +1737,34 @@ home-center {
 
 /*following.html*/
 
-.nine_title {
-  position: relative;
-  left: -550px;
-  top: -30px;
-}
-.nine_followers {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 40px;
 
-  position: absolute;
-  width: calc(100% * 1px);
+.nine_follows{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  padding : 80px;
 }
 
 .nine_follow_container {
+
   border-radius: 10px;
   background-color: white;
+  border: 2px solid #d4927d;
 
-  width: 1200px;
-  height: 650px;
+  width: 1000px;
+  height: 300px;
+  
+  margin-bottom : 40px;
+  
 }
 
 .nine_profile_name {
-  font-size: 45px;
+  font-size: 60px;
   position: relative;
+  top : -50px;
+  left : 280px;
 
   letter-spacing: 3px;
 }
@@ -1770,10 +1775,10 @@ home-center {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #71513c;
-
+  margin : 0;
   position: relative;
-  top: 80px;
-  left: 80px;
+  top: 75px;
+  left: 75px;
 }
 
 .nine_profile img {
@@ -1782,15 +1787,25 @@ home-center {
   object-fit: cover;
 }
 
+.nine_follow_buttons{
+    position : relative;
+    top : -150px;
+    margin : 0px;
+}
 .nine_following_button1 {
   background-color: #cadfdc;
   color: #71513c;
-  padding: 10px 30px;
+  width : 160px;
+  height : 80px;
   border: none;
   border-radius: 5px;
   font-size: 30px;
+  margin : 0px;
 
-  position: relative;
+  position: absolute;
+  right : 100px;
+
+  
 }
 
 .nine_following_button2 {
@@ -1798,38 +1813,17 @@ home-center {
   overflow: hidden;
   min-height: 5px;
   min-width: 5px;
-  position: relative;
+
+  position: absolute;
+  top : 90px;
+  right : 100px;
+
 }
 
 .nine_following_button2 img {
   object-fit: cover;
   width: 20px;
   height: 20px;
-}
-
-.nine_more_container {
-  width: 1000px;
-  height: 320px;
-  border: 2px solid #d4927d;
-  border-radius: 10px;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow: hidden;
-
-  position: relative;
-}
-
-.nine_follow_card {
-  float: left;
-  margin: 20px;
-}
-
-.nine_follow_card img {
-  width: 280px;
-  height: 280px;
-  border-radius: 10px;
 }
 
 .nine_hot {
@@ -1841,47 +1835,6 @@ home-center {
   font-weight: bold;
   font-style: italic;
   text-shadow: -2px 0 #71513c, 2px 0 #71513c, 2px 0 #71513c, -2px 0 #71513c;
-}
-
-.nine_fheart {
-  font-size: 50px;
-  color: #d4927d;
-  font-weight: bold;
-  margin-top: -80px;
-  margin-left: 220px;
-}
-
-/* list.html */
-.page-nation li {
-  list-style: none;
-}
-
-.page-wrap {
-  text-align: center;
-  font-size: 0;
-}
-
-.page-nation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.page-nation a {
-  display: block;
-  margin: 0 3px;
-  float: left;
-  border: 1px solid #e6e6e6;
-  width: 28px;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-  background-color: #fff;
-  font-size: 13px;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /*contact*/
