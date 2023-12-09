@@ -50,7 +50,7 @@
       </nav>
 
       <!-- 정렬 기능 -->
-      <div class="sort">
+      <div class="category">
         <button class="sort_button" onclick="toggleDiv()">▼ All</button>
         <div class="sort_content" id="sortContents" style="display: none">
           <a href="{{url_for('view_list', page=i, category='all')}}">All</a>
@@ -118,7 +118,7 @@
               {% for item in solds %}
 
               <td class="card3" style="position: relative">
-                <div class="sell-icon2">
+                <div class="sell-icon">
                   <div class="sell-triangle"></div>
                   <div class="sell-text" style="font-size: 15px">판매완료</div>
                 </div>
