@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>구매 내역</title>
+    <title>구매내역</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
@@ -25,12 +25,12 @@
           {% endif %}
         </ul>
       </div>
-
         <p class="nine_title">
-          <a href="/mysell//{{session['id']}}">구매 내역</a>
+          <a href="/mysell//{{session['id']}}">구매 목록</a>
         </p>
+
         <div class="separator"></div>
-        </nav>
+      </nav>
 
 
       <!-- 정렬 기능 -->
@@ -83,5 +83,6 @@
       <div class = "none_warning">구매한 상품이 없습니다.</div>
       {% endif %}
     </div>
+      </div>
   </body>
 </html>

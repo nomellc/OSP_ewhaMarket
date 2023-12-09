@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>구매 내역</title>
+    <title>관심내역</title>
     <link rel="stylesheet" type="text/css" href="../../static/style.css" />
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
   </head>
@@ -25,12 +25,12 @@
           {% endif %}
         </ul>
       </div>
-
         <p class="nine_title">
-          <a href="/mysell//{{session['id']}}">관심 내역</a>
+          <a href="/mysell//{{session['id']}}">관심 목록</a>
         </p>
+
         <div class="separator"></div>
-        </nav>
+      </nav>
 
 
 
@@ -76,6 +76,7 @@
       {% else %}
       <p class = "none_warning">등록된 상품이 없습니다.</p>
       {% endif %}
+        </div>
     </div>
   </body>
 </html>
