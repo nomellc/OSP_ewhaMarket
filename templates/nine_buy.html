@@ -9,22 +9,22 @@
   </head>
   <body>
     <div class="full-container">
-         <nav class = "navbar" style = "background-color : #f5ebe0;">
-      <div class="top_navbar">
-        <ul>
-          <li><a href="/">홈</a></li>
-          <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
-          {% if session['id'] %}
-          <li>
-            <a href="/logout">로그아웃</a>
-            <b>{{session['id']}}님</b>
-          </li>
-          {% else %}
-          <li><a href="/login">로그인</a></li>
-          <li><a href="/signup">회원가입</a></li>
-          {% endif %}
-        </ul>
-      </div>
+      <nav class="navbar" style="background-color: #f5ebe0">
+        <div class="top_navbar">
+          <ul>
+            <li><a href="/">홈</a></li>
+            <li><a href="/mypage/{{session['id']}}">마이페이지</a></li>
+            {% if session['id'] %}
+            <li>
+              <a href="/logout">로그아웃</a>
+              <b>{{session['id']}}님</b>
+            </li>
+            {% else %}
+            <li><a href="/login">로그인</a></li>
+            <li><a href="/signup">회원가입</a></li>
+            {% endif %}
+          </ul>
+        </div>
         <p class="nine_title">
           <a href="/mysell//{{session['id']}}">구매 목록</a>
         </p>
@@ -32,57 +32,64 @@
         <div class="separator"></div>
       </nav>
 
-
       <!-- 정렬 기능 -->
-      <div class="sort">
-      <button class="sort_button" onclick="toggleDiv()">▼ All</button>
-      <div class="sort_content" id="sortContents" style="display: none;">
-        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
-        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
-        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
-        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
-        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
-        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
-        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
-      </div>
+      <div class="category">
+        <button class="sort_button" onclick="toggleDiv()">▼ All</button>
+        <div class="sort_content" id="sortContents" style="display: none">
+          <a href="{{url_for('view_list', page=i, category='all')}}">All</a>
+          <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+          <a href="{{url_for('view_list', page=i, category='Macaroon')}}"
+            >마카롱</a
+          >
+          <a href="{{url_for('view_list', page=i, category='Bagel')}}"
+            >베이글</a
+          >
+          <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+          <a href="{{url_for('view_list', page=i, category='Croissant')}}"
+            >크로와상</a
+          >
+          <a href="{{url_for('view_list', page=i, category='ECT_sel')}}"
+            >기타</a
+          >
+        </div>
       </div>
 
-    <div class="nine_container1">
-      {% if total > 0 %}
-      <table>
-        <tbody>
-          <tr>
-            {% for item in datas %}
-            <td class="card">
-              <div
-                onclick="location.href='/view_detail/{{item.item_title}}/';"
-                style="cursor: pointer"
-              >
-                <img
-                  class="card_img"
-                  src="../../static/images/{{ item.img_path }}"
-                />
-                <div class="text">
-                  <p class="item_name">{{ item.item_title }}</p>
-                  <p class="item_price">{{ item.price }}</p>
+      <div class="nine_container1">
+        {% if total > 0 %}
+        <table>
+          <tbody>
+            <tr>
+              {% for item in datas %}
+              <td class="card">
+                <div
+                  onclick="location.href='/view_detail/{{item.item_title}}/';"
+                  style="cursor: pointer"
+                >
+                  <img
+                    class="card_img"
+                    src="../../static/images/{{ item.img_path }}"
+                  />
+                  <div class="text">
+                    <p class="item_name">{{ item.item_title }}</p>
+                    <p class="item_price">{{ item.price }}</p>
+                  </div>
                 </div>
-              </div>
-              <button
-                class="nine_review_button"
-                onclick="location.href
+                <button
+                  class="nine_review_button"
+                  onclick="location.href
                 ='/reg_review_init/{{session['id']}}/{{ item.item_title }}'"
-              >
-                리뷰 작성
-              </button>
-            </td>
-            {%endfor%}
-          </tr>
-        </tbody>
-      </table>
-      {% else %}
-      <div class = "none_warning">구매한 상품이 없습니다.</div>
-      {% endif %}
-    </div>
+                >
+                  리뷰 작성
+                </button>
+              </td>
+              {%endfor%}
+            </tr>
+          </tbody>
+        </table>
+        {% else %}
+        <div class="none_warning">구매한 상품이 없습니다.</div>
+        {% endif %}
       </div>
+    </div>
   </body>
 </html>
