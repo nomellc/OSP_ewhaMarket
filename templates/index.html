@@ -1,5 +1,5 @@
 {% extends "top.html" %} {% block section %}
-<!-- <div class="sort">
+<div class="categories">
   <button class="sort_button" onclick="toggleDiv()">▼ All</button>
   <div class="sort_content" id="sortContents" style="display: none">
     <a href="{{url_for('view_list', page=i, category='all')}}">All</a>
@@ -11,7 +11,7 @@
     >
     <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
   </div>
-</div> -->
+</div>
 <div class="sort">
   <select id="category" name="category" onchange="updateSort(this.value)">
     <option value="{{url_for('view_list', page=page, category=category, sort='name')}}"
