@@ -34,7 +34,7 @@ a {
 /*top.html*/
 
 .full-container {
-  width: calc(100% * 1px);
+  width: 100%;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1109,6 +1109,13 @@ home-center {
 #six-thumb-image {
   width: 20px;
   height: 20px;
+}
+
+#six-user-img {
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 /* seven, eight */
