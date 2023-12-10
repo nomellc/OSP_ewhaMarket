@@ -35,7 +35,9 @@
               <li><a href="/">전체 상품</a></li>
               <li><a href="/reg_items">상품 등록</a></li>
               <li><a href="/review">전체 리뷰</a></li>
+              {% if session['id'] %}
               <li><a href="">리뷰 등록</a></li>
+              {% endif %}
             </ul>
           </div>
         </nav>
