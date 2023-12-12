@@ -32,42 +32,52 @@
           </ul>
         </div>
 
-        <div class="title" style = "padding : 20px; padding-top : 50px"><a href="/">판매 내역</a></div>
-              <button class="nine_write_button" onclick="location.href='/reg_items'">
+        <div class="title" style="padding: 20px; padding-top: 50px">
+          <a href="/">판매 내역</a>
+        </div>
+        <button class="nine_write_button" onclick="location.href='/reg_items'">
           글쓰기
-      </button>
+        </button>
         <div class="navbar_container">
           <ul>
-              <li class = "menu">
-                <a id="nine_sellingbar" class="active" onclick="menu(); "
-                  >판매중</a
-                >
-              </li>
-              <li class = "menu">
-                  <a id="nine_soldbar" onclick="menu();">판매 완료</a></li>
-            </ul>
+            <li class="menu">
+              <a id="nine_sellingbar" class="active" onclick="menu(); "
+                >판매중</a
+              >
+            </li>
+            <li class="menu">
+              <a id="nine_soldbar" onclick="menu();">판매 완료</a>
+            </li>
+          </ul>
         </div>
       </nav>
 
       <div class="separator"></div>
 
-
       <!-- 정렬 기능 -->
       <div class="sort">
-      <button class="sort_button" onclick="toggleDiv()">▼ All</button>
-      <div class="sort_content" id="sortContents" style="display: none;">
-        <a href="{{url_for('view_list', page=i, category='all')}}">All</a> 
-        <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
-        <a href="{{url_for('view_list', page=i, category='Macaroon')}}">마카롱</a>
-        <a href="{{url_for('view_list', page=i, category='Bagel')}}">베이글</a>
-        <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
-        <a href="{{url_for('view_list', page=i, category='Croissant')}}">크로와상</a>
-        <a href="{{url_for('view_list', page=i, category='ECT_sel')}}">기타</a>
-      </div>
+        <button class="sort_button" onclick="toggleDiv()">▼ All</button>
+        <div class="sort_content" id="sortContents" style="display: none">
+          <a href="{{url_for('view_list', page=i, category='all')}}">All</a>
+          <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
+          <a href="{{url_for('view_list', page=i, category='Macaroon')}}"
+            >마카롱</a
+          >
+          <a href="{{url_for('view_list', page=i, category='Bagel')}}"
+            >베이글</a
+          >
+          <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
+          <a href="{{url_for('view_list', page=i, category='Croissant')}}"
+            >크로와상</a
+          >
+          <a href="{{url_for('view_list', page=i, category='ECT_sel')}}"
+            >기타</a
+          >
+        </div>
       </div>
 
-        <!-- 상품 리스트 -->
-        <!--판매중-->
+      <!-- 상품 리스트 -->
+      <!--판매중-->
       <div class="nine_container1">
         {% if total1 > 0 %}
         <table>
@@ -107,8 +117,8 @@
         <p class="none_warning">등록된 상품이 없습니다.</p>
         {% endif %}
       </div>
-        
-        <!--판매완료-->
+
+      <!--판매완료-->
       <div class="nine_container2">
         {% if total2 > 0 %}
         <table>
@@ -117,7 +127,7 @@
               {% for item in solds %}
 
               <td class="card3" style="position: relative">
-                <div class="sell-icon2">
+                <div class="sell-icon">
                   <div class="sell-triangle"></div>
                   <div class="sell-text" style="font-size: 15px">판매완료</div>
                 </div>
@@ -139,7 +149,7 @@
         <p class="none_warning">판매완료된 상품이 없습니다.</p>
         {% endif %}
       </div>
-        
+
       <div class="lower-section">
         <div class="about-us-container">
           <div class="content-title">ABOUT PUBLIC OF COMPUTER</div>
