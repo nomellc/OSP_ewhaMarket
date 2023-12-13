@@ -54,9 +54,9 @@ a {
   list-style: none;
   min-width: 300px;
 
-  position : absolute;
-  top : 0px;
-  right : 50px;
+  position: absolute;
+  top: 0px;
+  right: 50px;
 }
 
 .top_navbar li {
@@ -1570,11 +1570,11 @@ home-center {
   margin: 0;
 }
 
-#nine_sellingbar{
-    font-size : 30px;
+#nine_sellingbar {
+  font-size: 30px;
 }
-#nine_soldbar{
-    font-size : 30px;
+#nine_soldbar {
+  font-size: 30px;
 }
 
 .nine_write_button {
@@ -1636,9 +1636,8 @@ home-center {
   font-size: 30px;
 }
 
-
 .active {
-  color : #f5ebe0;
+  color: #f5ebe0;
 }
 
 .nine_container1 {
@@ -1647,10 +1646,10 @@ home-center {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
-    
+
   padding: 80px;
   padding-bottom: 0px;
-  min-height : 1000px;
+  min-height: 1000px;
 }
 
 .nine_container2 {
@@ -1661,9 +1660,9 @@ home-center {
   flex-wrap: wrap;
   justify-content: left;
   padding: 100px;
-  padding : 80px;
+  padding: 80px;
   padding-bottom: 0px;
-  min-height : 1000px;
+  min-height: 1000px;
 }
 
 .nine_container3 {
@@ -1705,7 +1704,7 @@ home-center {
 .sell-icon {
   position: absolute;
   left: 252px;
-  top: 11px;
+  top: 9px;
 }
 
 .sell-triangle {
@@ -1757,34 +1756,31 @@ home-center {
 }
 
 /*following.html*/
-.nine_follows{
-
+.nine_follows {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  
-  padding : 80px;
+
+  padding: 80px;
 }
 
 .nine_follow_container {
-
   border-radius: 10px;
   background-color: white;
   border: 2px solid #d4927d;
 
   width: 1000px;
   height: 300px;
-  
-  margin-bottom : 40px;
-  
+
+  margin-bottom: 40px;
 }
 
 .nine_profile_name {
   font-size: 60px;
   position: relative;
-  top : -50px;
-  left : 280px;
+  top: -50px;
+  left: 280px;
 
   letter-spacing: 3px;
 }
@@ -1795,7 +1791,7 @@ home-center {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #71513c;
-  margin : 0;
+  margin: 0;
   position: relative;
   top: 75px;
   left: 75px;
@@ -1807,25 +1803,23 @@ home-center {
   object-fit: cover;
 }
 
-.nine_follow_buttons{
-    position : relative;
-    top : -150px;
-    margin : 0px;
+.nine_follow_buttons {
+  position: relative;
+  top: -150px;
+  margin: 0px;
 }
 .nine_following_button1 {
   background-color: #cadfdc;
   color: #71513c;
-  width : 160px;
-  height : 80px;
+  width: 160px;
+  height: 80px;
   border: none;
   border-radius: 5px;
   font-size: 30px;
-  margin : 0px;
+  margin: 0px;
 
   position: absolute;
-  right : 100px;
-
-  
+  right: 100px;
 }
 
 .nine_following_button2 {
@@ -1835,9 +1829,8 @@ home-center {
   min-width: 5px;
 
   position: absolute;
-  top : 90px;
-  right : 100px;
-
+  top: 90px;
+  right: 100px;
 }
 
 .nine_following_button2 img {
