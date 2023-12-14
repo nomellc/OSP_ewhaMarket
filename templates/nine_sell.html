@@ -53,29 +53,6 @@
       </nav>
 
       <div class="separator"></div>
-
-      <!-- 정렬 기능 -->
-      <div class="sort">
-        <button class="sort_button" onclick="toggleDiv()">▼ All</button>
-        <div class="sort_content" id="sortContents" style="display: none">
-          <a href="{{url_for('view_list', page=i, category='all')}}">All</a>
-          <a href="{{url_for('view_list', page=i, category='Cake')}}">케이크</a>
-          <a href="{{url_for('view_list', page=i, category='Macaroon')}}"
-            >마카롱</a
-          >
-          <a href="{{url_for('view_list', page=i, category='Bagel')}}"
-            >베이글</a
-          >
-          <a href="{{url_for('view_list', page=i, category='Cookie')}}">쿠키</a>
-          <a href="{{url_for('view_list', page=i, category='Croissant')}}"
-            >크로와상</a
-          >
-          <a href="{{url_for('view_list', page=i, category='ECT_sel')}}"
-            >기타</a
-          >
-        </div>
-      </div>
-
       <!-- 상품 리스트 -->
       <!--판매중-->
       <div class="nine_container1">
